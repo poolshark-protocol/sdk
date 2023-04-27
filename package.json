@@ -1,0 +1,21 @@
+{
+  "name": "poolshark-sdk",
+  "version": "1.0.0",
+  "description": "TypeScript SDK for PoolShark",
+  "main": "dist/PoolSharkSDK.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node src/PoolSharkSDK.ts"
+  },
+  "keywords": [
+    "poolshark",
+    "sdk",
+    "typescript"
+  ],
+  "author": "",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}
