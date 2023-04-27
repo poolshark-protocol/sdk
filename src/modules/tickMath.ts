@@ -1,6 +1,6 @@
-const ethers = require('ethers');
+import { ethers } from 'ethers';
 
-// Define the ABI of the TickMath library // @dev move this to the abi directory and make sure its valid
+// Define the ABI (Application Binary Interface) for the TickMath library   // @dev move this to the abi directory and make sure its valid
 const tickMathAbi = [
   {
     "inputs": [
@@ -39,28 +39,47 @@ const tickMathAbi = [
     ],
     "stateMutability": "pure",
     "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint160",
+        "name": "price",
+        "type": "uint160"
+      }
+    ],
+    "name": "validatePrice",
+    "outputs": [],
+    "stateMutability": "pure",
+    "type": "function"
   }
 ];
 
-// Define the contract address (replace with the actual deployed address)
-const tickMathAddress = '0x1234567890123456789012345678901234567890';
+// Define the address of the TickMath library (replace with the actual deployed address)
+const tickMathAddress = '0x...';
 
-// Create a function to get the square root price at a specific tick
-async function getSqrtRatioAtTick(provider, tick) {
-  // Create an instance of the TickMath library contract
-  const tickMathContract = new ethers.Contract(tickMathAddress, tickMathAbi, provider);
-  // Call the getSqrtRatioAtTick function
-  const sqrtPriceX96 = await tickMathContract.getSqrtRatioAtTick(tick);
-  return sqrtPriceX96;
-}
+// Create functions to interact with the TickMath library
+class TickMathWrapper {
+  provider: ethers.providers.Provider;
 
-// Create a function to get the tick at a specific square root price
-async function getTickAtSqrtRatio(provider, sqrtPriceX96) {
-  // Create an instance of the TickMath library contract
-  const tickMathContract = new ethers.Contract(tickMathAddress, tickMathAbi, provider);
-  // Call the getTickAtSqrtRatio function
-  const tick = await tickMathContract.getTickAtSqrtRatio(sqrtPriceX96);
-  return tick;
+  constructor(provider: ethers.providers.Provider) {
+    this.provider = provider;
+  }
+
+  async getSqrtRatioAtTick(tick: number) {
+    const tickMathContract = new ethers.Contract(tickMathAddress, tickMathAbi, this.provider);
+    return await tickMathContract.getSqrtRatioAtTick(tick);
+  }
+
+  async getTickAtSqrtRatio(sqrtPriceX96: ethers.BigNumber) {
+    const tickMathContract = new ethers.Contract(tickMathAddress, tickMathAbi, this.provider);
+    return await tickMathContract.getTickAtSqrtRatio(sqrtPriceX96);
+  }
+
+  async validatePrice(price: ethers.BigNumber) {
+    const tickMathContract = new ethers.Contract(tickMathAddress, tickMathAbi, this.provider);
+    await tickMathContract.validatePrice(price);
+  }
 }
 
 // Example usage
@@ -68,13 +87,24 @@ async function getTickAtSqrtRatio(provider, sqrtPriceX96) {
   // Create a provider (replace with the actual provider, e.g., Infura, Alchemy, etc.)
   const provider = new ethers.providers.JsonRpcProvider('https://mainnet.infura.io/v3/YOUR-PROJECT-ID');
 
-  // Get the square root price at a specific tick
-  const tick = -1000;
-  const sqrtPriceX96 = await getSqrtRatioAtTick(provider, tick);
-  console.log(`SqrtPriceX96 at tick ${tick}:`, sqrtPriceX96.toString());
+  // Initialize the TickMathWrapper
+  const tickMath = new TickMathWrapper(provider);
 
-  // Get the tick at a specific square root price
-  const price = ethers.BigNumber.from('1000000000000');
-  const resultTick = await getTickAtSqrtRatio(provider, price);
-  console.log(`Tick at sqrtPriceX96 ${price}:`, resultTick.toString());
+  // Use the functions
+  const tick = -1000;
+  const sqrtPriceX96 = ethers.BigNumber.from('1000000000000');
+
+  const result = await tickMath.getSqrtRatioAtTick(tick);
+  console.log('Result of getSqrtRatioAtTick:', result.toString());
+
+  const resultTick = await tickMath.getTickAtSqrtRatio(sqrtPriceX96);
+  console.log('Result of getTickAtSqrtRatio:', resultTick.toString());
+
+  try {
+    await tickMath.validatePrice(sqrtPriceX96);
+    console.log(Price ${sqrtPriceX96} is valid.);
+    } 
+    catch (error) {
+    console.error(Price ${sqrtPriceX96} is invalid., error);
+  }
 })();
