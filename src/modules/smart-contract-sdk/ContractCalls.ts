@@ -89,4 +89,4 @@ class CoverPool {
 }
 
 // Export the CoverPool class
-export { CoverPool, CoverPoolParams, MintParams, BurnParams, SwapCache, SnapshotParams };
+export { CoverPool };
