@@ -1,9 +1,9 @@
 import { ethers } from 'ethers';
-import { CoverPool, CoverPoolParams, MintParams } from './CoverPool';
+import { CoverPool, CoverPoolParams, MintParams } from '../modules/smart-contract-sdk/ContractCalls';
 
 // Provide the contract address and Ethereum provider
 const coverPoolAddress = '0x...'; // Address of the deployed CoverPool contract
-const provider = new ethers.providers.JsonRpcProvider('http://localhost:8545'); // JSON-RPC provider
+const provider = new ethers.JsonRpcProvider('http://localhost:8545'); // JSON-RPC provider
 
 // Instantiate the CoverPool class
 const coverPool = new CoverPool(coverPoolAddress, provider);
