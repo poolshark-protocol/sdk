@@ -5,7 +5,8 @@ import JSBI from 'jsbi'
 export const NEGATIVE_ONE = JSBI.BigInt(-1)
 export const ZERO = JSBI.BigInt(0)
 export const ONE = JSBI.BigInt(1)
-export const MAX_UINT256 = JSBI.subtract(JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(256)), JSBI.BigInt(1))
+export const MaxUint128 = JSBI.subtract(JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(128)), JSBI.BigInt(1))
+export const MaxUint256 = JSBI.subtract(JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(256)), JSBI.BigInt(1))
 
 // used in tick to price math
 export const Q32 = JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(32))

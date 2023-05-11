@@ -1,20 +1,7 @@
 import { Contract, ethers } from 'ethers';
+import { coverPoolABI } from './abis/evm/cover/coverPool';
 
 // Define TypeScript types for structs used in the contract methods
-interface CoverPoolParams {
-  twapSource: string;
-  inputPool: string;
-  token0: string;
-  token1: string;
-  tickSpread: number;
-  config: {
-    auctionLength: number;
-    blockTime: number;
-    minPositionWidth: number;
-    minAmountPerAuction: number;
-    minAmountLowerPriced: boolean;
-  };
-}
 
 interface MintParams {
   to: string;
@@ -50,22 +37,13 @@ interface SwapCache {
   amountInDelta: any;
 }
 
-interface SnapshotParams {
-  owner: string;
-  lower: number;
-  upper: number;
-  claim: number;
-  amount: number;
-  zeroForOne: boolean;
-}
-
 // Define the CoverPool class
 class CoverPool {
   private contract: Contract;
 
   constructor(contractAddress: string, provider: ethers.providers.Provider) {
     // ABI of the CoverPool contract
-    const coverPoolAbi = [ /* ABI of the CoverPool contract */ ];
+    const coverPoolAbi = coverPoolABI;
 
     this.contract = new ethers.Contract(contractAddress, coverPoolAbi, provider);
   }
