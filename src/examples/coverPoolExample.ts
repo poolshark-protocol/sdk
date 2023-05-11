@@ -1,5 +1,5 @@
 import { ethers } from 'ethers';
-import { CoverPool, CoverPoolParams, MintParams } from '../modules/smart-contract-sdk/ContractCalls';
+import { CoverPool, CoverPoolParams, MintParams } from '../modules/smart-contract-sdk/cover/coverPool';
 
 // Provide the contract address and Ethereum provider
 const coverPoolAddress = '0x...'; // Address of the deployed CoverPool contract
