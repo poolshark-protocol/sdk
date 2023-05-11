@@ -1,0 +1,143 @@
+type CoverPoolFactory @entity {
+    # poolAddress
+    id: ID!
+    poolCount: BigInt!
+    txnCount: BigInt!
+    volumeUsdTotal: BigDecimal!
+    volumeEthTotal: BigDecimal!
+    feesUsdTotal: BigDecimal!
+    feesEthTotal: BigDecimal!
+    totalValueLockedUsd: BigDecimal!
+    totalValueLockedEth: BigDecimal!
+}
+
+type CoverPoolManager @entity {
+    id: ID!
+    owner: Bytes!
+    feeTo: Bytes!
+    # factory: CoverPoolFactory!
+    volatilityTiers: [VolatilityTier!]!
+}
+
+type BasePrice @entity {
+    id: ID!
+    ethUsd: BigDecimal!
+}
+
+type VolatilityTier @entity {
+    # fee amount + tick spread + twap length + auction length
+    id: ID!
+    feeAmount: BigInt!
+    tickSpread: BigInt!
+    twapLength: BigInt!
+    auctionLength: BigInt!
+
+    # creation stats
+    createdAtTimestamp: BigInt!
+    createdAtBlockNumber: BigInt!
+}
+
+type Token @entity {
+    # token address
+    id: ID!
+    name: String!
+    symbol: String!
+    decimals: BigInt!
+}
+
+type CoverPool @entity {
+    # poolAddress
+    id: ID!
+    token0: Token!
+    token1: Token!
+    # factory: CoverPoolFactory!
+
+    # pool setup
+    inputPool: Bytes!
+    volatilityTier: VolatilityTier!
+    genesisTime: BigInt!
+
+    liquidity: BigInt!
+    liquidityGlobal: BigInt!
+    latestTick: BigInt!
+    auctionEpoch: BigInt!
+    auctionStart: BigInt!
+
+    pool0Price: BigInt!
+    pool1Price: BigInt!
+    pool0Liquidity: BigInt!
+    pool1Liquidity: BigInt!
+
+    price0: BigDecimal!
+    price1: BigDecimal!
+    volumeToken0: BigDecimal!
+    volumeToken1: BigDecimal!
+    volumeUsd: BigDecimal!
+    volumeEth: BigDecimal!
+    feesUsd: BigDecimal!
+    feesEth: BigDecimal!
+    txnCount: BigInt!
+
+    totalValueLocked0: BigDecimal!
+    totalValueLocked1: BigDecimal!
+    totalValueLockedUsd: BigDecimal!
+    totalValueLockedEth: BigDecimal!
+
+    # collects: [PositionCollect!]! @derivedFrom(field: "pool")
+    # swaps: [Swap!]! @derivedFrom(field: "pool")
+    # ticks: [Tick!]! @derivedFrom(field: "pool")
+
+    # creation stats
+    createdAtTimestamp: BigInt!
+    createdAtBlockNumber: BigInt!
+    updatedAtTimestamp: BigInt!
+    updatedAtBlockNumber: BigInt!
+}
+
+type Position @entity {
+    # poolAddress + owner + lower + upper
+    id: ID!
+    pool: CoverPool!
+    txnHash: Bytes!
+    createdBy: Bytes!
+    createdAtTimestamp: BigInt!
+    epochLast: BigInt!
+    claimPriceLast: BigInt!
+    owner: Bytes!
+    lower: BigInt!
+    upper: BigInt!
+    liquidity: BigInt!
+    amountInDeltaMax: BigInt!
+    amountOutDeltaMax: BigInt!
+    inToken: Token!
+    outToken: Token!
+    inAmount: BigInt!
+    outAmount: BigInt!
+}
+
+type Tick @entity {
+    # poolAddress + index
+    id: ID!
+    pool: CoverPool!
+    index: BigInt!
+    price0: BigDecimal!
+    price1: BigDecimal!
+    epochLast: BigInt!
+}
+
+type TickDeltas @entity {
+    # poolAddress + index + zeroForOne
+    id: ID!
+    pool: CoverPool!
+    index: BigInt!
+    liquidityMinus: BigInt!
+    zeroForOne: Boolean!
+    amountInDelta: BigInt!
+    amountOutDelta: BigInt!
+    amountInDeltaMax: BigInt!
+    amountOutDeltaMax: BigInt!
+    amountInDeltaMaxMinus: BigInt!
+    amountOutDeltaMaxMinus: BigInt!
+    amountInDeltaMaxStashed: BigInt!
+    amountOutDeltaMaxStashed: BigInt!
+}

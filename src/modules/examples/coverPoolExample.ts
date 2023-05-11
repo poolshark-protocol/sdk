@@ -19,6 +19,8 @@ const mintParams: MintParams = {
 };
 
 // Call the mint function
+//TOOD: needs a signer
+//put pkey in .env file and load that as a signer
 coverPool.mint(mintParams).then((transaction) => {
   console.log('Mint transaction:', transaction);
 }).catch((error) => {
