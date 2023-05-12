@@ -1,13 +1,13 @@
 import { Contract, ethers } from 'ethers';
-import { coverPoolABI } from '../abis/evm/cover/coverPool';
-import { MintParams } from '../../typescript-sdk/cover/liquidity/mint';
-import { BurnParams } from '../../typescript-sdk/cover/liquidity/burn';
+import { coverPoolABI } from '../abis/evm/range/coverPool';
+import { MintParams } from '../../typescript-sdk/range/liquidity/mint';
+import { BurnParams } from '../../typescript-sdk/range/liquidity/burn';
 import { SwapParams } from '../../typescript-sdk/types/swap';
 import { QuoteParams } from '../../typescript-sdk/types/quote';
 // Define TypeScript types for structs used in the contract methods
 
 // Define the CoverPool class
-class CoverPool {
+class RangePool {
   private contract: Contract;
 
   constructor(contractAddress: string, provider: ethers.providers.Provider) {

@@ -15,3 +15,5 @@ export const Q32 = JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(32))
 export const Q96_BI = JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(96))
 export const Q96_BD = JSBD.pow(JSBD.BigDecimal(2), 96)
 export const Q192 = JSBI.exponentiate(Q96_BI, JSBI.BigInt(2))
+
+export type BigintIsh = JSBI | string | number

@@ -1,4 +1,4 @@
-import { BigintIsh } from "../../numbers"
+import { BigintIsh } from "../../../math/constants"
 
 export interface CreatePoolParams {
     /**
