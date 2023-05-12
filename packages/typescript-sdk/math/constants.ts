@@ -8,6 +8,12 @@ export const ONE = JSBI.BigInt(1)
 export const MaxUint128 = JSBI.subtract(JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(128)), JSBI.BigInt(1))
 export const MaxUint256 = JSBI.subtract(JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(256)), JSBI.BigInt(1))
 
+// address values
+export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
+
+// chain ids
+export const DEFAULT_CHAIN_ID = 1
+
 // used in tick to price math
 export const Q32 = JSBI.exponentiate(JSBI.BigInt(2), JSBI.BigInt(32))
 
