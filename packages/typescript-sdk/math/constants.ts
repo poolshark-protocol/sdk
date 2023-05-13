@@ -23,3 +23,9 @@ export const Q96_BD = JSBD.pow(JSBD.BigDecimal(2), 96)
 export const Q192 = JSBI.exponentiate(Q96_BI, JSBI.BigInt(2))
 
 export type BigintIsh = JSBI | string | number
+
+export enum Rounding {
+    DOWN,
+    HALF_UP,
+    UP
+}

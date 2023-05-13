@@ -2,8 +2,8 @@ import { Contract, ethers } from 'ethers';
 import { rangePoolABI } from '../abis/evm/range/rangePool';
 import { MintParams } from '../../typescript-sdk/range/pool/liquidity/mint';
 import { BurnParams } from '../../typescript-sdk/range/pool/liquidity/burn'
-import { SwapParams } from '../../typescript-sdk/swap/swap';
-import { QuoteParams } from '../../typescript-sdk/swap/quote';
+import { SwapParams } from '../../typescript-sdk/trade/swap';
+import { QuoteParams } from '../../typescript-sdk/trade/quote';
 // Define TypeScript types for structs used in the contract methods
 
 // Define the RangePool class
