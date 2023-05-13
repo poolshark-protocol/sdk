@@ -10,4 +10,8 @@ describe('Percent tests', () => {
   test('percent of 50% from 50 string', () => {
     expect((Percent.from('50')).value).toStrictEqual(JSBI.BigInt(ethers.utils.parseUnits('5', 37).toString()));
   });
+
+  test('percent of 50% from 50 string', () => {
+    expect((Percent.from('50.5')).value).toStrictEqual(JSBI.BigInt(ethers.utils.parseUnits('505', 35).toString()));
+  });
 });

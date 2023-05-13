@@ -53,9 +53,8 @@ export class Percent extends Ratio {
   }
 
   public static from(percentString: string): Percent {
-    const oneHundred = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(38))
-    const scaledValue = JSBD.multiply(JSBD.BigDecimal(percentString), JSBD.BigDecimal(oneHundred.toString()))
-    console.log(scaledValue.toExponential(5).toString())
-    return new Percent(percentString, JSBI.BigInt(100))
+    const scalar = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(5))
+    const scaledValue = JSBD.multiply(JSBD.BigDecimal(percentString), JSBD.BigDecimal(scalar.toString()))
+    return new Percent(scaledValue.toString().split('.').join(''), JSBI.multiply(scalar, JSBI.BigInt(100)))
   }
 }
