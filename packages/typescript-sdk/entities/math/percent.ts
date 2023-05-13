@@ -2,6 +2,8 @@ import JSBI from 'jsbi'
 import { BigintIsh, Rounding } from '../../math/constants'
 import { Ratio } from './ratio'
 import { ethers } from 'ethers'
+import JSBD from 'jsbd'
+import Big from 'big.js'
 
 const ONE_HUNDRED = new Ratio(ethers.utils.parseUnits('1', 38).toString())
 
@@ -50,4 +52,10 @@ export class Percent extends Ratio {
   public toFixed(decimalPlaces: number = 2, format?: object, rounding?: Rounding): string {
     return super.multiply(ONE_HUNDRED).toFixed(decimalPlaces, format, rounding)
   }
+
+  public static from(percentString: string): Percent {
+    const oneHundred = JSBI.exponentiate(JSBI.BigInt(10), JSBI.BigInt(38))
+    const scaledValue = JSBD.multiply(JSBD.BigDecimal(percentString), JSBD.BigDecimal(oneHundred.toString()))
+    return new Percent(scaledValue.toString(), JSBI.BigInt(100))
+}
 }
