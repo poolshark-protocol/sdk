@@ -47,7 +47,6 @@ export abstract class TickMath {
   }
 
   public static roundPrice(sqrtRatioX96: JSBI, tickSpacing: number): JSBI {
-    let spacing = JSBI.BigInt(tickSpacing.toString())
     let tick = this.getTickAtSqrtRatio(sqrtRatioX96)
     let roundedTick = this.roundTick(Number(tick), tickSpacing)
     if (tick != roundedTick) {

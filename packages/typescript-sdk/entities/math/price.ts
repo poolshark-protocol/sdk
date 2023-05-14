@@ -1,5 +1,5 @@
 import { Ratio } from "./ratio";
-import { BigintIsh, Rounding } from "../../math/constants";
+import { BigintIsh, Rounding } from "../../libraries/math/constants";
 import { TokenAmount } from "../tokens/tokenAmount";
 import JSBI from "jsbi";
 import { IToken } from "../tokens/itoken";

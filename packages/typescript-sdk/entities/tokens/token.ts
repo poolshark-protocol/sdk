@@ -1,7 +1,7 @@
 import { Contract, ethers } from 'ethers'
-import { DEFAULT_CHAIN_ID, ZERO_ADDRESS } from '../../math/constants'
+import { ZERO_ADDRESS } from '../../libraries/math/constants'
 import { checkValidAddress, validateAndParseAddress } from '../addresses/checksum'
-import { ERC20 } from '../../typechain/ERC20'
+import { ERC20 } from '../../../smart-contract-sdk/typechain/ERC20'
 import { erc20ABI } from 'wagmi'
 import { IToken } from './itoken'
 

@@ -1,5 +1,5 @@
 import JSBI from 'jsbi'
-import { BigintIsh, Rounding } from '../../math/constants'
+import { BigintIsh, Rounding } from '../../libraries/math/constants'
 import { Ratio } from './ratio'
 import { ethers } from 'ethers'
 import JSBD from 'jsbd'

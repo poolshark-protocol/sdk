@@ -1,6 +1,6 @@
 import JSBI from "jsbi"
 import invariant from "tiny-invariant"
-import { BigintIsh, MaxUint256, Rounding } from "../../math/constants"
+import { BigintIsh, MaxUint256, Rounding } from "../../libraries/math/constants"
 import { Ratio } from "../math/ratio"
 import _Big from "big.js"
 import { IToken } from "./itoken"

@@ -1,8 +1,3 @@
-import { Contract, ethers } from 'ethers'
-import { DEFAULT_CHAIN_ID, ZERO_ADDRESS } from '../../math/constants'
-import { checkValidAddress, validateAndParseAddress } from '../addresses/checksum'
-import { ERC20 } from '../../typechain/ERC20'
-import { erc20ABI } from 'wagmi'
 import invariant from 'tiny-invariant'
 
 export function sortAddresses(tokenIn: string, tokenOut: string): [string, string] {
@@ -71,6 +66,8 @@ export abstract class IToken {
    * The name of the IToken, i.e. a descriptive textual non-unique identifier
    */
   public readonly name?: string
+
+  public abstract sort(other:IToken): [IToken, IToken]
 
   /**
    * Returns whether this IToken is functionally equivalent to the other IToken

@@ -1,5 +1,5 @@
 import { BigNumber } from "ethers"
-import { BigintIsh } from "../math/constants"
+import { BigintIsh } from "../libraries/math/constants"
 
 export interface QuoteParams {
     /**

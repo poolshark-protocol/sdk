@@ -1,5 +1,5 @@
 import JSBI from "jsbi"
-import { BigintIsh, Rounding } from "../../math/constants"
+import { BigintIsh, Rounding } from "../../libraries/math/constants"
 import _Decimal from 'decimal.js-light'
 import _Big from 'big.js'
 import toFormat from 'toformat'
