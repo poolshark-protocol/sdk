@@ -1,5 +1,5 @@
 import JSBI from 'jsbi'
-import { ONE, ZERO } from './constants'
+import { ONE, ZERO } from '../../utils/constants'
 
 export abstract class PrecisionMath {
   /**

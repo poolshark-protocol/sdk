@@ -10,6 +10,10 @@ export const MaxUint256 = JSBI.subtract(JSBI.exponentiate(JSBI.BigInt(2), JSBI.B
 
 // address values
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000'
+export const FACTORY_ADDRESS = '0x1F98431c8aD98523631AE4a59f267346ea31F984'
+export const MSG_SENDER = '0x0000000000000000000000000000000000000001'
+export const SWAP_ROUTER_ADDRESS = '0x0000000000000000000000000000000000000002'
+export const POOL_INIT_CODE_HASH = '0xe34f199b19b2b4f47f68442619d555527d244f78a3297ea89325f843f87b8b54'
 
 // chain ids
 export const DEFAULT_CHAIN_ID = 1
@@ -30,6 +34,11 @@ export enum Rounding {
     UP
 }
 
+export enum TradeType {
+    EXACT_INPUT,
+    EXACT_OUTPUT
+}
+
 /**
  * The default factory enabled fee amounts, denominated in hundredths of bips.
  */
@@ -39,6 +48,14 @@ export enum FeeAmount {
     LOW = 500,
     MEDIUM = 3000,
     HIGH = 10000
+}
+
+export enum ProtocolType {
+    COVER,
+    LIMIT,
+    RANGE,
+    MIXED,
+    NONE
 }
 
 export const TICK_SPACINGS: { [amount in FeeAmount]: number } = {

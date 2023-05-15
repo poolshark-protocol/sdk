@@ -1,6 +1,6 @@
 import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
-import { ZERO } from '../../../libraries/math/constants'
+import { ZERO } from '../../../utils/constants'
 import { Tick } from './tick'
 
 function tickComparator(a: Tick, b: Tick) {

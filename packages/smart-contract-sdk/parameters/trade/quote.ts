@@ -1,13 +1,7 @@
 import { BigNumber } from "ethers"
-import { BigintIsh } from "../libraries/math/constants"
+import { BigintIsh } from "../../../typescript-sdk/utils/constants"
 
-export interface SwapParams {
-    /**
-     * Recipient of the swap output. 
-     * This must be set as your address if you wish to mint to yourself.
-     */
-    recipient: string
-
+export interface QuoteParams {
     /**
      * True if trading  token0 => token1.
      * False if trading token1 => token0.
@@ -27,7 +21,26 @@ export interface SwapParams {
     amountIn: BigintIsh
 }
 
-export interface SwapOptions {
+export interface QuoteOutputs {
+    /**
+     * Amount of tokenIn to deposit as liquidity. 
+     * This must be set as your address if you wish to mint to yourself.
+     */
+    inAmount: BigintIsh
+
+    /**
+     * Amount of tokenIn to deposit as liquidity. 
+     * This must be set as your address if you wish to mint to yourself.
+     */
+    outAmount: BigintIsh
+
+    /**
+     * The pool price after if the quoted swap took place in Q64.96 format.
+     */
+    priceAfter: BigintIsh
+}
+
+export interface QuoteOptions {
     /**
      * The percent beyond which the mint transaction will revert.
      * 100% = ethers.utils.parseUnits("1", 38)

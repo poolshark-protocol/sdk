@@ -2,7 +2,7 @@ import JSBI from 'jsbi'
 import { Pool, SwapCache } from '../entities/pools/pool'
 import { TickMath } from './math/tickMath'
 import { ConstantProduct } from './math/constantProduct';
-import { ZERO } from './math/constants';
+import { ZERO } from '../utils/constants';
 import { FeeMath } from './math/feeMath';
 
 export class Ticks {

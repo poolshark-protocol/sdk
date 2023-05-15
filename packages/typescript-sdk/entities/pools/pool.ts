@@ -1,6 +1,7 @@
 import JSBI from "jsbi";
 import invariant from "tiny-invariant";
-import { BigintIsh, FeeAmount, NEGATIVE_ONE, ONE, Q192, TICK_SPACINGS, ZERO } from "../../libraries/math/constants";
+import { getCreate2Address } from '@ethersproject/address'
+import { BigintIsh, FACTORY_ADDRESS, FeeAmount, NEGATIVE_ONE, ONE, POOL_INIT_CODE_HASH, ProtocolType, Q192, TICK_SPACINGS, ZERO } from "../../utils/constants";
 import { TickMath } from "../../libraries/math/tickMath";
 import { Tick, TickConstructorArgs } from "./ticks/tick";
 import { EMPTY_TICK_DATA_PROVIDER, TickDataProvider, TickListDataProvider } from "./ticks/tickData";
@@ -8,6 +9,8 @@ import { Token } from "../tokens/token";
 import { Price } from "../math/price";
 import { TokenAmount } from "../tokens/tokenAmount";
 import { Ticks } from "../../libraries/ticks";
+import { defaultAbiCoder } from "@ethersproject/abi";
+import { keccak256 } from '@ethersproject/solidity'
 
 
 export interface SwapStep {
@@ -32,9 +35,43 @@ export interface SwapCache {
 }
 
 /**
+ * Computes a pool address
+ * @param factoryAddress The RangePoolFactory address
+ * @param tokenA The first token of the pair, irrespective of sort order
+ * @param tokenB The second token of the pair, irrespective of sort order
+ * @param fee The fee tier of the pool
+ * @param initCodeHashManualOverride Override the init code hash used to compute the pool address if necessary
+ * @returns The pool address
+ */
+export function computePoolAddress({
+  factoryAddress,
+  tokenA,
+  tokenB,
+  fee,
+  initCodeHashManualOverride
+}: {
+  factoryAddress: string
+  tokenA: Token
+  tokenB: Token
+  fee: FeeAmount
+  initCodeHashManualOverride?: string
+}): string {
+  const [token0, token1] = tokenA.sort(tokenB) ? [tokenA, tokenB] : [tokenB, tokenA] // does safety checks
+  return getCreate2Address(
+    factoryAddress,
+    keccak256(
+      ['bytes'],
+      [defaultAbiCoder.encode(['address', 'address', 'uint24'], [token0.address, token1.address, fee])]
+    ),
+    initCodeHashManualOverride ?? POOL_INIT_CODE_HASH
+  )
+}
+
+/**
  * Represents a range pool
  */
 export class Pool {
+    public readonly protocol: ProtocolType
     public readonly token0: Token
     public readonly token1: Token
     public readonly swapFee: FeeAmount
@@ -48,6 +85,7 @@ export class Pool {
 
     /**
      * Construct a pool
+     * @param protocol One of the protocol types (i.e. Cover, Limit, Range)
      * @param token0 One of the tokens in the pool
      * @param token1 The other token in the pool
      * @param fee The fee in hundredths of a bips of the input amount of every swap that is collected by the pool
@@ -57,6 +95,7 @@ export class Pool {
      * @param ticks The current state of the pool ticks or a data provider that can return tick data
      */
     public constructor(
+        protocol: ProtocolType,
         token0: Token,
         token1: Token,
         fee: FeeAmount,
@@ -75,6 +114,7 @@ export class Pool {
         'PRICE_BOUNDS'
         )
         // always create a copy of the list since we want the pool's tick list to be immutable
+        this.protocol = protocol
         ;[this.token0, this.token1] = token0.sort(token1) ? [token0, token1] : [token1, token0]
         this.swapFee = fee
         this.sqrtPrice = JSBI.BigInt(sqrtPrice)
@@ -86,13 +126,20 @@ export class Pool {
             this.tickProvider = EMPTY_TICK_DATA_PROVIDER
     }
 
-    /**
-     * Returns true if the token is either token0 or token1
-     * @param token The token to check
-     * @returns True if token is either token0 or token
-     */
-    public contains(token: Token): boolean {
-        return token.equals(this.token0) || token.equals(this.token1)
+    public static getAddress(
+      tokenA: Token,
+      tokenB: Token,
+      fee: FeeAmount,
+      initCodeHashManualOverride?: string,
+      factoryAddressOverride?: string
+    ): string {
+      return computePoolAddress({
+        factoryAddress: factoryAddressOverride ?? FACTORY_ADDRESS,
+        fee,
+        tokenA,
+        tokenB,
+        initCodeHashManualOverride
+      })
     }
 
     /**
@@ -100,7 +147,7 @@ export class Pool {
      * @param token The token to check
      * @returns True if token is either token0 or token
      */
-    public involvesToken(token: Token): boolean {
+    public contains(token: Token): boolean {
         return token.equals(this.token0) || token.equals(this.token1)
     }
 
@@ -140,7 +187,7 @@ export class Pool {
      * @returns The price of the given token, in terms of the other.
      */
     public priceOf(token: Token): Price<Token, Token> {
-        invariant(this.involvesToken(token), 'TOKEN')
+        invariant(this.contains(token), 'TOKEN')
         return token.equals(this.token0) ? this.token0Price : this.token1Price
     }
 
@@ -161,7 +208,7 @@ export class Pool {
     inputAmount: TokenAmount<Token>,
     sqrtPriceLimitX96?: JSBI
   ): Promise<[TokenAmount<Token>, Pool]> {
-    invariant(this.involvesToken(inputAmount.token), 'TOKEN')
+    invariant(this.contains(inputAmount.token), 'TOKEN')
 
     const zeroForOne = inputAmount.token.equals(this.token0)
 
@@ -173,7 +220,7 @@ export class Pool {
     const outputToken = zeroForOne ? this.token1 : this.token0
     return [
       TokenAmount.fromRawAmount(outputToken, JSBI.multiply(outputAmount, NEGATIVE_ONE)),
-      new Pool(this.token0, this.token1, this.swapFee, sqrtPrice, liquidity, tickCurrent, this.tickProvider)
+      new Pool(this.protocol, this.token0, this.token1, this.swapFee, sqrtPrice, liquidity, tickCurrent, this.tickProvider)
     ]
   }
 
@@ -187,7 +234,7 @@ export class Pool {
     outputAmount: TokenAmount<Token>,
     sqrtPriceLimitX96?: JSBI
   ): Promise<[TokenAmount<Token>, Pool]> {
-    invariant(outputAmount.token.isToken && this.involvesToken(outputAmount.token), 'TOKEN')
+    invariant(outputAmount.token.isToken && this.contains(outputAmount.token), 'TOKEN')
 
     const zeroForOne = outputAmount.token.equals(this.token1)
 
@@ -199,7 +246,7 @@ export class Pool {
     const inputToken = zeroForOne ? this.token0 : this.token1
     return [
       TokenAmount.fromRawAmount(inputToken, inputAmount),
-      new Pool(this.token0, this.token1, this.swapFee, sqrtPrice, liquidity, tickCurrent, this.tickProvider)
+      new Pool(this.protocol, this.token0, this.token1, this.swapFee, sqrtPrice, liquidity, tickCurrent, this.tickProvider)
     ]
   }
 

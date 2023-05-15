@@ -1,5 +1,5 @@
 import JSBI from 'jsbi'
-import { BigintIsh, Rounding } from '../../libraries/math/constants'
+import { BigintIsh, Rounding } from '../../utils/constants'
 import { Ratio } from './ratio'
 import { ethers } from 'ethers'
 import JSBD from 'jsbd'
@@ -19,7 +19,7 @@ export class Percent extends Ratio {
    * This boolean prevents a ratio from being interpreted as a Percent
    */
   public readonly isPercent: true = true
-  public readonly value: BigintIsh
+  public readonly value: JSBI
 
   public constructor(numerator: BigintIsh, denominator: BigintIsh = JSBI.BigInt(1)) {
     super(numerator, denominator)

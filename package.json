@@ -1,8 +1,7 @@
 {
-  "type": "module",
   "name": "poolshark-sdk",
   "version": "1.0.0",
-  "description": "TypeScript SDK for PoolShark",
+  "description": "⚒️ The Official SDK for the Poolshark Protocol",
   "main": "dist/PoolSharkSDK.js",
   "scripts": {
     "build": "tsc",
@@ -17,13 +16,15 @@
   "license": "Apache-2.0",
   "dependencies": {
     "@ethersproject/abi": "^5.7.0",
+    "@ethersproject/address": "^5.7.0",
     "big.js": "^6.2.1",
     "decimal.js-light": "^2.5.1",
-    "ethers": "5.6.1",
+    "ethers": "^5.6.1",
     "jsbd": "^0.0.11",
     "jsbi": "^4.3.0",
     "nodemon": "^2.0.22",
     "tiny-invariant": "^1.3.1",
+    "tiny-warning": "^1.0.3",
     "toformat": "^2.0.0",
     "ts-node": "^10.9.1",
     "typescript": "^4.5.5",

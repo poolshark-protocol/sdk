@@ -1,4 +1,4 @@
-import { BigintIsh } from "../../../libraries/math/constants"
+import { BigintIsh } from "../../../utils/constants"
 import { Tick, TickConstructorArgs } from "./tick"
 import { TickList } from "./tickList"
 

@@ -1,5 +1,5 @@
 import JSBI from 'jsbi'
-import { FeeAmount, ZERO } from './constants'
+import { FeeAmount, ZERO } from '../../utils/constants'
 import { SwapCache } from '../../entities/pools/pool'
 import { PrecisionMath } from './precisionMath'
 

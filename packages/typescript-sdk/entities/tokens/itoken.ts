@@ -1,4 +1,7 @@
 import invariant from 'tiny-invariant'
+import { Token } from './token'
+import { ZERO_ADDRESS } from '../../utils/constants'
+import { Contract } from 'ethers'
 
 export function sortAddresses(tokenIn: string, tokenOut: string): [string, string] {
   if (tokenIn.localeCompare(tokenOut) < 0) {
@@ -27,6 +30,16 @@ export abstract class IToken {
      * Returns whether the IToken is a IToken that is usable without wrapping
      */
     public abstract readonly isToken: boolean
+
+    /**
+     * The contract address for the token
+     */
+    public address: string
+
+    /**
+     * The contract address for the token
+     */
+    public contract: Contract | undefined
   
     /**
      * Constructs an instance of the base class `BaseCurrency`.
@@ -47,6 +60,8 @@ export abstract class IToken {
       this.decimals = decimals ? decimals : 0
       this.symbol = symbol ? symbol : ''
       this.name = name ? name : ''
+      this.address = ZERO_ADDRESS
+      this.contract = undefined
     }
 
   /**
@@ -69,6 +84,8 @@ export abstract class IToken {
 
   public abstract sort(other:IToken): [IToken, IToken]
 
+  public abstract zeroForOne(other: IToken): boolean
+
   /**
    * Returns whether this IToken is functionally equivalent to the other IToken
    * @param other the other IToken
@@ -78,5 +95,5 @@ export abstract class IToken {
   /**
    * Return the wrapped version of this IToken that can be used with the Poolshark contracts.
    */
-  public abstract get wrapped(): IToken
+  public abstract get wrapped(): Token
 }

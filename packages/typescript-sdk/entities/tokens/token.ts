@@ -1,5 +1,5 @@
-import { Contract, ethers } from 'ethers'
-import { ZERO_ADDRESS } from '../../libraries/math/constants'
+import { ethers } from 'ethers'
+import { ZERO_ADDRESS } from '../../utils/constants'
 import { checkValidAddress, validateAndParseAddress } from '../addresses/checksum'
 import { ERC20 } from '../../../smart-contract-sdk/typechain/ERC20'
 import { erc20ABI } from 'wagmi'
@@ -27,11 +27,11 @@ export class Token extends IToken {
     /**
    * Returns whether the token is native to the chain and must be wrapped (e.g. Ether)
    */
-    public readonly isNative: false = false
+    public readonly isNative: boolean = false
     /**
      * Returns whether the token is a token that is usable without wrapping
      */
-    public readonly isToken: true = true
+    public readonly isToken: boolean = true
     /**
    * Constructs an instance of the base class `Token`.
    * @param tokenAddress the address of the `Token` being created
@@ -65,15 +65,6 @@ export class Token extends IToken {
     }
   }
 
-  /**
-   * The contract address for the token
-   */
-  public address: string
-
-  /**
-   * The contract address for the token
-   */
-  public contract: Contract | undefined
   /**
    * The decimals used in representing token amounts
    */

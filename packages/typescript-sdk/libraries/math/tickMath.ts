@@ -1,6 +1,6 @@
 import JSBI from 'jsbi'
 import invariant from 'tiny-invariant'
-import { Q32, ONE, ZERO, Q96_BD, MaxUint256 } from './constants'
+import { Q32, ONE, ZERO, Q96_BD, MaxUint256 } from '../../utils/constants'
 import { mostSignificantBit } from "./bitMath"
 import JSBD from 'jsbd'
 

@@ -1,5 +1,5 @@
 import JSBI from 'jsbi';
-import { Q96_BI } from './constants'
+import { Q96_BI } from '../../utils/constants'
 import { PrecisionMath } from './precisionMath';
 
 export abstract class ConstantProduct {
