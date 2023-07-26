@@ -12,10 +12,11 @@ export class CoverPoolGetters  {
     network:Network;
     signerOrProvider:Signer | Provider
     debugMode:boolean;
+    poolAddress:string;
     constructor(args:CoverPoolAddressConstructorArgs) {
         this.network = args.network;
-        const coverPoolAddress = this.network === Network.ARBITRUM ? coverPoolAddressArbitrum : coverPoolAddressArbitrumGoerli;
-        this.coverPool = CoverPool__factory.connect(coverPoolAddress, args.signerOrProvider);
+        this.poolAddress = args.poolAddress;
+        this.coverPool = CoverPool__factory.connect(this.poolAddress, args.signerOrProvider);
         this.signerOrProvider = args.signerOrProvider;
         this.debugMode = args.debugMode;
     }
