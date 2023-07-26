@@ -4,7 +4,8 @@ import { coverPoolAddressArbitrum,coverPoolAddressArbitrumGoerli } from "../../c
 import { BigNumber, Signer } from "ethers";
 import type {Provider} from '@ethersproject/providers';
 import { isInt24 } from "../../utils";
-import { SnapshotParamsArgs,QuoteParams,CoverPoolAddressConstructorArgs,PositionArgs } from "./types";
+import { SnapshotParamsArgs,QuoteParams,PositionArgs } from "./types";
+import { CoverPoolAddressConstructorArgs } from "../types";
 
 export class CoverPoolGetters  {
     coverPool:CoverPool;
@@ -72,7 +73,7 @@ export class CoverPoolGetters  {
         return await this.coverPool.minPositionWidth();
     }
 
-    
+
     async minPrice():Promise<BigNumber> {
         return await this.coverPool.minPrice();
     }
@@ -101,8 +102,8 @@ export class CoverPoolGetters  {
     }
 
     async positions0(args:PositionArgs) {
-        if(!isInt24(BigNumber.from(args.input0))) throw new Error("input0 is not int24")
-        if(!isInt24(BigNumber.from(args.input1))) throw new Error("input1 is not int24")
+        // if(!isInt24(BigNumber.from(args.input0))) throw new Error("input0 is not int24")
+        // if(!isInt24(BigNumber.from(args.input1))) throw new Error("input1 is not int24")
         const positions0 = await this.coverPool.positions0(args.address, args.input0, args.input1);
         return positions0;
     }
