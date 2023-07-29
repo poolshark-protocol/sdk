@@ -15,6 +15,7 @@ import { GetRangePoolFromFactoryResponseFeeTierIdDefined,
     FetchRangePositionsResponse,
     FetchUniV3PoolsResponse,
     FetchUniV3PositionsResponse } from './types';
+import { Network } from '../enums';
 export interface PoolState {
   unlocked: number
   protocolFee: number
@@ -58,6 +59,11 @@ export const countDecimals = (value: number, tokenDecimals: number) => {
 }
 
 export class PoolsharkSubgraph {
+    public network:Network
+    constructor(network?:Network) {
+    this.network = network ? network : Network.ARBITRUM;
+
+    }
     /**
  * 
  * @param tokenA : token0 address
@@ -110,7 +116,7 @@ export class PoolsharkSubgraph {
             }
           }
           `
-      const {data} = await getClient(SubgraphVersion.v_0_0_7).query<GetRangePoolFromFactoryResponseFeeTierIdUndefined | GetRangePoolFromFactoryResponseFeeTierIdDefined>({query: gql(getPoolQuery)})
+      const {data} = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_7 : SubgraphVersion.none).query<GetRangePoolFromFactoryResponseFeeTierIdUndefined | GetRangePoolFromFactoryResponseFeeTierIdDefined>({query: gql(getPoolQuery)})
       return data
   }
 
@@ -137,7 +143,7 @@ export class PoolsharkSubgraph {
             }
            `
   
-      const {data} = await getClient(SubgraphVersion.v_0_0_3).query<GetCoverPoolFromFactoryResponse>({query: gql(query)})
+      const {data} = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_3 : SubgraphVersion.none).query<GetCoverPoolFromFactoryResponse>({query: gql(query)})
       return data
   }
 
@@ -157,7 +163,7 @@ export class PoolsharkSubgraph {
           }
           `
   
-    const { data } = await getClient(SubgraphVersion.v_0_0_3).query<GetTickIfZeroForOneResponse>({query: gql(query)})
+    const { data } = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_3 : SubgraphVersion.none).query<GetTickIfZeroForOneResponse>({query: gql(query)})
     return data
   }
 
@@ -176,7 +182,7 @@ export class PoolsharkSubgraph {
             }
           }
           `
-      const { data } = await getClient(SubgraphVersion.v_0_0_3).query<GetTickIfNotZeroForOneResponse>({query: gql(query)})
+      const { data } = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_3 : SubgraphVersion.none).query<GetTickIfNotZeroForOneResponse>({query: gql(query)})
       return data
   }
    
@@ -236,7 +242,7 @@ export class PoolsharkSubgraph {
         }
     `
 
-    const {data} = await getClient(SubgraphVersion.v_0_0_3).query<FetchCoverPositionsResponse>({query: gql(positionsQuery)})
+    const {data} = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_3 : SubgraphVersion.none).query<FetchCoverPositionsResponse>({query: gql(positionsQuery)})
     return data
 }
 
@@ -281,7 +287,7 @@ async fetchCoverPools (skip?:number,limit?:number):Promise<FetchCoverPoolsRespon
             }
         `
 
-    const {data} = await getClient(SubgraphVersion.v_0_0_3).query<FetchCoverPoolsResponse>({query: gql(poolsQuery)})
+    const {data} = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_3 : SubgraphVersion.none).query<FetchCoverPoolsResponse>({query: gql(poolsQuery)})
     return data;
 }
 
@@ -296,7 +302,7 @@ async fetchCoverPoolMetrics (limit?:number,offset?:number):Promise<FetchCoverPoo
         `
 
 
-   const {data} = await getClient(SubgraphVersion.v_0_0_3).query<FetchCoverPoolMetricsResponse>({query: gql(poolsMetricsQuery)})
+   const {data} = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_3 : SubgraphVersion.none).query<FetchCoverPoolMetricsResponse>({query: gql(poolsMetricsQuery)})
    return data
 }
 
@@ -351,7 +357,7 @@ async  fetchRangePools (skip?:number,limit?:number):Promise<FetchRangePoolsRespo
             }
         `
 
-    const {data} = await getClient(SubgraphVersion.v_0_0_7).query<FetchRangePoolsResponse>({query: gql(poolsQuery)})
+    const {data} = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_7 : SubgraphVersion.none).query<FetchRangePoolsResponse>({query: gql(poolsQuery)})
     return data;
 }
 
@@ -415,7 +421,7 @@ async fetchRangePositions  (address: string,skip?:number,limit?:number):Promise<
   }
     `
 
-    const {data} = await getClient(SubgraphVersion.v_0_0_7).query<FetchRangePositionsResponse>({query: gql(positionsQuery)})
+    const {data} = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_7 : SubgraphVersion.none).query<FetchRangePositionsResponse>({query: gql(positionsQuery)})
     return data;
 }
 async fetchRangeMetrics (skip?:number,limit?:number):Promise<FetchRangePoolMetricsResponse> {
@@ -435,7 +441,7 @@ async fetchRangeMetrics (skip?:number,limit?:number):Promise<FetchRangePoolMetri
         }
     `
 
-    const {data} = await getClient(SubgraphVersion.v_0_0_7).query<FetchRangePoolMetricsResponse>({query: gql(positionsQuery)})
+    const {data} = await getClient(this.network === Network.ARBITRUM_GOERLI ? SubgraphVersion.t_v_0_0_7 : SubgraphVersion.none).query<FetchRangePoolMetricsResponse>({query: gql(positionsQuery)})
     return data;
 }
 async  fetchUniV3Pools (skip?:number,limit?:number):Promise<FetchUniV3PoolsResponse> {

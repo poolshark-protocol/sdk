@@ -14,7 +14,7 @@ export class CoverPoolGetters  {
     debugMode:boolean;
     poolAddress:`0x${string}`;
     constructor(args:CoverPoolAddressConstructorArgs) {
-        this.network = args.network;
+        this.network = args.network ? args.network : Network.ARBITRUM;
         this.poolAddress = args.poolAddress;
         this.coverPool = CoverPool__factory.connect(this.poolAddress, args.signerOrProvider);
         this.signerOrProvider = args.signerOrProvider;

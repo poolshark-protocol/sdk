@@ -17,7 +17,7 @@ export class CoverPool {
     
 
     constructor(args:CoverPoolConstructor) {
-        this.network = args.network;
+        this.network = args.network ? args.network : Network.ARBITRUM;
         this.signerOrProvider = args.signerOrProvider;
 
         this.getters = new CoverPoolGetters({
