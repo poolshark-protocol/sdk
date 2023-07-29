@@ -1,6 +1,6 @@
 import { ApolloClient, InMemoryCache, gql } from '@apollo/client'
 import { BigNumber } from 'ethers'
-import {client} from './client';
+import {SubgraphVersion, getClient, getClientFromCustomUrl} from './client';
 import { GetRangePoolFromFactoryResponseFeeTierIdDefined,
     GetRangePoolFromFactoryResponseFeeTierIdUndefined,
     GetCoverPoolFromFactoryResponse,
@@ -110,7 +110,7 @@ export class PoolsharkSubgraph {
             }
           }
           `
-      const {data} = await client.query<GetRangePoolFromFactoryResponseFeeTierIdUndefined | GetRangePoolFromFactoryResponseFeeTierIdDefined>({query: gql(getPoolQuery)})
+      const {data} = await getClient(SubgraphVersion.v_0_0_7).query<GetRangePoolFromFactoryResponseFeeTierIdUndefined | GetRangePoolFromFactoryResponseFeeTierIdDefined>({query: gql(getPoolQuery)})
       return data
   }
 
@@ -137,7 +137,7 @@ export class PoolsharkSubgraph {
             }
            `
   
-      const {data} = await client.query<GetCoverPoolFromFactoryResponse>({query: gql(query)})
+      const {data} = await getClient(SubgraphVersion.v_0_0_3).query<GetCoverPoolFromFactoryResponse>({query: gql(query)})
       return data
   }
 
@@ -157,7 +157,7 @@ export class PoolsharkSubgraph {
           }
           `
   
-    const { data } = await client.query<GetTickIfZeroForOneResponse>({query: gql(query)})
+    const { data } = await getClient(SubgraphVersion.v_0_0_3).query<GetTickIfZeroForOneResponse>({query: gql(query)})
     return data
   }
 
@@ -176,7 +176,7 @@ export class PoolsharkSubgraph {
             }
           }
           `
-      const { data } = await client.query<GetTickIfNotZeroForOneResponse>({query: gql(query)})
+      const { data } = await getClient(SubgraphVersion.v_0_0_3).query<GetTickIfNotZeroForOneResponse>({query: gql(query)})
       return data
   }
    
@@ -236,7 +236,7 @@ export class PoolsharkSubgraph {
         }
     `
 
-    const {data} = await client.query<FetchCoverPositionsResponse>({query: gql(positionsQuery)})
+    const {data} = await getClient(SubgraphVersion.v_0_0_3).query<FetchCoverPositionsResponse>({query: gql(positionsQuery)})
     return data
 }
 
@@ -281,7 +281,7 @@ async fetchCoverPools (skip?:number,limit?:number):Promise<FetchCoverPoolsRespon
             }
         `
 
-    const {data} = await client.query<FetchCoverPoolsResponse>({query: gql(poolsQuery)})
+    const {data} = await getClient(SubgraphVersion.v_0_0_3).query<FetchCoverPoolsResponse>({query: gql(poolsQuery)})
     return data;
 }
 
@@ -296,7 +296,7 @@ async fetchCoverPoolMetrics (limit?:number,offset?:number):Promise<FetchCoverPoo
         `
 
 
-   const {data} = await client.query<FetchCoverPoolMetricsResponse>({query: gql(poolsMetricsQuery)})
+   const {data} = await getClient(SubgraphVersion.v_0_0_3).query<FetchCoverPoolMetricsResponse>({query: gql(poolsMetricsQuery)})
    return data
 }
 
@@ -351,7 +351,7 @@ async  fetchRangePools (skip?:number,limit?:number):Promise<FetchRangePoolsRespo
             }
         `
 
-    const {data} = await client.query<FetchRangePoolsResponse>({query: gql(poolsQuery)})
+    const {data} = await getClient(SubgraphVersion.v_0_0_7).query<FetchRangePoolsResponse>({query: gql(poolsQuery)})
     return data;
 }
 
@@ -415,7 +415,7 @@ async fetchRangePositions  (address: string,skip?:number,limit?:number):Promise<
   }
     `
 
-    const {data} = await client.query<FetchRangePositionsResponse>({query: gql(positionsQuery)})
+    const {data} = await getClient(SubgraphVersion.v_0_0_7).query<FetchRangePositionsResponse>({query: gql(positionsQuery)})
     return data;
 }
 async fetchRangeMetrics (skip?:number,limit?:number):Promise<FetchRangePoolMetricsResponse> {
@@ -435,7 +435,7 @@ async fetchRangeMetrics (skip?:number,limit?:number):Promise<FetchRangePoolMetri
         }
     `
 
-    const {data} = await client.query<FetchRangePoolMetricsResponse>({query: gql(positionsQuery)})
+    const {data} = await getClient(SubgraphVersion.v_0_0_7).query<FetchRangePoolMetricsResponse>({query: gql(positionsQuery)})
     return data;
 }
 async  fetchUniV3Pools (skip?:number,limit?:number):Promise<FetchUniV3PoolsResponse> {
@@ -466,7 +466,7 @@ async  fetchUniV3Pools (skip?:number,limit?:number):Promise<FetchUniV3PoolsRespo
             }
         `
 
-    const {data} = await client.query<FetchUniV3PoolsResponse>({query: gql(univ3PoolsQuery)})
+    const {data} = await getClientFromCustomUrl("https://api.thegraph.com/subgraphs/name/liqwiz/uniswap-v3-goerli").query<FetchUniV3PoolsResponse>({query: gql(univ3PoolsQuery)})
     return data;
 }
 
@@ -501,7 +501,7 @@ async fetchUniV3Positions(address: string,skip?:number,limit?:number):Promise<Fe
             }
         `
 
-    const {data} = await client.query<FetchUniV3PositionsResponse>({query: gql(univ3PositionsQuery),variables:{owner:address}})
+    const {data} = await getClientFromCustomUrl('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3').query<FetchUniV3PositionsResponse>({query: gql(univ3PositionsQuery),variables:{owner:address}})
     return data;
 }
 
@@ -515,7 +515,7 @@ async fetchPrice (address: string,skip?:number,limit?:number):Promise<FetchPrice
             }
             `
 
-    const {data} = await client.query<FetchPriceResponse>({query: gql(univ3Price)})
+    const {data} = await getClientFromCustomUrl('https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3').query<FetchPriceResponse>({query: gql(univ3Price)})
     return data;
 }
 }
