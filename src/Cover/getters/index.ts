@@ -102,22 +102,42 @@ export class CoverPoolGetters  {
         return pool1;
     }
 
+    /**
+    * @param {PositionArgs} args - The arguments for fetching positions.
+     */
     async positions0(args:PositionArgs) {
-        // if(!isInt24(BigNumber.from(args.input0))) throw new Error("input0 is not int24")
-        // if(!isInt24(BigNumber.from(args.input1))) throw new Error("input1 is not int24")
         const positions0 = await this.coverPool.positions0(args.address, args.input0, args.input1);
         return positions0;
     }
+
 
     async positions1(args:PositionArgs) {
         const positions1 = await this.coverPool.positions1(args.address, args.input0, args.input1);
         return positions1;
     }
 
+    /**
+     * @notice Quotes the amount of `tokenIn` for `tokenOut`. 
+               `tokenIn` will be `token0` if `zeroForOne` is true.
+               `tokenIn` will be `token1` if `zeroForOne` is false.
+               The pool price represents token1 per token0.
+               The pool price will decrease if `zeroForOne` is true.
+               The pool price will increase if `zeroForOne` is false. 
+     * @param {QuoteParams} params The parameters for the function. See QuoteParams type
+     * @return inAmount The amount of tokenIn to be spent
+     * @return outAmount The amount of tokenOut to be received
+     * @return priceAfter The Q64.96 square root price after the swap
+     */
     async quote(args:QuoteParams) {
         return await this.coverPool.quote(args);
     }
-
+    
+    /**
+     * @notice Snapshots the current state of an existing position. 
+     * @param {SwapParams} params The parameters for the function. See SwapParams type.
+     * @return position The updated position containing `amountIn` and `amountOut`
+     * @dev positions amounts reflected will be collected by the user if `burn` is called
+     */
     async snapshot(args:SnapshotParamsArgs) {
         return await this.coverPool.snapshot(args);
     }
@@ -132,11 +152,19 @@ export class CoverPoolGetters  {
         return tickSpread;
     }
 
+    /**  
+     * @param {number} tick The tick to get the token0 for
+     * @returns the tick containing token0 as output
+    */
     async ticks0(tick:number) {
         const ticks0 = await this.coverPool.ticks0(tick);
         return ticks0;
     }
 
+    /**
+     * @param {number} tick The tick to get the token1 for
+     * @returns the tick containing token1 as output
+    */
     async ticks1(tick:number) {
         const ticks1 = await this.coverPool.ticks1(tick);
         return ticks1;
