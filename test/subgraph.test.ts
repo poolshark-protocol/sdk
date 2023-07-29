@@ -1,4 +1,4 @@
-import { PoolsharkSubgraph } from "../src/subgraph/queries";
+import { PoolsharkSubgraph } from "../src/subgraph";
 import {describe, expect, test} from '@jest/globals';
 import * as dotenv from "dotenv";
 import { Network } from "../src/enums";
