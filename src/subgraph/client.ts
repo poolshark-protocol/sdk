@@ -1,4 +1,6 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client/core";
+import { ApolloClient, HttpLink, InMemoryCache } from "@apollo/client/core";
+import fetch from 'cross-fetch';
+
 export enum SubgraphVersion  {
     // v_0_0_3 = "https://subgraph.satsuma-prod.com/3eaf484773f9/poolshark/cover-arbitrumGoerli/version/v0.0.3/api",
     // v_0_0_7 = "https://subgraph.satsuma-prod.com/3eaf484773f9/poolshark/range-arbitrumGoerli/version/v0.0.7/api",
@@ -18,26 +20,29 @@ const getSubgraphUrlFromVersion = (subgraphVersion:SubgraphVersion) => {
     }
 }
 
-export const getClient = (subgraphVersion:SubgraphVersion) => {
-    return new ApolloClient({
-        uri: getSubgraphUrlFromVersion(subgraphVersion),
-        cache: new InMemoryCache(),
-        defaultOptions: {
-            query: {
-                fetchPolicy: "no-cache",
-            },
-        },
-    });
-}
-
-export const getClientFromCustomUrl = (url:string) => {
+export const getClient = (subgraphVersion: SubgraphVersion) => {
+    const url = getSubgraphUrlFromVersion(subgraphVersion);
     return new ApolloClient({
         uri: url,
         cache: new InMemoryCache(),
+        link:  new HttpLink({ uri: `${url}`, fetch }),
         defaultOptions: {
-            query: {
-                fetchPolicy: "no-cache",
-            },
-        },
+                        query: {
+                            fetchPolicy: "no-cache",
+                        },
+                    },
     });
-}
+};
+
+export const getClientFromCustomUrl = (url: string) => {
+    return new ApolloClient({
+        uri: url,
+        cache: new InMemoryCache(),
+        link: new HttpLink({ uri: `${url}`, fetch })
+    });
+};
+
+
+
+
+
