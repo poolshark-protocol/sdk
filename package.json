@@ -18,6 +18,7 @@
   "dependencies": {
     "@apollo/client": "^3.7.17",
     "@types/node": "^20.4.2",
+    "cross-fetch": "^4.0.0",
     "dotenv": "^16.3.1",
     "ethers": "^5.7.2",
     "jsbd": "^0.0.11",
