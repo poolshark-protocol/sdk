@@ -12,7 +12,7 @@ export class CoverPoolGetters  {
     network:Network;
     signerOrProvider:Signer | Provider
     debugMode:boolean;
-    poolAddress:string;
+    poolAddress:`0x${string}`;
     constructor(args:CoverPoolAddressConstructorArgs) {
         this.network = args.network;
         this.poolAddress = args.poolAddress;
@@ -40,8 +40,8 @@ export class CoverPoolGetters  {
     /**
      * @returns The address to pay fees to
     */
-    async feeTo():Promise<string> {
-        return await this.coverPool.feeTo();
+    async feeTo():Promise<`0x${string}`> {
+        return await this.coverPool.feeTo() as `0x${string}`;
     }
 
     async genesisTime():Promise<number> {
@@ -82,8 +82,8 @@ export class CoverPoolGetters  {
     /**
      * @returns The name of the pool
     */
-    async owner():Promise<string> {
-        return await this.coverPool.owner();
+    async owner():Promise<`0x${string}`> {
+        return await this.coverPool.owner() as `0x${string}`;
     }
 
     /**

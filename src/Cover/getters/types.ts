@@ -16,23 +16,37 @@ import { type BigNumber, type Signer } from "ethers";;
  * False if deposited token1, the second token address in lexographical order
 */
 type SnapshotParamsArgs = {
-    owner: string;
+    owner: `0x${string}`;
     burnPercent: BigNumber; //uint128
     lower: number; //int24
     upper: number; //int24
     claim: number; //int24
     zeroForOne: boolean;
 }
+
+/**
+ * @param priceLimit: The Q64.96 square root price at which to stop swapping.
+ * @param amountIn: The tokenIn amount being passed into the swap
+ * @param zeroForOne: The direction of the swap, true for token0 to token1, false for token1 to token0
+ * True if swapping in token0, the first token address in lexographical order
+ * False if swapping in token1, the second token address in lexographical order
+ */
 type QuoteParams = {
     priceLimit:BigNumber,
     amountIn:BigNumber,
     zeroForOne:boolean,
 }
 
+/**
+ * @param address: Address of the position
+ * @param input0: 
+ * @param input1: 
+ * 
+ */
 type PositionArgs = {
-    address: string;
-    input0: string;
-    input1: string;
+    address: `0x${string}`;
+    input0: BigNumber
+    input1: BigNumber
 }
 export {
     SnapshotParamsArgs,

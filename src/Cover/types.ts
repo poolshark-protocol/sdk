@@ -6,7 +6,7 @@ type CoverPoolAddressConstructorArgs = {
     network: Network;
     signerOrProvider: Signer | Provider;
     debugMode: boolean;
-    poolAddress: string;
+    poolAddress: `0x${string}`;
 }
 
 export {

@@ -13,7 +13,7 @@ export class CoverPool {
     public network: Network;
     public signerOrProvider: Signer | Provider;
     public debugMode: boolean;
-    public poolAddress: string;
+    public poolAddress: `0x${string}`;
     
 
     constructor(args:CoverPoolConstructor) {

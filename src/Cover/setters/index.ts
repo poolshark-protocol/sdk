@@ -13,7 +13,7 @@ export class CoverPoolSetters  {
     network:Network;
     signer:Signer
     debugMode:boolean;
-    poolAddress:string;
+    poolAddress:`0x${string}`;
     constructor(args:CoverPoolSettersConstructorArgs) {
         this.network = args.network;
         this.coverPool = CoverPool__factory.connect(args.poolAddress, args.signerOrProvider);

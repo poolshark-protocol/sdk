@@ -10,7 +10,7 @@ import {type BigNumber } from "ethers/lib/ethers"
  * False if depositing for token1, the second token address in lexographical order
   */
 type MintParams = {
-    to:string,
+    to:`0x${string}`,
     amount:BigNumber,
     lower:BigNumber,
     upper:BigNumber,
@@ -27,8 +27,8 @@ type MintParams = {
  * False if swapping in token1, the second token address in lexographical order 
  */
 type SwapParams = {
-    to:string,
-    refundTo:string,
+    to:`0x${string}`,
+    refundTo:`0x${string}`,
     priceLimit:BigNumber,
     amountIn:BigNumber,
     zeroForOne:boolean,
@@ -50,7 +50,7 @@ type SwapParams = {
     * False if deposited token1, the second token address in lexographical order 
     */
 type BurnParams = {
-    to:string,
+    to:`0x${string}`,
     burnPercent:BigNumber,
     lower:BigNumber,
     claim:BigNumber,
