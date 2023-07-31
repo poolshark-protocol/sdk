@@ -1,6 +1,5 @@
 import { ethers } from 'ethers';
-import { coverPoolABI } from '../packages/smart-contract-sdk/abis/evm/cover/coverPool'
-import { CoverPool__factory,CoverPool } from '../typechain';
+import { CoverPool__factory,CoverPool } from '../typechain-cover';
 import { TickMath } from '../packages/typescript-sdk/libraries/math/tickMath'
 import {ERC20ABI} from "../packages/smart-contract-sdk/abis/evm/erc20/erc20";
 import * as dotenv from 'dotenv'

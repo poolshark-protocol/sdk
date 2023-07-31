@@ -14,7 +14,8 @@ import { GetRangePoolFromFactoryResponseFeeTierIdDefined,
     FetchRangePoolsResponse,
     FetchRangePositionsResponse,
     FetchUniV3PoolsResponse,
-    FetchUniV3PositionsResponse } from './types';
+    FetchUniV3PositionsResponse
+   } from './types';
 import { Network } from '../enums';
 export interface PoolState {
   unlocked: number
