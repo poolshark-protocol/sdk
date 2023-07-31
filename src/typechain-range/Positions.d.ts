@@ -12,48 +12,48 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface PositionsInterface extends ethers.utils.Interface {
   functions: {
-    "id(int24,int24)": FunctionFragment;
-    "rangeFeeGrowth(address,int24,int24)": FunctionFragment;
-    "snapshot(address,address,int24,int24)": FunctionFragment;
+    'id(int24,int24)': FunctionFragment;
+    'rangeFeeGrowth(address,int24,int24)': FunctionFragment;
+    'snapshot(address,address,int24,int24)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "id",
-    values: [BigNumberish, BigNumberish]
+    functionFragment: 'id',
+    values: [BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "rangeFeeGrowth",
-    values: [string, BigNumberish, BigNumberish]
+    functionFragment: 'rangeFeeGrowth',
+    values: [string, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "snapshot",
-    values: [string, string, BigNumberish, BigNumberish]
+    functionFragment: 'snapshot',
+    values: [string, string, BigNumberish, BigNumberish],
   ): string;
 
-  decodeFunctionResult(functionFragment: "id", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'id', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "rangeFeeGrowth",
-    data: BytesLike
+    functionFragment: 'rangeFeeGrowth',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "snapshot", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'snapshot', data: BytesLike): Result;
 
   events: {
-    "Burn(address,int24,int24,uint256,uint128,uint128,uint128,uint128)": EventFragment;
-    "Compound(int24,int24,uint128,uint128,uint128)": EventFragment;
-    "Mint(address,int24,int24,uint256,uint128,uint128,uint128,uint128)": EventFragment;
+    'Burn(address,int24,int24,uint256,uint128,uint128,uint128,uint128)': EventFragment;
+    'Compound(int24,int24,uint128,uint128,uint128)': EventFragment;
+    'Mint(address,int24,int24,uint256,uint128,uint128,uint128,uint128)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "Burn"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Compound"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Mint"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Burn'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Compound'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Mint'): EventFragment;
 }
 
 export type BurnEvent = TypedEvent<
@@ -65,7 +65,7 @@ export type BurnEvent = TypedEvent<
     BigNumber,
     BigNumber,
     BigNumber,
-    BigNumber
+    BigNumber,
   ] & {
     recipient: string;
     lower: number;
@@ -97,7 +97,7 @@ export type MintEvent = TypedEvent<
     BigNumber,
     BigNumber,
     BigNumber,
-    BigNumber
+    BigNumber,
   ] & {
     recipient: string;
     lower: number;
@@ -116,26 +116,26 @@ export class Positions extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -148,7 +148,7 @@ export class Positions extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: PositionsInterface;
@@ -157,14 +157,14 @@ export class Positions extends BaseContract {
     id(
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber]>;
 
     rangeFeeGrowth(
       pool: string,
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         feeGrowthInside0: BigNumber;
@@ -177,7 +177,7 @@ export class Positions extends BaseContract {
       owner: string,
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
         tickSecondsAccum: BigNumber;
@@ -191,14 +191,14 @@ export class Positions extends BaseContract {
   id(
     lower: BigNumberish,
     upper: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   rangeFeeGrowth(
     pool: string,
     lower: BigNumberish,
     upper: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & {
       feeGrowthInside0: BigNumber;
@@ -211,7 +211,7 @@ export class Positions extends BaseContract {
     owner: string,
     lower: BigNumberish,
     upper: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber] & {
       tickSecondsAccum: BigNumber;
@@ -225,14 +225,14 @@ export class Positions extends BaseContract {
     id(
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     rangeFeeGrowth(
       pool: string,
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         feeGrowthInside0: BigNumber;
@@ -245,7 +245,7 @@ export class Positions extends BaseContract {
       owner: string,
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
         tickSecondsAccum: BigNumber;
@@ -257,7 +257,7 @@ export class Positions extends BaseContract {
   };
 
   filters: {
-    "Burn(address,int24,int24,uint256,uint128,uint128,uint128,uint128)"(
+    'Burn(address,int24,int24,uint256,uint128,uint128,uint128,uint128)'(
       recipient?: string | null,
       lower?: null,
       upper?: null,
@@ -265,7 +265,7 @@ export class Positions extends BaseContract {
       tokenBurned?: null,
       liquidityBurned?: null,
       amount0?: null,
-      amount1?: null
+      amount1?: null,
     ): TypedEventFilter<
       [
         string,
@@ -275,7 +275,7 @@ export class Positions extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ],
       {
         recipient: string;
@@ -297,7 +297,7 @@ export class Positions extends BaseContract {
       tokenBurned?: null,
       liquidityBurned?: null,
       amount0?: null,
-      amount1?: null
+      amount1?: null,
     ): TypedEventFilter<
       [
         string,
@@ -307,7 +307,7 @@ export class Positions extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ],
       {
         recipient: string;
@@ -321,12 +321,12 @@ export class Positions extends BaseContract {
       }
     >;
 
-    "Compound(int24,int24,uint128,uint128,uint128)"(
+    'Compound(int24,int24,uint128,uint128,uint128)'(
       lower?: BigNumberish | null,
       upper?: BigNumberish | null,
       liquidityCompounded?: null,
       positionAmount0?: null,
-      positionAmount1?: null
+      positionAmount1?: null,
     ): TypedEventFilter<
       [number, number, BigNumber, BigNumber, BigNumber],
       {
@@ -343,7 +343,7 @@ export class Positions extends BaseContract {
       upper?: BigNumberish | null,
       liquidityCompounded?: null,
       positionAmount0?: null,
-      positionAmount1?: null
+      positionAmount1?: null,
     ): TypedEventFilter<
       [number, number, BigNumber, BigNumber, BigNumber],
       {
@@ -355,7 +355,7 @@ export class Positions extends BaseContract {
       }
     >;
 
-    "Mint(address,int24,int24,uint256,uint128,uint128,uint128,uint128)"(
+    'Mint(address,int24,int24,uint256,uint128,uint128,uint128,uint128)'(
       recipient?: string | null,
       lower?: null,
       upper?: null,
@@ -363,7 +363,7 @@ export class Positions extends BaseContract {
       tokenMinted?: null,
       liquidityMinted?: null,
       amount0?: null,
-      amount1?: null
+      amount1?: null,
     ): TypedEventFilter<
       [
         string,
@@ -373,7 +373,7 @@ export class Positions extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ],
       {
         recipient: string;
@@ -395,7 +395,7 @@ export class Positions extends BaseContract {
       tokenMinted?: null,
       liquidityMinted?: null,
       amount0?: null,
-      amount1?: null
+      amount1?: null,
     ): TypedEventFilter<
       [
         string,
@@ -405,7 +405,7 @@ export class Positions extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ],
       {
         recipient: string;
@@ -424,14 +424,14 @@ export class Positions extends BaseContract {
     id(
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     rangeFeeGrowth(
       pool: string,
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     snapshot(
@@ -439,7 +439,7 @@ export class Positions extends BaseContract {
       owner: string,
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -447,14 +447,14 @@ export class Positions extends BaseContract {
     id(
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     rangeFeeGrowth(
       pool: string,
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     snapshot(
@@ -462,7 +462,7 @@ export class Positions extends BaseContract {
       owner: string,
       lower: BigNumberish,
       upper: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

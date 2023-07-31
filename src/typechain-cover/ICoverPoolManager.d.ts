@@ -12,40 +12,40 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface ICoverPoolManagerInterface extends ethers.utils.Interface {
   functions: {
-    "feeTo()": FunctionFragment;
-    "owner()": FunctionFragment;
-    "twapSources(bytes32)": FunctionFragment;
-    "volatilityTiers(bytes32,uint16,int16,uint16)": FunctionFragment;
+    'feeTo()': FunctionFragment;
+    'owner()': FunctionFragment;
+    'twapSources(bytes32)': FunctionFragment;
+    'volatilityTiers(bytes32,uint16,int16,uint16)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "feeTo", values?: undefined): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'feeTo', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "twapSources",
-    values: [BytesLike]
+    functionFragment: 'twapSources',
+    values: [BytesLike],
   ): string;
   encodeFunctionData(
-    functionFragment: "volatilityTiers",
-    values: [BytesLike, BigNumberish, BigNumberish, BigNumberish]
+    functionFragment: 'volatilityTiers',
+    values: [BytesLike, BigNumberish, BigNumberish, BigNumberish],
   ): string;
 
-  decodeFunctionResult(functionFragment: "feeTo", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTo', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "twapSources",
-    data: BytesLike
+    functionFragment: 'twapSources',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "volatilityTiers",
-    data: BytesLike
+    functionFragment: 'volatilityTiers',
+    data: BytesLike,
   ): Result;
 
   events: {};
@@ -57,26 +57,26 @@ export class ICoverPoolManager extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -89,7 +89,7 @@ export class ICoverPoolManager extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: ICoverPoolManagerInterface;
@@ -101,7 +101,7 @@ export class ICoverPoolManager extends BaseContract {
 
     twapSources(
       sourceName: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [string, string] & { sourceAddress: string; curveAddress: string }
     >;
@@ -111,7 +111,7 @@ export class ICoverPoolManager extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, number, number, number, number, number, boolean] & {
@@ -122,7 +122,7 @@ export class ICoverPoolManager extends BaseContract {
           fillFee: number;
           minPositionWidth: number;
           minAmountLowerPriced: boolean;
-        }
+        },
       ]
     >;
   };
@@ -133,7 +133,7 @@ export class ICoverPoolManager extends BaseContract {
 
   twapSources(
     sourceName: BytesLike,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [string, string] & { sourceAddress: string; curveAddress: string }
   >;
@@ -143,7 +143,7 @@ export class ICoverPoolManager extends BaseContract {
     feeTier: BigNumberish,
     tickSpread: BigNumberish,
     twapLength: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, number, number, number, number, number, boolean] & {
       minAmountPerAuction: BigNumber;
@@ -163,7 +163,7 @@ export class ICoverPoolManager extends BaseContract {
 
     twapSources(
       sourceName: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [string, string] & { sourceAddress: string; curveAddress: string }
     >;
@@ -173,7 +173,7 @@ export class ICoverPoolManager extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         minAmountPerAuction: BigNumber;
@@ -196,7 +196,7 @@ export class ICoverPoolManager extends BaseContract {
 
     twapSources(
       sourceName: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     volatilityTiers(
@@ -204,7 +204,7 @@ export class ICoverPoolManager extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -215,7 +215,7 @@ export class ICoverPoolManager extends BaseContract {
 
     twapSources(
       sourceName: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     volatilityTiers(
@@ -223,7 +223,7 @@ export class ICoverPoolManager extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

@@ -11,20 +11,20 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface MintCallInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "Mint(address,int24,int24,bool,uint32,uint128,uint128,uint128,uint128)": EventFragment;
+    'Mint(address,int24,int24,bool,uint32,uint128,uint128,uint128,uint128)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "Mint"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Mint'): EventFragment;
 }
 
 export type MintEvent = TypedEvent<
@@ -37,7 +37,7 @@ export type MintEvent = TypedEvent<
     BigNumber,
     BigNumber,
     BigNumber,
-    BigNumber
+    BigNumber,
   ] & {
     to: string;
     lower: number;
@@ -57,26 +57,26 @@ export class MintCall extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -89,7 +89,7 @@ export class MintCall extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: MintCallInterface;
@@ -99,7 +99,7 @@ export class MintCall extends BaseContract {
   callStatic: {};
 
   filters: {
-    "Mint(address,int24,int24,bool,uint32,uint128,uint128,uint128,uint128)"(
+    'Mint(address,int24,int24,bool,uint32,uint128,uint128,uint128,uint128)'(
       to?: string | null,
       lower?: null,
       upper?: null,
@@ -108,7 +108,7 @@ export class MintCall extends BaseContract {
       amountIn?: null,
       liquidityMinted?: null,
       amountInDeltaMaxMinted?: null,
-      amountOutDeltaMaxMinted?: null
+      amountOutDeltaMaxMinted?: null,
     ): TypedEventFilter<
       [
         string,
@@ -119,7 +119,7 @@ export class MintCall extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ],
       {
         to: string;
@@ -143,7 +143,7 @@ export class MintCall extends BaseContract {
       amountIn?: null,
       liquidityMinted?: null,
       amountInDeltaMaxMinted?: null,
-      amountOutDeltaMaxMinted?: null
+      amountOutDeltaMaxMinted?: null,
     ): TypedEventFilter<
       [
         string,
@@ -154,7 +154,7 @@ export class MintCall extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ],
       {
         to: string;

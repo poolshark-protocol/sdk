@@ -2,38 +2,38 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   CoverTicksErrors,
   CoverTicksErrorsInterface,
-} from "../CoverTicksErrors";
+} from '../CoverTicksErrors';
 
 const _abi = [
   {
     inputs: [],
-    name: "WrongTickClaimedAt",
-    type: "error",
+    name: 'WrongTickClaimedAt',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "WrongTickLowerOrder",
-    type: "error",
+    name: 'WrongTickLowerOrder',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "WrongTickLowerRange",
-    type: "error",
+    name: 'WrongTickLowerRange',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "WrongTickUpperOrder",
-    type: "error",
+    name: 'WrongTickUpperOrder',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "WrongTickUpperRange",
-    type: "error",
+    name: 'WrongTickUpperRange',
+    type: 'error',
   },
 ];
 
@@ -44,7 +44,7 @@ export class CoverTicksErrors__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): CoverTicksErrors {
     return new Contract(address, _abi, signerOrProvider) as CoverTicksErrors;
   }

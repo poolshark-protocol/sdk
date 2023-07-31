@@ -2,25 +2,25 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Signer, utils, Contract, ContractFactory, Overrides } from "ethers";
-import { Provider, TransactionRequest } from "@ethersproject/providers";
-import type { LibClone, LibCloneInterface } from "../LibClone";
+import { Signer, utils, Contract, ContractFactory, Overrides } from 'ethers';
+import { Provider, TransactionRequest } from '@ethersproject/providers';
+import type { LibClone, LibCloneInterface } from '../LibClone';
 
 const _abi = [
   {
     inputs: [],
-    name: "DeploymentFailed",
-    type: "error",
+    name: 'DeploymentFailed',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "SaltDoesNotStartWithCaller",
-    type: "error",
+    name: 'SaltDoesNotStartWithCaller',
+    type: 'error',
   },
 ];
 
 const _bytecode =
-  "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220e3a2af9529a3835d0e2969c48c2b513bfc6eda62a3ca6f2a3cf2e25ccc0fe8a964736f6c634300080d0033";
+  '0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220e3a2af9529a3835d0e2969c48c2b513bfc6eda62a3ca6f2a3cf2e25ccc0fe8a964736f6c634300080d0033';
 
 export class LibClone__factory extends ContractFactory {
   constructor(
@@ -34,12 +34,12 @@ export class LibClone__factory extends ContractFactory {
   }
 
   deploy(
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<LibClone> {
     return super.deploy(overrides || {}) as Promise<LibClone>;
   }
   getDeployTransaction(
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): TransactionRequest {
     return super.getDeployTransaction(overrides || {});
   }
@@ -56,7 +56,7 @@ export class LibClone__factory extends ContractFactory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): LibClone {
     return new Contract(address, _abi, signerOrProvider) as LibClone;
   }

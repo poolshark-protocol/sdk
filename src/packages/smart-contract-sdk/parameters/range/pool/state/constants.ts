@@ -1,4 +1,4 @@
 interface RangeImmutables {
-    swapFee: number,
-    tickSpacing: number
+  swapFee: number;
+  tickSpacing: number;
 }

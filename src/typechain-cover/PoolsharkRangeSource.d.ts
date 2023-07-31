@@ -13,26 +13,26 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface PoolsharkRangeSourceInterface extends ethers.utils.Interface {
   functions: {
-    "calculateAverageTick((address,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool),int24)": FunctionFragment;
-    "factory()": FunctionFragment;
-    "feeTierTickSpacing(uint16)": FunctionFragment;
-    "getPool(address,address,uint16)": FunctionFragment;
-    "initialize((address,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))": FunctionFragment;
-    "oneSecond()": FunctionFragment;
-    "rangePoolFactory()": FunctionFragment;
-    "rangePoolManager()": FunctionFragment;
+    'calculateAverageTick((address,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool),int24)': FunctionFragment;
+    'factory()': FunctionFragment;
+    'feeTierTickSpacing(uint16)': FunctionFragment;
+    'getPool(address,address,uint16)': FunctionFragment;
+    'initialize((address,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))': FunctionFragment;
+    'oneSecond()': FunctionFragment;
+    'rangePoolFactory()': FunctionFragment;
+    'rangePoolManager()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "calculateAverageTick",
+    functionFragment: 'calculateAverageTick',
     values: [
       {
         source: string;
@@ -51,20 +51,20 @@ interface PoolsharkRangeSourceInterface extends ethers.utils.Interface {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "feeTierTickSpacing",
-    values: [BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getPool",
-    values: [string, string, BigNumberish]
+    functionFragment: 'feeTierTickSpacing',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "initialize",
+    functionFragment: 'getPool',
+    values: [string, string, BigNumberish],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'initialize',
     values: [
       {
         source: string;
@@ -82,38 +82,38 @@ interface PoolsharkRangeSourceInterface extends ethers.utils.Interface {
         token0Decimals: BigNumberish;
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "oneSecond", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'oneSecond', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "rangePoolFactory",
-    values?: undefined
+    functionFragment: 'rangePoolFactory',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "rangePoolManager",
-    values?: undefined
+    functionFragment: 'rangePoolManager',
+    values?: undefined,
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "calculateAverageTick",
-    data: BytesLike
+    functionFragment: 'calculateAverageTick',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "feeTierTickSpacing",
-    data: BytesLike
+    functionFragment: 'feeTierTickSpacing',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "getPool", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "oneSecond", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getPool', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'oneSecond', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "rangePoolFactory",
-    data: BytesLike
+    functionFragment: 'rangePoolFactory',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "rangePoolManager",
-    data: BytesLike
+    functionFragment: 'rangePoolManager',
+    data: BytesLike,
   ): Result;
 
   events: {};
@@ -125,26 +125,26 @@ export class PoolsharkRangeSource extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -157,7 +157,7 @@ export class PoolsharkRangeSource extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: PoolsharkRangeSourceInterface;
@@ -182,21 +182,21 @@ export class PoolsharkRangeSource extends BaseContract {
         minAmountLowerPriced: boolean;
       },
       latestTick: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { averageTick: number }>;
 
     factory(overrides?: CallOverrides): Promise<[string]>;
 
     feeTierTickSpacing(
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number]>;
 
     getPool(
       token0: string,
       token1: string,
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string] & { pool: string }>;
 
     initialize(
@@ -217,7 +217,7 @@ export class PoolsharkRangeSource extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     oneSecond(overrides?: CallOverrides): Promise<[number]>;
@@ -246,21 +246,21 @@ export class PoolsharkRangeSource extends BaseContract {
       minAmountLowerPriced: boolean;
     },
     latestTick: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   factory(overrides?: CallOverrides): Promise<string>;
 
   feeTierTickSpacing(
     feeTier: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   getPool(
     token0: string,
     token1: string,
     feeTier: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   initialize(
@@ -281,7 +281,7 @@ export class PoolsharkRangeSource extends BaseContract {
       token1Decimals: BigNumberish;
       minAmountLowerPriced: boolean;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   oneSecond(overrides?: CallOverrides): Promise<number>;
@@ -310,21 +310,21 @@ export class PoolsharkRangeSource extends BaseContract {
         minAmountLowerPriced: boolean;
       },
       latestTick: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
 
     factory(overrides?: CallOverrides): Promise<string>;
 
     feeTierTickSpacing(
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
 
     getPool(
       token0: string,
       token1: string,
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     initialize(
@@ -345,7 +345,7 @@ export class PoolsharkRangeSource extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [number, number] & { initializable: number; startingTick: number }
     >;
@@ -379,21 +379,21 @@ export class PoolsharkRangeSource extends BaseContract {
         minAmountLowerPriced: boolean;
       },
       latestTick: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     factory(overrides?: CallOverrides): Promise<BigNumber>;
 
     feeTierTickSpacing(
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getPool(
       token0: string,
       token1: string,
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     initialize(
@@ -414,7 +414,7 @@ export class PoolsharkRangeSource extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     oneSecond(overrides?: CallOverrides): Promise<BigNumber>;
@@ -444,21 +444,21 @@ export class PoolsharkRangeSource extends BaseContract {
         minAmountLowerPriced: boolean;
       },
       latestTick: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     factory(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     feeTierTickSpacing(
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getPool(
       token0: string,
       token1: string,
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     initialize(
@@ -479,7 +479,7 @@ export class PoolsharkRangeSource extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     oneSecond(overrides?: CallOverrides): Promise<PopulatedTransaction>;

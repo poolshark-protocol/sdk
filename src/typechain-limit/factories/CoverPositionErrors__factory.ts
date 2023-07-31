@@ -2,23 +2,23 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   CoverPositionErrors,
   CoverPositionErrorsInterface,
-} from "../CoverPositionErrors";
+} from '../CoverPositionErrors';
 
 const _abi = [
   {
     inputs: [],
-    name: "InvalidClaimTick",
-    type: "error",
+    name: 'InvalidClaimTick',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "NotEnoughPositionLiquidity",
-    type: "error",
+    name: 'NotEnoughPositionLiquidity',
+    type: 'error',
   },
 ];
 
@@ -29,7 +29,7 @@ export class CoverPositionErrors__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): CoverPositionErrors {
     return new Contract(address, _abi, signerOrProvider) as CoverPositionErrors;
   }

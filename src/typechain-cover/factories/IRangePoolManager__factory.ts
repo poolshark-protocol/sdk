@@ -2,77 +2,77 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   IRangePoolManager,
   IRangePoolManagerInterface,
-} from "../IRangePoolManager";
+} from '../IRangePoolManager';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "uint16",
-        name: "swapFee",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'swapFee',
+        type: 'uint16',
       },
     ],
-    name: "feeTiers",
+    name: 'feeTiers',
     outputs: [
       {
-        internalType: "int24",
-        name: "",
-        type: "int24",
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "feeTo",
+    name: 'feeTo',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "owner",
+    name: 'owner',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "address",
-        name: "pool",
-        type: "address",
+        internalType: 'address',
+        name: 'pool',
+        type: 'address',
       },
     ],
-    name: "protocolFees",
+    name: 'protocolFees',
     outputs: [
       {
-        internalType: "uint16",
-        name: "",
-        type: "uint16",
+        internalType: 'uint16',
+        name: '',
+        type: 'uint16',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
 ];
 
@@ -83,7 +83,7 @@ export class IRangePoolManager__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): IRangePoolManager {
     return new Contract(address, _abi, signerOrProvider) as IRangePoolManager;
   }

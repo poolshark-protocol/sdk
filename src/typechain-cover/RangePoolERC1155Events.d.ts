@@ -11,24 +11,24 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface RangePoolERC1155EventsInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "ApprovalForAll(address,address,bool)": EventFragment;
-    "TransferBatch(address,address,address,uint256[],uint256[])": EventFragment;
-    "TransferSingle(address,address,address,uint256,uint256)": EventFragment;
+    'ApprovalForAll(address,address,bool)': EventFragment;
+    'TransferBatch(address,address,address,uint256[],uint256[])': EventFragment;
+    'TransferSingle(address,address,address,uint256,uint256)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "ApprovalForAll"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TransferBatch"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TransferSingle"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ApprovalForAll'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'TransferBatch'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'TransferSingle'): EventFragment;
 }
 
 export type ApprovalForAllEvent = TypedEvent<
@@ -65,26 +65,26 @@ export class RangePoolERC1155Events extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -97,7 +97,7 @@ export class RangePoolERC1155Events extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: RangePoolERC1155EventsInterface;
@@ -107,10 +107,10 @@ export class RangePoolERC1155Events extends BaseContract {
   callStatic: {};
 
   filters: {
-    "ApprovalForAll(address,address,bool)"(
+    'ApprovalForAll(address,address,bool)'(
       account?: string | null,
       sender?: string | null,
-      approve?: null
+      approve?: null,
     ): TypedEventFilter<
       [string, string, boolean],
       { account: string; sender: string; approve: boolean }
@@ -119,18 +119,18 @@ export class RangePoolERC1155Events extends BaseContract {
     ApprovalForAll(
       account?: string | null,
       sender?: string | null,
-      approve?: null
+      approve?: null,
     ): TypedEventFilter<
       [string, string, boolean],
       { account: string; sender: string; approve: boolean }
     >;
 
-    "TransferBatch(address,address,address,uint256[],uint256[])"(
+    'TransferBatch(address,address,address,uint256[],uint256[])'(
       sender?: string | null,
       from?: string | null,
       to?: string | null,
       ids?: null,
-      amounts?: null
+      amounts?: null,
     ): TypedEventFilter<
       [string, string, string, BigNumber[], BigNumber[]],
       {
@@ -147,7 +147,7 @@ export class RangePoolERC1155Events extends BaseContract {
       from?: string | null,
       to?: string | null,
       ids?: null,
-      amounts?: null
+      amounts?: null,
     ): TypedEventFilter<
       [string, string, string, BigNumber[], BigNumber[]],
       {
@@ -159,12 +159,12 @@ export class RangePoolERC1155Events extends BaseContract {
       }
     >;
 
-    "TransferSingle(address,address,address,uint256,uint256)"(
+    'TransferSingle(address,address,address,uint256,uint256)'(
       sender?: string | null,
       from?: string | null,
       to?: string | null,
       id?: null,
-      amount?: null
+      amount?: null,
     ): TypedEventFilter<
       [string, string, string, BigNumber, BigNumber],
       {
@@ -181,7 +181,7 @@ export class RangePoolERC1155Events extends BaseContract {
       from?: string | null,
       to?: string | null,
       id?: null,
-      amount?: null
+      amount?: null,
     ): TypedEventFilter<
       [string, string, string, BigNumber, BigNumber],
       {

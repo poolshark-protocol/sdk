@@ -11,22 +11,22 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface SwapCallInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "SwapPool0(address,uint128,uint128,uint160,uint160)": EventFragment;
-    "SwapPool1(address,uint128,uint128,uint160,uint160)": EventFragment;
+    'SwapPool0(address,uint128,uint128,uint160,uint160)': EventFragment;
+    'SwapPool1(address,uint128,uint128,uint160,uint160)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "SwapPool0"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "SwapPool1"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'SwapPool0'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'SwapPool1'): EventFragment;
 }
 
 export type SwapPool0Event = TypedEvent<
@@ -55,26 +55,26 @@ export class SwapCall extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -87,7 +87,7 @@ export class SwapCall extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: SwapCallInterface;
@@ -97,12 +97,12 @@ export class SwapCall extends BaseContract {
   callStatic: {};
 
   filters: {
-    "SwapPool0(address,uint128,uint128,uint160,uint160)"(
+    'SwapPool0(address,uint128,uint128,uint160,uint160)'(
       recipient?: string | null,
       amountIn?: null,
       amountOut?: null,
       priceLimit?: null,
-      newPrice?: null
+      newPrice?: null,
     ): TypedEventFilter<
       [string, BigNumber, BigNumber, BigNumber, BigNumber],
       {
@@ -119,7 +119,7 @@ export class SwapCall extends BaseContract {
       amountIn?: null,
       amountOut?: null,
       priceLimit?: null,
-      newPrice?: null
+      newPrice?: null,
     ): TypedEventFilter<
       [string, BigNumber, BigNumber, BigNumber, BigNumber],
       {
@@ -131,12 +131,12 @@ export class SwapCall extends BaseContract {
       }
     >;
 
-    "SwapPool1(address,uint128,uint128,uint160,uint160)"(
+    'SwapPool1(address,uint128,uint128,uint160,uint160)'(
       recipient?: string | null,
       amountIn?: null,
       amountOut?: null,
       priceLimit?: null,
-      newPrice?: null
+      newPrice?: null,
     ): TypedEventFilter<
       [string, BigNumber, BigNumber, BigNumber, BigNumber],
       {
@@ -153,7 +153,7 @@ export class SwapCall extends BaseContract {
       amountIn?: null,
       amountOut?: null,
       priceLimit?: null,
-      newPrice?: null
+      newPrice?: null,
     ): TypedEventFilter<
       [string, BigNumber, BigNumber, BigNumber, BigNumber],
       {

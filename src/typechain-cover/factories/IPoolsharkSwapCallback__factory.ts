@@ -2,36 +2,36 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   IPoolsharkSwapCallback,
   IPoolsharkSwapCallbackInterface,
-} from "../IPoolsharkSwapCallback";
+} from '../IPoolsharkSwapCallback';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "int256",
-        name: "amount0Delta",
-        type: "int256",
+        internalType: 'int256',
+        name: 'amount0Delta',
+        type: 'int256',
       },
       {
-        internalType: "int256",
-        name: "amount1Delta",
-        type: "int256",
+        internalType: 'int256',
+        name: 'amount1Delta',
+        type: 'int256',
       },
       {
-        internalType: "bytes",
-        name: "data",
-        type: "bytes",
+        internalType: 'bytes',
+        name: 'data',
+        type: 'bytes',
       },
     ],
-    name: "poolsharkSwapCallback",
+    name: 'poolsharkSwapCallback',
     outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
 ];
 
@@ -42,12 +42,12 @@ export class IPoolsharkSwapCallback__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): IPoolsharkSwapCallback {
     return new Contract(
       address,
       _abi,
-      signerOrProvider
+      signerOrProvider,
     ) as IPoolsharkSwapCallback;
   }
 }

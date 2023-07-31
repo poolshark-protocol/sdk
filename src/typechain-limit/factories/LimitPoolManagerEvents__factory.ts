@@ -2,12 +2,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   LimitPoolManagerEvents,
   LimitPoolManagerEventsInterface,
-} from "../LimitPoolManagerEvents";
+} from '../LimitPoolManagerEvents';
 
 const _abi = [
   {
@@ -15,138 +15,138 @@ const _abi = [
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "previousFactory",
-        type: "address",
+        internalType: 'address',
+        name: 'previousFactory',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "newFactory",
-        type: "address",
+        internalType: 'address',
+        name: 'newFactory',
+        type: 'address',
       },
     ],
-    name: "FactoryChanged",
-    type: "event",
+    name: 'FactoryChanged',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "previousFeeTo",
-        type: "address",
+        internalType: 'address',
+        name: 'previousFeeTo',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "newFeeTo",
-        type: "address",
+        internalType: 'address',
+        name: 'newFeeTo',
+        type: 'address',
       },
     ],
-    name: "FeeToTransfer",
-    type: "event",
+    name: 'FeeToTransfer',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "previousOwner",
-        type: "address",
+        internalType: 'address',
+        name: 'previousOwner',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
+        internalType: 'address',
+        name: 'newOwner',
+        type: 'address',
       },
     ],
-    name: "OwnerTransfer",
-    type: "event",
+    name: 'OwnerTransfer',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "address[]",
-        name: "collectPools",
-        type: "address[]",
+        internalType: 'address[]',
+        name: 'collectPools',
+        type: 'address[]',
       },
       {
         indexed: false,
-        internalType: "uint128[]",
-        name: "token0Fees",
-        type: "uint128[]",
+        internalType: 'uint128[]',
+        name: 'token0Fees',
+        type: 'uint128[]',
       },
       {
         indexed: false,
-        internalType: "uint128[]",
-        name: "token1Fees",
-        type: "uint128[]",
+        internalType: 'uint128[]',
+        name: 'token1Fees',
+        type: 'uint128[]',
       },
     ],
-    name: "ProtocolFeesCollected",
-    type: "event",
+    name: 'ProtocolFeesCollected',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "address[]",
-        name: "modifyPools",
-        type: "address[]",
+        internalType: 'address[]',
+        name: 'modifyPools',
+        type: 'address[]',
       },
       {
         indexed: false,
-        internalType: "uint16[]",
-        name: "syncFees",
-        type: "uint16[]",
+        internalType: 'uint16[]',
+        name: 'syncFees',
+        type: 'uint16[]',
       },
       {
         indexed: false,
-        internalType: "uint16[]",
-        name: "fillFees",
-        type: "uint16[]",
+        internalType: 'uint16[]',
+        name: 'fillFees',
+        type: 'uint16[]',
       },
       {
         indexed: false,
-        internalType: "bool[]",
-        name: "setFees",
-        type: "bool[]",
+        internalType: 'bool[]',
+        name: 'setFees',
+        type: 'bool[]',
       },
       {
         indexed: false,
-        internalType: "uint128[]",
-        name: "token0Fees",
-        type: "uint128[]",
+        internalType: 'uint128[]',
+        name: 'token0Fees',
+        type: 'uint128[]',
       },
       {
         indexed: false,
-        internalType: "uint128[]",
-        name: "token1Fees",
-        type: "uint128[]",
+        internalType: 'uint128[]',
+        name: 'token1Fees',
+        type: 'uint128[]',
       },
     ],
-    name: "ProtocolFeesModified",
-    type: "event",
+    name: 'ProtocolFeesModified',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "int16",
-        name: "tickSpacing",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpacing',
+        type: 'int16',
       },
     ],
-    name: "TickSpacingEnabled",
-    type: "event",
+    name: 'TickSpacingEnabled',
+    type: 'event',
   },
 ];
 
@@ -157,12 +157,12 @@ export class LimitPoolManagerEvents__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): LimitPoolManagerEvents {
     return new Contract(
       address,
       _abi,
-      signerOrProvider
+      signerOrProvider,
     ) as LimitPoolManagerEvents;
   }
 }

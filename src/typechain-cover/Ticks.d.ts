@@ -11,20 +11,20 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface TicksInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "Initialize(int24,int24,int24,uint32,uint32,uint160,uint160)": EventFragment;
+    'Initialize(int24,int24,int24,uint32,uint32,uint160,uint160)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "Initialize"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Initialize'): EventFragment;
 }
 
 export type InitializeEvent = TypedEvent<
@@ -45,26 +45,26 @@ export class Ticks extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -77,7 +77,7 @@ export class Ticks extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: TicksInterface;
@@ -87,14 +87,14 @@ export class Ticks extends BaseContract {
   callStatic: {};
 
   filters: {
-    "Initialize(int24,int24,int24,uint32,uint32,uint160,uint160)"(
+    'Initialize(int24,int24,int24,uint32,uint32,uint160,uint160)'(
       minTick?: null,
       maxTick?: null,
       latestTick?: null,
       genesisTime?: null,
       auctionStart?: null,
       pool0Price?: null,
-      pool1Price?: null
+      pool1Price?: null,
     ): TypedEventFilter<
       [number, number, number, number, number, BigNumber, BigNumber],
       {
@@ -115,7 +115,7 @@ export class Ticks extends BaseContract {
       genesisTime?: null,
       auctionStart?: null,
       pool0Price?: null,
-      pool1Price?: null
+      pool1Price?: null,
     ): TypedEventFilter<
       [number, number, number, number, number, BigNumber, BigNumber],
       {

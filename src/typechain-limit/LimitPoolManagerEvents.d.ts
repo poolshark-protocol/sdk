@@ -11,30 +11,30 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface LimitPoolManagerEventsInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "FactoryChanged(address,address)": EventFragment;
-    "FeeToTransfer(address,address)": EventFragment;
-    "OwnerTransfer(address,address)": EventFragment;
-    "ProtocolFeesCollected(address[],uint128[],uint128[])": EventFragment;
-    "ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])": EventFragment;
-    "TickSpacingEnabled(int16)": EventFragment;
+    'FactoryChanged(address,address)': EventFragment;
+    'FeeToTransfer(address,address)': EventFragment;
+    'OwnerTransfer(address,address)': EventFragment;
+    'ProtocolFeesCollected(address[],uint128[],uint128[])': EventFragment;
+    'ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])': EventFragment;
+    'TickSpacingEnabled(int16)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "FactoryChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "FeeToTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnerTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeesCollected"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeesModified"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TickSpacingEnabled"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FactoryChanged'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FeeToTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'OwnerTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeesCollected'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeesModified'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'TickSpacingEnabled'): EventFragment;
 }
 
 export type FactoryChangedEvent = TypedEvent<
@@ -78,26 +78,26 @@ export class LimitPoolManagerEvents extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -110,7 +110,7 @@ export class LimitPoolManagerEvents extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: LimitPoolManagerEventsInterface;
@@ -120,9 +120,9 @@ export class LimitPoolManagerEvents extends BaseContract {
   callStatic: {};
 
   filters: {
-    "FactoryChanged(address,address)"(
+    'FactoryChanged(address,address)'(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
@@ -130,15 +130,15 @@ export class LimitPoolManagerEvents extends BaseContract {
 
     FactoryChanged(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
     >;
 
-    "FeeToTransfer(address,address)"(
+    'FeeToTransfer(address,address)'(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
@@ -146,15 +146,15 @@ export class LimitPoolManagerEvents extends BaseContract {
 
     FeeToTransfer(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
     >;
 
-    "OwnerTransfer(address,address)"(
+    'OwnerTransfer(address,address)'(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
@@ -162,16 +162,16 @@ export class LimitPoolManagerEvents extends BaseContract {
 
     OwnerTransfer(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
     >;
 
-    "ProtocolFeesCollected(address[],uint128[],uint128[])"(
+    'ProtocolFeesCollected(address[],uint128[],uint128[])'(
       collectPools?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       {
@@ -184,7 +184,7 @@ export class LimitPoolManagerEvents extends BaseContract {
     ProtocolFeesCollected(
       collectPools?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       {
@@ -194,13 +194,13 @@ export class LimitPoolManagerEvents extends BaseContract {
       }
     >;
 
-    "ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])"(
+    'ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])'(
       modifyPools?: null,
       syncFees?: null,
       fillFees?: null,
       setFees?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], number[], number[], boolean[], BigNumber[], BigNumber[]],
       {
@@ -219,7 +219,7 @@ export class LimitPoolManagerEvents extends BaseContract {
       fillFees?: null,
       setFees?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], number[], number[], boolean[], BigNumber[], BigNumber[]],
       {
@@ -232,12 +232,12 @@ export class LimitPoolManagerEvents extends BaseContract {
       }
     >;
 
-    "TickSpacingEnabled(int16)"(
-      tickSpacing?: null
+    'TickSpacingEnabled(int16)'(
+      tickSpacing?: null,
     ): TypedEventFilter<[number], { tickSpacing: number }>;
 
     TickSpacingEnabled(
-      tickSpacing?: null
+      tickSpacing?: null,
     ): TypedEventFilter<[number], { tickSpacing: number }>;
   };
 

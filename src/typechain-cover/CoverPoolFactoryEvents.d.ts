@@ -11,20 +11,20 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface CoverPoolFactoryEventsInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "PoolCreated(address,address,address,address,address,uint16,int16,uint16)": EventFragment;
+    'PoolCreated(address,address,address,address,address,uint16,int16,uint16)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "PoolCreated"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'PoolCreated'): EventFragment;
 }
 
 export type PoolCreatedEvent = TypedEvent<
@@ -46,26 +46,26 @@ export class CoverPoolFactoryEvents extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -78,7 +78,7 @@ export class CoverPoolFactoryEvents extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: CoverPoolFactoryEventsInterface;
@@ -88,7 +88,7 @@ export class CoverPoolFactoryEvents extends BaseContract {
   callStatic: {};
 
   filters: {
-    "PoolCreated(address,address,address,address,address,uint16,int16,uint16)"(
+    'PoolCreated(address,address,address,address,address,uint16,int16,uint16)'(
       pool?: null,
       twapSource?: null,
       inputPool?: null,
@@ -96,7 +96,7 @@ export class CoverPoolFactoryEvents extends BaseContract {
       token1?: string | null,
       fee?: null,
       tickSpread?: BigNumberish | null,
-      twapLength?: null
+      twapLength?: null,
     ): TypedEventFilter<
       [string, string, string, string, string, number, number, number],
       {
@@ -119,7 +119,7 @@ export class CoverPoolFactoryEvents extends BaseContract {
       token1?: string | null,
       fee?: null,
       tickSpread?: BigNumberish | null,
-      twapLength?: null
+      twapLength?: null,
     ): TypedEventFilter<
       [string, string, string, string, string, number, number, number],
       {

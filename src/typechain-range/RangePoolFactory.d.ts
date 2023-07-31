@@ -13,50 +13,50 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface RangePoolFactoryInterface extends ethers.utils.Interface {
   functions: {
-    "createRangePool(address,address,uint16,uint160)": FunctionFragment;
-    "getRangePool(address,address,uint256)": FunctionFragment;
-    "owner()": FunctionFragment;
-    "rangePools(bytes32)": FunctionFragment;
+    'createRangePool(address,address,uint16,uint160)': FunctionFragment;
+    'getRangePool(address,address,uint256)': FunctionFragment;
+    'owner()': FunctionFragment;
+    'rangePools(bytes32)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "createRangePool",
-    values: [string, string, BigNumberish, BigNumberish]
+    functionFragment: 'createRangePool',
+    values: [string, string, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "getRangePool",
-    values: [string, string, BigNumberish]
+    functionFragment: 'getRangePool',
+    values: [string, string, BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "rangePools",
-    values: [BytesLike]
+    functionFragment: 'rangePools',
+    values: [BytesLike],
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "createRangePool",
-    data: BytesLike
+    functionFragment: 'createRangePool',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getRangePool",
-    data: BytesLike
+    functionFragment: 'getRangePool',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "rangePools", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'rangePools', data: BytesLike): Result;
 
   events: {
-    "RangePoolCreated(address,address,uint24,address)": EventFragment;
+    'RangePoolCreated(address,address,uint24,address)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "RangePoolCreated"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'RangePoolCreated'): EventFragment;
 }
 
 export type RangePoolCreatedEvent = TypedEvent<
@@ -74,26 +74,26 @@ export class RangePoolFactory extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -106,7 +106,7 @@ export class RangePoolFactory extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: RangePoolFactoryInterface;
@@ -117,14 +117,14 @@ export class RangePoolFactory extends BaseContract {
       tokenOut: string,
       swapFee: BigNumberish,
       startPrice: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     getRangePool(
       tokenIn: string,
       tokenOut: string,
       swapFee: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
@@ -137,14 +137,14 @@ export class RangePoolFactory extends BaseContract {
     tokenOut: string,
     swapFee: BigNumberish,
     startPrice: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   getRangePool(
     tokenIn: string,
     tokenOut: string,
     swapFee: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   owner(overrides?: CallOverrides): Promise<string>;
@@ -157,14 +157,14 @@ export class RangePoolFactory extends BaseContract {
       tokenOut: string,
       swapFee: BigNumberish,
       startPrice: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     getRangePool(
       tokenIn: string,
       tokenOut: string,
       swapFee: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     owner(overrides?: CallOverrides): Promise<string>;
@@ -173,11 +173,11 @@ export class RangePoolFactory extends BaseContract {
   };
 
   filters: {
-    "RangePoolCreated(address,address,uint24,address)"(
+    'RangePoolCreated(address,address,uint24,address)'(
       token0?: string | null,
       token1?: string | null,
       fee?: BigNumberish | null,
-      pool?: null
+      pool?: null,
     ): TypedEventFilter<
       [string, string, number, string],
       { token0: string; token1: string; fee: number; pool: string }
@@ -187,7 +187,7 @@ export class RangePoolFactory extends BaseContract {
       token0?: string | null,
       token1?: string | null,
       fee?: BigNumberish | null,
-      pool?: null
+      pool?: null,
     ): TypedEventFilter<
       [string, string, number, string],
       { token0: string; token1: string; fee: number; pool: string }
@@ -200,14 +200,14 @@ export class RangePoolFactory extends BaseContract {
       tokenOut: string,
       swapFee: BigNumberish,
       startPrice: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     getRangePool(
       tokenIn: string,
       tokenOut: string,
       swapFee: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
@@ -221,21 +221,21 @@ export class RangePoolFactory extends BaseContract {
       tokenOut: string,
       swapFee: BigNumberish,
       startPrice: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     getRangePool(
       tokenIn: string,
       tokenOut: string,
       swapFee: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     rangePools(
       arg0: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

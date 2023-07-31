@@ -2,118 +2,118 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
-import type { IPool, IPoolInterface } from "../IPool";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
+import type { IPool, IPoolInterface } from '../IPool';
 
 const _abi = [
   {
     inputs: [],
-    name: "immutables",
+    name: 'immutables',
     outputs: [
       {
         components: [
           {
-            internalType: "address",
-            name: "owner",
-            type: "address",
+            internalType: 'address',
+            name: 'owner',
+            type: 'address',
           },
           {
             components: [
               {
-                internalType: "uint160",
-                name: "min",
-                type: "uint160",
+                internalType: 'uint160',
+                name: 'min',
+                type: 'uint160',
               },
               {
-                internalType: "uint160",
-                name: "max",
-                type: "uint160",
+                internalType: 'uint160',
+                name: 'max',
+                type: 'uint160',
               },
             ],
-            internalType: "struct PoolsharkStructs.PriceBounds",
-            name: "bounds",
-            type: "tuple",
+            internalType: 'struct PoolsharkStructs.PriceBounds',
+            name: 'bounds',
+            type: 'tuple',
           },
           {
-            internalType: "address",
-            name: "token0",
-            type: "address",
+            internalType: 'address',
+            name: 'token0',
+            type: 'address',
           },
           {
-            internalType: "address",
-            name: "token1",
-            type: "address",
+            internalType: 'address',
+            name: 'token1',
+            type: 'address',
           },
           {
-            internalType: "int16",
-            name: "tickSpacing",
-            type: "int16",
+            internalType: 'int16',
+            name: 'tickSpacing',
+            type: 'int16',
           },
         ],
-        internalType: "struct PoolsharkStructs.Immutables",
-        name: "",
-        type: "tuple",
+        internalType: 'struct PoolsharkStructs.Immutables',
+        name: '',
+        type: 'tuple',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [
       {
         components: [
           {
-            internalType: "address",
-            name: "to",
-            type: "address",
+            internalType: 'address',
+            name: 'to',
+            type: 'address',
           },
           {
-            internalType: "uint160",
-            name: "priceLimit",
-            type: "uint160",
+            internalType: 'uint160',
+            name: 'priceLimit',
+            type: 'uint160',
           },
           {
-            internalType: "uint128",
-            name: "amount",
-            type: "uint128",
+            internalType: 'uint128',
+            name: 'amount',
+            type: 'uint128',
           },
           {
-            internalType: "bool",
-            name: "exactIn",
-            type: "bool",
+            internalType: 'bool',
+            name: 'exactIn',
+            type: 'bool',
           },
           {
-            internalType: "bool",
-            name: "zeroForOne",
-            type: "bool",
+            internalType: 'bool',
+            name: 'zeroForOne',
+            type: 'bool',
           },
           {
-            internalType: "bytes",
-            name: "callbackData",
-            type: "bytes",
+            internalType: 'bytes',
+            name: 'callbackData',
+            type: 'bytes',
           },
         ],
-        internalType: "struct PoolsharkStructs.SwapParams",
-        name: "params",
-        type: "tuple",
+        internalType: 'struct PoolsharkStructs.SwapParams',
+        name: 'params',
+        type: 'tuple',
       },
     ],
-    name: "swap",
+    name: 'swap',
     outputs: [
       {
-        internalType: "int256",
-        name: "amount0",
-        type: "int256",
+        internalType: 'int256',
+        name: 'amount0',
+        type: 'int256',
       },
       {
-        internalType: "int256",
-        name: "amount1",
-        type: "int256",
+        internalType: 'int256',
+        name: 'amount1',
+        type: 'int256',
       },
     ],
-    stateMutability: "nonpayable",
-    type: "function",
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
 ];
 

@@ -2,38 +2,38 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   LimitPoolFactoryErrors,
   LimitPoolFactoryErrorsInterface,
-} from "../LimitPoolFactoryErrors";
+} from '../LimitPoolFactoryErrors';
 
 const _abi = [
   {
     inputs: [],
-    name: "FeeTierNotSupported",
-    type: "error",
+    name: 'FeeTierNotSupported',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidTokenAddress",
-    type: "error",
+    name: 'InvalidTokenAddress',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "OwnerOnly",
-    type: "error",
+    name: 'OwnerOnly',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "PoolAlreadyExists",
-    type: "error",
+    name: 'PoolAlreadyExists',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "TickSpacingNotSupported",
-    type: "error",
+    name: 'TickSpacingNotSupported',
+    type: 'error',
   },
 ];
 
@@ -44,12 +44,12 @@ export class LimitPoolFactoryErrors__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): LimitPoolFactoryErrors {
     return new Contract(
       address,
       _abi,
-      signerOrProvider
+      signerOrProvider,
     ) as LimitPoolFactoryErrors;
   }
 }

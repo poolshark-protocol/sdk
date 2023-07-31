@@ -2,195 +2,195 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
-import type { IDyDxMath, IDyDxMathInterface } from "../IDyDxMath";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
+import type { IDyDxMath, IDyDxMathInterface } from '../IDyDxMath';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "priceLower",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'priceLower',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "priceUpper",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'priceUpper',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "price",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'price',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "liquidity",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'liquidity',
+        type: 'uint256',
       },
       {
-        internalType: "bool",
-        name: "roundUp",
-        type: "bool",
+        internalType: 'bool',
+        name: 'roundUp',
+        type: 'bool',
       },
     ],
-    name: "getAmountsForLiquidity",
+    name: 'getAmountsForLiquidity',
     outputs: [
       {
-        internalType: "uint128",
-        name: "token0amount",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'token0amount',
+        type: 'uint128',
       },
       {
-        internalType: "uint128",
-        name: "token1amount",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'token1amount',
+        type: 'uint128',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "liquidity",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'liquidity',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "priceLower",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'priceLower',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "priceUpper",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'priceUpper',
+        type: 'uint256',
       },
       {
-        internalType: "bool",
-        name: "roundUp",
-        type: "bool",
+        internalType: 'bool',
+        name: 'roundUp',
+        type: 'bool',
       },
     ],
-    name: "getDx",
+    name: 'getDx',
     outputs: [
       {
-        internalType: "uint256",
-        name: "dx",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'dx',
+        type: 'uint256',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "liquidity",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'liquidity',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "priceLower",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'priceLower',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "priceUpper",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'priceUpper',
+        type: 'uint256',
       },
       {
-        internalType: "bool",
-        name: "roundUp",
-        type: "bool",
+        internalType: 'bool',
+        name: 'roundUp',
+        type: 'bool',
       },
     ],
-    name: "getDy",
+    name: 'getDy',
     outputs: [
       {
-        internalType: "uint256",
-        name: "dy",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'dy',
+        type: 'uint256',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "priceLower",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'priceLower',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "priceUpper",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'priceUpper',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "currentPrice",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'currentPrice',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "dy",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'dy',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "dx",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'dx',
+        type: 'uint256',
       },
     ],
-    name: "getLiquidityForAmounts",
+    name: 'getLiquidityForAmounts',
     outputs: [
       {
-        internalType: "uint256",
-        name: "liquidity",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'liquidity',
+        type: 'uint256',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "price",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'price',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "liquidity",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'liquidity',
+        type: 'uint256',
       },
       {
-        internalType: "uint256",
-        name: "input",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'input',
+        type: 'uint256',
       },
       {
-        internalType: "bool",
-        name: "zeroForOne",
-        type: "bool",
+        internalType: 'bool',
+        name: 'zeroForOne',
+        type: 'bool',
       },
     ],
-    name: "getNewPrice",
+    name: 'getNewPrice',
     outputs: [
       {
-        internalType: "uint256",
-        name: "newPrice",
-        type: "uint256",
+        internalType: 'uint256',
+        name: 'newPrice',
+        type: 'uint256',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
 ];
 
@@ -201,7 +201,7 @@ export class IDyDxMath__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): IDyDxMath {
     return new Contract(address, _abi, signerOrProvider) as IDyDxMath;
   }

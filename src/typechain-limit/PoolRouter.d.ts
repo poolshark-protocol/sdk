@@ -13,27 +13,27 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface PoolRouterInterface extends ethers.utils.Interface {
   functions: {
-    "factory()": FunctionFragment;
-    "implementation()": FunctionFragment;
-    "multiCall(address[],tuple[])": FunctionFragment;
-    "poolsharkSwapCallback(int256,int256,bytes)": FunctionFragment;
+    'factory()': FunctionFragment;
+    'implementation()': FunctionFragment;
+    'multiCall(address[],tuple[])': FunctionFragment;
+    'poolsharkSwapCallback(int256,int256,bytes)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "implementation",
-    values?: undefined
+    functionFragment: 'implementation',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "multiCall",
+    functionFragment: 'multiCall',
     values: [
       string[],
       {
@@ -43,23 +43,23 @@ interface PoolRouterInterface extends ethers.utils.Interface {
         exactIn: boolean;
         zeroForOne: boolean;
         callbackData: BytesLike;
-      }[]
-    ]
+      }[],
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "poolsharkSwapCallback",
-    values: [BigNumberish, BigNumberish, BytesLike]
+    functionFragment: 'poolsharkSwapCallback',
+    values: [BigNumberish, BigNumberish, BytesLike],
   ): string;
 
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "implementation",
-    data: BytesLike
+    functionFragment: 'implementation',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "multiCall", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'multiCall', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "poolsharkSwapCallback",
-    data: BytesLike
+    functionFragment: 'poolsharkSwapCallback',
+    data: BytesLike,
   ): Result;
 
   events: {};
@@ -71,26 +71,26 @@ export class PoolRouter extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -103,7 +103,7 @@ export class PoolRouter extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: PoolRouterInterface;
@@ -123,14 +123,14 @@ export class PoolRouter extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       }[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     poolsharkSwapCallback(
       amount0Delta: BigNumberish,
       amount1Delta: BigNumberish,
       data: BytesLike,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
   };
 
@@ -148,14 +148,14 @@ export class PoolRouter extends BaseContract {
       zeroForOne: boolean;
       callbackData: BytesLike;
     }[],
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   poolsharkSwapCallback(
     amount0Delta: BigNumberish,
     amount1Delta: BigNumberish,
     data: BytesLike,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   callStatic: {
@@ -173,14 +173,14 @@ export class PoolRouter extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       }[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     poolsharkSwapCallback(
       amount0Delta: BigNumberish,
       amount1Delta: BigNumberish,
       data: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
   };
 
@@ -201,14 +201,14 @@ export class PoolRouter extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       }[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     poolsharkSwapCallback(
       amount0Delta: BigNumberish,
       amount1Delta: BigNumberish,
       data: BytesLike,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
   };
 
@@ -227,14 +227,14 @@ export class PoolRouter extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       }[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     poolsharkSwapCallback(
       amount0Delta: BigNumberish,
       amount1Delta: BigNumberish,
       data: BytesLike,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
   };
 }

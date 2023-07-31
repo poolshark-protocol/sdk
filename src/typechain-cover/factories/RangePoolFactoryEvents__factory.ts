@@ -2,12 +2,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   RangePoolFactoryEvents,
   RangePoolFactoryEventsInterface,
-} from "../RangePoolFactoryEvents";
+} from '../RangePoolFactoryEvents';
 
 const _abi = [
   {
@@ -15,31 +15,31 @@ const _abi = [
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "token0",
-        type: "address",
+        internalType: 'address',
+        name: 'token0',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "token1",
-        type: "address",
+        internalType: 'address',
+        name: 'token1',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "uint24",
-        name: "fee",
-        type: "uint24",
+        internalType: 'uint24',
+        name: 'fee',
+        type: 'uint24',
       },
       {
         indexed: false,
-        internalType: "address",
-        name: "pool",
-        type: "address",
+        internalType: 'address',
+        name: 'pool',
+        type: 'address',
       },
     ],
-    name: "RangePoolCreated",
-    type: "event",
+    name: 'RangePoolCreated',
+    type: 'event',
   },
 ];
 
@@ -50,12 +50,12 @@ export class RangePoolFactoryEvents__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): RangePoolFactoryEvents {
     return new Contract(
       address,
       _abi,
-      signerOrProvider
+      signerOrProvider,
     ) as RangePoolFactoryEvents;
   }
 }

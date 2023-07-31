@@ -1,2 +1,2 @@
-export * from "../subgraph/types"
-export * from  "../contracts/types";
+export * from '../subgraph/types';
+export * from '../contracts/types';

@@ -2,132 +2,132 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   IUniswapV3Pool,
   IUniswapV3PoolInterface,
-} from "../IUniswapV3Pool";
+} from '../IUniswapV3Pool';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "uint16",
-        name: "observationCardinalityNext",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'observationCardinalityNext',
+        type: 'uint16',
       },
     ],
-    name: "increaseObservationCardinalityNext",
+    name: 'increaseObservationCardinalityNext',
     outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint32[]",
-        name: "secondsAgos",
-        type: "uint32[]",
+        internalType: 'uint32[]',
+        name: 'secondsAgos',
+        type: 'uint32[]',
       },
     ],
-    name: "observe",
+    name: 'observe',
     outputs: [
       {
-        internalType: "int56[]",
-        name: "tickCumulatives",
-        type: "int56[]",
+        internalType: 'int56[]',
+        name: 'tickCumulatives',
+        type: 'int56[]',
       },
       {
-        internalType: "uint160[]",
-        name: "secondsPerLiquidityCumulativeX128s",
-        type: "uint160[]",
+        internalType: 'uint160[]',
+        name: 'secondsPerLiquidityCumulativeX128s',
+        type: 'uint160[]',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "slot0",
+    name: 'slot0',
     outputs: [
       {
-        internalType: "uint160",
-        name: "sqrtPriceX96",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'sqrtPriceX96',
+        type: 'uint160',
       },
       {
-        internalType: "int24",
-        name: "tick",
-        type: "int24",
+        internalType: 'int24',
+        name: 'tick',
+        type: 'int24',
       },
       {
-        internalType: "uint16",
-        name: "observationIndex",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'observationIndex',
+        type: 'uint16',
       },
       {
-        internalType: "uint16",
-        name: "observationCardinality",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'observationCardinality',
+        type: 'uint16',
       },
       {
-        internalType: "uint16",
-        name: "observationCardinalityNext",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'observationCardinalityNext',
+        type: 'uint16',
       },
       {
-        internalType: "uint8",
-        name: "feeProtocol",
-        type: "uint8",
+        internalType: 'uint8',
+        name: 'feeProtocol',
+        type: 'uint8',
       },
       {
-        internalType: "bool",
-        name: "unlocked",
-        type: "bool",
+        internalType: 'bool',
+        name: 'unlocked',
+        type: 'bool',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "tickSpacing",
+    name: 'tickSpacing',
     outputs: [
       {
-        internalType: "int24",
-        name: "",
-        type: "int24",
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "token0",
+    name: 'token0',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "token1",
+    name: 'token1',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
 ];
 
@@ -138,7 +138,7 @@ export class IUniswapV3Pool__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): IUniswapV3Pool {
     return new Contract(address, _abi, signerOrProvider) as IUniswapV3Pool;
   }

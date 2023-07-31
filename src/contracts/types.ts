@@ -1,13 +1,12 @@
-import { type BigNumber } from "ethers";
-import type { Signer } from "ethers";
-import type {Provider} from '@ethersproject/providers';
-import { Network } from "../enums";
-export * from "./Cover/types"
-export * from "./Range/types"
-export * from "./Limit/types"
+import { type BigNumber } from 'ethers';
+import type { Signer } from 'ethers';
+import type { Provider } from '@ethersproject/providers';
+import { Network } from '../enums';
+export * from './Cover/types';
+export * from './Range/types';
+export * from './Limit/types';
 
-
-/**  
+/**
  * @param owner: Address of the owner of the position
  * @param burnPercent: Percentage of the position to burn
  * 1e38 represents 100% of the position.
@@ -21,15 +20,15 @@ export * from "./Limit/types"
  * @param zeroForOne: The direction of the swap, true for token0 to token1, false for token1 to token0
  * True if deposited token0, the first token address in lexographical order
  * False if deposited token1, the second token address in lexographical order
-*/
+ */
 export type SnapshotParamsArgs = {
-    owner: `0x${string}`;
-    burnPercent: BigNumber; //uint128
-    lower: number; //int24
-    upper: number; //int24
-    claim: number; //int24
-    zeroForOne: boolean;
-}
+  owner: `0x${string}`;
+  burnPercent: BigNumber; //uint128
+  lower: number; //int24
+  upper: number; //int24
+  claim: number; //int24
+  zeroForOne: boolean;
+};
 
 /**
  * @param signerOrProvider: Signer or Provider
@@ -38,8 +37,8 @@ export type SnapshotParamsArgs = {
  * @param network: Network enum to use
  */
 export type ContractConstructorArgs = {
-    signerOrProvider: Signer | Provider;
-    debugMode?: boolean;
-    poolAddress: `0x${string}`;
-    network?: Network | undefined;
-}
+  signerOrProvider: Signer | Provider;
+  debugMode?: boolean;
+  poolAddress: `0x${string}`;
+  network?: Network | undefined;
+};

@@ -11,30 +11,30 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface RangePoolManagerEventsInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "FactoryChanged(address,address)": EventFragment;
-    "FeeTierEnabled(uint16,int24)": EventFragment;
-    "FeeToTransfer(address,address)": EventFragment;
-    "OwnerTransfer(address,address)": EventFragment;
-    "ProtocolFeeCollected(address[],uint128[],uint128[])": EventFragment;
-    "ProtocolFeeUpdated(address[],uint16)": EventFragment;
+    'FactoryChanged(address,address)': EventFragment;
+    'FeeTierEnabled(uint16,int24)': EventFragment;
+    'FeeToTransfer(address,address)': EventFragment;
+    'OwnerTransfer(address,address)': EventFragment;
+    'ProtocolFeeCollected(address[],uint128[],uint128[])': EventFragment;
+    'ProtocolFeeUpdated(address[],uint16)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "FactoryChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "FeeTierEnabled"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "FeeToTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnerTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeeCollected"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeeUpdated"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FactoryChanged'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FeeTierEnabled'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FeeToTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'OwnerTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeeCollected'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeeUpdated'): EventFragment;
 }
 
 export type FactoryChangedEvent = TypedEvent<
@@ -71,26 +71,26 @@ export class RangePoolManagerEvents extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -103,7 +103,7 @@ export class RangePoolManagerEvents extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: RangePoolManagerEventsInterface;
@@ -113,9 +113,9 @@ export class RangePoolManagerEvents extends BaseContract {
   callStatic: {};
 
   filters: {
-    "FactoryChanged(address,address)"(
+    'FactoryChanged(address,address)'(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
@@ -123,15 +123,15 @@ export class RangePoolManagerEvents extends BaseContract {
 
     FactoryChanged(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
     >;
 
-    "FeeTierEnabled(uint16,int24)"(
+    'FeeTierEnabled(uint16,int24)'(
       swapFee?: null,
-      tickSpacing?: null
+      tickSpacing?: null,
     ): TypedEventFilter<
       [number, number],
       { swapFee: number; tickSpacing: number }
@@ -139,15 +139,15 @@ export class RangePoolManagerEvents extends BaseContract {
 
     FeeTierEnabled(
       swapFee?: null,
-      tickSpacing?: null
+      tickSpacing?: null,
     ): TypedEventFilter<
       [number, number],
       { swapFee: number; tickSpacing: number }
     >;
 
-    "FeeToTransfer(address,address)"(
+    'FeeToTransfer(address,address)'(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
@@ -155,15 +155,15 @@ export class RangePoolManagerEvents extends BaseContract {
 
     FeeToTransfer(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
     >;
 
-    "OwnerTransfer(address,address)"(
+    'OwnerTransfer(address,address)'(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
@@ -171,16 +171,16 @@ export class RangePoolManagerEvents extends BaseContract {
 
     OwnerTransfer(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
     >;
 
-    "ProtocolFeeCollected(address[],uint128[],uint128[])"(
+    'ProtocolFeeCollected(address[],uint128[],uint128[])'(
       pool?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       { pool: string[]; token0Fees: BigNumber[]; token1Fees: BigNumber[] }
@@ -189,15 +189,15 @@ export class RangePoolManagerEvents extends BaseContract {
     ProtocolFeeCollected(
       pool?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       { pool: string[]; token0Fees: BigNumber[]; token1Fees: BigNumber[] }
     >;
 
-    "ProtocolFeeUpdated(address[],uint16)"(
+    'ProtocolFeeUpdated(address[],uint16)'(
       pool?: null,
-      protocolFee?: null
+      protocolFee?: null,
     ): TypedEventFilter<
       [string[], number],
       { pool: string[]; protocolFee: number }
@@ -205,7 +205,7 @@ export class RangePoolManagerEvents extends BaseContract {
 
     ProtocolFeeUpdated(
       pool?: null,
-      protocolFee?: null
+      protocolFee?: null,
     ): TypedEventFilter<
       [string[], number],
       { pool: string[]; protocolFee: number }

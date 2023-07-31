@@ -2,62 +2,62 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Signer, utils, Contract, ContractFactory, Overrides } from "ethers";
-import { Provider, TransactionRequest } from "@ethersproject/providers";
-import type { Samples, SamplesInterface } from "../Samples";
+import { Signer, utils, Contract, ContractFactory, Overrides } from 'ethers';
+import { Provider, TransactionRequest } from '@ethersproject/providers';
+import type { Samples, SamplesInterface } from '../Samples';
 
 const _abi = [
   {
     inputs: [],
-    name: "InvalidSampleLength",
-    type: "error",
+    name: 'InvalidSampleLength',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "SampleArrayUninitialized",
-    type: "error",
+    name: 'SampleArrayUninitialized',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "SampleLengthNotAvailable",
-    type: "error",
+    name: 'SampleLengthNotAvailable',
+    type: 'error',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "uint16",
-        name: "sampleLengthNext",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'sampleLengthNext',
+        type: 'uint16',
       },
     ],
-    name: "SampleLengthIncreased",
-    type: "event",
+    name: 'SampleLengthIncreased',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "int56",
-        name: "tickSecondsAccum",
-        type: "int56",
+        internalType: 'int56',
+        name: 'tickSecondsAccum',
+        type: 'int56',
       },
       {
         indexed: false,
-        internalType: "uint160",
-        name: "secondsPerLiquidityAccum",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'secondsPerLiquidityAccum',
+        type: 'uint160',
       },
     ],
-    name: "SampleRecorded",
-    type: "event",
+    name: 'SampleRecorded',
+    type: 'event',
   },
 ];
 
 const _bytecode =
-  "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203a79ce929c8ace7185a73e6e6ac1d50708ce3b21b7ab17e9b8b82c933b5d0e5464736f6c634300080d0033";
+  '0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212203a79ce929c8ace7185a73e6e6ac1d50708ce3b21b7ab17e9b8b82c933b5d0e5464736f6c634300080d0033';
 
 export class Samples__factory extends ContractFactory {
   constructor(
@@ -71,12 +71,12 @@ export class Samples__factory extends ContractFactory {
   }
 
   deploy(
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<Samples> {
     return super.deploy(overrides || {}) as Promise<Samples>;
   }
   getDeployTransaction(
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): TransactionRequest {
     return super.getDeployTransaction(overrides || {});
   }
@@ -93,7 +93,7 @@ export class Samples__factory extends ContractFactory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): Samples {
     return new Contract(address, _abi, signerOrProvider) as Samples;
   }

@@ -2,23 +2,23 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   RangePoolErrors,
   RangePoolErrorsInterface,
-} from "../RangePoolErrors";
+} from '../RangePoolErrors';
 
 const _abi = [
   {
     inputs: [],
-    name: "Locked",
-    type: "error",
+    name: 'Locked',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "ManagerOnly",
-    type: "error",
+    name: 'ManagerOnly',
+    type: 'error',
   },
 ];
 
@@ -29,7 +29,7 @@ export class RangePoolErrors__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): RangePoolErrors {
     return new Contract(address, _abi, signerOrProvider) as RangePoolErrors;
   }

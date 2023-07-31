@@ -2,12 +2,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   RangePoolManagerEvents,
   RangePoolManagerEventsInterface,
-} from "../RangePoolManagerEvents";
+} from '../RangePoolManagerEvents';
 
 const _abi = [
   {
@@ -15,120 +15,120 @@ const _abi = [
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "previousFactory",
-        type: "address",
+        internalType: 'address',
+        name: 'previousFactory',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "newFactory",
-        type: "address",
+        internalType: 'address',
+        name: 'newFactory',
+        type: 'address',
       },
     ],
-    name: "FactoryChanged",
-    type: "event",
+    name: 'FactoryChanged',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "uint16",
-        name: "swapFee",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'swapFee',
+        type: 'uint16',
       },
       {
         indexed: false,
-        internalType: "int24",
-        name: "tickSpacing",
-        type: "int24",
+        internalType: 'int24',
+        name: 'tickSpacing',
+        type: 'int24',
       },
     ],
-    name: "FeeTierEnabled",
-    type: "event",
+    name: 'FeeTierEnabled',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "previousFeeTo",
-        type: "address",
+        internalType: 'address',
+        name: 'previousFeeTo',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "newFeeTo",
-        type: "address",
+        internalType: 'address',
+        name: 'newFeeTo',
+        type: 'address',
       },
     ],
-    name: "FeeToTransfer",
-    type: "event",
+    name: 'FeeToTransfer',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "previousOwner",
-        type: "address",
+        internalType: 'address',
+        name: 'previousOwner',
+        type: 'address',
       },
       {
         indexed: true,
-        internalType: "address",
-        name: "newOwner",
-        type: "address",
+        internalType: 'address',
+        name: 'newOwner',
+        type: 'address',
       },
     ],
-    name: "OwnerTransfer",
-    type: "event",
+    name: 'OwnerTransfer',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "address[]",
-        name: "pool",
-        type: "address[]",
+        internalType: 'address[]',
+        name: 'pool',
+        type: 'address[]',
       },
       {
         indexed: false,
-        internalType: "uint128[]",
-        name: "token0Fees",
-        type: "uint128[]",
+        internalType: 'uint128[]',
+        name: 'token0Fees',
+        type: 'uint128[]',
       },
       {
         indexed: false,
-        internalType: "uint128[]",
-        name: "token1Fees",
-        type: "uint128[]",
+        internalType: 'uint128[]',
+        name: 'token1Fees',
+        type: 'uint128[]',
       },
     ],
-    name: "ProtocolFeeCollected",
-    type: "event",
+    name: 'ProtocolFeeCollected',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "address[]",
-        name: "pool",
-        type: "address[]",
+        internalType: 'address[]',
+        name: 'pool',
+        type: 'address[]',
       },
       {
         indexed: false,
-        internalType: "uint16",
-        name: "protocolFee",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'protocolFee',
+        type: 'uint16',
       },
     ],
-    name: "ProtocolFeeUpdated",
-    type: "event",
+    name: 'ProtocolFeeUpdated',
+    type: 'event',
   },
 ];
 
@@ -139,12 +139,12 @@ export class RangePoolManagerEvents__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): RangePoolManagerEvents {
     return new Contract(
       address,
       _abi,
-      signerOrProvider
+      signerOrProvider,
     ) as RangePoolManagerEvents;
   }
 }

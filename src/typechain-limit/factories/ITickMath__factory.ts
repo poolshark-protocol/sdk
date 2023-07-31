@@ -2,265 +2,265 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
-import type { ITickMath, ITickMathInterface } from "../ITickMath";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
+import type { ITickMath, ITickMathInterface } from '../ITickMath';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "uint160",
-        name: "price",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'price',
+        type: 'uint160',
       },
       {
         components: [
           {
-            internalType: "uint160",
-            name: "min",
-            type: "uint160",
+            internalType: 'uint160',
+            name: 'min',
+            type: 'uint160',
           },
           {
-            internalType: "uint160",
-            name: "max",
-            type: "uint160",
+            internalType: 'uint160',
+            name: 'max',
+            type: 'uint160',
           },
         ],
-        internalType: "struct ITickMath.PriceBounds",
-        name: "bounds",
-        type: "tuple",
+        internalType: 'struct ITickMath.PriceBounds',
+        name: 'bounds',
+        type: 'tuple',
       },
     ],
-    name: "checkPrice",
+    name: 'checkPrice',
     outputs: [],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "int24",
-        name: "lower",
-        type: "int24",
+        internalType: 'int24',
+        name: 'lower',
+        type: 'int24',
       },
       {
-        internalType: "int24",
-        name: "upper",
-        type: "int24",
+        internalType: 'int24',
+        name: 'upper',
+        type: 'int24',
       },
       {
-        internalType: "int16",
-        name: "tickSpacing",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpacing',
+        type: 'int16',
       },
     ],
-    name: "checkTicks",
+    name: 'checkTicks',
     outputs: [],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "int24",
-        name: "tick",
-        type: "int24",
+        internalType: 'int24',
+        name: 'tick',
+        type: 'int24',
       },
       {
         components: [
           {
-            internalType: "address",
-            name: "owner",
-            type: "address",
+            internalType: 'address',
+            name: 'owner',
+            type: 'address',
           },
           {
             components: [
               {
-                internalType: "uint160",
-                name: "min",
-                type: "uint160",
+                internalType: 'uint160',
+                name: 'min',
+                type: 'uint160',
               },
               {
-                internalType: "uint160",
-                name: "max",
-                type: "uint160",
+                internalType: 'uint160',
+                name: 'max',
+                type: 'uint160',
               },
             ],
-            internalType: "struct ConstantProduct.PriceBounds",
-            name: "bounds",
-            type: "tuple",
+            internalType: 'struct ConstantProduct.PriceBounds',
+            name: 'bounds',
+            type: 'tuple',
           },
           {
-            internalType: "address",
-            name: "token0",
-            type: "address",
+            internalType: 'address',
+            name: 'token0',
+            type: 'address',
           },
           {
-            internalType: "address",
-            name: "token1",
-            type: "address",
+            internalType: 'address',
+            name: 'token1',
+            type: 'address',
           },
           {
-            internalType: "int16",
-            name: "tickSpacing",
-            type: "int16",
+            internalType: 'int16',
+            name: 'tickSpacing',
+            type: 'int16',
           },
         ],
-        internalType: "struct ILimitPoolStructs.Immutables",
-        name: "",
-        type: "tuple",
+        internalType: 'struct ILimitPoolStructs.Immutables',
+        name: '',
+        type: 'tuple',
       },
     ],
-    name: "getPriceAtTick",
+    name: 'getPriceAtTick',
     outputs: [
       {
-        internalType: "uint160",
-        name: "price",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'price',
+        type: 'uint160',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint160",
-        name: "price",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'price',
+        type: 'uint160',
       },
       {
         components: [
           {
-            internalType: "address",
-            name: "owner",
-            type: "address",
+            internalType: 'address',
+            name: 'owner',
+            type: 'address',
           },
           {
             components: [
               {
-                internalType: "uint160",
-                name: "min",
-                type: "uint160",
+                internalType: 'uint160',
+                name: 'min',
+                type: 'uint160',
               },
               {
-                internalType: "uint160",
-                name: "max",
-                type: "uint160",
+                internalType: 'uint160',
+                name: 'max',
+                type: 'uint160',
               },
             ],
-            internalType: "struct ConstantProduct.PriceBounds",
-            name: "bounds",
-            type: "tuple",
+            internalType: 'struct ConstantProduct.PriceBounds',
+            name: 'bounds',
+            type: 'tuple',
           },
           {
-            internalType: "address",
-            name: "token0",
-            type: "address",
+            internalType: 'address',
+            name: 'token0',
+            type: 'address',
           },
           {
-            internalType: "address",
-            name: "token1",
-            type: "address",
+            internalType: 'address',
+            name: 'token1',
+            type: 'address',
           },
           {
-            internalType: "int16",
-            name: "tickSpacing",
-            type: "int16",
+            internalType: 'int16',
+            name: 'tickSpacing',
+            type: 'int16',
           },
         ],
-        internalType: "struct ILimitPoolStructs.Immutables",
-        name: "",
-        type: "tuple",
+        internalType: 'struct ILimitPoolStructs.Immutables',
+        name: '',
+        type: 'tuple',
       },
     ],
-    name: "getTickAtPrice",
+    name: 'getTickAtPrice',
     outputs: [
       {
-        internalType: "int24",
-        name: "tick",
-        type: "int24",
+        internalType: 'int24',
+        name: 'tick',
+        type: 'int24',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "int16",
-        name: "tickSpacing",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpacing',
+        type: 'int16',
       },
     ],
-    name: "maxPrice",
+    name: 'maxPrice',
     outputs: [
       {
-        internalType: "uint160",
-        name: "maxPrice",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'maxPrice',
+        type: 'uint160',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "int16",
-        name: "tickSpacing",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpacing',
+        type: 'int16',
       },
     ],
-    name: "maxTick",
+    name: 'maxTick',
     outputs: [
       {
-        internalType: "int24",
-        name: "tick",
-        type: "int24",
+        internalType: 'int24',
+        name: 'tick',
+        type: 'int24',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "int16",
-        name: "tickSpacing",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpacing',
+        type: 'int16',
       },
     ],
-    name: "minPrice",
+    name: 'minPrice',
     outputs: [
       {
-        internalType: "uint160",
-        name: "minPrice",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'minPrice',
+        type: 'uint160',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "int16",
-        name: "tickSpacing",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpacing',
+        type: 'int16',
       },
     ],
-    name: "minTick",
+    name: 'minTick',
     outputs: [
       {
-        internalType: "int24",
-        name: "tick",
-        type: "int24",
+        internalType: 'int24',
+        name: 'tick',
+        type: 'int24',
       },
     ],
-    stateMutability: "pure",
-    type: "function",
+    stateMutability: 'pure',
+    type: 'function',
   },
 ];
 
@@ -271,7 +271,7 @@ export class ITickMath__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): ITickMath {
     return new Contract(address, _abi, signerOrProvider) as ITickMath;
   }

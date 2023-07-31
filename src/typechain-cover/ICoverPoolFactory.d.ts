@@ -13,54 +13,54 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface ICoverPoolFactoryInterface extends ethers.utils.Interface {
   functions: {
-    "coverPools(bytes32)": FunctionFragment;
-    "createCoverPool(bytes32,address,address,uint16,int16,uint16)": FunctionFragment;
-    "getCoverPool(bytes32,address,address,uint16,int16,uint16)": FunctionFragment;
+    'coverPools(bytes32)': FunctionFragment;
+    'createCoverPool(bytes32,address,address,uint16,int16,uint16)': FunctionFragment;
+    'getCoverPool(bytes32,address,address,uint16,int16,uint16)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "coverPools",
-    values: [BytesLike]
+    functionFragment: 'coverPools',
+    values: [BytesLike],
   ): string;
   encodeFunctionData(
-    functionFragment: "createCoverPool",
+    functionFragment: 'createCoverPool',
     values: [
       BytesLike,
       string,
       string,
       BigNumberish,
       BigNumberish,
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "getCoverPool",
+    functionFragment: 'getCoverPool',
     values: [
       BytesLike,
       string,
       string,
       BigNumberish,
       BigNumberish,
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
 
-  decodeFunctionResult(functionFragment: "coverPools", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'coverPools', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "createCoverPool",
-    data: BytesLike
+    functionFragment: 'createCoverPool',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getCoverPool",
-    data: BytesLike
+    functionFragment: 'getCoverPool',
+    data: BytesLike,
   ): Result;
 
   events: {};
@@ -72,26 +72,26 @@ export class ICoverPoolFactory extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -104,7 +104,7 @@ export class ICoverPoolFactory extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: ICoverPoolFactoryInterface;
@@ -119,7 +119,7 @@ export class ICoverPoolFactory extends BaseContract {
       fee: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     getCoverPool(
@@ -129,7 +129,7 @@ export class ICoverPoolFactory extends BaseContract {
       fee: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string] & { pool: string }>;
   };
 
@@ -142,7 +142,7 @@ export class ICoverPoolFactory extends BaseContract {
     fee: BigNumberish,
     tickSpread: BigNumberish,
     twapLength: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   getCoverPool(
@@ -152,7 +152,7 @@ export class ICoverPoolFactory extends BaseContract {
     fee: BigNumberish,
     tickSpread: BigNumberish,
     twapLength: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   callStatic: {
@@ -165,7 +165,7 @@ export class ICoverPoolFactory extends BaseContract {
       fee: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     getCoverPool(
@@ -175,7 +175,7 @@ export class ICoverPoolFactory extends BaseContract {
       fee: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
   };
 
@@ -191,7 +191,7 @@ export class ICoverPoolFactory extends BaseContract {
       fee: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     getCoverPool(
@@ -201,14 +201,14 @@ export class ICoverPoolFactory extends BaseContract {
       fee: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
     coverPools(
       arg0: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     createCoverPool(
@@ -218,7 +218,7 @@ export class ICoverPoolFactory extends BaseContract {
       fee: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     getCoverPool(
@@ -228,7 +228,7 @@ export class ICoverPoolFactory extends BaseContract {
       fee: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

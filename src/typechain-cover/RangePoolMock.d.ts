@@ -13,68 +13,68 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface RangePoolMockInterface extends ethers.utils.Interface {
   functions: {
-    "increaseSampleLength(uint16)": FunctionFragment;
-    "poolState()": FunctionFragment;
-    "sample(uint32[])": FunctionFragment;
-    "setObservationCardinality(uint16,uint16)": FunctionFragment;
-    "setTickCumulatives(int56,int56,int56,int56)": FunctionFragment;
-    "tickSpacing()": FunctionFragment;
-    "token0()": FunctionFragment;
-    "token1()": FunctionFragment;
+    'increaseSampleLength(uint16)': FunctionFragment;
+    'poolState()': FunctionFragment;
+    'sample(uint32[])': FunctionFragment;
+    'setObservationCardinality(uint16,uint16)': FunctionFragment;
+    'setTickCumulatives(int56,int56,int56,int56)': FunctionFragment;
+    'tickSpacing()': FunctionFragment;
+    'token0()': FunctionFragment;
+    'token1()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "increaseSampleLength",
-    values: [BigNumberish]
+    functionFragment: 'increaseSampleLength',
+    values: [BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "poolState", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'poolState', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "sample",
-    values: [BigNumberish[]]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setObservationCardinality",
-    values: [BigNumberish, BigNumberish]
+    functionFragment: 'sample',
+    values: [BigNumberish[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "setTickCumulatives",
-    values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish]
+    functionFragment: 'setObservationCardinality',
+    values: [BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "tickSpacing",
-    values?: undefined
+    functionFragment: 'setTickCumulatives',
+    values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "token0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "token1", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: 'tickSpacing',
+    values?: undefined,
+  ): string;
+  encodeFunctionData(functionFragment: 'token0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token1', values?: undefined): string;
 
   decodeFunctionResult(
-    functionFragment: "increaseSampleLength",
-    data: BytesLike
+    functionFragment: 'increaseSampleLength',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "poolState", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "sample", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'poolState', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'sample', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "setObservationCardinality",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setTickCumulatives",
-    data: BytesLike
+    functionFragment: 'setObservationCardinality',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "tickSpacing",
-    data: BytesLike
+    functionFragment: 'setTickCumulatives',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "token0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'tickSpacing',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(functionFragment: 'token0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token1', data: BytesLike): Result;
 
   events: {};
 }
@@ -85,26 +85,26 @@ export class RangePoolMock extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -117,7 +117,7 @@ export class RangePoolMock extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: RangePoolMockInterface;
@@ -125,12 +125,10 @@ export class RangePoolMock extends BaseContract {
   functions: {
     increaseSampleLength(
       cardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
-    poolState(
-      overrides?: CallOverrides
-    ): Promise<
+    poolState(overrides?: CallOverrides): Promise<
       [
         number,
         number,
@@ -147,13 +145,13 @@ export class RangePoolMock extends BaseContract {
           length: number;
           lengthNext: number;
         },
-        [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }
+        [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
       ]
     >;
 
     sample(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
         tickSecondsAccum: BigNumber[];
@@ -167,7 +165,7 @@ export class RangePoolMock extends BaseContract {
     setObservationCardinality(
       _observationCardinality: BigNumberish,
       _observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     setTickCumulatives(
@@ -175,7 +173,7 @@ export class RangePoolMock extends BaseContract {
       _tickCumulative1: BigNumberish,
       _tickCumulative2: BigNumberish,
       _tickCumulative3: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     tickSpacing(overrides?: CallOverrides): Promise<[number]>;
@@ -187,12 +185,10 @@ export class RangePoolMock extends BaseContract {
 
   increaseSampleLength(
     cardinalityNext: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
-  poolState(
-    overrides?: CallOverrides
-  ): Promise<
+  poolState(overrides?: CallOverrides): Promise<
     [
       number,
       number,
@@ -209,13 +205,13 @@ export class RangePoolMock extends BaseContract {
         length: number;
         lengthNext: number;
       },
-      [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }
+      [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
     ]
   >;
 
   sample(
     secondsAgos: BigNumberish[],
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
       tickSecondsAccum: BigNumber[];
@@ -229,7 +225,7 @@ export class RangePoolMock extends BaseContract {
   setObservationCardinality(
     _observationCardinality: BigNumberish,
     _observationCardinalityNext: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   setTickCumulatives(
@@ -237,7 +233,7 @@ export class RangePoolMock extends BaseContract {
     _tickCumulative1: BigNumberish,
     _tickCumulative2: BigNumberish,
     _tickCumulative3: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   tickSpacing(overrides?: CallOverrides): Promise<number>;
@@ -249,12 +245,10 @@ export class RangePoolMock extends BaseContract {
   callStatic: {
     increaseSampleLength(
       cardinalityNext: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
-    poolState(
-      overrides?: CallOverrides
-    ): Promise<
+    poolState(overrides?: CallOverrides): Promise<
       [
         number,
         number,
@@ -271,13 +265,13 @@ export class RangePoolMock extends BaseContract {
           length: number;
           lengthNext: number;
         },
-        [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }
+        [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
       ]
     >;
 
     sample(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
         tickSecondsAccum: BigNumber[];
@@ -291,7 +285,7 @@ export class RangePoolMock extends BaseContract {
     setObservationCardinality(
       _observationCardinality: BigNumberish,
       _observationCardinalityNext: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     setTickCumulatives(
@@ -299,7 +293,7 @@ export class RangePoolMock extends BaseContract {
       _tickCumulative1: BigNumberish,
       _tickCumulative2: BigNumberish,
       _tickCumulative3: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     tickSpacing(overrides?: CallOverrides): Promise<number>;
@@ -314,20 +308,20 @@ export class RangePoolMock extends BaseContract {
   estimateGas: {
     increaseSampleLength(
       cardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     poolState(overrides?: CallOverrides): Promise<BigNumber>;
 
     sample(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     setObservationCardinality(
       _observationCardinality: BigNumberish,
       _observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     setTickCumulatives(
@@ -335,7 +329,7 @@ export class RangePoolMock extends BaseContract {
       _tickCumulative1: BigNumberish,
       _tickCumulative2: BigNumberish,
       _tickCumulative3: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     tickSpacing(overrides?: CallOverrides): Promise<BigNumber>;
@@ -348,20 +342,20 @@ export class RangePoolMock extends BaseContract {
   populateTransaction: {
     increaseSampleLength(
       cardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     poolState(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     sample(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     setObservationCardinality(
       _observationCardinality: BigNumberish,
       _observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     setTickCumulatives(
@@ -369,7 +363,7 @@ export class RangePoolMock extends BaseContract {
       _tickCumulative1: BigNumberish,
       _tickCumulative2: BigNumberish,
       _tickCumulative3: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     tickSpacing(overrides?: CallOverrides): Promise<PopulatedTransaction>;

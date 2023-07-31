@@ -2,18 +2,18 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   CoverMiscErrors,
   CoverMiscErrorsInterface,
-} from "../CoverMiscErrors";
+} from '../CoverMiscErrors';
 
 const _abi = [
   {
     inputs: [],
-    name: "NotImplementedYet",
-    type: "error",
+    name: 'NotImplementedYet',
+    type: 'error',
   },
 ];
 
@@ -24,7 +24,7 @@ export class CoverMiscErrors__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): CoverMiscErrors {
     return new Contract(address, _abi, signerOrProvider) as CoverMiscErrors;
   }

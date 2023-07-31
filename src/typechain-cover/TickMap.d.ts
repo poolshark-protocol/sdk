@@ -12,19 +12,19 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface TickMapInterface extends ethers.utils.Interface {
   functions: {
-    "getIndices(int24,(ITwapSource,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))": FunctionFragment;
+    'getIndices(int24,(ITwapSource,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "getIndices",
+    functionFragment: 'getIndices',
     values: [
       BigNumberish,
       {
@@ -43,11 +43,11 @@ interface TickMapInterface extends ethers.utils.Interface {
         token0Decimals: BigNumberish;
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
 
-  decodeFunctionResult(functionFragment: "getIndices", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getIndices', data: BytesLike): Result;
 
   events: {};
 }
@@ -58,26 +58,26 @@ export class TickMap extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -90,7 +90,7 @@ export class TickMap extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: TickMapInterface;
@@ -115,7 +115,7 @@ export class TickMap extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         tickIndex: BigNumber;
@@ -144,7 +144,7 @@ export class TickMap extends BaseContract {
       token1Decimals: BigNumberish;
       minAmountLowerPriced: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber] & {
       tickIndex: BigNumber;
@@ -173,7 +173,7 @@ export class TickMap extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         tickIndex: BigNumber;
@@ -205,7 +205,7 @@ export class TickMap extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -229,7 +229,7 @@ export class TickMap extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

@@ -12,88 +12,65 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface ICurveMathInterface extends ethers.utils.Interface {
   functions: {
-    "checkPrice(uint160,(uint160,uint160))": FunctionFragment;
-    "checkTicks(int24,int24,int16)": FunctionFragment;
-    "getAmountsForLiquidity(uint256,uint256,uint256,uint256,bool)": FunctionFragment;
-    "getDx(uint256,uint256,uint256,bool)": FunctionFragment;
-    "getDy(uint256,uint256,uint256,bool)": FunctionFragment;
-    "getLiquidityForAmounts(uint256,uint256,uint256,uint256,uint256)": FunctionFragment;
-    "getNewPrice(uint256,uint256,uint256,bool)": FunctionFragment;
-    "getPriceAtTick(int24,(address,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))": FunctionFragment;
-    "getTickAtPrice(uint160,(address,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))": FunctionFragment;
-    "maxPrice(int16)": FunctionFragment;
-    "maxTick(int16)": FunctionFragment;
-    "minPrice(int16)": FunctionFragment;
-    "minTick(int16)": FunctionFragment;
+    'checkPrice(uint160,(uint160,uint160))': FunctionFragment;
+    'checkTicks(int24,int24,int16)': FunctionFragment;
+    'getAmountsForLiquidity(uint256,uint256,uint256,uint256,bool)': FunctionFragment;
+    'getDx(uint256,uint256,uint256,bool)': FunctionFragment;
+    'getDy(uint256,uint256,uint256,bool)': FunctionFragment;
+    'getLiquidityForAmounts(uint256,uint256,uint256,uint256,uint256)': FunctionFragment;
+    'getNewPrice(uint256,uint256,uint256,bool)': FunctionFragment;
+    'getPriceAtTick(int24,(address,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))': FunctionFragment;
+    'getTickAtPrice(uint160,(address,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))': FunctionFragment;
+    'maxPrice(int16)': FunctionFragment;
+    'maxTick(int16)': FunctionFragment;
+    'minPrice(int16)': FunctionFragment;
+    'minTick(int16)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "checkPrice",
-    values: [BigNumberish, { min: BigNumberish; max: BigNumberish }]
+    functionFragment: 'checkPrice',
+    values: [BigNumberish, { min: BigNumberish; max: BigNumberish }],
   ): string;
   encodeFunctionData(
-    functionFragment: "checkTicks",
-    values: [BigNumberish, BigNumberish, BigNumberish]
+    functionFragment: 'checkTicks',
+    values: [BigNumberish, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "getAmountsForLiquidity",
-    values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'getAmountsForLiquidity',
+    values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "getDx",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'getDx',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "getDy",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'getDy',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "getLiquidityForAmounts",
+    functionFragment: 'getLiquidityForAmounts',
     values: [
       BigNumberish,
       BigNumberish,
       BigNumberish,
       BigNumberish,
-      BigNumberish
-    ]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getNewPrice",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "getPriceAtTick",
-    values: [
       BigNumberish,
-      {
-        source: string;
-        bounds: { min: BigNumberish; max: BigNumberish };
-        token0: string;
-        token1: string;
-        inputPool: string;
-        minAmountPerAuction: BigNumberish;
-        genesisTime: BigNumberish;
-        minPositionWidth: BigNumberish;
-        tickSpread: BigNumberish;
-        twapLength: BigNumberish;
-        auctionLength: BigNumberish;
-        blockTime: BigNumberish;
-        token0Decimals: BigNumberish;
-        token1Decimals: BigNumberish;
-        minAmountLowerPriced: boolean;
-      }
-    ]
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "getTickAtPrice",
+    functionFragment: 'getNewPrice',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'getPriceAtTick',
     values: [
       BigNumberish,
       {
@@ -112,54 +89,77 @@ interface ICurveMathInterface extends ethers.utils.Interface {
         token0Decimals: BigNumberish;
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "maxPrice",
-    values: [BigNumberish]
+    functionFragment: 'getTickAtPrice',
+    values: [
+      BigNumberish,
+      {
+        source: string;
+        bounds: { min: BigNumberish; max: BigNumberish };
+        token0: string;
+        token1: string;
+        inputPool: string;
+        minAmountPerAuction: BigNumberish;
+        genesisTime: BigNumberish;
+        minPositionWidth: BigNumberish;
+        tickSpread: BigNumberish;
+        twapLength: BigNumberish;
+        auctionLength: BigNumberish;
+        blockTime: BigNumberish;
+        token0Decimals: BigNumberish;
+        token1Decimals: BigNumberish;
+        minAmountLowerPriced: boolean;
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "maxTick",
-    values: [BigNumberish]
+    functionFragment: 'maxPrice',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "minPrice",
-    values: [BigNumberish]
+    functionFragment: 'maxTick',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "minTick",
-    values: [BigNumberish]
+    functionFragment: 'minPrice',
+    values: [BigNumberish],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'minTick',
+    values: [BigNumberish],
   ): string;
 
-  decodeFunctionResult(functionFragment: "checkPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "checkTicks", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'checkPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'checkTicks', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "getAmountsForLiquidity",
-    data: BytesLike
+    functionFragment: 'getAmountsForLiquidity',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "getDx", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "getDy", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getDx', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getDy', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "getLiquidityForAmounts",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "getNewPrice",
-    data: BytesLike
+    functionFragment: 'getLiquidityForAmounts',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getPriceAtTick",
-    data: BytesLike
+    functionFragment: 'getNewPrice',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getTickAtPrice",
-    data: BytesLike
+    functionFragment: 'getPriceAtTick',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "maxPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "maxTick", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "minPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "minTick", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'getTickAtPrice',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(functionFragment: 'maxPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'maxTick', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'minPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'minTick', data: BytesLike): Result;
 
   events: {};
 }
@@ -170,26 +170,26 @@ export class ICurveMath extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -202,7 +202,7 @@ export class ICurveMath extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: ICurveMathInterface;
@@ -211,14 +211,14 @@ export class ICurveMath extends BaseContract {
     checkPrice(
       price: BigNumberish,
       bounds: { min: BigNumberish; max: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[void]>;
 
     checkTicks(
       lower: BigNumberish,
       upper: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[void]>;
 
     getAmountsForLiquidity(
@@ -227,7 +227,7 @@ export class ICurveMath extends BaseContract {
       price: BigNumberish,
       liquidity: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         token0amount: BigNumber;
@@ -240,7 +240,7 @@ export class ICurveMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { dx: BigNumber }>;
 
     getDy(
@@ -248,7 +248,7 @@ export class ICurveMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { dy: BigNumber }>;
 
     getLiquidityForAmounts(
@@ -257,7 +257,7 @@ export class ICurveMath extends BaseContract {
       currentPrice: BigNumberish,
       dy: BigNumberish,
       dx: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { liquidity: BigNumber }>;
 
     getNewPrice(
@@ -265,7 +265,7 @@ export class ICurveMath extends BaseContract {
       liquidity: BigNumberish,
       input: BigNumberish,
       zeroForOne: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { newPrice: BigNumber }>;
 
     getPriceAtTick(
@@ -287,7 +287,7 @@ export class ICurveMath extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { price: BigNumber }>;
 
     getTickAtPrice(
@@ -309,41 +309,41 @@ export class ICurveMath extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { tick: number }>;
 
     maxPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { maxPrice: BigNumber }>;
 
     maxTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { tick: number }>;
 
     minPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { minPrice: BigNumber }>;
 
     minTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { tick: number }>;
   };
 
   checkPrice(
     price: BigNumberish,
     bounds: { min: BigNumberish; max: BigNumberish },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<void>;
 
   checkTicks(
     lower: BigNumberish,
     upper: BigNumberish,
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<void>;
 
   getAmountsForLiquidity(
@@ -352,7 +352,7 @@ export class ICurveMath extends BaseContract {
     price: BigNumberish,
     liquidity: BigNumberish,
     roundUp: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & {
       token0amount: BigNumber;
@@ -365,7 +365,7 @@ export class ICurveMath extends BaseContract {
     priceLower: BigNumberish,
     priceUpper: BigNumberish,
     roundUp: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getDy(
@@ -373,7 +373,7 @@ export class ICurveMath extends BaseContract {
     priceLower: BigNumberish,
     priceUpper: BigNumberish,
     roundUp: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getLiquidityForAmounts(
@@ -382,7 +382,7 @@ export class ICurveMath extends BaseContract {
     currentPrice: BigNumberish,
     dy: BigNumberish,
     dx: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getNewPrice(
@@ -390,7 +390,7 @@ export class ICurveMath extends BaseContract {
     liquidity: BigNumberish,
     input: BigNumberish,
     zeroForOne: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getPriceAtTick(
@@ -412,7 +412,7 @@ export class ICurveMath extends BaseContract {
       token1Decimals: BigNumberish;
       minAmountLowerPriced: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getTickAtPrice(
@@ -434,41 +434,41 @@ export class ICurveMath extends BaseContract {
       token1Decimals: BigNumberish;
       minAmountLowerPriced: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   maxPrice(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   maxTick(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   minPrice(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   minTick(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   callStatic: {
     checkPrice(
       price: BigNumberish,
       bounds: { min: BigNumberish; max: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     checkTicks(
       lower: BigNumberish,
       upper: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     getAmountsForLiquidity(
@@ -477,7 +477,7 @@ export class ICurveMath extends BaseContract {
       price: BigNumberish,
       liquidity: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         token0amount: BigNumber;
@@ -490,7 +490,7 @@ export class ICurveMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getDy(
@@ -498,7 +498,7 @@ export class ICurveMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getLiquidityForAmounts(
@@ -507,7 +507,7 @@ export class ICurveMath extends BaseContract {
       currentPrice: BigNumberish,
       dy: BigNumberish,
       dx: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getNewPrice(
@@ -515,7 +515,7 @@ export class ICurveMath extends BaseContract {
       liquidity: BigNumberish,
       input: BigNumberish,
       zeroForOne: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getPriceAtTick(
@@ -537,7 +537,7 @@ export class ICurveMath extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getTickAtPrice(
@@ -559,27 +559,27 @@ export class ICurveMath extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
 
     maxPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     maxTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
 
     minPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     minTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
   };
 
@@ -589,14 +589,14 @@ export class ICurveMath extends BaseContract {
     checkPrice(
       price: BigNumberish,
       bounds: { min: BigNumberish; max: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     checkTicks(
       lower: BigNumberish,
       upper: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getAmountsForLiquidity(
@@ -605,7 +605,7 @@ export class ICurveMath extends BaseContract {
       price: BigNumberish,
       liquidity: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getDx(
@@ -613,7 +613,7 @@ export class ICurveMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getDy(
@@ -621,7 +621,7 @@ export class ICurveMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getLiquidityForAmounts(
@@ -630,7 +630,7 @@ export class ICurveMath extends BaseContract {
       currentPrice: BigNumberish,
       dy: BigNumberish,
       dx: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getNewPrice(
@@ -638,7 +638,7 @@ export class ICurveMath extends BaseContract {
       liquidity: BigNumberish,
       input: BigNumberish,
       zeroForOne: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getPriceAtTick(
@@ -660,7 +660,7 @@ export class ICurveMath extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getTickAtPrice(
@@ -682,27 +682,27 @@ export class ICurveMath extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     maxPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     maxTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     minPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     minTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -710,14 +710,14 @@ export class ICurveMath extends BaseContract {
     checkPrice(
       price: BigNumberish,
       bounds: { min: BigNumberish; max: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     checkTicks(
       lower: BigNumberish,
       upper: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getAmountsForLiquidity(
@@ -726,7 +726,7 @@ export class ICurveMath extends BaseContract {
       price: BigNumberish,
       liquidity: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getDx(
@@ -734,7 +734,7 @@ export class ICurveMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getDy(
@@ -742,7 +742,7 @@ export class ICurveMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getLiquidityForAmounts(
@@ -751,7 +751,7 @@ export class ICurveMath extends BaseContract {
       currentPrice: BigNumberish,
       dy: BigNumberish,
       dx: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getNewPrice(
@@ -759,7 +759,7 @@ export class ICurveMath extends BaseContract {
       liquidity: BigNumberish,
       input: BigNumberish,
       zeroForOne: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getPriceAtTick(
@@ -781,7 +781,7 @@ export class ICurveMath extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getTickAtPrice(
@@ -803,27 +803,27 @@ export class ICurveMath extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     maxPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     maxTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     minPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     minTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

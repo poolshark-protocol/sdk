@@ -2,482 +2,482 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
 import {
   FactoryOptions,
   HardhatEthersHelpers as HardhatEthersHelpersBase,
-} from "@nomiclabs/hardhat-ethers/types";
+} from '@nomiclabs/hardhat-ethers/types';
 
-import * as Contracts from ".";
+import * as Contracts from '.';
 
-declare module "hardhat/types/runtime" {
+declare module 'hardhat/types/runtime' {
   interface HardhatEthersHelpers extends HardhatEthersHelpersBase {
     getContractFactory(
-      name: "ERC20",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'ERC20',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.ERC20__factory>;
     getContractFactory(
-      name: "ERC20Burnable",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'ERC20Burnable',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.ERC20Burnable__factory>;
     getContractFactory(
-      name: "IERC20Metadata",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'IERC20Metadata',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IERC20Metadata__factory>;
     getContractFactory(
-      name: "IERC20",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'IERC20',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IERC20__factory>;
     getContractFactory(
-      name: "CoverPoolEvents",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolEvents',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolEvents__factory>;
     getContractFactory(
-      name: "CoverPoolFactoryEvents",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolFactoryEvents',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolFactoryEvents__factory>;
     getContractFactory(
-      name: "CoverPoolManagerEvents",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolManagerEvents',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolManagerEvents__factory>;
     getContractFactory(
-      name: "CoverPoolModifiers",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolModifiers',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolModifiers__factory>;
     getContractFactory(
-      name: "CoverPoolFactoryStorage",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolFactoryStorage',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolFactoryStorage__factory>;
     getContractFactory(
-      name: "CoverPoolStorage",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolStorage',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolStorage__factory>;
     getContractFactory(
-      name: "CoverPool",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPool',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPool__factory>;
     getContractFactory(
-      name: "CoverPoolFactory",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolFactory',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolFactory__factory>;
     getContractFactory(
-      name: "IRangePool",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'IRangePool',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IRangePool__factory>;
     getContractFactory(
-      name: "IRangePoolFactory",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'IRangePoolFactory',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IRangePoolFactory__factory>;
     getContractFactory(
-      name: "IRangePoolManager",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'IRangePoolManager',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IRangePoolManager__factory>;
     getContractFactory(
-      name: "IUniswapV3Factory",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'IUniswapV3Factory',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IUniswapV3Factory__factory>;
     getContractFactory(
-      name: "IUniswapV3Pool",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'IUniswapV3Pool',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IUniswapV3Pool__factory>;
     getContractFactory(
-      name: "ICoverPool",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'ICoverPool',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.ICoverPool__factory>;
     getContractFactory(
-      name: "ICoverPoolFactory",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'ICoverPoolFactory',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.ICoverPoolFactory__factory>;
     getContractFactory(
-      name: "ICoverPoolManager",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'ICoverPoolManager',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.ICoverPoolManager__factory>;
     getContractFactory(
-      name: "ICurveMath",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'ICurveMath',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.ICurveMath__factory>;
     getContractFactory(
-      name: "IDyDxMath",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'IDyDxMath',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.IDyDxMath__factory>;
     getContractFactory(
-      name: "ITickMath",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'ITickMath',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.ITickMath__factory>;
     getContractFactory(
-      name: "ITwapSource",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'ITwapSource',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.ITwapSource__factory>;
     getContractFactory(
-      name: "Claims",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'Claims',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.Claims__factory>;
     getContractFactory(
-      name: "Deltas",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'Deltas',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.Deltas__factory>;
     getContractFactory(
-      name: "EpochMap",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'EpochMap',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.EpochMap__factory>;
     getContractFactory(
-      name: "Epochs",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'Epochs',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.Epochs__factory>;
     getContractFactory(
-      name: "BurnCall",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'BurnCall',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.BurnCall__factory>;
     getContractFactory(
-      name: "MintCall",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'MintCall',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.MintCall__factory>;
     getContractFactory(
-      name: "QuoteCall",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'QuoteCall',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.QuoteCall__factory>;
     getContractFactory(
-      name: "SwapCall",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'SwapCall',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.SwapCall__factory>;
     getContractFactory(
-      name: "Positions",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'Positions',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.Positions__factory>;
     getContractFactory(
-      name: "PoolsharkRangeSource",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'PoolsharkRangeSource',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.PoolsharkRangeSource__factory>;
     getContractFactory(
-      name: "UniswapV3Source",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'UniswapV3Source',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.UniswapV3Source__factory>;
     getContractFactory(
-      name: "TickMap",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'TickMap',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.TickMap__factory>;
     getContractFactory(
-      name: "Ticks",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'Ticks',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.Ticks__factory>;
     getContractFactory(
-      name: "RangePoolFactoryMock",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'RangePoolFactoryMock',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.RangePoolFactoryMock__factory>;
     getContractFactory(
-      name: "RangePoolMock",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'RangePoolMock',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.RangePoolMock__factory>;
     getContractFactory(
-      name: "Token20",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'Token20',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.Token20__factory>;
     getContractFactory(
-      name: "Token20Batcher",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'Token20Batcher',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.Token20Batcher__factory>;
     getContractFactory(
-      name: "UniswapV3FactoryMock",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'UniswapV3FactoryMock',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.UniswapV3FactoryMock__factory>;
     getContractFactory(
-      name: "UniswapV3PoolMock",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'UniswapV3PoolMock',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.UniswapV3PoolMock__factory>;
     getContractFactory(
-      name: "CoverMiscErrors",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverMiscErrors',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverMiscErrors__factory>;
     getContractFactory(
-      name: "CoverPoolErrors",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolErrors',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolErrors__factory>;
     getContractFactory(
-      name: "CoverPoolFactoryErrors",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolFactoryErrors',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolFactoryErrors__factory>;
     getContractFactory(
-      name: "CoverPositionErrors",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPositionErrors',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPositionErrors__factory>;
     getContractFactory(
-      name: "CoverTicksErrors",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverTicksErrors',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverTicksErrors__factory>;
     getContractFactory(
-      name: "CoverTransferErrors",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverTransferErrors',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverTransferErrors__factory>;
     getContractFactory(
-      name: "CoverPoolManager",
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      name: 'CoverPoolManager',
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<Contracts.CoverPoolManager__factory>;
 
     getContractAt(
-      name: "ERC20",
+      name: 'ERC20',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.ERC20>;
     getContractAt(
-      name: "ERC20Burnable",
+      name: 'ERC20Burnable',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.ERC20Burnable>;
     getContractAt(
-      name: "IERC20Metadata",
+      name: 'IERC20Metadata',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.IERC20Metadata>;
     getContractAt(
-      name: "IERC20",
+      name: 'IERC20',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.IERC20>;
     getContractAt(
-      name: "CoverPoolEvents",
+      name: 'CoverPoolEvents',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolEvents>;
     getContractAt(
-      name: "CoverPoolFactoryEvents",
+      name: 'CoverPoolFactoryEvents',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolFactoryEvents>;
     getContractAt(
-      name: "CoverPoolManagerEvents",
+      name: 'CoverPoolManagerEvents',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolManagerEvents>;
     getContractAt(
-      name: "CoverPoolModifiers",
+      name: 'CoverPoolModifiers',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolModifiers>;
     getContractAt(
-      name: "CoverPoolFactoryStorage",
+      name: 'CoverPoolFactoryStorage',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolFactoryStorage>;
     getContractAt(
-      name: "CoverPoolStorage",
+      name: 'CoverPoolStorage',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolStorage>;
     getContractAt(
-      name: "CoverPool",
+      name: 'CoverPool',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPool>;
     getContractAt(
-      name: "CoverPoolFactory",
+      name: 'CoverPoolFactory',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolFactory>;
     getContractAt(
-      name: "IRangePool",
+      name: 'IRangePool',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.IRangePool>;
     getContractAt(
-      name: "IRangePoolFactory",
+      name: 'IRangePoolFactory',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.IRangePoolFactory>;
     getContractAt(
-      name: "IRangePoolManager",
+      name: 'IRangePoolManager',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.IRangePoolManager>;
     getContractAt(
-      name: "IUniswapV3Factory",
+      name: 'IUniswapV3Factory',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.IUniswapV3Factory>;
     getContractAt(
-      name: "IUniswapV3Pool",
+      name: 'IUniswapV3Pool',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.IUniswapV3Pool>;
     getContractAt(
-      name: "ICoverPool",
+      name: 'ICoverPool',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.ICoverPool>;
     getContractAt(
-      name: "ICoverPoolFactory",
+      name: 'ICoverPoolFactory',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.ICoverPoolFactory>;
     getContractAt(
-      name: "ICoverPoolManager",
+      name: 'ICoverPoolManager',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.ICoverPoolManager>;
     getContractAt(
-      name: "ICurveMath",
+      name: 'ICurveMath',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.ICurveMath>;
     getContractAt(
-      name: "IDyDxMath",
+      name: 'IDyDxMath',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.IDyDxMath>;
     getContractAt(
-      name: "ITickMath",
+      name: 'ITickMath',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.ITickMath>;
     getContractAt(
-      name: "ITwapSource",
+      name: 'ITwapSource',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.ITwapSource>;
     getContractAt(
-      name: "Claims",
+      name: 'Claims',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.Claims>;
     getContractAt(
-      name: "Deltas",
+      name: 'Deltas',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.Deltas>;
     getContractAt(
-      name: "EpochMap",
+      name: 'EpochMap',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.EpochMap>;
     getContractAt(
-      name: "Epochs",
+      name: 'Epochs',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.Epochs>;
     getContractAt(
-      name: "BurnCall",
+      name: 'BurnCall',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.BurnCall>;
     getContractAt(
-      name: "MintCall",
+      name: 'MintCall',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.MintCall>;
     getContractAt(
-      name: "QuoteCall",
+      name: 'QuoteCall',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.QuoteCall>;
     getContractAt(
-      name: "SwapCall",
+      name: 'SwapCall',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.SwapCall>;
     getContractAt(
-      name: "Positions",
+      name: 'Positions',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.Positions>;
     getContractAt(
-      name: "PoolsharkRangeSource",
+      name: 'PoolsharkRangeSource',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.PoolsharkRangeSource>;
     getContractAt(
-      name: "UniswapV3Source",
+      name: 'UniswapV3Source',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.UniswapV3Source>;
     getContractAt(
-      name: "TickMap",
+      name: 'TickMap',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.TickMap>;
     getContractAt(
-      name: "Ticks",
+      name: 'Ticks',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.Ticks>;
     getContractAt(
-      name: "RangePoolFactoryMock",
+      name: 'RangePoolFactoryMock',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.RangePoolFactoryMock>;
     getContractAt(
-      name: "RangePoolMock",
+      name: 'RangePoolMock',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.RangePoolMock>;
     getContractAt(
-      name: "Token20",
+      name: 'Token20',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.Token20>;
     getContractAt(
-      name: "Token20Batcher",
+      name: 'Token20Batcher',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.Token20Batcher>;
     getContractAt(
-      name: "UniswapV3FactoryMock",
+      name: 'UniswapV3FactoryMock',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.UniswapV3FactoryMock>;
     getContractAt(
-      name: "UniswapV3PoolMock",
+      name: 'UniswapV3PoolMock',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.UniswapV3PoolMock>;
     getContractAt(
-      name: "CoverMiscErrors",
+      name: 'CoverMiscErrors',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverMiscErrors>;
     getContractAt(
-      name: "CoverPoolErrors",
+      name: 'CoverPoolErrors',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolErrors>;
     getContractAt(
-      name: "CoverPoolFactoryErrors",
+      name: 'CoverPoolFactoryErrors',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolFactoryErrors>;
     getContractAt(
-      name: "CoverPositionErrors",
+      name: 'CoverPositionErrors',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPositionErrors>;
     getContractAt(
-      name: "CoverTicksErrors",
+      name: 'CoverTicksErrors',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverTicksErrors>;
     getContractAt(
-      name: "CoverTransferErrors",
+      name: 'CoverTransferErrors',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverTransferErrors>;
     getContractAt(
-      name: "CoverPoolManager",
+      name: 'CoverPoolManager',
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<Contracts.CoverPoolManager>;
 
     // default types
     getContractFactory(
       name: string,
-      signerOrOptions?: ethers.Signer | FactoryOptions
+      signerOrOptions?: ethers.Signer | FactoryOptions,
     ): Promise<ethers.ContractFactory>;
     getContractFactory(
       abi: any[],
       bytecode: ethers.utils.BytesLike,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<ethers.ContractFactory>;
     getContractAt(
       nameOrAbi: string | any[],
       address: string,
-      signer?: ethers.Signer
+      signer?: ethers.Signer,
     ): Promise<ethers.Contract>;
   }
 }

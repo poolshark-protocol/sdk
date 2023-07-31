@@ -12,25 +12,25 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface ClaimsInterface extends ethers.utils.Interface {
   functions: {
-    "applyDeltas(((uint128,uint128),uint160,uint128,uint32,uint32,uint32,int24,uint16,uint16,uint8),((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "getDeltas(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "section1(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool),(ITwapSource,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))": FunctionFragment;
-    "section2(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "section3(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool),(uint160,uint128,uint128,uint128,uint128))": FunctionFragment;
-    "section4(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool),(uint160,uint128,uint128,uint128,uint128))": FunctionFragment;
-    "section5(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))": FunctionFragment;
+    'applyDeltas(((uint128,uint128),uint160,uint128,uint32,uint32,uint32,int24,uint16,uint16,uint8),((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'getDeltas(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'section1(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool),(ITwapSource,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool))': FunctionFragment;
+    'section2(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'section3(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool),(uint160,uint128,uint128,uint128,uint128))': FunctionFragment;
+    'section4(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool),(uint160,uint128,uint128,uint128,uint128))': FunctionFragment;
+    'section5(((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "applyDeltas",
+    functionFragment: 'applyDeltas',
     values: [
       {
         protocolFees: { token0: BigNumberish; token1: BigNumberish };
@@ -115,11 +115,11 @@ interface ClaimsInterface extends ethers.utils.Interface {
         upper: BigNumberish;
         claim: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "getDeltas",
+    functionFragment: 'getDeltas',
     values: [
       {
         deltas: {
@@ -192,11 +192,11 @@ interface ClaimsInterface extends ethers.utils.Interface {
         upper: BigNumberish;
         claim: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "section1",
+    functionFragment: 'section1',
     values: [
       {
         deltas: {
@@ -286,88 +286,11 @@ interface ClaimsInterface extends ethers.utils.Interface {
         token0Decimals: BigNumberish;
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
-      }
-    ]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "section2",
-    values: [
-      {
-        deltas: {
-          amountInDelta: BigNumberish;
-          amountOutDelta: BigNumberish;
-          amountInDeltaMax: BigNumberish;
-          amountOutDeltaMax: BigNumberish;
-        };
-        finalDeltas: {
-          amountInDelta: BigNumberish;
-          amountOutDelta: BigNumberish;
-          amountInDeltaMax: BigNumberish;
-          amountOutDeltaMax: BigNumberish;
-        };
-        pool: {
-          price: BigNumberish;
-          liquidity: BigNumberish;
-          amountInDelta: BigNumberish;
-          amountInDeltaMaxClaimed: BigNumberish;
-          amountOutDeltaMaxClaimed: BigNumberish;
-        };
-        amountInFilledMax: BigNumberish;
-        amountOutUnfilledMax: BigNumberish;
-        claimTick: {
-          deltas: {
-            amountInDelta: BigNumberish;
-            amountOutDelta: BigNumberish;
-            amountInDeltaMax: BigNumberish;
-            amountOutDeltaMax: BigNumberish;
-          };
-          liquidityDelta: BigNumberish;
-          amountInDeltaMaxMinus: BigNumberish;
-          amountOutDeltaMaxMinus: BigNumberish;
-          amountInDeltaMaxStashed: BigNumberish;
-          amountOutDeltaMaxStashed: BigNumberish;
-        };
-        finalTick: {
-          deltas: {
-            amountInDelta: BigNumberish;
-            amountOutDelta: BigNumberish;
-            amountInDeltaMax: BigNumberish;
-            amountOutDeltaMax: BigNumberish;
-          };
-          liquidityDelta: BigNumberish;
-          amountInDeltaMaxMinus: BigNumberish;
-          amountOutDeltaMaxMinus: BigNumberish;
-          amountInDeltaMaxStashed: BigNumberish;
-          amountOutDeltaMaxStashed: BigNumberish;
-        };
-        position: {
-          claimPriceLast: BigNumberish;
-          liquidity: BigNumberish;
-          amountIn: BigNumberish;
-          amountOut: BigNumberish;
-          accumEpochLast: BigNumberish;
-        };
-        priceLower: BigNumberish;
-        priceClaim: BigNumberish;
-        priceUpper: BigNumberish;
-        priceSpread: BigNumberish;
-        earlyReturn: boolean;
-        removeLower: boolean;
-        removeUpper: boolean;
       },
-      {
-        owner: string;
-        to: string;
-        amount: BigNumberish;
-        lower: BigNumberish;
-        upper: BigNumberish;
-        claim: BigNumberish;
-        zeroForOne: boolean;
-      }
-    ]
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "section3",
+    functionFragment: 'section2',
     values: [
       {
         deltas: {
@@ -441,17 +364,10 @@ interface ClaimsInterface extends ethers.utils.Interface {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      {
-        price: BigNumberish;
-        liquidity: BigNumberish;
-        amountInDelta: BigNumberish;
-        amountInDeltaMaxClaimed: BigNumberish;
-        amountOutDeltaMaxClaimed: BigNumberish;
-      }
-    ]
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "section4",
+    functionFragment: 'section3',
     values: [
       {
         deltas: {
@@ -531,11 +447,11 @@ interface ClaimsInterface extends ethers.utils.Interface {
         amountInDelta: BigNumberish;
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "section5",
+    functionFragment: 'section4',
     values: [
       {
         deltas: {
@@ -608,20 +524,104 @@ interface ClaimsInterface extends ethers.utils.Interface {
         upper: BigNumberish;
         claim: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+      {
+        price: BigNumberish;
+        liquidity: BigNumberish;
+        amountInDelta: BigNumberish;
+        amountInDeltaMaxClaimed: BigNumberish;
+        amountOutDeltaMaxClaimed: BigNumberish;
+      },
+    ],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'section5',
+    values: [
+      {
+        deltas: {
+          amountInDelta: BigNumberish;
+          amountOutDelta: BigNumberish;
+          amountInDeltaMax: BigNumberish;
+          amountOutDeltaMax: BigNumberish;
+        };
+        finalDeltas: {
+          amountInDelta: BigNumberish;
+          amountOutDelta: BigNumberish;
+          amountInDeltaMax: BigNumberish;
+          amountOutDeltaMax: BigNumberish;
+        };
+        pool: {
+          price: BigNumberish;
+          liquidity: BigNumberish;
+          amountInDelta: BigNumberish;
+          amountInDeltaMaxClaimed: BigNumberish;
+          amountOutDeltaMaxClaimed: BigNumberish;
+        };
+        amountInFilledMax: BigNumberish;
+        amountOutUnfilledMax: BigNumberish;
+        claimTick: {
+          deltas: {
+            amountInDelta: BigNumberish;
+            amountOutDelta: BigNumberish;
+            amountInDeltaMax: BigNumberish;
+            amountOutDeltaMax: BigNumberish;
+          };
+          liquidityDelta: BigNumberish;
+          amountInDeltaMaxMinus: BigNumberish;
+          amountOutDeltaMaxMinus: BigNumberish;
+          amountInDeltaMaxStashed: BigNumberish;
+          amountOutDeltaMaxStashed: BigNumberish;
+        };
+        finalTick: {
+          deltas: {
+            amountInDelta: BigNumberish;
+            amountOutDelta: BigNumberish;
+            amountInDeltaMax: BigNumberish;
+            amountOutDeltaMax: BigNumberish;
+          };
+          liquidityDelta: BigNumberish;
+          amountInDeltaMaxMinus: BigNumberish;
+          amountOutDeltaMaxMinus: BigNumberish;
+          amountInDeltaMaxStashed: BigNumberish;
+          amountOutDeltaMaxStashed: BigNumberish;
+        };
+        position: {
+          claimPriceLast: BigNumberish;
+          liquidity: BigNumberish;
+          amountIn: BigNumberish;
+          amountOut: BigNumberish;
+          accumEpochLast: BigNumberish;
+        };
+        priceLower: BigNumberish;
+        priceClaim: BigNumberish;
+        priceUpper: BigNumberish;
+        priceSpread: BigNumberish;
+        earlyReturn: boolean;
+        removeLower: boolean;
+        removeUpper: boolean;
+      },
+      {
+        owner: string;
+        to: string;
+        amount: BigNumberish;
+        lower: BigNumberish;
+        upper: BigNumberish;
+        claim: BigNumberish;
+        zeroForOne: boolean;
+      },
+    ],
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "applyDeltas",
-    data: BytesLike
+    functionFragment: 'applyDeltas',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "getDeltas", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "section1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "section2", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "section3", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "section4", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "section5", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getDeltas', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'section1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'section2', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'section3', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'section4', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'section5', data: BytesLike): Result;
 
   events: {};
 }
@@ -632,26 +632,26 @@ export class Claims extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -664,7 +664,7 @@ export class Claims extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: ClaimsInterface;
@@ -755,7 +755,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -791,7 +791,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -816,7 +816,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -843,7 +843,7 @@ export class Claims extends BaseContract {
           BigNumber,
           boolean,
           boolean,
-          boolean
+          boolean,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -877,7 +877,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -902,7 +902,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -930,7 +930,7 @@ export class Claims extends BaseContract {
           earlyReturn: boolean;
           removeLower: boolean;
           removeUpper: boolean;
-        }
+        },
       ]
     >;
 
@@ -1007,7 +1007,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -1043,7 +1043,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1068,7 +1068,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1095,7 +1095,7 @@ export class Claims extends BaseContract {
           BigNumber,
           boolean,
           boolean,
-          boolean
+          boolean,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -1129,7 +1129,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1154,7 +1154,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1182,7 +1182,7 @@ export class Claims extends BaseContract {
           earlyReturn: boolean;
           removeLower: boolean;
           removeUpper: boolean;
-        }
+        },
       ]
     >;
 
@@ -1276,7 +1276,7 @@ export class Claims extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -1312,7 +1312,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1337,7 +1337,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1364,7 +1364,7 @@ export class Claims extends BaseContract {
           BigNumber,
           boolean,
           boolean,
-          boolean
+          boolean,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -1398,7 +1398,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1423,7 +1423,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1451,7 +1451,7 @@ export class Claims extends BaseContract {
           earlyReturn: boolean;
           removeLower: boolean;
           removeUpper: boolean;
-        }
+        },
       ]
     >;
 
@@ -1528,7 +1528,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -1564,7 +1564,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1589,7 +1589,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1616,7 +1616,7 @@ export class Claims extends BaseContract {
           BigNumber,
           boolean,
           boolean,
-          boolean
+          boolean,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -1650,7 +1650,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1675,7 +1675,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1703,7 +1703,7 @@ export class Claims extends BaseContract {
           earlyReturn: boolean;
           removeLower: boolean;
           removeUpper: boolean;
-        }
+        },
       ]
     >;
 
@@ -1787,7 +1787,7 @@ export class Claims extends BaseContract {
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -1823,7 +1823,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1848,7 +1848,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1875,7 +1875,7 @@ export class Claims extends BaseContract {
           BigNumber,
           boolean,
           boolean,
-          boolean
+          boolean,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -1909,7 +1909,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1934,7 +1934,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -1962,7 +1962,7 @@ export class Claims extends BaseContract {
           earlyReturn: boolean;
           removeLower: boolean;
           removeUpper: boolean;
-        }
+        },
       ]
     >;
 
@@ -2046,7 +2046,7 @@ export class Claims extends BaseContract {
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -2082,7 +2082,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -2107,7 +2107,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -2134,7 +2134,7 @@ export class Claims extends BaseContract {
           BigNumber,
           boolean,
           boolean,
-          boolean
+          boolean,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -2168,7 +2168,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -2193,7 +2193,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -2221,7 +2221,7 @@ export class Claims extends BaseContract {
           earlyReturn: boolean;
           removeLower: boolean;
           removeUpper: boolean;
-        }
+        },
       ]
     >;
 
@@ -2298,7 +2298,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -2334,7 +2334,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -2359,7 +2359,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -2386,7 +2386,7 @@ export class Claims extends BaseContract {
           BigNumber,
           boolean,
           boolean,
-          boolean
+          boolean,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -2420,7 +2420,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -2445,7 +2445,7 @@ export class Claims extends BaseContract {
             BigNumber,
             BigNumber,
             BigNumber,
-            BigNumber
+            BigNumber,
           ] & {
             deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
               amountInDelta: BigNumber;
@@ -2473,7 +2473,7 @@ export class Claims extends BaseContract {
           earlyReturn: boolean;
           removeLower: boolean;
           removeUpper: boolean;
-        }
+        },
       ]
     >;
   };
@@ -2563,7 +2563,7 @@ export class Claims extends BaseContract {
       claim: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -2598,7 +2598,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -2623,7 +2623,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -2650,7 +2650,7 @@ export class Claims extends BaseContract {
       BigNumber,
       boolean,
       boolean,
-      boolean
+      boolean,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -2684,7 +2684,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -2709,7 +2709,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -2813,7 +2813,7 @@ export class Claims extends BaseContract {
       claim: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -2848,7 +2848,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -2873,7 +2873,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -2900,7 +2900,7 @@ export class Claims extends BaseContract {
       BigNumber,
       boolean,
       boolean,
-      boolean
+      boolean,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -2934,7 +2934,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -2959,7 +2959,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3080,7 +3080,7 @@ export class Claims extends BaseContract {
       token1Decimals: BigNumberish;
       minAmountLowerPriced: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -3115,7 +3115,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3140,7 +3140,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3167,7 +3167,7 @@ export class Claims extends BaseContract {
       BigNumber,
       boolean,
       boolean,
-      boolean
+      boolean,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -3201,7 +3201,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3226,7 +3226,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3330,7 +3330,7 @@ export class Claims extends BaseContract {
       claim: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -3365,7 +3365,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3390,7 +3390,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3417,7 +3417,7 @@ export class Claims extends BaseContract {
       BigNumber,
       boolean,
       boolean,
-      boolean
+      boolean,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -3451,7 +3451,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3476,7 +3476,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3587,7 +3587,7 @@ export class Claims extends BaseContract {
       amountInDeltaMaxClaimed: BigNumberish;
       amountOutDeltaMaxClaimed: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -3622,7 +3622,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3647,7 +3647,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3674,7 +3674,7 @@ export class Claims extends BaseContract {
       BigNumber,
       boolean,
       boolean,
-      boolean
+      boolean,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -3708,7 +3708,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3733,7 +3733,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3844,7 +3844,7 @@ export class Claims extends BaseContract {
       amountInDeltaMaxClaimed: BigNumberish;
       amountOutDeltaMaxClaimed: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -3879,7 +3879,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3904,7 +3904,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3931,7 +3931,7 @@ export class Claims extends BaseContract {
       BigNumber,
       boolean,
       boolean,
-      boolean
+      boolean,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -3965,7 +3965,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -3990,7 +3990,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -4094,7 +4094,7 @@ export class Claims extends BaseContract {
       claim: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -4129,7 +4129,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -4154,7 +4154,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -4181,7 +4181,7 @@ export class Claims extends BaseContract {
       BigNumber,
       boolean,
       boolean,
-      boolean
+      boolean,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -4215,7 +4215,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -4240,7 +4240,7 @@ export class Claims extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -4357,7 +4357,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -4392,7 +4392,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4417,7 +4417,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4444,7 +4444,7 @@ export class Claims extends BaseContract {
         BigNumber,
         boolean,
         boolean,
-        boolean
+        boolean,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -4478,7 +4478,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4503,7 +4503,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4607,7 +4607,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -4642,7 +4642,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4667,7 +4667,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4694,7 +4694,7 @@ export class Claims extends BaseContract {
         BigNumber,
         boolean,
         boolean,
-        boolean
+        boolean,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -4728,7 +4728,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4753,7 +4753,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4874,7 +4874,7 @@ export class Claims extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -4909,7 +4909,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4934,7 +4934,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -4961,7 +4961,7 @@ export class Claims extends BaseContract {
         BigNumber,
         boolean,
         boolean,
-        boolean
+        boolean,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -4995,7 +4995,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5020,7 +5020,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5124,7 +5124,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -5159,7 +5159,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5184,7 +5184,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5211,7 +5211,7 @@ export class Claims extends BaseContract {
         BigNumber,
         boolean,
         boolean,
-        boolean
+        boolean,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -5245,7 +5245,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5270,7 +5270,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5381,7 +5381,7 @@ export class Claims extends BaseContract {
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -5416,7 +5416,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5441,7 +5441,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5468,7 +5468,7 @@ export class Claims extends BaseContract {
         BigNumber,
         boolean,
         boolean,
-        boolean
+        boolean,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -5502,7 +5502,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5527,7 +5527,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5638,7 +5638,7 @@ export class Claims extends BaseContract {
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -5673,7 +5673,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5698,7 +5698,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5725,7 +5725,7 @@ export class Claims extends BaseContract {
         BigNumber,
         boolean,
         boolean,
-        boolean
+        boolean,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -5759,7 +5759,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5784,7 +5784,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5888,7 +5888,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -5923,7 +5923,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5948,7 +5948,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -5975,7 +5975,7 @@ export class Claims extends BaseContract {
         BigNumber,
         boolean,
         boolean,
-        boolean
+        boolean,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -6009,7 +6009,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -6034,7 +6034,7 @@ export class Claims extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -6154,7 +6154,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getDeltas(
@@ -6230,7 +6230,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     section1(
@@ -6323,7 +6323,7 @@ export class Claims extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     section2(
@@ -6399,7 +6399,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     section3(
@@ -6482,7 +6482,7 @@ export class Claims extends BaseContract {
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     section4(
@@ -6565,7 +6565,7 @@ export class Claims extends BaseContract {
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     section5(
@@ -6641,7 +6641,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -6731,7 +6731,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getDeltas(
@@ -6807,7 +6807,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     section1(
@@ -6900,7 +6900,7 @@ export class Claims extends BaseContract {
         token1Decimals: BigNumberish;
         minAmountLowerPriced: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     section2(
@@ -6976,7 +6976,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     section3(
@@ -7059,7 +7059,7 @@ export class Claims extends BaseContract {
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     section4(
@@ -7142,7 +7142,7 @@ export class Claims extends BaseContract {
         amountInDeltaMaxClaimed: BigNumberish;
         amountOutDeltaMaxClaimed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     section5(
@@ -7218,7 +7218,7 @@ export class Claims extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

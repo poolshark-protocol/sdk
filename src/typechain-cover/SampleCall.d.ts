@@ -12,19 +12,19 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface SampleCallInterface extends ethers.utils.Interface {
   functions: {
-    "perform((uint8,uint16,int24,int56,uint160,uint160,uint128,uint128,uint200,uint200,(uint16,uint16,uint16),(uint128,uint128)),uint32[])": FunctionFragment;
+    'perform((uint8,uint16,int24,int56,uint160,uint160,uint128,uint128,uint200,uint200,(uint16,uint16,uint16),(uint128,uint128)),uint32[])': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "perform",
+    functionFragment: 'perform',
     values: [
       {
         unlocked: BigNumberish;
@@ -44,17 +44,17 @@ interface SampleCallInterface extends ethers.utils.Interface {
         };
         protocolFees: { token0: BigNumberish; token1: BigNumberish };
       },
-      BigNumberish[]
-    ]
+      BigNumberish[],
+    ],
   ): string;
 
-  decodeFunctionResult(functionFragment: "perform", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'perform', data: BytesLike): Result;
 
   events: {
-    "Swap(address,bool,uint256,uint256,uint160,uint128,int24)": EventFragment;
+    'Swap(address,bool,uint256,uint256,uint160,uint128,int24)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "Swap"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Swap'): EventFragment;
 }
 
 export type SwapEvent = TypedEvent<
@@ -75,26 +75,26 @@ export class SampleCall extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -107,7 +107,7 @@ export class SampleCall extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: SampleCallInterface;
@@ -133,7 +133,7 @@ export class SampleCall extends BaseContract {
         protocolFees: { token0: BigNumberish; token1: BigNumberish };
       },
       secondsAgo: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
         tickSecondsAccum: BigNumber[];
@@ -165,7 +165,7 @@ export class SampleCall extends BaseContract {
       protocolFees: { token0: BigNumberish; token1: BigNumberish };
     },
     secondsAgo: BigNumberish[],
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
       tickSecondsAccum: BigNumber[];
@@ -197,7 +197,7 @@ export class SampleCall extends BaseContract {
         protocolFees: { token0: BigNumberish; token1: BigNumberish };
       },
       secondsAgo: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
         tickSecondsAccum: BigNumber[];
@@ -210,14 +210,14 @@ export class SampleCall extends BaseContract {
   };
 
   filters: {
-    "Swap(address,bool,uint256,uint256,uint160,uint128,int24)"(
+    'Swap(address,bool,uint256,uint256,uint160,uint128,int24)'(
       recipient?: string | null,
       zeroForOne?: null,
       amountIn?: null,
       amountOut?: null,
       price?: null,
       liquidity?: null,
-      tickAtPrice?: null
+      tickAtPrice?: null,
     ): TypedEventFilter<
       [string, boolean, BigNumber, BigNumber, BigNumber, BigNumber, number],
       {
@@ -238,7 +238,7 @@ export class SampleCall extends BaseContract {
       amountOut?: null,
       price?: null,
       liquidity?: null,
-      tickAtPrice?: null
+      tickAtPrice?: null,
     ): TypedEventFilter<
       [string, boolean, BigNumber, BigNumber, BigNumber, BigNumber, number],
       {
@@ -274,7 +274,7 @@ export class SampleCall extends BaseContract {
         protocolFees: { token0: BigNumberish; token1: BigNumberish };
       },
       secondsAgo: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -299,7 +299,7 @@ export class SampleCall extends BaseContract {
         protocolFees: { token0: BigNumberish; token1: BigNumberish };
       },
       secondsAgo: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

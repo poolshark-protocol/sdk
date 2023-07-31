@@ -11,20 +11,20 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface BurnCallInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "Burn(address,int24,int24,int24,bool,uint128,uint128,uint128,uint128,uint128,uint128,uint128,uint128,uint160)": EventFragment;
+    'Burn(address,int24,int24,int24,bool,uint128,uint128,uint128,uint128,uint128,uint128,uint128,uint128,uint160)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "Burn"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Burn'): EventFragment;
 }
 
 export type BurnEvent = TypedEvent<
@@ -42,7 +42,7 @@ export type BurnEvent = TypedEvent<
     BigNumber,
     BigNumber,
     BigNumber,
-    BigNumber
+    BigNumber,
   ] & {
     to: string;
     lower: number;
@@ -67,26 +67,26 @@ export class BurnCall extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -99,7 +99,7 @@ export class BurnCall extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: BurnCallInterface;
@@ -109,7 +109,7 @@ export class BurnCall extends BaseContract {
   callStatic: {};
 
   filters: {
-    "Burn(address,int24,int24,int24,bool,uint128,uint128,uint128,uint128,uint128,uint128,uint128,uint128,uint160)"(
+    'Burn(address,int24,int24,int24,bool,uint128,uint128,uint128,uint128,uint128,uint128,uint128,uint128,uint160)'(
       to?: string | null,
       lower?: null,
       upper?: null,
@@ -123,7 +123,7 @@ export class BurnCall extends BaseContract {
       amountOutDeltaMaxStashedBurned?: null,
       amountInDeltaMaxBurned?: null,
       amountOutDeltaMaxBurned?: null,
-      claimPriceLast?: null
+      claimPriceLast?: null,
     ): TypedEventFilter<
       [
         string,
@@ -139,7 +139,7 @@ export class BurnCall extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ],
       {
         to: string;
@@ -173,7 +173,7 @@ export class BurnCall extends BaseContract {
       amountOutDeltaMaxStashedBurned?: null,
       amountInDeltaMaxBurned?: null,
       amountOutDeltaMaxBurned?: null,
-      claimPriceLast?: null
+      claimPriceLast?: null,
     ): TypedEventFilter<
       [
         string,
@@ -189,7 +189,7 @@ export class BurnCall extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ],
       {
         to: string;

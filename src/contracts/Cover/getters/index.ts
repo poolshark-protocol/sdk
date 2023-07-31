@@ -1,121 +1,130 @@
-import { Network } from "../../../enums";
-import { CoverPool__factory,CoverPool } from "../../../typechain-cover";
-import { BigNumber, Signer } from "ethers";
-import type {Provider} from '@ethersproject/providers';
-import { CoverQuoteParams,CoverPositionArgs } from "./types";
-import { ContractConstructorArgs } from "../../types";
-import {SnapshotParamsArgs} from "../../types";
+import { Network } from '../../../enums';
+import { CoverPool__factory, CoverPool } from '../../../typechain-cover';
+import { BigNumber, Signer } from 'ethers';
+import type { Provider } from '@ethersproject/providers';
+import { CoverQuoteParams, CoverPositionArgs } from './types';
+import { ContractConstructorArgs } from '../../types';
+import { SnapshotParamsArgs } from '../../types';
 
-export class CoverPoolGetters  {
-    coverPool:CoverPool;
-    network:Network;
-    signerOrProvider:Signer | Provider
-    debugMode:boolean;
-    poolAddress:`0x${string}`;
-    constructor(args:ContractConstructorArgs) {
-        this.network = args.network ? args.network : Network.ARBITRUM;
-        this.poolAddress = args.poolAddress;
-        this.coverPool = CoverPool__factory.connect(this.poolAddress, args.signerOrProvider);
-        this.signerOrProvider = args.signerOrProvider;
-        this.debugMode = args.debugMode || false;
-    }
+export class CoverPoolGetters {
+  coverPool: CoverPool;
+  network: Network;
+  signerOrProvider: Signer | Provider;
+  debugMode: boolean;
+  poolAddress: `0x${string}`;
+  constructor(args: ContractConstructorArgs) {
+    this.network = args.network ? args.network : Network.ARBITRUM;
+    this.poolAddress = args.poolAddress;
+    this.coverPool = CoverPool__factory.connect(
+      this.poolAddress,
+      args.signerOrProvider,
+    );
+    this.signerOrProvider = args.signerOrProvider;
+    this.debugMode = args.debugMode || false;
+  }
 
-    /**
-       * Returns the length of the auction in seconds
-       * @returns The length of the auction in seconds
-    */
-    async auctionLength():Promise<number> {
-        return await this.coverPool.auctionLength();
-    }
+  /**
+   * Returns the length of the auction in seconds
+   * @returns The length of the auction in seconds
+   */
+  async auctionLength(): Promise<number> {
+    return await this.coverPool.auctionLength();
+  }
 
-    /**
-     * 
-     * @returns The block time in seconds
-     */
-    async blockTime():Promise<number> {
-        return await this.coverPool.blockTime();
-    }
+  /**
+   *
+   * @returns The block time in seconds
+   */
+  async blockTime(): Promise<number> {
+    return await this.coverPool.blockTime();
+  }
 
-    /**
-     * @returns The address to pay fees to
-    */
-    async feeTo():Promise<`0x${string}`> {
-        return await this.coverPool.feeTo() as `0x${string}`;
-    }
+  /**
+   * @returns The address to pay fees to
+   */
+  async feeTo(): Promise<`0x${string}`> {
+    return (await this.coverPool.feeTo()) as `0x${string}`;
+  }
 
-    async genesisTime():Promise<number> {
-        return await this.coverPool.genesisTime();
-    }
+  async genesisTime(): Promise<number> {
+    return await this.coverPool.genesisTime();
+  }
 
-    async globalState() {
-        const globalState = await this.coverPool.globalState();
-        return globalState;
-    }
+  async globalState() {
+    const globalState = await this.coverPool.globalState();
+    return globalState;
+  }
 
-    async inputPool() {
-        const inputPool = await this.coverPool.inputPool();
-        return inputPool;
-    }
+  async inputPool() {
+    const inputPool = await this.coverPool.inputPool();
+    return inputPool;
+  }
 
-    async maxPrice():Promise<BigNumber> {
-        return await this.coverPool.maxPrice();
-    }
+  async maxPrice(): Promise<BigNumber> {
+    return await this.coverPool.maxPrice();
+  }
 
-    async minAmountLowerPriced():Promise<boolean> {
-        return await this.coverPool.minAmountLowerPriced();
-    }
+  async minAmountLowerPriced(): Promise<boolean> {
+    return await this.coverPool.minAmountLowerPriced();
+  }
 
-    async minAmountPerAuction():Promise<BigNumber> {
-        return await this.coverPool.minAmountPerAuction();
-    }
+  async minAmountPerAuction(): Promise<BigNumber> {
+    return await this.coverPool.minAmountPerAuction();
+  }
 
-    async minPositionWidth():Promise<number> {
-        return await this.coverPool.minPositionWidth();
-    }
+  async minPositionWidth(): Promise<number> {
+    return await this.coverPool.minPositionWidth();
+  }
 
+  async minPrice(): Promise<BigNumber> {
+    return await this.coverPool.minPrice();
+  }
 
-    async minPrice():Promise<BigNumber> {
-        return await this.coverPool.minPrice();
-    }
+  /**
+   * @returns The name of the pool
+   */
+  async owner(): Promise<`0x${string}`> {
+    return (await this.coverPool.owner()) as `0x${string}`;
+  }
 
-    /**
-     * @returns The name of the pool
-    */
-    async owner():Promise<`0x${string}`> {
-        return await this.coverPool.owner() as `0x${string}`;
-    }
+  /**
+   * @returns The address of the pool for token0
+   */
+  async pool0() {
+    const pool0 = await this.coverPool.pool0();
+    return pool0;
+  }
 
-    /**
-     * @returns The address of the pool for token0
-    */
-    async pool0() {
-        const pool0 = await this.coverPool.pool0();
-        return pool0;
-    }
+  /**
+   * @returns The address of the pool for token1
+   */
+  async pool1() {
+    const pool1 = await this.coverPool.pool1();
+    return pool1;
+  }
 
-    /**
-     * @returns The address of the pool for token1
-    */
-    async pool1() {
-        const pool1 = await this.coverPool.pool1();
-        return pool1;
-    }
+  /**
+   * @param {CoverPositionArgs} args - The arguments for fetching positions.
+   */
+  async positions0(args: CoverPositionArgs) {
+    const positions0 = await this.coverPool.positions0(
+      args.address,
+      args.input0,
+      args.input1,
+    );
+    return positions0;
+  }
 
-    /**
-    * @param {CoverPositionArgs} args - The arguments for fetching positions.
-     */
-    async positions0(args:CoverPositionArgs) {
-        const positions0 = await this.coverPool.positions0(args.address, args.input0, args.input1);
-        return positions0;
-    }
+  async positions1(args: CoverPositionArgs) {
+    const positions1 = await this.coverPool.positions1(
+      args.address,
+      args.input0,
+      args.input1,
+    );
+    return positions1;
+  }
 
-
-    async positions1(args:CoverPositionArgs) {
-        const positions1 = await this.coverPool.positions1(args.address, args.input0, args.input1);
-        return positions1;
-    }
-
-    /**
+  /**
      * @notice Quotes the amount of `tokenIn` for `tokenOut`. 
                `tokenIn` will be `token0` if `zeroForOne` is true.
                `tokenIn` will be `token1` if `zeroForOne` is false.
@@ -127,72 +136,71 @@ export class CoverPoolGetters  {
      * @return outAmount The amount of tokenOut to be received
      * @return priceAfter The Q64.96 square root price after the swap
      */
-    async quote(args:CoverQuoteParams) {
-        return await this.coverPool.quote(args);
-    }
-    
-    /**
-     * @notice Snapshots the current state of an existing position. 
-     * @param {SwapParams} params The parameters for the function. See SwapParams type.
-     * @return position The updated position containing `amountIn` and `amountOut`
-     * @dev positions amounts reflected will be collected by the user if `burn` is called
-     */
-    async snapshot(args:SnapshotParamsArgs) {
-        return await this.coverPool.snapshot(args);
-    }
+  async quote(args: CoverQuoteParams) {
+    return await this.coverPool.quote(args);
+  }
 
-    async tickMap() {
-        const tickMap = await this.coverPool.tickMap();
-        return tickMap;
-    }
-    
-    async tickSpread() {
-        const tickSpread = await this.coverPool.tickSpread();
-        return tickSpread;
-    }
+  /**
+   * @notice Snapshots the current state of an existing position.
+   * @param {SwapParams} params The parameters for the function. See SwapParams type.
+   * @return position The updated position containing `amountIn` and `amountOut`
+   * @dev positions amounts reflected will be collected by the user if `burn` is called
+   */
+  async snapshot(args: SnapshotParamsArgs) {
+    return await this.coverPool.snapshot(args);
+  }
 
-    /**  
-     * @param {number} tick The tick to get the token0 for
-     * @returns the tick containing token0 as output
-    */
-    async ticks0(tick:number) {
-        const ticks0 = await this.coverPool.ticks0(tick);
-        return ticks0;
-    }
+  async tickMap() {
+    const tickMap = await this.coverPool.tickMap();
+    return tickMap;
+  }
 
-    /**
-     * @param {number} tick The tick to get the token1 for
-     * @returns the tick containing token1 as output
-    */
-    async ticks1(tick:number) {
-        const ticks1 = await this.coverPool.ticks1(tick);
-        return ticks1;
-    }
+  async tickSpread() {
+    const tickSpread = await this.coverPool.tickSpread();
+    return tickSpread;
+  }
 
-    /**
-     * @returns The address of token0  
-     */
-    async token0() {
-        const token0 = await this.coverPool.token0();
-        return token0;
-    }
+  /**
+   * @param {number} tick The tick to get the token0 for
+   * @returns the tick containing token0 as output
+   */
+  async ticks0(tick: number) {
+    const ticks0 = await this.coverPool.ticks0(tick);
+    return ticks0;
+  }
 
-    /**
-     * @returns The address of token1
-        */
-    async token1() {
-        const token1 = await this.coverPool.token1();
-        return token1;
-    }
+  /**
+   * @param {number} tick The tick to get the token1 for
+   * @returns the tick containing token1 as output
+   */
+  async ticks1(tick: number) {
+    const ticks1 = await this.coverPool.ticks1(tick);
+    return ticks1;
+  }
 
-   
-    async twapLength() {
-        const twapLength = await this.coverPool.twapLength();
-        return twapLength;
-    }
+  /**
+   * @returns The address of token0
+   */
+  async token0() {
+    const token0 = await this.coverPool.token0();
+    return token0;
+  }
 
-    async twapSource() {
-        const twapSource = await this.coverPool.twapSource();
-        return twapSource;
-    }
+  /**
+   * @returns The address of token1
+   */
+  async token1() {
+    const token1 = await this.coverPool.token1();
+    return token1;
+  }
+
+  async twapLength() {
+    const twapLength = await this.coverPool.twapLength();
+    return twapLength;
+  }
+
+  async twapSource() {
+    const twapSource = await this.coverPool.twapSource();
+    return twapSource;
+  }
 }

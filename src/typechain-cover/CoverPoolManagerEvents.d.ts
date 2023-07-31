@@ -11,32 +11,32 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface CoverPoolManagerEventsInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "FactoryChanged(address,address)": EventFragment;
-    "FeeToTransfer(address,address)": EventFragment;
-    "OwnerTransfer(address,address)": EventFragment;
-    "ProtocolFeesCollected(address[],uint128[],uint128[])": EventFragment;
-    "ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])": EventFragment;
-    "TwapSourceEnabled(bytes32,address,address,address)": EventFragment;
-    "VolatilityTierEnabled(address,address,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)": EventFragment;
+    'FactoryChanged(address,address)': EventFragment;
+    'FeeToTransfer(address,address)': EventFragment;
+    'OwnerTransfer(address,address)': EventFragment;
+    'ProtocolFeesCollected(address[],uint128[],uint128[])': EventFragment;
+    'ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])': EventFragment;
+    'TwapSourceEnabled(bytes32,address,address,address)': EventFragment;
+    'VolatilityTierEnabled(address,address,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "FactoryChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "FeeToTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnerTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeesCollected"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeesModified"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TwapSourceEnabled"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "VolatilityTierEnabled"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FactoryChanged'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FeeToTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'OwnerTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeesCollected'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeesModified'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'TwapSourceEnabled'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'VolatilityTierEnabled'): EventFragment;
 }
 
 export type FactoryChangedEvent = TypedEvent<
@@ -92,7 +92,7 @@ export type VolatilityTierEnabledEvent = TypedEvent<
     number,
     number,
     number,
-    boolean
+    boolean,
   ] & {
     sourceAddress: string;
     curveAddress: string;
@@ -115,26 +115,26 @@ export class CoverPoolManagerEvents extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -147,7 +147,7 @@ export class CoverPoolManagerEvents extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: CoverPoolManagerEventsInterface;
@@ -157,9 +157,9 @@ export class CoverPoolManagerEvents extends BaseContract {
   callStatic: {};
 
   filters: {
-    "FactoryChanged(address,address)"(
+    'FactoryChanged(address,address)'(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
@@ -167,15 +167,15 @@ export class CoverPoolManagerEvents extends BaseContract {
 
     FactoryChanged(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
     >;
 
-    "FeeToTransfer(address,address)"(
+    'FeeToTransfer(address,address)'(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
@@ -183,15 +183,15 @@ export class CoverPoolManagerEvents extends BaseContract {
 
     FeeToTransfer(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
     >;
 
-    "OwnerTransfer(address,address)"(
+    'OwnerTransfer(address,address)'(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
@@ -199,16 +199,16 @@ export class CoverPoolManagerEvents extends BaseContract {
 
     OwnerTransfer(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
     >;
 
-    "ProtocolFeesCollected(address[],uint128[],uint128[])"(
+    'ProtocolFeesCollected(address[],uint128[],uint128[])'(
       collectPools?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       {
@@ -221,7 +221,7 @@ export class CoverPoolManagerEvents extends BaseContract {
     ProtocolFeesCollected(
       collectPools?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       {
@@ -231,13 +231,13 @@ export class CoverPoolManagerEvents extends BaseContract {
       }
     >;
 
-    "ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])"(
+    'ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])'(
       modifyPools?: null,
       syncFees?: null,
       fillFees?: null,
       setFees?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], number[], number[], boolean[], BigNumber[], BigNumber[]],
       {
@@ -256,7 +256,7 @@ export class CoverPoolManagerEvents extends BaseContract {
       fillFees?: null,
       setFees?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], number[], number[], boolean[], BigNumber[], BigNumber[]],
       {
@@ -269,11 +269,11 @@ export class CoverPoolManagerEvents extends BaseContract {
       }
     >;
 
-    "TwapSourceEnabled(bytes32,address,address,address)"(
+    'TwapSourceEnabled(bytes32,address,address,address)'(
       sourceName?: null,
       sourceAddress?: null,
       curveAddress?: null,
-      factoryAddress?: null
+      factoryAddress?: null,
     ): TypedEventFilter<
       [string, string, string, string],
       {
@@ -288,7 +288,7 @@ export class CoverPoolManagerEvents extends BaseContract {
       sourceName?: null,
       sourceAddress?: null,
       curveAddress?: null,
-      factoryAddress?: null
+      factoryAddress?: null,
     ): TypedEventFilter<
       [string, string, string, string],
       {
@@ -299,7 +299,7 @@ export class CoverPoolManagerEvents extends BaseContract {
       }
     >;
 
-    "VolatilityTierEnabled(address,address,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)"(
+    'VolatilityTierEnabled(address,address,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)'(
       sourceAddress?: null,
       curveAddress?: null,
       feeTier?: null,
@@ -311,7 +311,7 @@ export class CoverPoolManagerEvents extends BaseContract {
       syncFee?: null,
       fillFee?: null,
       minPositionWidth?: null,
-      minLowerPriced?: null
+      minLowerPriced?: null,
     ): TypedEventFilter<
       [
         string,
@@ -325,7 +325,7 @@ export class CoverPoolManagerEvents extends BaseContract {
         number,
         number,
         number,
-        boolean
+        boolean,
       ],
       {
         sourceAddress: string;
@@ -355,7 +355,7 @@ export class CoverPoolManagerEvents extends BaseContract {
       syncFee?: null,
       fillFee?: null,
       minPositionWidth?: null,
-      minLowerPriced?: null
+      minLowerPriced?: null,
     ): TypedEventFilter<
       [
         string,
@@ -369,7 +369,7 @@ export class CoverPoolManagerEvents extends BaseContract {
         number,
         number,
         number,
-        boolean
+        boolean,
       ],
       {
         sourceAddress: string;

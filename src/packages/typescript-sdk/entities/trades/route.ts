@@ -1,9 +1,9 @@
-import invariant from 'tiny-invariant'
-import { IToken } from '../tokens/itoken'
-import { Token } from '../tokens/token'
-import { Pool } from '../pools/pool'
-import { Price } from '../math/price'
-import { ProtocolType } from '../../utils/constants'
+import invariant from 'tiny-invariant';
+import { IToken } from '../tokens/itoken';
+import { Token } from '../tokens/token';
+import { Pool } from '../pools/pool';
+import { Price } from '../math/price';
+import { ProtocolType } from '../../utils/constants';
 
 /**
  * Represents a list of pools through which a swap can occur
@@ -11,13 +11,13 @@ import { ProtocolType } from '../../utils/constants'
  * @template TOutput The output token
  */
 export class Route<TInput extends IToken, TOutput extends IToken> {
-  public readonly pools: Pool[]
-  public readonly tokenPath: Token[]
-  public readonly input: TInput
-  public readonly output: TOutput
-  public readonly protocol: ProtocolType
+  public readonly pools: Pool[];
+  public readonly tokenPath: Token[];
+  public readonly input: TInput;
+  public readonly output: TOutput;
+  public readonly protocol: ProtocolType;
 
-  private _midPrice: Price<TInput, TOutput> | null = null
+  private _midPrice: Price<TInput, TOutput> | null = null;
 
   /**
    * Creates an instance of route.
@@ -26,72 +26,83 @@ export class Route<TInput extends IToken, TOutput extends IToken> {
    * @param output The output token
    */
   public constructor(pools: Pool[], input: TInput, output: TOutput) {
-    invariant(pools.length > 0, 'POOLS')
+    invariant(pools.length > 0, 'POOLS');
 
-    const chainId = pools[0].chainId
-    const allOnSameChain = pools.every(pool => pool.chainId === chainId)
-    invariant(allOnSameChain, 'CHAIN_IDS')
+    const chainId = pools[0].chainId;
+    const allOnSameChain = pools.every(pool => pool.chainId === chainId);
+    invariant(allOnSameChain, 'CHAIN_IDS');
 
-    const wrappedInput = input.wrapped
-    invariant(pools[0].contains(wrappedInput), 'INPUT')
+    const wrappedInput = input.wrapped;
+    invariant(pools[0].contains(wrappedInput), 'INPUT');
 
-    invariant(pools[pools.length - 1].contains(output.wrapped), 'OUTPUT')
+    invariant(pools[pools.length - 1].contains(output.wrapped), 'OUTPUT');
 
-    this.protocol = ProtocolType.NONE
+    this.protocol = ProtocolType.NONE;
 
     /**
      * Normalizes token0-token1 order and selects the next token/fee step to add to the path
      * */
-    const tokenPath: Token[] = [wrappedInput]
+    const tokenPath: Token[] = [wrappedInput];
     for (const [i, pool] of pools.entries()) {
-      const currentInputToken = tokenPath[i]
-      invariant(currentInputToken.equals(pool.token0) || currentInputToken.equals(pool.token1), 'PATH')
-      invariant(pool.protocol == ProtocolType.NONE)
-      if (this.protocol == ProtocolType.NONE) this.protocol = pool.protocol
-      if (this.protocol != pool.protocol) this.protocol = ProtocolType.MIXED
-      const nextToken = currentInputToken.equals(pool.token0) ? pool.token1 : pool.token0
-      tokenPath.push(nextToken)
+      const currentInputToken = tokenPath[i];
+      invariant(
+        currentInputToken.equals(pool.token0) ||
+          currentInputToken.equals(pool.token1),
+        'PATH',
+      );
+      invariant(pool.protocol == ProtocolType.NONE);
+      if (this.protocol == ProtocolType.NONE) this.protocol = pool.protocol;
+      if (this.protocol != pool.protocol) this.protocol = ProtocolType.MIXED;
+      const nextToken = currentInputToken.equals(pool.token0)
+        ? pool.token1
+        : pool.token0;
+      tokenPath.push(nextToken);
     }
 
-    this.pools = pools
-    this.tokenPath = tokenPath
-    this.input = input
-    this.output = output ?? tokenPath[tokenPath.length - 1]
+    this.pools = pools;
+    this.tokenPath = tokenPath;
+    this.input = input;
+    this.output = output ?? tokenPath[tokenPath.length - 1];
   }
 
   public get chainId(): number {
-    return this.pools[0].chainId
+    return this.pools[0].chainId;
   }
 
   /**
    * Returns the mid price of the route
    */
   public get midPrice(): Price<TInput, TOutput> {
-    if (this._midPrice !== null) return this._midPrice
+    if (this._midPrice !== null) return this._midPrice;
 
     const price = this.pools.slice(1).reduce(
       ({ nextInput, price }, pool) => {
         return nextInput.equals(pool.token0)
           ? {
               nextInput: pool.token1,
-              price: price.multiply(pool.token0Price)
+              price: price.multiply(pool.token0Price),
             }
           : {
               nextInput: pool.token0,
-              price: price.multiply(pool.token1Price)
-            }
+              price: price.multiply(pool.token1Price),
+            };
       },
       this.pools[0].token0.equals(this.input.wrapped)
         ? {
             nextInput: this.pools[0].token1,
-            price: this.pools[0].token0Price
+            price: this.pools[0].token0Price,
           }
         : {
             nextInput: this.pools[0].token0,
-            price: this.pools[0].token1Price
-          }
-    ).price
+            price: this.pools[0].token1Price,
+          },
+    ).price;
 
-    return (this._midPrice = new Price(this.input, this.output, price.denominator, price.numerator))
+    return (this._midPrice = new Price(
+      this.input,
+      this.output,
+      price.denominator,
+      price.numerator,
+    ));
   }
 }

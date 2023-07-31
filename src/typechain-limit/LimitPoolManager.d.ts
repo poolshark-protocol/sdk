@@ -13,108 +13,108 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface LimitPoolManagerInterface extends ethers.utils.Interface {
   functions: {
-    "MAX_PROTOCOL_FEE()": FunctionFragment;
-    "collectProtocolFees(address[])": FunctionFragment;
-    "enableTickSpacing(int16)": FunctionFragment;
-    "factory()": FunctionFragment;
-    "feeTo()": FunctionFragment;
-    "modifyProtocolFees(address[],uint16[],uint16[],bool[])": FunctionFragment;
-    "owner()": FunctionFragment;
-    "setFactory(address)": FunctionFragment;
-    "tickSpacings(int16)": FunctionFragment;
-    "transferFeeTo(address)": FunctionFragment;
-    "transferOwner(address)": FunctionFragment;
+    'MAX_PROTOCOL_FEE()': FunctionFragment;
+    'collectProtocolFees(address[])': FunctionFragment;
+    'enableTickSpacing(int16)': FunctionFragment;
+    'factory()': FunctionFragment;
+    'feeTo()': FunctionFragment;
+    'modifyProtocolFees(address[],uint16[],uint16[],bool[])': FunctionFragment;
+    'owner()': FunctionFragment;
+    'setFactory(address)': FunctionFragment;
+    'tickSpacings(int16)': FunctionFragment;
+    'transferFeeTo(address)': FunctionFragment;
+    'transferOwner(address)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "MAX_PROTOCOL_FEE",
-    values?: undefined
+    functionFragment: 'MAX_PROTOCOL_FEE',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "collectProtocolFees",
-    values: [string[]]
+    functionFragment: 'collectProtocolFees',
+    values: [string[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "enableTickSpacing",
-    values: [BigNumberish]
+    functionFragment: 'enableTickSpacing',
+    values: [BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
-  encodeFunctionData(functionFragment: "feeTo", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'feeTo', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "modifyProtocolFees",
-    values: [string[], BigNumberish[], BigNumberish[], boolean[]]
+    functionFragment: 'modifyProtocolFees',
+    values: [string[], BigNumberish[], BigNumberish[], boolean[]],
   ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(functionFragment: "setFactory", values: [string]): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'setFactory', values: [string]): string;
   encodeFunctionData(
-    functionFragment: "tickSpacings",
-    values: [BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "transferFeeTo",
-    values: [string]
+    functionFragment: 'tickSpacings',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "transferOwner",
-    values: [string]
+    functionFragment: 'transferFeeTo',
+    values: [string],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'transferOwner',
+    values: [string],
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "MAX_PROTOCOL_FEE",
-    data: BytesLike
+    functionFragment: 'MAX_PROTOCOL_FEE',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "collectProtocolFees",
-    data: BytesLike
+    functionFragment: 'collectProtocolFees',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "enableTickSpacing",
-    data: BytesLike
+    functionFragment: 'enableTickSpacing',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "feeTo", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTo', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "modifyProtocolFees",
-    data: BytesLike
+    functionFragment: 'modifyProtocolFees',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "setFactory", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'setFactory', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "tickSpacings",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "transferFeeTo",
-    data: BytesLike
+    functionFragment: 'tickSpacings',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "transferOwner",
-    data: BytesLike
+    functionFragment: 'transferFeeTo',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'transferOwner',
+    data: BytesLike,
   ): Result;
 
   events: {
-    "FactoryChanged(address,address)": EventFragment;
-    "FeeToTransfer(address,address)": EventFragment;
-    "OwnerTransfer(address,address)": EventFragment;
-    "ProtocolFeesCollected(address[],uint128[],uint128[])": EventFragment;
-    "ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])": EventFragment;
-    "TickSpacingEnabled(int16)": EventFragment;
+    'FactoryChanged(address,address)': EventFragment;
+    'FeeToTransfer(address,address)': EventFragment;
+    'OwnerTransfer(address,address)': EventFragment;
+    'ProtocolFeesCollected(address[],uint128[],uint128[])': EventFragment;
+    'ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])': EventFragment;
+    'TickSpacingEnabled(int16)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "FactoryChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "FeeToTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnerTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeesCollected"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeesModified"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TickSpacingEnabled"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FactoryChanged'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FeeToTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'OwnerTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeesCollected'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeesModified'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'TickSpacingEnabled'): EventFragment;
 }
 
 export type FactoryChangedEvent = TypedEvent<
@@ -158,26 +158,26 @@ export class LimitPoolManager extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -190,7 +190,7 @@ export class LimitPoolManager extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: LimitPoolManagerInterface;
@@ -200,12 +200,12 @@ export class LimitPoolManager extends BaseContract {
 
     collectProtocolFees(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     enableTickSpacing(
       tickSpacing: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     factory(overrides?: CallOverrides): Promise<[string]>;
@@ -217,29 +217,29 @@ export class LimitPoolManager extends BaseContract {
       syncFees: BigNumberish[],
       fillFees: BigNumberish[],
       setFees: boolean[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     tickSpacings(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
   };
 
@@ -247,12 +247,12 @@ export class LimitPoolManager extends BaseContract {
 
   collectProtocolFees(
     collectPools: string[],
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   enableTickSpacing(
     tickSpacing: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   factory(overrides?: CallOverrides): Promise<string>;
@@ -264,29 +264,29 @@ export class LimitPoolManager extends BaseContract {
     syncFees: BigNumberish[],
     fillFees: BigNumberish[],
     setFees: boolean[],
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   owner(overrides?: CallOverrides): Promise<string>;
 
   setFactory(
     factory_: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   tickSpacings(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   transferFeeTo(
     newFeeTo: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   transferOwner(
     newOwner: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   callStatic: {
@@ -294,12 +294,12 @@ export class LimitPoolManager extends BaseContract {
 
     collectProtocolFees(
       collectPools: string[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     enableTickSpacing(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     factory(overrides?: CallOverrides): Promise<string>;
@@ -311,7 +311,7 @@ export class LimitPoolManager extends BaseContract {
       syncFees: BigNumberish[],
       fillFees: BigNumberish[],
       setFees: boolean[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     owner(overrides?: CallOverrides): Promise<string>;
@@ -320,7 +320,7 @@ export class LimitPoolManager extends BaseContract {
 
     tickSpacings(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     transferFeeTo(newFeeTo: string, overrides?: CallOverrides): Promise<void>;
@@ -329,9 +329,9 @@ export class LimitPoolManager extends BaseContract {
   };
 
   filters: {
-    "FactoryChanged(address,address)"(
+    'FactoryChanged(address,address)'(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
@@ -339,15 +339,15 @@ export class LimitPoolManager extends BaseContract {
 
     FactoryChanged(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
     >;
 
-    "FeeToTransfer(address,address)"(
+    'FeeToTransfer(address,address)'(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
@@ -355,15 +355,15 @@ export class LimitPoolManager extends BaseContract {
 
     FeeToTransfer(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
     >;
 
-    "OwnerTransfer(address,address)"(
+    'OwnerTransfer(address,address)'(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
@@ -371,16 +371,16 @@ export class LimitPoolManager extends BaseContract {
 
     OwnerTransfer(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
     >;
 
-    "ProtocolFeesCollected(address[],uint128[],uint128[])"(
+    'ProtocolFeesCollected(address[],uint128[],uint128[])'(
       collectPools?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       {
@@ -393,7 +393,7 @@ export class LimitPoolManager extends BaseContract {
     ProtocolFeesCollected(
       collectPools?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       {
@@ -403,13 +403,13 @@ export class LimitPoolManager extends BaseContract {
       }
     >;
 
-    "ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])"(
+    'ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])'(
       modifyPools?: null,
       syncFees?: null,
       fillFees?: null,
       setFees?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], number[], number[], boolean[], BigNumber[], BigNumber[]],
       {
@@ -428,7 +428,7 @@ export class LimitPoolManager extends BaseContract {
       fillFees?: null,
       setFees?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], number[], number[], boolean[], BigNumber[], BigNumber[]],
       {
@@ -441,12 +441,12 @@ export class LimitPoolManager extends BaseContract {
       }
     >;
 
-    "TickSpacingEnabled(int16)"(
-      tickSpacing?: null
+    'TickSpacingEnabled(int16)'(
+      tickSpacing?: null,
     ): TypedEventFilter<[number], { tickSpacing: number }>;
 
     TickSpacingEnabled(
-      tickSpacing?: null
+      tickSpacing?: null,
     ): TypedEventFilter<[number], { tickSpacing: number }>;
   };
 
@@ -455,12 +455,12 @@ export class LimitPoolManager extends BaseContract {
 
     collectProtocolFees(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     enableTickSpacing(
       tickSpacing: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     factory(overrides?: CallOverrides): Promise<BigNumber>;
@@ -472,29 +472,29 @@ export class LimitPoolManager extends BaseContract {
       syncFees: BigNumberish[],
       fillFees: BigNumberish[],
       setFees: boolean[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     tickSpacings(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
   };
 
@@ -503,12 +503,12 @@ export class LimitPoolManager extends BaseContract {
 
     collectProtocolFees(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     enableTickSpacing(
       tickSpacing: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     factory(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -520,29 +520,29 @@ export class LimitPoolManager extends BaseContract {
       syncFees: BigNumberish[],
       fillFees: BigNumberish[],
       setFees: boolean[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     tickSpacings(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
   };
 }

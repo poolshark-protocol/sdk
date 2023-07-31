@@ -2,29 +2,29 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   CoverTransferErrors,
   CoverTransferErrorsInterface,
-} from "../CoverTransferErrors";
+} from '../CoverTransferErrors';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "address",
-        name: "from",
-        type: "address",
+        internalType: 'address',
+        name: 'from',
+        type: 'address',
       },
       {
-        internalType: "address",
-        name: "dest",
-        type: "address",
+        internalType: 'address',
+        name: 'dest',
+        type: 'address',
       },
     ],
-    name: "TransferFailed",
-    type: "error",
+    name: 'TransferFailed',
+    type: 'error',
   },
 ];
 
@@ -35,7 +35,7 @@ export class CoverTransferErrors__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): CoverTransferErrors {
     return new Contract(address, _abi, signerOrProvider) as CoverTransferErrors;
   }

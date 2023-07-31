@@ -2,500 +2,500 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   CoverPoolModifiers,
   CoverPoolModifiersInterface,
-} from "../CoverPoolModifiers";
+} from '../CoverPoolModifiers';
 
 const _abi = [
   {
     inputs: [],
-    name: "CollectToZeroAddress",
-    type: "error",
+    name: 'CollectToZeroAddress',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "FactoryOnly",
-    type: "error",
+    name: 'FactoryOnly',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidPosition",
-    type: "error",
+    name: 'InvalidPosition',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidSwapFee",
-    type: "error",
+    name: 'InvalidSwapFee',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidTick",
-    type: "error",
+    name: 'InvalidTick',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidTickSpread",
-    type: "error",
+    name: 'InvalidTickSpread',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidToken",
-    type: "error",
+    name: 'InvalidToken',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidTokenDecimals",
-    type: "error",
+    name: 'InvalidTokenDecimals',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "LiquidityOverflow",
-    type: "error",
+    name: 'LiquidityOverflow',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "Locked",
-    type: "error",
+    name: 'Locked',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "LowerNotEvenTick",
-    type: "error",
+    name: 'LowerNotEvenTick',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "MaxTickLiquidity",
-    type: "error",
+    name: 'MaxTickLiquidity',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "NotEnoughOutputLiquidity",
-    type: "error",
+    name: 'NotEnoughOutputLiquidity',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "Overflow",
-    type: "error",
+    name: 'Overflow',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "OwnerOnly",
-    type: "error",
+    name: 'OwnerOnly',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "Token0Missing",
-    type: "error",
+    name: 'Token0Missing',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "Token1Missing",
-    type: "error",
+    name: 'Token1Missing',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "UpperNotOddTick",
-    type: "error",
+    name: 'UpperNotOddTick',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "WaitUntilEnoughObservations",
-    type: "error",
+    name: 'WaitUntilEnoughObservations',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "feeTo",
+    name: 'feeTo',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "globalState",
-    outputs: [
-      {
-        components: [
-          {
-            internalType: "uint128",
-            name: "token0",
-            type: "uint128",
-          },
-          {
-            internalType: "uint128",
-            name: "token1",
-            type: "uint128",
-          },
-        ],
-        internalType: "struct ICoverPoolStructs.ProtocolFees",
-        name: "protocolFees",
-        type: "tuple",
-      },
-      {
-        internalType: "uint160",
-        name: "latestPrice",
-        type: "uint160",
-      },
-      {
-        internalType: "uint128",
-        name: "liquidityGlobal",
-        type: "uint128",
-      },
-      {
-        internalType: "uint32",
-        name: "lastTime",
-        type: "uint32",
-      },
-      {
-        internalType: "uint32",
-        name: "auctionStart",
-        type: "uint32",
-      },
-      {
-        internalType: "uint32",
-        name: "accumEpoch",
-        type: "uint32",
-      },
-      {
-        internalType: "int24",
-        name: "latestTick",
-        type: "int24",
-      },
-      {
-        internalType: "uint16",
-        name: "syncFee",
-        type: "uint16",
-      },
-      {
-        internalType: "uint16",
-        name: "fillFee",
-        type: "uint16",
-      },
-      {
-        internalType: "uint8",
-        name: "unlocked",
-        type: "uint8",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "pool0",
-    outputs: [
-      {
-        internalType: "uint160",
-        name: "price",
-        type: "uint160",
-      },
-      {
-        internalType: "uint128",
-        name: "liquidity",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountInDelta",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountInDeltaMaxClaimed",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountOutDeltaMaxClaimed",
-        type: "uint128",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "pool1",
-    outputs: [
-      {
-        internalType: "uint160",
-        name: "price",
-        type: "uint160",
-      },
-      {
-        internalType: "uint128",
-        name: "liquidity",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountInDelta",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountInDeltaMaxClaimed",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountOutDeltaMaxClaimed",
-        type: "uint128",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-      {
-        internalType: "int24",
-        name: "",
-        type: "int24",
-      },
-      {
-        internalType: "int24",
-        name: "",
-        type: "int24",
-      },
-    ],
-    name: "positions0",
-    outputs: [
-      {
-        internalType: "uint160",
-        name: "claimPriceLast",
-        type: "uint160",
-      },
-      {
-        internalType: "uint128",
-        name: "liquidity",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountIn",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountOut",
-        type: "uint128",
-      },
-      {
-        internalType: "uint32",
-        name: "accumEpochLast",
-        type: "uint32",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "",
-        type: "address",
-      },
-      {
-        internalType: "int24",
-        name: "",
-        type: "int24",
-      },
-      {
-        internalType: "int24",
-        name: "",
-        type: "int24",
-      },
-    ],
-    name: "positions1",
-    outputs: [
-      {
-        internalType: "uint160",
-        name: "claimPriceLast",
-        type: "uint160",
-      },
-      {
-        internalType: "uint128",
-        name: "liquidity",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountIn",
-        type: "uint128",
-      },
-      {
-        internalType: "uint128",
-        name: "amountOut",
-        type: "uint128",
-      },
-      {
-        internalType: "uint32",
-        name: "accumEpochLast",
-        type: "uint32",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [],
-    name: "tickMap",
-    outputs: [
-      {
-        internalType: "uint256",
-        name: "blocks",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "int24",
-        name: "",
-        type: "int24",
-      },
-    ],
-    name: "ticks0",
+    name: 'globalState',
     outputs: [
       {
         components: [
           {
-            internalType: "uint128",
-            name: "amountInDelta",
-            type: "uint128",
+            internalType: 'uint128',
+            name: 'token0',
+            type: 'uint128',
           },
           {
-            internalType: "uint128",
-            name: "amountOutDelta",
-            type: "uint128",
-          },
-          {
-            internalType: "uint128",
-            name: "amountInDeltaMax",
-            type: "uint128",
-          },
-          {
-            internalType: "uint128",
-            name: "amountOutDeltaMax",
-            type: "uint128",
+            internalType: 'uint128',
+            name: 'token1',
+            type: 'uint128',
           },
         ],
-        internalType: "struct ICoverPoolStructs.Deltas",
-        name: "deltas",
-        type: "tuple",
+        internalType: 'struct ICoverPoolStructs.ProtocolFees',
+        name: 'protocolFees',
+        type: 'tuple',
       },
       {
-        internalType: "int128",
-        name: "liquidityDelta",
-        type: "int128",
+        internalType: 'uint160',
+        name: 'latestPrice',
+        type: 'uint160',
       },
       {
-        internalType: "uint128",
-        name: "amountInDeltaMaxMinus",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'liquidityGlobal',
+        type: 'uint128',
       },
       {
-        internalType: "uint128",
-        name: "amountOutDeltaMaxMinus",
-        type: "uint128",
+        internalType: 'uint32',
+        name: 'lastTime',
+        type: 'uint32',
       },
       {
-        internalType: "uint128",
-        name: "amountInDeltaMaxStashed",
-        type: "uint128",
+        internalType: 'uint32',
+        name: 'auctionStart',
+        type: 'uint32',
       },
       {
-        internalType: "uint128",
-        name: "amountOutDeltaMaxStashed",
-        type: "uint128",
+        internalType: 'uint32',
+        name: 'accumEpoch',
+        type: 'uint32',
+      },
+      {
+        internalType: 'int24',
+        name: 'latestTick',
+        type: 'int24',
+      },
+      {
+        internalType: 'uint16',
+        name: 'syncFee',
+        type: 'uint16',
+      },
+      {
+        internalType: 'uint16',
+        name: 'fillFee',
+        type: 'uint16',
+      },
+      {
+        internalType: 'uint8',
+        name: 'unlocked',
+        type: 'uint8',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'pool0',
+    outputs: [
+      {
+        internalType: 'uint160',
+        name: 'price',
+        type: 'uint160',
+      },
+      {
+        internalType: 'uint128',
+        name: 'liquidity',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountInDelta',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountInDeltaMaxClaimed',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountOutDeltaMaxClaimed',
+        type: 'uint128',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'pool1',
+    outputs: [
+      {
+        internalType: 'uint160',
+        name: 'price',
+        type: 'uint160',
+      },
+      {
+        internalType: 'uint128',
+        name: 'liquidity',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountInDelta',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountInDeltaMaxClaimed',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountOutDeltaMaxClaimed',
+        type: 'uint128',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "int24",
-        name: "",
-        type: "int24",
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+      {
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
+      },
+      {
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
       },
     ],
-    name: "ticks1",
+    name: 'positions0',
+    outputs: [
+      {
+        internalType: 'uint160',
+        name: 'claimPriceLast',
+        type: 'uint160',
+      },
+      {
+        internalType: 'uint128',
+        name: 'liquidity',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountIn',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountOut',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint32',
+        name: 'accumEpochLast',
+        type: 'uint32',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'address',
+        name: '',
+        type: 'address',
+      },
+      {
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
+      },
+      {
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
+      },
+    ],
+    name: 'positions1',
+    outputs: [
+      {
+        internalType: 'uint160',
+        name: 'claimPriceLast',
+        type: 'uint160',
+      },
+      {
+        internalType: 'uint128',
+        name: 'liquidity',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountIn',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountOut',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint32',
+        name: 'accumEpochLast',
+        type: 'uint32',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [],
+    name: 'tickMap',
+    outputs: [
+      {
+        internalType: 'uint256',
+        name: 'blocks',
+        type: 'uint256',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
+      },
+    ],
+    name: 'ticks0',
     outputs: [
       {
         components: [
           {
-            internalType: "uint128",
-            name: "amountInDelta",
-            type: "uint128",
+            internalType: 'uint128',
+            name: 'amountInDelta',
+            type: 'uint128',
           },
           {
-            internalType: "uint128",
-            name: "amountOutDelta",
-            type: "uint128",
+            internalType: 'uint128',
+            name: 'amountOutDelta',
+            type: 'uint128',
           },
           {
-            internalType: "uint128",
-            name: "amountInDeltaMax",
-            type: "uint128",
+            internalType: 'uint128',
+            name: 'amountInDeltaMax',
+            type: 'uint128',
           },
           {
-            internalType: "uint128",
-            name: "amountOutDeltaMax",
-            type: "uint128",
+            internalType: 'uint128',
+            name: 'amountOutDeltaMax',
+            type: 'uint128',
           },
         ],
-        internalType: "struct ICoverPoolStructs.Deltas",
-        name: "deltas",
-        type: "tuple",
+        internalType: 'struct ICoverPoolStructs.Deltas',
+        name: 'deltas',
+        type: 'tuple',
       },
       {
-        internalType: "int128",
-        name: "liquidityDelta",
-        type: "int128",
+        internalType: 'int128',
+        name: 'liquidityDelta',
+        type: 'int128',
       },
       {
-        internalType: "uint128",
-        name: "amountInDeltaMaxMinus",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'amountInDeltaMaxMinus',
+        type: 'uint128',
       },
       {
-        internalType: "uint128",
-        name: "amountOutDeltaMaxMinus",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'amountOutDeltaMaxMinus',
+        type: 'uint128',
       },
       {
-        internalType: "uint128",
-        name: "amountInDeltaMaxStashed",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'amountInDeltaMaxStashed',
+        type: 'uint128',
       },
       {
-        internalType: "uint128",
-        name: "amountOutDeltaMaxStashed",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'amountOutDeltaMaxStashed',
+        type: 'uint128',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
+      },
+    ],
+    name: 'ticks1',
+    outputs: [
+      {
+        components: [
+          {
+            internalType: 'uint128',
+            name: 'amountInDelta',
+            type: 'uint128',
+          },
+          {
+            internalType: 'uint128',
+            name: 'amountOutDelta',
+            type: 'uint128',
+          },
+          {
+            internalType: 'uint128',
+            name: 'amountInDeltaMax',
+            type: 'uint128',
+          },
+          {
+            internalType: 'uint128',
+            name: 'amountOutDeltaMax',
+            type: 'uint128',
+          },
+        ],
+        internalType: 'struct ICoverPoolStructs.Deltas',
+        name: 'deltas',
+        type: 'tuple',
+      },
+      {
+        internalType: 'int128',
+        name: 'liquidityDelta',
+        type: 'int128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountInDeltaMaxMinus',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountOutDeltaMaxMinus',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountInDeltaMaxStashed',
+        type: 'uint128',
+      },
+      {
+        internalType: 'uint128',
+        name: 'amountOutDeltaMaxStashed',
+        type: 'uint128',
+      },
+    ],
+    stateMutability: 'view',
+    type: 'function',
   },
 ];
 
@@ -506,7 +506,7 @@ export class CoverPoolModifiers__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): CoverPoolModifiers {
     return new Contract(address, _abi, signerOrProvider) as CoverPoolModifiers;
   }

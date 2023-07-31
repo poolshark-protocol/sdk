@@ -13,108 +13,108 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface RangePoolManagerInterface extends ethers.utils.Interface {
   functions: {
-    "_owner()": FunctionFragment;
-    "collectTopPools(address[])": FunctionFragment;
-    "enableFeeTier(uint16,int24)": FunctionFragment;
-    "factory()": FunctionFragment;
-    "feeTiers(uint16)": FunctionFragment;
-    "feeTo()": FunctionFragment;
-    "owner()": FunctionFragment;
-    "protocolFees(address)": FunctionFragment;
-    "setFactory(address)": FunctionFragment;
-    "setTopPools(address[],address[],uint16)": FunctionFragment;
-    "transferFeeTo(address)": FunctionFragment;
-    "transferOwner(address)": FunctionFragment;
+    '_owner()': FunctionFragment;
+    'collectTopPools(address[])': FunctionFragment;
+    'enableFeeTier(uint16,int24)': FunctionFragment;
+    'factory()': FunctionFragment;
+    'feeTiers(uint16)': FunctionFragment;
+    'feeTo()': FunctionFragment;
+    'owner()': FunctionFragment;
+    'protocolFees(address)': FunctionFragment;
+    'setFactory(address)': FunctionFragment;
+    'setTopPools(address[],address[],uint16)': FunctionFragment;
+    'transferFeeTo(address)': FunctionFragment;
+    'transferOwner(address)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "_owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: '_owner', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "collectTopPools",
-    values: [string[]]
+    functionFragment: 'collectTopPools',
+    values: [string[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "enableFeeTier",
-    values: [BigNumberish, BigNumberish]
+    functionFragment: 'enableFeeTier',
+    values: [BigNumberish, BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "feeTiers",
-    values: [BigNumberish]
+    functionFragment: 'feeTiers',
+    values: [BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "feeTo", values?: undefined): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'feeTo', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "protocolFees",
-    values: [string]
+    functionFragment: 'protocolFees',
+    values: [string],
   ): string;
-  encodeFunctionData(functionFragment: "setFactory", values: [string]): string;
+  encodeFunctionData(functionFragment: 'setFactory', values: [string]): string;
   encodeFunctionData(
-    functionFragment: "setTopPools",
-    values: [string[], string[], BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "transferFeeTo",
-    values: [string]
+    functionFragment: 'setTopPools',
+    values: [string[], string[], BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "transferOwner",
-    values: [string]
+    functionFragment: 'transferFeeTo',
+    values: [string],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'transferOwner',
+    values: [string],
   ): string;
 
-  decodeFunctionResult(functionFragment: "_owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: '_owner', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "collectTopPools",
-    data: BytesLike
+    functionFragment: 'collectTopPools',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "enableFeeTier",
-    data: BytesLike
+    functionFragment: 'enableFeeTier',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "feeTiers", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "feeTo", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTiers', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTo', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "protocolFees",
-    data: BytesLike
+    functionFragment: 'protocolFees',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "setFactory", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'setFactory', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "setTopPools",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "transferFeeTo",
-    data: BytesLike
+    functionFragment: 'setTopPools',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "transferOwner",
-    data: BytesLike
+    functionFragment: 'transferFeeTo',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'transferOwner',
+    data: BytesLike,
   ): Result;
 
   events: {
-    "FactoryChanged(address,address)": EventFragment;
-    "FeeTierEnabled(uint16,int24)": EventFragment;
-    "FeeToTransfer(address,address)": EventFragment;
-    "OwnerTransfer(address,address)": EventFragment;
-    "ProtocolFeeCollected(address[],uint128[],uint128[])": EventFragment;
-    "ProtocolFeeUpdated(address[],uint16)": EventFragment;
+    'FactoryChanged(address,address)': EventFragment;
+    'FeeTierEnabled(uint16,int24)': EventFragment;
+    'FeeToTransfer(address,address)': EventFragment;
+    'OwnerTransfer(address,address)': EventFragment;
+    'ProtocolFeeCollected(address[],uint128[],uint128[])': EventFragment;
+    'ProtocolFeeUpdated(address[],uint16)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "FactoryChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "FeeTierEnabled"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "FeeToTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnerTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeeCollected"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeeUpdated"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FactoryChanged'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FeeTierEnabled'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FeeToTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'OwnerTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeeCollected'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeeUpdated'): EventFragment;
 }
 
 export type FactoryChangedEvent = TypedEvent<
@@ -151,26 +151,26 @@ export class RangePoolManager extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -183,7 +183,7 @@ export class RangePoolManager extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: RangePoolManagerInterface;
@@ -193,13 +193,13 @@ export class RangePoolManager extends BaseContract {
 
     collectTopPools(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     enableFeeTier(
       swapFee: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     factory(overrides?: CallOverrides): Promise<[string]>;
@@ -214,24 +214,24 @@ export class RangePoolManager extends BaseContract {
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     setTopPools(
       removePools: string[],
       addPools: string[],
       protocolFee: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
   };
 
@@ -239,13 +239,13 @@ export class RangePoolManager extends BaseContract {
 
   collectTopPools(
     collectPools: string[],
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   enableFeeTier(
     swapFee: BigNumberish,
     tickSpacing: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   factory(overrides?: CallOverrides): Promise<string>;
@@ -260,24 +260,24 @@ export class RangePoolManager extends BaseContract {
 
   setFactory(
     factory_: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   setTopPools(
     removePools: string[],
     addPools: string[],
     protocolFee: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   transferFeeTo(
     newFeeTo: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   transferOwner(
     newOwner: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   callStatic: {
@@ -285,13 +285,13 @@ export class RangePoolManager extends BaseContract {
 
     collectTopPools(
       collectPools: string[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     enableFeeTier(
       swapFee: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     factory(overrides?: CallOverrides): Promise<string>;
@@ -310,7 +310,7 @@ export class RangePoolManager extends BaseContract {
       removePools: string[],
       addPools: string[],
       protocolFee: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     transferFeeTo(newFeeTo: string, overrides?: CallOverrides): Promise<void>;
@@ -319,9 +319,9 @@ export class RangePoolManager extends BaseContract {
   };
 
   filters: {
-    "FactoryChanged(address,address)"(
+    'FactoryChanged(address,address)'(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
@@ -329,15 +329,15 @@ export class RangePoolManager extends BaseContract {
 
     FactoryChanged(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
     >;
 
-    "FeeTierEnabled(uint16,int24)"(
+    'FeeTierEnabled(uint16,int24)'(
       swapFee?: null,
-      tickSpacing?: null
+      tickSpacing?: null,
     ): TypedEventFilter<
       [number, number],
       { swapFee: number; tickSpacing: number }
@@ -345,15 +345,15 @@ export class RangePoolManager extends BaseContract {
 
     FeeTierEnabled(
       swapFee?: null,
-      tickSpacing?: null
+      tickSpacing?: null,
     ): TypedEventFilter<
       [number, number],
       { swapFee: number; tickSpacing: number }
     >;
 
-    "FeeToTransfer(address,address)"(
+    'FeeToTransfer(address,address)'(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
@@ -361,15 +361,15 @@ export class RangePoolManager extends BaseContract {
 
     FeeToTransfer(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
     >;
 
-    "OwnerTransfer(address,address)"(
+    'OwnerTransfer(address,address)'(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
@@ -377,16 +377,16 @@ export class RangePoolManager extends BaseContract {
 
     OwnerTransfer(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
     >;
 
-    "ProtocolFeeCollected(address[],uint128[],uint128[])"(
+    'ProtocolFeeCollected(address[],uint128[],uint128[])'(
       pool?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       { pool: string[]; token0Fees: BigNumber[]; token1Fees: BigNumber[] }
@@ -395,15 +395,15 @@ export class RangePoolManager extends BaseContract {
     ProtocolFeeCollected(
       pool?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       { pool: string[]; token0Fees: BigNumber[]; token1Fees: BigNumber[] }
     >;
 
-    "ProtocolFeeUpdated(address[],uint16)"(
+    'ProtocolFeeUpdated(address[],uint16)'(
       pool?: null,
-      protocolFee?: null
+      protocolFee?: null,
     ): TypedEventFilter<
       [string[], number],
       { pool: string[]; protocolFee: number }
@@ -411,7 +411,7 @@ export class RangePoolManager extends BaseContract {
 
     ProtocolFeeUpdated(
       pool?: null,
-      protocolFee?: null
+      protocolFee?: null,
     ): TypedEventFilter<
       [string[], number],
       { pool: string[]; protocolFee: number }
@@ -423,13 +423,13 @@ export class RangePoolManager extends BaseContract {
 
     collectTopPools(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     enableFeeTier(
       swapFee: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     factory(overrides?: CallOverrides): Promise<BigNumber>;
@@ -444,24 +444,24 @@ export class RangePoolManager extends BaseContract {
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     setTopPools(
       removePools: string[],
       addPools: string[],
       protocolFee: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
   };
 
@@ -470,20 +470,20 @@ export class RangePoolManager extends BaseContract {
 
     collectTopPools(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     enableFeeTier(
       swapFee: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     factory(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     feeTiers(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     feeTo(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -492,29 +492,29 @@ export class RangePoolManager extends BaseContract {
 
     protocolFees(
       arg0: string,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     setTopPools(
       removePools: string[],
       addPools: string[],
       protocolFee: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
   };
 }

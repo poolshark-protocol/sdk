@@ -13,68 +13,68 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface UniswapV3PoolMockInterface extends ethers.utils.Interface {
   functions: {
-    "increaseObservationCardinalityNext(uint16)": FunctionFragment;
-    "observe(uint32[])": FunctionFragment;
-    "setObservationCardinality(uint16,uint16)": FunctionFragment;
-    "setTickCumulatives(int56,int56,int56,int56)": FunctionFragment;
-    "slot0()": FunctionFragment;
-    "tickSpacing()": FunctionFragment;
-    "token0()": FunctionFragment;
-    "token1()": FunctionFragment;
+    'increaseObservationCardinalityNext(uint16)': FunctionFragment;
+    'observe(uint32[])': FunctionFragment;
+    'setObservationCardinality(uint16,uint16)': FunctionFragment;
+    'setTickCumulatives(int56,int56,int56,int56)': FunctionFragment;
+    'slot0()': FunctionFragment;
+    'tickSpacing()': FunctionFragment;
+    'token0()': FunctionFragment;
+    'token1()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "increaseObservationCardinalityNext",
-    values: [BigNumberish]
+    functionFragment: 'increaseObservationCardinalityNext',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "observe",
-    values: [BigNumberish[]]
+    functionFragment: 'observe',
+    values: [BigNumberish[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "setObservationCardinality",
-    values: [BigNumberish, BigNumberish]
+    functionFragment: 'setObservationCardinality',
+    values: [BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "setTickCumulatives",
-    values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish]
+    functionFragment: 'setTickCumulatives',
+    values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "slot0", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'slot0', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "tickSpacing",
-    values?: undefined
+    functionFragment: 'tickSpacing',
+    values?: undefined,
   ): string;
-  encodeFunctionData(functionFragment: "token0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "token1", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token1', values?: undefined): string;
 
   decodeFunctionResult(
-    functionFragment: "increaseObservationCardinalityNext",
-    data: BytesLike
+    functionFragment: 'increaseObservationCardinalityNext',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "observe", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'observe', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "setObservationCardinality",
-    data: BytesLike
+    functionFragment: 'setObservationCardinality',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "setTickCumulatives",
-    data: BytesLike
+    functionFragment: 'setTickCumulatives',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "slot0", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'slot0', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "tickSpacing",
-    data: BytesLike
+    functionFragment: 'tickSpacing',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "token0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token1', data: BytesLike): Result;
 
   events: {};
 }
@@ -85,26 +85,26 @@ export class UniswapV3PoolMock extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -117,7 +117,7 @@ export class UniswapV3PoolMock extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: UniswapV3PoolMockInterface;
@@ -125,12 +125,12 @@ export class UniswapV3PoolMock extends BaseContract {
   functions: {
     increaseObservationCardinalityNext(
       cardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     observe(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[]] & {
         tickCumulatives: BigNumber[];
@@ -141,7 +141,7 @@ export class UniswapV3PoolMock extends BaseContract {
     setObservationCardinality(
       _observationCardinality: BigNumberish,
       _observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     setTickCumulatives(
@@ -149,12 +149,10 @@ export class UniswapV3PoolMock extends BaseContract {
       _tickCumulative1: BigNumberish,
       _tickCumulative2: BigNumberish,
       _tickCumulative3: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
-    slot0(
-      overrides?: CallOverrides
-    ): Promise<
+    slot0(overrides?: CallOverrides): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         sqrtPriceX96: BigNumber;
         tick: number;
@@ -175,12 +173,12 @@ export class UniswapV3PoolMock extends BaseContract {
 
   increaseObservationCardinalityNext(
     cardinalityNext: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   observe(
     secondsAgos: BigNumberish[],
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber[], BigNumber[]] & {
       tickCumulatives: BigNumber[];
@@ -191,7 +189,7 @@ export class UniswapV3PoolMock extends BaseContract {
   setObservationCardinality(
     _observationCardinality: BigNumberish,
     _observationCardinalityNext: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   setTickCumulatives(
@@ -199,12 +197,10 @@ export class UniswapV3PoolMock extends BaseContract {
     _tickCumulative1: BigNumberish,
     _tickCumulative2: BigNumberish,
     _tickCumulative3: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
-  slot0(
-    overrides?: CallOverrides
-  ): Promise<
+  slot0(overrides?: CallOverrides): Promise<
     [BigNumber, number, number, number, number, number, boolean] & {
       sqrtPriceX96: BigNumber;
       tick: number;
@@ -225,12 +221,12 @@ export class UniswapV3PoolMock extends BaseContract {
   callStatic: {
     increaseObservationCardinalityNext(
       cardinalityNext: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     observe(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[]] & {
         tickCumulatives: BigNumber[];
@@ -241,7 +237,7 @@ export class UniswapV3PoolMock extends BaseContract {
     setObservationCardinality(
       _observationCardinality: BigNumberish,
       _observationCardinalityNext: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     setTickCumulatives(
@@ -249,12 +245,10 @@ export class UniswapV3PoolMock extends BaseContract {
       _tickCumulative1: BigNumberish,
       _tickCumulative2: BigNumberish,
       _tickCumulative3: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
-    slot0(
-      overrides?: CallOverrides
-    ): Promise<
+    slot0(overrides?: CallOverrides): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         sqrtPriceX96: BigNumber;
         tick: number;
@@ -278,18 +272,18 @@ export class UniswapV3PoolMock extends BaseContract {
   estimateGas: {
     increaseObservationCardinalityNext(
       cardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     observe(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     setObservationCardinality(
       _observationCardinality: BigNumberish,
       _observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     setTickCumulatives(
@@ -297,7 +291,7 @@ export class UniswapV3PoolMock extends BaseContract {
       _tickCumulative1: BigNumberish,
       _tickCumulative2: BigNumberish,
       _tickCumulative3: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     slot0(overrides?: CallOverrides): Promise<BigNumber>;
@@ -312,18 +306,18 @@ export class UniswapV3PoolMock extends BaseContract {
   populateTransaction: {
     increaseObservationCardinalityNext(
       cardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     observe(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     setObservationCardinality(
       _observationCardinality: BigNumberish,
       _observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     setTickCumulatives(
@@ -331,7 +325,7 @@ export class UniswapV3PoolMock extends BaseContract {
       _tickCumulative1: BigNumberish,
       _tickCumulative2: BigNumberish,
       _tickCumulative3: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     slot0(overrides?: CallOverrides): Promise<PopulatedTransaction>;

@@ -13,64 +13,64 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface CoverPoolFactoryInterface extends ethers.utils.Interface {
   functions: {
-    "coverPools(bytes32)": FunctionFragment;
-    "createCoverPool(bytes32,address,address,uint16,int16,uint16)": FunctionFragment;
-    "getCoverPool(bytes32,address,address,uint16,int16,uint16)": FunctionFragment;
-    "owner()": FunctionFragment;
+    'coverPools(bytes32)': FunctionFragment;
+    'createCoverPool(bytes32,address,address,uint16,int16,uint16)': FunctionFragment;
+    'getCoverPool(bytes32,address,address,uint16,int16,uint16)': FunctionFragment;
+    'owner()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "coverPools",
-    values: [BytesLike]
+    functionFragment: 'coverPools',
+    values: [BytesLike],
   ): string;
   encodeFunctionData(
-    functionFragment: "createCoverPool",
+    functionFragment: 'createCoverPool',
     values: [
       BytesLike,
       string,
       string,
       BigNumberish,
       BigNumberish,
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "getCoverPool",
+    functionFragment: 'getCoverPool',
     values: [
       BytesLike,
       string,
       string,
       BigNumberish,
       BigNumberish,
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "coverPools", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'coverPools', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "createCoverPool",
-    data: BytesLike
+    functionFragment: 'createCoverPool',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getCoverPool",
-    data: BytesLike
+    functionFragment: 'getCoverPool',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
 
   events: {
-    "PoolCreated(address,address,address,address,address,uint16,int16,uint16)": EventFragment;
+    'PoolCreated(address,address,address,address,address,uint16,int16,uint16)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "PoolCreated"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'PoolCreated'): EventFragment;
 }
 
 export type PoolCreatedEvent = TypedEvent<
@@ -92,26 +92,26 @@ export class CoverPoolFactory extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -124,7 +124,7 @@ export class CoverPoolFactory extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: CoverPoolFactoryInterface;
@@ -139,7 +139,7 @@ export class CoverPoolFactory extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     getCoverPool(
@@ -149,7 +149,7 @@ export class CoverPoolFactory extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
@@ -164,7 +164,7 @@ export class CoverPoolFactory extends BaseContract {
     feeTier: BigNumberish,
     tickSpread: BigNumberish,
     twapLength: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   getCoverPool(
@@ -174,7 +174,7 @@ export class CoverPoolFactory extends BaseContract {
     feeTier: BigNumberish,
     tickSpread: BigNumberish,
     twapLength: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   owner(overrides?: CallOverrides): Promise<string>;
@@ -189,7 +189,7 @@ export class CoverPoolFactory extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     getCoverPool(
@@ -199,14 +199,14 @@ export class CoverPoolFactory extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     owner(overrides?: CallOverrides): Promise<string>;
   };
 
   filters: {
-    "PoolCreated(address,address,address,address,address,uint16,int16,uint16)"(
+    'PoolCreated(address,address,address,address,address,uint16,int16,uint16)'(
       pool?: null,
       twapSource?: null,
       inputPool?: null,
@@ -214,7 +214,7 @@ export class CoverPoolFactory extends BaseContract {
       token1?: string | null,
       fee?: null,
       tickSpread?: BigNumberish | null,
-      twapLength?: null
+      twapLength?: null,
     ): TypedEventFilter<
       [string, string, string, string, string, number, number, number],
       {
@@ -237,7 +237,7 @@ export class CoverPoolFactory extends BaseContract {
       token1?: string | null,
       fee?: null,
       tickSpread?: BigNumberish | null,
-      twapLength?: null
+      twapLength?: null,
     ): TypedEventFilter<
       [string, string, string, string, string, number, number, number],
       {
@@ -263,7 +263,7 @@ export class CoverPoolFactory extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     getCoverPool(
@@ -273,7 +273,7 @@ export class CoverPoolFactory extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
@@ -282,7 +282,7 @@ export class CoverPoolFactory extends BaseContract {
   populateTransaction: {
     coverPools(
       arg0: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     createCoverPool(
@@ -292,7 +292,7 @@ export class CoverPoolFactory extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     getCoverPool(
@@ -302,7 +302,7 @@ export class CoverPoolFactory extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;

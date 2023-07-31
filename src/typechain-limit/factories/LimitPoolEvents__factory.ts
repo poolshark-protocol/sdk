@@ -2,12 +2,12 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   LimitPoolEvents,
   LimitPoolEventsInterface,
-} from "../LimitPoolEvents";
+} from '../LimitPoolEvents';
 
 const _abi = [
   {
@@ -15,184 +15,184 @@ const _abi = [
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "to",
-        type: "address",
+        internalType: 'address',
+        name: 'to',
+        type: 'address',
       },
       {
         indexed: false,
-        internalType: "int24",
-        name: "lower",
-        type: "int24",
+        internalType: 'int24',
+        name: 'lower',
+        type: 'int24',
       },
       {
         indexed: false,
-        internalType: "int24",
-        name: "upper",
-        type: "int24",
+        internalType: 'int24',
+        name: 'upper',
+        type: 'int24',
       },
       {
         indexed: false,
-        internalType: "int24",
-        name: "claim",
-        type: "int24",
+        internalType: 'int24',
+        name: 'claim',
+        type: 'int24',
       },
       {
         indexed: false,
-        internalType: "bool",
-        name: "zeroForOne",
-        type: "bool",
+        internalType: 'bool',
+        name: 'zeroForOne',
+        type: 'bool',
       },
       {
         indexed: false,
-        internalType: "uint128",
-        name: "liquidityBurned",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'liquidityBurned',
+        type: 'uint128',
       },
       {
         indexed: false,
-        internalType: "uint128",
-        name: "tokenInClaimed",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'tokenInClaimed',
+        type: 'uint128',
       },
       {
         indexed: false,
-        internalType: "uint128",
-        name: "tokenOutBurned",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'tokenOutBurned',
+        type: 'uint128',
       },
     ],
-    name: "BurnLimit",
-    type: "event",
+    name: 'BurnLimit',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: false,
-        internalType: "int24",
-        name: "minTick",
-        type: "int24",
+        internalType: 'int24',
+        name: 'minTick',
+        type: 'int24',
       },
       {
         indexed: false,
-        internalType: "int24",
-        name: "maxTick",
-        type: "int24",
+        internalType: 'int24',
+        name: 'maxTick',
+        type: 'int24',
       },
       {
         indexed: false,
-        internalType: "uint160",
-        name: "startPrice",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'startPrice',
+        type: 'uint160',
       },
     ],
-    name: "Initialize",
-    type: "event",
-  },
-  {
-    anonymous: false,
-    inputs: [
-      {
-        indexed: true,
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-      {
-        indexed: false,
-        internalType: "int24",
-        name: "lower",
-        type: "int24",
-      },
-      {
-        indexed: false,
-        internalType: "int24",
-        name: "upper",
-        type: "int24",
-      },
-      {
-        indexed: false,
-        internalType: "bool",
-        name: "zeroForOne",
-        type: "bool",
-      },
-      {
-        indexed: false,
-        internalType: "uint32",
-        name: "epochLast",
-        type: "uint32",
-      },
-      {
-        indexed: false,
-        internalType: "uint128",
-        name: "amountIn",
-        type: "uint128",
-      },
-      {
-        indexed: false,
-        internalType: "uint128",
-        name: "amountFilled",
-        type: "uint128",
-      },
-      {
-        indexed: false,
-        internalType: "uint128",
-        name: "liquidityMinted",
-        type: "uint128",
-      },
-    ],
-    name: "MintLimit",
-    type: "event",
+    name: 'Initialize',
+    type: 'event',
   },
   {
     anonymous: false,
     inputs: [
       {
         indexed: true,
-        internalType: "address",
-        name: "recipient",
-        type: "address",
+        internalType: 'address',
+        name: 'to',
+        type: 'address',
       },
       {
         indexed: false,
-        internalType: "bool",
-        name: "zeroForOne",
-        type: "bool",
+        internalType: 'int24',
+        name: 'lower',
+        type: 'int24',
       },
       {
         indexed: false,
-        internalType: "uint256",
-        name: "amountIn",
-        type: "uint256",
+        internalType: 'int24',
+        name: 'upper',
+        type: 'int24',
       },
       {
         indexed: false,
-        internalType: "uint256",
-        name: "amountOut",
-        type: "uint256",
+        internalType: 'bool',
+        name: 'zeroForOne',
+        type: 'bool',
       },
       {
         indexed: false,
-        internalType: "uint160",
-        name: "price",
-        type: "uint160",
+        internalType: 'uint32',
+        name: 'epochLast',
+        type: 'uint32',
       },
       {
         indexed: false,
-        internalType: "uint128",
-        name: "liquidity",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'amountIn',
+        type: 'uint128',
       },
       {
         indexed: false,
-        internalType: "int24",
-        name: "tickAtPrice",
-        type: "int24",
+        internalType: 'uint128',
+        name: 'amountFilled',
+        type: 'uint128',
+      },
+      {
+        indexed: false,
+        internalType: 'uint128',
+        name: 'liquidityMinted',
+        type: 'uint128',
       },
     ],
-    name: "Swap",
-    type: "event",
+    name: 'MintLimit',
+    type: 'event',
+  },
+  {
+    anonymous: false,
+    inputs: [
+      {
+        indexed: true,
+        internalType: 'address',
+        name: 'recipient',
+        type: 'address',
+      },
+      {
+        indexed: false,
+        internalType: 'bool',
+        name: 'zeroForOne',
+        type: 'bool',
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'amountIn',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        internalType: 'uint256',
+        name: 'amountOut',
+        type: 'uint256',
+      },
+      {
+        indexed: false,
+        internalType: 'uint160',
+        name: 'price',
+        type: 'uint160',
+      },
+      {
+        indexed: false,
+        internalType: 'uint128',
+        name: 'liquidity',
+        type: 'uint128',
+      },
+      {
+        indexed: false,
+        internalType: 'int24',
+        name: 'tickAtPrice',
+        type: 'int24',
+      },
+    ],
+    name: 'Swap',
+    type: 'event',
   },
 ];
 
@@ -203,7 +203,7 @@ export class LimitPoolEvents__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): LimitPoolEvents {
     return new Contract(address, _abi, signerOrProvider) as LimitPoolEvents;
   }

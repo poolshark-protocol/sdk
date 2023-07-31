@@ -12,34 +12,34 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface ITickMathInterface extends ethers.utils.Interface {
   functions: {
-    "checkPrice(uint160,(uint160,uint160))": FunctionFragment;
-    "checkTicks(int24,int24,int16)": FunctionFragment;
-    "getPriceAtTick(int24,(address,(uint160,uint160),address,address,int16))": FunctionFragment;
-    "getTickAtPrice(uint160,(address,(uint160,uint160),address,address,int16))": FunctionFragment;
-    "maxPrice(int16)": FunctionFragment;
-    "maxTick(int16)": FunctionFragment;
-    "minPrice(int16)": FunctionFragment;
-    "minTick(int16)": FunctionFragment;
+    'checkPrice(uint160,(uint160,uint160))': FunctionFragment;
+    'checkTicks(int24,int24,int16)': FunctionFragment;
+    'getPriceAtTick(int24,(address,(uint160,uint160),address,address,int16))': FunctionFragment;
+    'getTickAtPrice(uint160,(address,(uint160,uint160),address,address,int16))': FunctionFragment;
+    'maxPrice(int16)': FunctionFragment;
+    'maxTick(int16)': FunctionFragment;
+    'minPrice(int16)': FunctionFragment;
+    'minTick(int16)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "checkPrice",
-    values: [BigNumberish, { min: BigNumberish; max: BigNumberish }]
+    functionFragment: 'checkPrice',
+    values: [BigNumberish, { min: BigNumberish; max: BigNumberish }],
   ): string;
   encodeFunctionData(
-    functionFragment: "checkTicks",
-    values: [BigNumberish, BigNumberish, BigNumberish]
+    functionFragment: 'checkTicks',
+    values: [BigNumberish, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "getPriceAtTick",
+    functionFragment: 'getPriceAtTick',
     values: [
       BigNumberish,
       {
@@ -48,11 +48,11 @@ interface ITickMathInterface extends ethers.utils.Interface {
         token0: string;
         token1: string;
         tickSpacing: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "getTickAtPrice",
+    functionFragment: 'getTickAtPrice',
     values: [
       BigNumberish,
       {
@@ -61,40 +61,40 @@ interface ITickMathInterface extends ethers.utils.Interface {
         token0: string;
         token1: string;
         tickSpacing: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "maxPrice",
-    values: [BigNumberish]
+    functionFragment: 'maxPrice',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "maxTick",
-    values: [BigNumberish]
+    functionFragment: 'maxTick',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "minPrice",
-    values: [BigNumberish]
+    functionFragment: 'minPrice',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "minTick",
-    values: [BigNumberish]
+    functionFragment: 'minTick',
+    values: [BigNumberish],
   ): string;
 
-  decodeFunctionResult(functionFragment: "checkPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "checkTicks", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'checkPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'checkTicks', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "getPriceAtTick",
-    data: BytesLike
+    functionFragment: 'getPriceAtTick',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getTickAtPrice",
-    data: BytesLike
+    functionFragment: 'getTickAtPrice',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "maxPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "maxTick", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "minPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "minTick", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'maxPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'maxTick', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'minPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'minTick', data: BytesLike): Result;
 
   events: {};
 }
@@ -105,26 +105,26 @@ export class ITickMath extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -137,7 +137,7 @@ export class ITickMath extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: ITickMathInterface;
@@ -146,14 +146,14 @@ export class ITickMath extends BaseContract {
     checkPrice(
       price: BigNumberish,
       bounds: { min: BigNumberish; max: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[void]>;
 
     checkTicks(
       lower: BigNumberish,
       upper: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[void]>;
 
     getPriceAtTick(
@@ -165,7 +165,7 @@ export class ITickMath extends BaseContract {
         token1: string;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { price: BigNumber }>;
 
     getTickAtPrice(
@@ -177,41 +177,41 @@ export class ITickMath extends BaseContract {
         token1: string;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { tick: number }>;
 
     maxPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { maxPrice: BigNumber }>;
 
     maxTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { tick: number }>;
 
     minPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { minPrice: BigNumber }>;
 
     minTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { tick: number }>;
   };
 
   checkPrice(
     price: BigNumberish,
     bounds: { min: BigNumberish; max: BigNumberish },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<void>;
 
   checkTicks(
     lower: BigNumberish,
     upper: BigNumberish,
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<void>;
 
   getPriceAtTick(
@@ -223,7 +223,7 @@ export class ITickMath extends BaseContract {
       token1: string;
       tickSpacing: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getTickAtPrice(
@@ -235,41 +235,41 @@ export class ITickMath extends BaseContract {
       token1: string;
       tickSpacing: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   maxPrice(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   maxTick(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   minPrice(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   minTick(
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   callStatic: {
     checkPrice(
       price: BigNumberish,
       bounds: { min: BigNumberish; max: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     checkTicks(
       lower: BigNumberish,
       upper: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     getPriceAtTick(
@@ -281,7 +281,7 @@ export class ITickMath extends BaseContract {
         token1: string;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getTickAtPrice(
@@ -293,27 +293,27 @@ export class ITickMath extends BaseContract {
         token1: string;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
 
     maxPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     maxTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
 
     minPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     minTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
   };
 
@@ -323,14 +323,14 @@ export class ITickMath extends BaseContract {
     checkPrice(
       price: BigNumberish,
       bounds: { min: BigNumberish; max: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     checkTicks(
       lower: BigNumberish,
       upper: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getPriceAtTick(
@@ -342,7 +342,7 @@ export class ITickMath extends BaseContract {
         token1: string;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getTickAtPrice(
@@ -354,27 +354,27 @@ export class ITickMath extends BaseContract {
         token1: string;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     maxPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     maxTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     minPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     minTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -382,14 +382,14 @@ export class ITickMath extends BaseContract {
     checkPrice(
       price: BigNumberish,
       bounds: { min: BigNumberish; max: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     checkTicks(
       lower: BigNumberish,
       upper: BigNumberish,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getPriceAtTick(
@@ -401,7 +401,7 @@ export class ITickMath extends BaseContract {
         token1: string;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getTickAtPrice(
@@ -413,27 +413,27 @@ export class ITickMath extends BaseContract {
         token1: string;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     maxPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     maxTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     minPrice(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     minTick(
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

@@ -13,41 +13,41 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface LimitPoolInterface extends ethers.utils.Interface {
   functions: {
-    "burn((address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "feeTo()": FunctionFragment;
-    "fees(uint16,uint16,bool)": FunctionFragment;
-    "globalState()": FunctionFragment;
-    "immutables()": FunctionFragment;
-    "initialize((address,address,address,uint160,uint160,uint160,int16))": FunctionFragment;
-    "maxPrice()": FunctionFragment;
-    "minPrice()": FunctionFragment;
-    "mint((address,address,uint128,uint96,int24,int24,bool))": FunctionFragment;
-    "owner()": FunctionFragment;
-    "pool0()": FunctionFragment;
-    "pool1()": FunctionFragment;
-    "positions0(address,int24,int24)": FunctionFragment;
-    "positions1(address,int24,int24)": FunctionFragment;
-    "quote((uint160,uint128,bool,bool))": FunctionFragment;
-    "snapshot((address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "swap((address,uint160,uint128,bool,bool,bytes))": FunctionFragment;
-    "tickMap()": FunctionFragment;
-    "tickSpacing()": FunctionFragment;
-    "ticks0(int24)": FunctionFragment;
-    "ticks1(int24)": FunctionFragment;
-    "token0()": FunctionFragment;
-    "token1()": FunctionFragment;
+    'burn((address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'feeTo()': FunctionFragment;
+    'fees(uint16,uint16,bool)': FunctionFragment;
+    'globalState()': FunctionFragment;
+    'immutables()': FunctionFragment;
+    'initialize((address,address,address,uint160,uint160,uint160,int16))': FunctionFragment;
+    'maxPrice()': FunctionFragment;
+    'minPrice()': FunctionFragment;
+    'mint((address,address,uint128,uint96,int24,int24,bool))': FunctionFragment;
+    'owner()': FunctionFragment;
+    'pool0()': FunctionFragment;
+    'pool1()': FunctionFragment;
+    'positions0(address,int24,int24)': FunctionFragment;
+    'positions1(address,int24,int24)': FunctionFragment;
+    'quote((uint160,uint128,bool,bool))': FunctionFragment;
+    'snapshot((address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'swap((address,uint160,uint128,bool,bool,bytes))': FunctionFragment;
+    'tickMap()': FunctionFragment;
+    'tickSpacing()': FunctionFragment;
+    'ticks0(int24)': FunctionFragment;
+    'ticks1(int24)': FunctionFragment;
+    'token0()': FunctionFragment;
+    'token1()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "burn",
+    functionFragment: 'burn',
     values: [
       {
         to: string;
@@ -56,24 +56,24 @@ interface LimitPoolInterface extends ethers.utils.Interface {
         claim: BigNumberish;
         upper: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "feeTo", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'feeTo', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "fees",
-    values: [BigNumberish, BigNumberish, boolean]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "globalState",
-    values?: undefined
+    functionFragment: 'fees',
+    values: [BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "immutables",
-    values?: undefined
+    functionFragment: 'globalState',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "initialize",
+    functionFragment: 'immutables',
+    values?: undefined,
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'initialize',
     values: [
       {
         owner: string;
@@ -83,13 +83,13 @@ interface LimitPoolInterface extends ethers.utils.Interface {
         maxPrice: BigNumberish;
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "maxPrice", values?: undefined): string;
-  encodeFunctionData(functionFragment: "minPrice", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'maxPrice', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'minPrice', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "mint",
+    functionFragment: 'mint',
     values: [
       {
         to: string;
@@ -99,33 +99,33 @@ interface LimitPoolInterface extends ethers.utils.Interface {
         lower: BigNumberish;
         upper: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(functionFragment: "pool0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "pool1", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'pool0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'pool1', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "positions0",
-    values: [string, BigNumberish, BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "positions1",
-    values: [string, BigNumberish, BigNumberish]
+    functionFragment: 'positions0',
+    values: [string, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "quote",
+    functionFragment: 'positions1',
+    values: [string, BigNumberish, BigNumberish],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'quote',
     values: [
       {
         priceLimit: BigNumberish;
         amount: BigNumberish;
         exactIn: boolean;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "snapshot",
+    functionFragment: 'snapshot',
     values: [
       {
         owner: string;
@@ -134,11 +134,11 @@ interface LimitPoolInterface extends ethers.utils.Interface {
         upper: BigNumberish;
         claim: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "swap",
+    functionFragment: 'swap',
     values: [
       {
         to: string;
@@ -147,54 +147,54 @@ interface LimitPoolInterface extends ethers.utils.Interface {
         exactIn: boolean;
         zeroForOne: boolean;
         callbackData: BytesLike;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "tickMap", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'tickMap', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "tickSpacing",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "ticks0",
-    values: [BigNumberish]
+    functionFragment: 'tickSpacing',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "ticks1",
-    values: [BigNumberish]
+    functionFragment: 'ticks0',
+    values: [BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "token0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "token1", values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: 'ticks1',
+    values: [BigNumberish],
+  ): string;
+  encodeFunctionData(functionFragment: 'token0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token1', values?: undefined): string;
 
-  decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "feeTo", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "fees", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'burn', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTo', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'fees', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "globalState",
-    data: BytesLike
+    functionFragment: 'globalState',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "immutables", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "maxPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "minPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "pool0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "pool1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "positions0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "positions1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "quote", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "snapshot", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "swap", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "tickMap", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'immutables', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'maxPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'minPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'pool0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'pool1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'positions0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'positions1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'quote', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'snapshot', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'swap', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'tickMap', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "tickSpacing",
-    data: BytesLike
+    functionFragment: 'tickSpacing',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "ticks0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "ticks1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'ticks0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'ticks1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token1', data: BytesLike): Result;
 
   events: {};
 }
@@ -205,26 +205,26 @@ export class LimitPool extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -237,7 +237,7 @@ export class LimitPool extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: LimitPoolInterface;
@@ -252,7 +252,7 @@ export class LimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     feeTo(overrides?: CallOverrides): Promise<[string]>;
@@ -261,30 +261,28 @@ export class LimitPool extends BaseContract {
       protocolFee0: BigNumberish,
       protocolFee1: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     globalState(
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { unlocked: number }>;
 
-    immutables(
-      overrides?: CallOverrides
-    ): Promise<
+    immutables(overrides?: CallOverrides): Promise<
       [
         [
           string,
           [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber },
           string,
           string,
-          number
+          number,
         ] & {
           owner: string;
           bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
           token0: string;
           token1: string;
           tickSpacing: number;
-        }
+        },
       ]
     >;
 
@@ -298,7 +296,7 @@ export class LimitPool extends BaseContract {
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     maxPrice(overrides?: CallOverrides): Promise<[BigNumber]>;
@@ -315,14 +313,12 @@ export class LimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
 
-    pool0(
-      overrides?: CallOverrides
-    ): Promise<
+    pool0(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -334,9 +330,7 @@ export class LimitPool extends BaseContract {
       }
     >;
 
-    pool1(
-      overrides?: CallOverrides
-    ): Promise<
+    pool1(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -352,7 +346,7 @@ export class LimitPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -367,7 +361,7 @@ export class LimitPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -385,7 +379,7 @@ export class LimitPool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         inAmount: BigNumber;
@@ -403,7 +397,7 @@ export class LimitPool extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
@@ -412,7 +406,7 @@ export class LimitPool extends BaseContract {
           amountIn: BigNumber;
           amountOut: BigNumber;
           epochLast: number;
-        }
+        },
       ]
     >;
 
@@ -425,25 +419,25 @@ export class LimitPool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     tickMap(
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { blocks: BigNumber }>;
 
     tickSpacing(overrides?: CallOverrides): Promise<[number]>;
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
     >;
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
     >;
@@ -462,7 +456,7 @@ export class LimitPool extends BaseContract {
       upper: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   feeTo(overrides?: CallOverrides): Promise<string>;
@@ -471,20 +465,18 @@ export class LimitPool extends BaseContract {
     protocolFee0: BigNumberish,
     protocolFee1: BigNumberish,
     setFees: boolean,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   globalState(overrides?: CallOverrides): Promise<number>;
 
-  immutables(
-    overrides?: CallOverrides
-  ): Promise<
+  immutables(overrides?: CallOverrides): Promise<
     [
       string,
       [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber },
       string,
       string,
-      number
+      number,
     ] & {
       owner: string;
       bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
@@ -504,7 +496,7 @@ export class LimitPool extends BaseContract {
       startPrice: BigNumberish;
       tickSpacing: BigNumberish;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   maxPrice(overrides?: CallOverrides): Promise<BigNumber>;
@@ -521,14 +513,12 @@ export class LimitPool extends BaseContract {
       upper: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   owner(overrides?: CallOverrides): Promise<string>;
 
-  pool0(
-    overrides?: CallOverrides
-  ): Promise<
+  pool0(overrides?: CallOverrides): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
       price: BigNumber;
       liquidity: BigNumber;
@@ -540,9 +530,7 @@ export class LimitPool extends BaseContract {
     }
   >;
 
-  pool1(
-    overrides?: CallOverrides
-  ): Promise<
+  pool1(overrides?: CallOverrides): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
       price: BigNumber;
       liquidity: BigNumber;
@@ -558,7 +546,7 @@ export class LimitPool extends BaseContract {
     arg0: string,
     arg1: BigNumberish,
     arg2: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -573,7 +561,7 @@ export class LimitPool extends BaseContract {
     arg0: string,
     arg1: BigNumberish,
     arg2: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -591,7 +579,7 @@ export class LimitPool extends BaseContract {
       exactIn: boolean;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber] & {
       inAmount: BigNumber;
@@ -609,7 +597,7 @@ export class LimitPool extends BaseContract {
       claim: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -629,7 +617,7 @@ export class LimitPool extends BaseContract {
       zeroForOne: boolean;
       callbackData: BytesLike;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   tickMap(overrides?: CallOverrides): Promise<BigNumber>;
@@ -638,14 +626,14 @@ export class LimitPool extends BaseContract {
 
   ticks0(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
   >;
 
   ticks1(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
   >;
@@ -664,7 +652,7 @@ export class LimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     feeTo(overrides?: CallOverrides): Promise<string>;
@@ -673,22 +661,20 @@ export class LimitPool extends BaseContract {
       protocolFee0: BigNumberish,
       protocolFee1: BigNumberish,
       setFees: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { token0Fees: BigNumber; token1Fees: BigNumber }
     >;
 
     globalState(overrides?: CallOverrides): Promise<number>;
 
-    immutables(
-      overrides?: CallOverrides
-    ): Promise<
+    immutables(overrides?: CallOverrides): Promise<
       [
         string,
         [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber },
         string,
         string,
-        number
+        number,
       ] & {
         owner: string;
         bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
@@ -708,7 +694,7 @@ export class LimitPool extends BaseContract {
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     maxPrice(overrides?: CallOverrides): Promise<BigNumber>;
@@ -725,14 +711,12 @@ export class LimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     owner(overrides?: CallOverrides): Promise<string>;
 
-    pool0(
-      overrides?: CallOverrides
-    ): Promise<
+    pool0(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -744,9 +728,7 @@ export class LimitPool extends BaseContract {
       }
     >;
 
-    pool1(
-      overrides?: CallOverrides
-    ): Promise<
+    pool1(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -762,7 +744,7 @@ export class LimitPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -777,7 +759,7 @@ export class LimitPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -795,7 +777,7 @@ export class LimitPool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         inAmount: BigNumber;
@@ -813,7 +795,7 @@ export class LimitPool extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -833,7 +815,7 @@ export class LimitPool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber, BigNumber]>;
 
     tickMap(overrides?: CallOverrides): Promise<BigNumber>;
@@ -842,14 +824,14 @@ export class LimitPool extends BaseContract {
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
     >;
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
     >;
@@ -871,7 +853,7 @@ export class LimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     feeTo(overrides?: CallOverrides): Promise<BigNumber>;
@@ -880,7 +862,7 @@ export class LimitPool extends BaseContract {
       protocolFee0: BigNumberish,
       protocolFee1: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     globalState(overrides?: CallOverrides): Promise<BigNumber>;
@@ -897,7 +879,7 @@ export class LimitPool extends BaseContract {
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     maxPrice(overrides?: CallOverrides): Promise<BigNumber>;
@@ -914,7 +896,7 @@ export class LimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
@@ -927,14 +909,14 @@ export class LimitPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     positions1(
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     quote(
@@ -944,7 +926,7 @@ export class LimitPool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     snapshot(
@@ -956,7 +938,7 @@ export class LimitPool extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     swap(
@@ -968,7 +950,7 @@ export class LimitPool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     tickMap(overrides?: CallOverrides): Promise<BigNumber>;
@@ -994,7 +976,7 @@ export class LimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     feeTo(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1003,7 +985,7 @@ export class LimitPool extends BaseContract {
       protocolFee0: BigNumberish,
       protocolFee1: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     globalState(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1020,7 +1002,7 @@ export class LimitPool extends BaseContract {
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     maxPrice(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1037,7 +1019,7 @@ export class LimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1050,14 +1032,14 @@ export class LimitPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     positions1(
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     quote(
@@ -1067,7 +1049,7 @@ export class LimitPool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     snapshot(
@@ -1079,7 +1061,7 @@ export class LimitPool extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     swap(
@@ -1091,7 +1073,7 @@ export class LimitPool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     tickMap(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1100,12 +1082,12 @@ export class LimitPool extends BaseContract {
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     token0(overrides?: CallOverrides): Promise<PopulatedTransaction>;

@@ -13,53 +13,53 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface CoverPoolInterface extends ethers.utils.Interface {
   functions: {
-    "auctionLength()": FunctionFragment;
-    "blockTime()": FunctionFragment;
-    "burn((address,uint128,int24,int24,int24,bool,bool))": FunctionFragment;
-    "feeTo()": FunctionFragment;
-    "fees(uint16,uint16,bool)": FunctionFragment;
-    "genesisTime()": FunctionFragment;
-    "globalState()": FunctionFragment;
-    "inputPool()": FunctionFragment;
-    "maxPrice()": FunctionFragment;
-    "minAmountLowerPriced()": FunctionFragment;
-    "minAmountPerAuction()": FunctionFragment;
-    "minPositionWidth()": FunctionFragment;
-    "minPrice()": FunctionFragment;
-    "mint((address,uint128,int24,int24,bool))": FunctionFragment;
-    "owner()": FunctionFragment;
-    "pool0()": FunctionFragment;
-    "pool1()": FunctionFragment;
-    "positions0(address,int24,int24)": FunctionFragment;
-    "positions1(address,int24,int24)": FunctionFragment;
-    "quote((uint160,uint128,bool))": FunctionFragment;
-    "snapshot((address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "swap((address,address,uint160,uint128,bool))": FunctionFragment;
-    "tickMap()": FunctionFragment;
-    "tickSpread()": FunctionFragment;
-    "ticks0(int24)": FunctionFragment;
-    "ticks1(int24)": FunctionFragment;
-    "token0()": FunctionFragment;
-    "token1()": FunctionFragment;
-    "twapLength()": FunctionFragment;
-    "twapSource()": FunctionFragment;
+    'auctionLength()': FunctionFragment;
+    'blockTime()': FunctionFragment;
+    'burn((address,uint128,int24,int24,int24,bool,bool))': FunctionFragment;
+    'feeTo()': FunctionFragment;
+    'fees(uint16,uint16,bool)': FunctionFragment;
+    'genesisTime()': FunctionFragment;
+    'globalState()': FunctionFragment;
+    'inputPool()': FunctionFragment;
+    'maxPrice()': FunctionFragment;
+    'minAmountLowerPriced()': FunctionFragment;
+    'minAmountPerAuction()': FunctionFragment;
+    'minPositionWidth()': FunctionFragment;
+    'minPrice()': FunctionFragment;
+    'mint((address,uint128,int24,int24,bool))': FunctionFragment;
+    'owner()': FunctionFragment;
+    'pool0()': FunctionFragment;
+    'pool1()': FunctionFragment;
+    'positions0(address,int24,int24)': FunctionFragment;
+    'positions1(address,int24,int24)': FunctionFragment;
+    'quote((uint160,uint128,bool))': FunctionFragment;
+    'snapshot((address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'swap((address,address,uint160,uint128,bool))': FunctionFragment;
+    'tickMap()': FunctionFragment;
+    'tickSpread()': FunctionFragment;
+    'ticks0(int24)': FunctionFragment;
+    'ticks1(int24)': FunctionFragment;
+    'token0()': FunctionFragment;
+    'token1()': FunctionFragment;
+    'twapLength()': FunctionFragment;
+    'twapSource()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "auctionLength",
-    values?: undefined
+    functionFragment: 'auctionLength',
+    values?: undefined,
   ): string;
-  encodeFunctionData(functionFragment: "blockTime", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'blockTime', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "burn",
+    functionFragment: 'burn',
     values: [
       {
         to: string;
@@ -69,39 +69,39 @@ interface CoverPoolInterface extends ethers.utils.Interface {
         upper: BigNumberish;
         zeroForOne: boolean;
         sync: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "feeTo", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'feeTo', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "fees",
-    values: [BigNumberish, BigNumberish, boolean]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "genesisTime",
-    values?: undefined
+    functionFragment: 'fees',
+    values: [BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "globalState",
-    values?: undefined
-  ): string;
-  encodeFunctionData(functionFragment: "inputPool", values?: undefined): string;
-  encodeFunctionData(functionFragment: "maxPrice", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "minAmountLowerPriced",
-    values?: undefined
+    functionFragment: 'genesisTime',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "minAmountPerAuction",
-    values?: undefined
+    functionFragment: 'globalState',
+    values?: undefined,
+  ): string;
+  encodeFunctionData(functionFragment: 'inputPool', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'maxPrice', values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: 'minAmountLowerPriced',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "minPositionWidth",
-    values?: undefined
+    functionFragment: 'minAmountPerAuction',
+    values?: undefined,
   ): string;
-  encodeFunctionData(functionFragment: "minPrice", values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "mint",
+    functionFragment: 'minPositionWidth',
+    values?: undefined,
+  ): string;
+  encodeFunctionData(functionFragment: 'minPrice', values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: 'mint',
     values: [
       {
         to: string;
@@ -109,28 +109,28 @@ interface CoverPoolInterface extends ethers.utils.Interface {
         lower: BigNumberish;
         upper: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(functionFragment: "pool0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "pool1", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'pool0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'pool1', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "positions0",
-    values: [string, BigNumberish, BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "positions1",
-    values: [string, BigNumberish, BigNumberish]
+    functionFragment: 'positions0',
+    values: [string, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "quote",
+    functionFragment: 'positions1',
+    values: [string, BigNumberish, BigNumberish],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'quote',
     values: [
-      { priceLimit: BigNumberish; amountIn: BigNumberish; zeroForOne: boolean }
-    ]
+      { priceLimit: BigNumberish; amountIn: BigNumberish; zeroForOne: boolean },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "snapshot",
+    functionFragment: 'snapshot',
     values: [
       {
         owner: string;
@@ -139,11 +139,11 @@ interface CoverPoolInterface extends ethers.utils.Interface {
         claim: BigNumberish;
         upper: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "swap",
+    functionFragment: 'swap',
     values: [
       {
         to: string;
@@ -151,81 +151,81 @@ interface CoverPoolInterface extends ethers.utils.Interface {
         priceLimit: BigNumberish;
         amountIn: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "tickMap", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'tickMap', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "tickSpread",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "ticks0",
-    values: [BigNumberish]
+    functionFragment: 'tickSpread',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "ticks1",
-    values: [BigNumberish]
-  ): string;
-  encodeFunctionData(functionFragment: "token0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "token1", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "twapLength",
-    values?: undefined
+    functionFragment: 'ticks0',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "twapSource",
-    values?: undefined
+    functionFragment: 'ticks1',
+    values: [BigNumberish],
+  ): string;
+  encodeFunctionData(functionFragment: 'token0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token1', values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: 'twapLength',
+    values?: undefined,
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'twapSource',
+    values?: undefined,
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "auctionLength",
-    data: BytesLike
+    functionFragment: 'auctionLength',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "blockTime", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "feeTo", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "fees", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'blockTime', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'burn', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTo', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'fees', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "genesisTime",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "globalState",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "inputPool", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "maxPrice", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "minAmountLowerPriced",
-    data: BytesLike
+    functionFragment: 'genesisTime',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "minAmountPerAuction",
-    data: BytesLike
+    functionFragment: 'globalState',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(functionFragment: 'inputPool', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'maxPrice', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'minAmountLowerPriced',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "minPositionWidth",
-    data: BytesLike
+    functionFragment: 'minAmountPerAuction',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "minPrice", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "pool0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "pool1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "positions0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "positions1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "quote", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "snapshot", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "swap", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "tickMap", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "tickSpread", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "ticks0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "ticks1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "twapLength", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "twapSource", data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'minPositionWidth',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(functionFragment: 'minPrice', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'pool0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'pool1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'positions0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'positions1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'quote', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'snapshot', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'swap', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'tickMap', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'tickSpread', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'ticks0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'ticks1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'twapLength', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'twapSource', data: BytesLike): Result;
 
   events: {};
 }
@@ -236,26 +236,26 @@ export class CoverPool extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -268,7 +268,7 @@ export class CoverPool extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: CoverPoolInterface;
@@ -288,7 +288,7 @@ export class CoverPool extends BaseContract {
         zeroForOne: boolean;
         sync: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     feeTo(overrides?: CallOverrides): Promise<[string]>;
@@ -297,14 +297,12 @@ export class CoverPool extends BaseContract {
       syncFee: BigNumberish,
       fillFee: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     genesisTime(overrides?: CallOverrides): Promise<[number]>;
 
-    globalState(
-      overrides?: CallOverrides
-    ): Promise<
+    globalState(overrides?: CallOverrides): Promise<
       [
         [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
         BigNumber,
@@ -315,7 +313,7 @@ export class CoverPool extends BaseContract {
         number,
         number,
         number,
-        number
+        number,
       ] & {
         protocolFees: [BigNumber, BigNumber] & {
           token0: BigNumber;
@@ -353,14 +351,12 @@ export class CoverPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
 
-    pool0(
-      overrides?: CallOverrides
-    ): Promise<
+    pool0(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -370,9 +366,7 @@ export class CoverPool extends BaseContract {
       }
     >;
 
-    pool1(
-      overrides?: CallOverrides
-    ): Promise<
+    pool1(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -386,7 +380,7 @@ export class CoverPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -401,7 +395,7 @@ export class CoverPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -418,7 +412,7 @@ export class CoverPool extends BaseContract {
         amountIn: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         inAmount: BigNumber;
@@ -436,7 +430,7 @@ export class CoverPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
@@ -445,7 +439,7 @@ export class CoverPool extends BaseContract {
           amountIn: BigNumber;
           amountOut: BigNumber;
           accumEpochLast: number;
-        }
+        },
       ]
     >;
 
@@ -457,18 +451,18 @@ export class CoverPool extends BaseContract {
         amountIn: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     tickMap(
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { blocks: BigNumber }>;
 
     tickSpread(overrides?: CallOverrides): Promise<[number]>;
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -481,7 +475,7 @@ export class CoverPool extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -499,7 +493,7 @@ export class CoverPool extends BaseContract {
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -512,7 +506,7 @@ export class CoverPool extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -551,7 +545,7 @@ export class CoverPool extends BaseContract {
       zeroForOne: boolean;
       sync: boolean;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   feeTo(overrides?: CallOverrides): Promise<string>;
@@ -560,14 +554,12 @@ export class CoverPool extends BaseContract {
     syncFee: BigNumberish,
     fillFee: BigNumberish,
     setFees: boolean,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   genesisTime(overrides?: CallOverrides): Promise<number>;
 
-  globalState(
-    overrides?: CallOverrides
-  ): Promise<
+  globalState(overrides?: CallOverrides): Promise<
     [
       [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
       BigNumber,
@@ -578,7 +570,7 @@ export class CoverPool extends BaseContract {
       number,
       number,
       number,
-      number
+      number,
     ] & {
       protocolFees: [BigNumber, BigNumber] & {
         token0: BigNumber;
@@ -616,14 +608,12 @@ export class CoverPool extends BaseContract {
       upper: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   owner(overrides?: CallOverrides): Promise<string>;
 
-  pool0(
-    overrides?: CallOverrides
-  ): Promise<
+  pool0(overrides?: CallOverrides): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
       price: BigNumber;
       liquidity: BigNumber;
@@ -633,9 +623,7 @@ export class CoverPool extends BaseContract {
     }
   >;
 
-  pool1(
-    overrides?: CallOverrides
-  ): Promise<
+  pool1(overrides?: CallOverrides): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
       price: BigNumber;
       liquidity: BigNumber;
@@ -649,7 +637,7 @@ export class CoverPool extends BaseContract {
     arg0: string,
     arg1: BigNumberish,
     arg2: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -664,7 +652,7 @@ export class CoverPool extends BaseContract {
     arg0: string,
     arg1: BigNumberish,
     arg2: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -681,7 +669,7 @@ export class CoverPool extends BaseContract {
       amountIn: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber] & {
       inAmount: BigNumber;
@@ -699,7 +687,7 @@ export class CoverPool extends BaseContract {
       upper: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -718,7 +706,7 @@ export class CoverPool extends BaseContract {
       amountIn: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   tickMap(overrides?: CallOverrides): Promise<BigNumber>;
@@ -727,7 +715,7 @@ export class CoverPool extends BaseContract {
 
   ticks0(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -740,7 +728,7 @@ export class CoverPool extends BaseContract {
       BigNumber,
       BigNumber,
       BigNumber,
-      BigNumber
+      BigNumber,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -758,7 +746,7 @@ export class CoverPool extends BaseContract {
 
   ticks1(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -771,7 +759,7 @@ export class CoverPool extends BaseContract {
       BigNumber,
       BigNumber,
       BigNumber,
-      BigNumber
+      BigNumber,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -810,7 +798,7 @@ export class CoverPool extends BaseContract {
         zeroForOne: boolean;
         sync: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     feeTo(overrides?: CallOverrides): Promise<string>;
@@ -819,16 +807,14 @@ export class CoverPool extends BaseContract {
       syncFee: BigNumberish,
       fillFee: BigNumberish,
       setFees: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { token0Fees: BigNumber; token1Fees: BigNumber }
     >;
 
     genesisTime(overrides?: CallOverrides): Promise<number>;
 
-    globalState(
-      overrides?: CallOverrides
-    ): Promise<
+    globalState(overrides?: CallOverrides): Promise<
       [
         [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
         BigNumber,
@@ -839,7 +825,7 @@ export class CoverPool extends BaseContract {
         number,
         number,
         number,
-        number
+        number,
       ] & {
         protocolFees: [BigNumber, BigNumber] & {
           token0: BigNumber;
@@ -877,14 +863,12 @@ export class CoverPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     owner(overrides?: CallOverrides): Promise<string>;
 
-    pool0(
-      overrides?: CallOverrides
-    ): Promise<
+    pool0(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -894,9 +878,7 @@ export class CoverPool extends BaseContract {
       }
     >;
 
-    pool1(
-      overrides?: CallOverrides
-    ): Promise<
+    pool1(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -910,7 +892,7 @@ export class CoverPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -925,7 +907,7 @@ export class CoverPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -942,7 +924,7 @@ export class CoverPool extends BaseContract {
         amountIn: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         inAmount: BigNumber;
@@ -960,7 +942,7 @@ export class CoverPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -979,7 +961,7 @@ export class CoverPool extends BaseContract {
         amountIn: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         inAmount: BigNumber;
@@ -994,7 +976,7 @@ export class CoverPool extends BaseContract {
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1007,7 +989,7 @@ export class CoverPool extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -1025,7 +1007,7 @@ export class CoverPool extends BaseContract {
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1038,7 +1020,7 @@ export class CoverPool extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -1080,7 +1062,7 @@ export class CoverPool extends BaseContract {
         zeroForOne: boolean;
         sync: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     feeTo(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1089,7 +1071,7 @@ export class CoverPool extends BaseContract {
       syncFee: BigNumberish,
       fillFee: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     genesisTime(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1116,7 +1098,7 @@ export class CoverPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     owner(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1129,14 +1111,14 @@ export class CoverPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     positions1(
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     quote(
@@ -1145,7 +1127,7 @@ export class CoverPool extends BaseContract {
         amountIn: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     snapshot(
@@ -1157,7 +1139,7 @@ export class CoverPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     swap(
@@ -1168,7 +1150,7 @@ export class CoverPool extends BaseContract {
         amountIn: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     tickMap(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1203,7 +1185,7 @@ export class CoverPool extends BaseContract {
         zeroForOne: boolean;
         sync: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     feeTo(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1212,7 +1194,7 @@ export class CoverPool extends BaseContract {
       syncFee: BigNumberish,
       fillFee: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     genesisTime(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1224,11 +1206,11 @@ export class CoverPool extends BaseContract {
     maxPrice(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     minAmountLowerPriced(
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     minAmountPerAuction(
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     minPositionWidth(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1243,7 +1225,7 @@ export class CoverPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1256,14 +1238,14 @@ export class CoverPool extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     positions1(
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     quote(
@@ -1272,7 +1254,7 @@ export class CoverPool extends BaseContract {
         amountIn: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     snapshot(
@@ -1284,7 +1266,7 @@ export class CoverPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     swap(
@@ -1295,7 +1277,7 @@ export class CoverPool extends BaseContract {
         amountIn: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     tickMap(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1304,12 +1286,12 @@ export class CoverPool extends BaseContract {
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     token0(overrides?: CallOverrides): Promise<PopulatedTransaction>;

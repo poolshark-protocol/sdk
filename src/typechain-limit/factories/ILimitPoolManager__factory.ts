@@ -2,58 +2,58 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   ILimitPoolManager,
   ILimitPoolManagerInterface,
-} from "../ILimitPoolManager";
+} from '../ILimitPoolManager';
 
 const _abi = [
   {
     inputs: [],
-    name: "feeTo",
+    name: 'feeTo',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "owner",
+    name: 'owner',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "int16",
-        name: "tickSpacing",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpacing',
+        type: 'int16',
       },
     ],
-    name: "tickSpacings",
+    name: 'tickSpacings',
     outputs: [
       {
-        internalType: "bool",
-        name: "",
-        type: "bool",
+        internalType: 'bool',
+        name: '',
+        type: 'bool',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
 ];
 
@@ -64,7 +64,7 @@ export class ILimitPoolManager__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): ILimitPoolManager {
     return new Contract(address, _abi, signerOrProvider) as ILimitPoolManager;
   }

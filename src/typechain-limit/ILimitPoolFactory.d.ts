@@ -13,41 +13,41 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface ILimitPoolFactoryInterface extends ethers.utils.Interface {
   functions: {
-    "createLimitPool(address,address,int16,uint160)": FunctionFragment;
-    "getLimitPool(address,address,int16)": FunctionFragment;
-    "limitPools(bytes32)": FunctionFragment;
+    'createLimitPool(address,address,int16,uint160)': FunctionFragment;
+    'getLimitPool(address,address,int16)': FunctionFragment;
+    'limitPools(bytes32)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "createLimitPool",
-    values: [string, string, BigNumberish, BigNumberish]
+    functionFragment: 'createLimitPool',
+    values: [string, string, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "getLimitPool",
-    values: [string, string, BigNumberish]
+    functionFragment: 'getLimitPool',
+    values: [string, string, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "limitPools",
-    values: [BytesLike]
+    functionFragment: 'limitPools',
+    values: [BytesLike],
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "createLimitPool",
-    data: BytesLike
+    functionFragment: 'createLimitPool',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getLimitPool",
-    data: BytesLike
+    functionFragment: 'getLimitPool',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "limitPools", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'limitPools', data: BytesLike): Result;
 
   events: {};
 }
@@ -58,26 +58,26 @@ export class ILimitPoolFactory extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -90,7 +90,7 @@ export class ILimitPoolFactory extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: ILimitPoolFactoryInterface;
@@ -101,14 +101,14 @@ export class ILimitPoolFactory extends BaseContract {
       tokenOut: string,
       tickSpacing: BigNumberish,
       startPrice: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     getLimitPool(
       tokenIn: string,
       tokenOut: string,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     limitPools(arg0: BytesLike, overrides?: CallOverrides): Promise<[string]>;
@@ -119,14 +119,14 @@ export class ILimitPoolFactory extends BaseContract {
     tokenOut: string,
     tickSpacing: BigNumberish,
     startPrice: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   getLimitPool(
     tokenIn: string,
     tokenOut: string,
     tickSpacing: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   limitPools(arg0: BytesLike, overrides?: CallOverrides): Promise<string>;
@@ -137,14 +137,14 @@ export class ILimitPoolFactory extends BaseContract {
       tokenOut: string,
       tickSpacing: BigNumberish,
       startPrice: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     getLimitPool(
       tokenIn: string,
       tokenOut: string,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     limitPools(arg0: BytesLike, overrides?: CallOverrides): Promise<string>;
@@ -158,14 +158,14 @@ export class ILimitPoolFactory extends BaseContract {
       tokenOut: string,
       tickSpacing: BigNumberish,
       startPrice: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     getLimitPool(
       tokenIn: string,
       tokenOut: string,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     limitPools(arg0: BytesLike, overrides?: CallOverrides): Promise<BigNumber>;
@@ -177,19 +177,19 @@ export class ILimitPoolFactory extends BaseContract {
       tokenOut: string,
       tickSpacing: BigNumberish,
       startPrice: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     getLimitPool(
       tokenIn: string,
       tokenOut: string,
       tickSpacing: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     limitPools(
       arg0: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

@@ -11,28 +11,28 @@ import {
   PopulatedTransaction,
   BaseContract,
   ContractTransaction,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface EpochsInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {
-    "FinalDeltasAccumulated(uint128,uint128,uint32,int24,bool)": EventFragment;
-    "StashDeltasAccumulated(uint128,uint128,uint128,uint128,uint32,int24,bool)": EventFragment;
-    "StashDeltasCleared(int24,bool)": EventFragment;
-    "Sync(uint160,uint160,uint128,uint128,uint32,uint32,int24,int24)": EventFragment;
-    "SyncFeesCollected(address,uint128,uint128)": EventFragment;
+    'FinalDeltasAccumulated(uint128,uint128,uint32,int24,bool)': EventFragment;
+    'StashDeltasAccumulated(uint128,uint128,uint128,uint128,uint32,int24,bool)': EventFragment;
+    'StashDeltasCleared(int24,bool)': EventFragment;
+    'Sync(uint160,uint160,uint128,uint128,uint32,uint32,int24,int24)': EventFragment;
+    'SyncFeesCollected(address,uint128,uint128)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "FinalDeltasAccumulated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "StashDeltasAccumulated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "StashDeltasCleared"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Sync"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "SyncFeesCollected"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FinalDeltasAccumulated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'StashDeltasAccumulated'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'StashDeltasCleared'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'Sync'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'SyncFeesCollected'): EventFragment;
 }
 
 export type FinalDeltasAccumulatedEvent = TypedEvent<
@@ -70,7 +70,7 @@ export type SyncEvent = TypedEvent<
     number,
     number,
     number,
-    number
+    number,
   ] & {
     pool0Price: BigNumber;
     pool1Price: BigNumber;
@@ -97,26 +97,26 @@ export class Epochs extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -129,7 +129,7 @@ export class Epochs extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: EpochsInterface;
@@ -139,12 +139,12 @@ export class Epochs extends BaseContract {
   callStatic: {};
 
   filters: {
-    "FinalDeltasAccumulated(uint128,uint128,uint32,int24,bool)"(
+    'FinalDeltasAccumulated(uint128,uint128,uint32,int24,bool)'(
       amountInDelta?: null,
       amountOutDelta?: null,
       accumEpoch?: null,
       accumTick?: null,
-      isPool0?: null
+      isPool0?: null,
     ): TypedEventFilter<
       [BigNumber, BigNumber, number, number, boolean],
       {
@@ -161,7 +161,7 @@ export class Epochs extends BaseContract {
       amountOutDelta?: null,
       accumEpoch?: null,
       accumTick?: null,
-      isPool0?: null
+      isPool0?: null,
     ): TypedEventFilter<
       [BigNumber, BigNumber, number, number, boolean],
       {
@@ -173,14 +173,14 @@ export class Epochs extends BaseContract {
       }
     >;
 
-    "StashDeltasAccumulated(uint128,uint128,uint128,uint128,uint32,int24,bool)"(
+    'StashDeltasAccumulated(uint128,uint128,uint128,uint128,uint32,int24,bool)'(
       amountInDelta?: null,
       amountOutDelta?: null,
       amountInDeltaMaxStashed?: null,
       amountOutDeltaMaxStashed?: null,
       accumEpoch?: null,
       stashTick?: null,
-      isPool0?: null
+      isPool0?: null,
     ): TypedEventFilter<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, boolean],
       {
@@ -201,7 +201,7 @@ export class Epochs extends BaseContract {
       amountOutDeltaMaxStashed?: null,
       accumEpoch?: null,
       stashTick?: null,
-      isPool0?: null
+      isPool0?: null,
     ): TypedEventFilter<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, boolean],
       {
@@ -215,9 +215,9 @@ export class Epochs extends BaseContract {
       }
     >;
 
-    "StashDeltasCleared(int24,bool)"(
+    'StashDeltasCleared(int24,bool)'(
       stashTick?: null,
-      isPool0?: null
+      isPool0?: null,
     ): TypedEventFilter<
       [number, boolean],
       { stashTick: number; isPool0: boolean }
@@ -225,13 +225,13 @@ export class Epochs extends BaseContract {
 
     StashDeltasCleared(
       stashTick?: null,
-      isPool0?: null
+      isPool0?: null,
     ): TypedEventFilter<
       [number, boolean],
       { stashTick: number; isPool0: boolean }
     >;
 
-    "Sync(uint160,uint160,uint128,uint128,uint32,uint32,int24,int24)"(
+    'Sync(uint160,uint160,uint128,uint128,uint32,uint32,int24,int24)'(
       pool0Price?: null,
       pool1Price?: null,
       pool0Liquidity?: null,
@@ -239,7 +239,7 @@ export class Epochs extends BaseContract {
       auctionStart?: null,
       accumEpoch?: null,
       oldLatestTick?: null,
-      newLatestTick?: null
+      newLatestTick?: null,
     ): TypedEventFilter<
       [
         BigNumber,
@@ -249,7 +249,7 @@ export class Epochs extends BaseContract {
         number,
         number,
         number,
-        number
+        number,
       ],
       {
         pool0Price: BigNumber;
@@ -271,7 +271,7 @@ export class Epochs extends BaseContract {
       auctionStart?: null,
       accumEpoch?: null,
       oldLatestTick?: null,
-      newLatestTick?: null
+      newLatestTick?: null,
     ): TypedEventFilter<
       [
         BigNumber,
@@ -281,7 +281,7 @@ export class Epochs extends BaseContract {
         number,
         number,
         number,
-        number
+        number,
       ],
       {
         pool0Price: BigNumber;
@@ -295,10 +295,10 @@ export class Epochs extends BaseContract {
       }
     >;
 
-    "SyncFeesCollected(address,uint128,uint128)"(
+    'SyncFeesCollected(address,uint128,uint128)'(
       collector?: null,
       token0Amount?: null,
-      token1Amount?: null
+      token1Amount?: null,
     ): TypedEventFilter<
       [string, BigNumber, BigNumber],
       { collector: string; token0Amount: BigNumber; token1Amount: BigNumber }
@@ -307,7 +307,7 @@ export class Epochs extends BaseContract {
     SyncFeesCollected(
       collector?: null,
       token0Amount?: null,
-      token1Amount?: null
+      token1Amount?: null,
     ): TypedEventFilter<
       [string, BigNumber, BigNumber],
       { collector: string; token0Amount: BigNumber; token1Amount: BigNumber }

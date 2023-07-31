@@ -1,8 +1,10 @@
-import { request, gql } from "graphql-request";
-const POOLSHARK_COVER_URL = "https://thegraph.com/hosted-service/subgraph/alphak3y/poolshark-cover";
-const POOLSHARK_RANGE_URL = "https://thegraph.com/hosted-service/subgraph/alphak3y/poolshark-range";
+import { request, gql } from 'graphql-request';
+const POOLSHARK_COVER_URL =
+  'https://thegraph.com/hosted-service/subgraph/alphak3y/poolshark-cover';
+const POOLSHARK_RANGE_URL =
+  'https://thegraph.com/hosted-service/subgraph/alphak3y/poolshark-range';
 // Replace coverEntities, rangeEntities, and their properties with the actual entities and properties you want to fetch from the subgraphs.
-const COVER_QUERY = gql `
+const COVER_QUERY = gql`
   query CoverData {
     coverEntities {
       id
@@ -11,7 +13,7 @@ const COVER_QUERY = gql `
     }
   }
 `;
-const RANGE_QUERY = gql `
+const RANGE_QUERY = gql`
   query RangeData {
     rangeEntities {
       id
@@ -21,12 +23,12 @@ const RANGE_QUERY = gql `
   }
 `;
 async function fetchCoverData() {
-    const data = await request(POOLSHARK_COVER_URL, COVER_QUERY);
-    return data.coverEntities;
+  const data = await request(POOLSHARK_COVER_URL, COVER_QUERY);
+  return data.coverEntities;
 }
 async function fetchRangeData() {
-    const data = await request(POOLSHARK_RANGE_URL, RANGE_QUERY);
-    return data.rangeEntities;
+  const data = await request(POOLSHARK_RANGE_URL, RANGE_QUERY);
+  return data.rangeEntities;
 }
 export { fetchCoverData, fetchRangeData };
 //# sourceMappingURL=SubgraphFetcher.js.map

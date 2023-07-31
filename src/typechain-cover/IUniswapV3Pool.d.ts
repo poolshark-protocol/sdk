@@ -13,50 +13,50 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IUniswapV3PoolInterface extends ethers.utils.Interface {
   functions: {
-    "increaseObservationCardinalityNext(uint16)": FunctionFragment;
-    "observe(uint32[])": FunctionFragment;
-    "slot0()": FunctionFragment;
-    "tickSpacing()": FunctionFragment;
-    "token0()": FunctionFragment;
-    "token1()": FunctionFragment;
+    'increaseObservationCardinalityNext(uint16)': FunctionFragment;
+    'observe(uint32[])': FunctionFragment;
+    'slot0()': FunctionFragment;
+    'tickSpacing()': FunctionFragment;
+    'token0()': FunctionFragment;
+    'token1()': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "increaseObservationCardinalityNext",
-    values: [BigNumberish]
+    functionFragment: 'increaseObservationCardinalityNext',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "observe",
-    values: [BigNumberish[]]
+    functionFragment: 'observe',
+    values: [BigNumberish[]],
   ): string;
-  encodeFunctionData(functionFragment: "slot0", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'slot0', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "tickSpacing",
-    values?: undefined
+    functionFragment: 'tickSpacing',
+    values?: undefined,
   ): string;
-  encodeFunctionData(functionFragment: "token0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "token1", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token1', values?: undefined): string;
 
   decodeFunctionResult(
-    functionFragment: "increaseObservationCardinalityNext",
-    data: BytesLike
+    functionFragment: 'increaseObservationCardinalityNext',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "observe", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "slot0", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'observe', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'slot0', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "tickSpacing",
-    data: BytesLike
+    functionFragment: 'tickSpacing',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "token0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token1', data: BytesLike): Result;
 
   events: {};
 }
@@ -67,26 +67,26 @@ export class IUniswapV3Pool extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -99,7 +99,7 @@ export class IUniswapV3Pool extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: IUniswapV3PoolInterface;
@@ -107,12 +107,12 @@ export class IUniswapV3Pool extends BaseContract {
   functions: {
     increaseObservationCardinalityNext(
       observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     observe(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[]] & {
         tickCumulatives: BigNumber[];
@@ -120,9 +120,7 @@ export class IUniswapV3Pool extends BaseContract {
       }
     >;
 
-    slot0(
-      overrides?: CallOverrides
-    ): Promise<
+    slot0(overrides?: CallOverrides): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         sqrtPriceX96: BigNumber;
         tick: number;
@@ -143,12 +141,12 @@ export class IUniswapV3Pool extends BaseContract {
 
   increaseObservationCardinalityNext(
     observationCardinalityNext: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   observe(
     secondsAgos: BigNumberish[],
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber[], BigNumber[]] & {
       tickCumulatives: BigNumber[];
@@ -156,9 +154,7 @@ export class IUniswapV3Pool extends BaseContract {
     }
   >;
 
-  slot0(
-    overrides?: CallOverrides
-  ): Promise<
+  slot0(overrides?: CallOverrides): Promise<
     [BigNumber, number, number, number, number, number, boolean] & {
       sqrtPriceX96: BigNumber;
       tick: number;
@@ -179,12 +175,12 @@ export class IUniswapV3Pool extends BaseContract {
   callStatic: {
     increaseObservationCardinalityNext(
       observationCardinalityNext: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     observe(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[]] & {
         tickCumulatives: BigNumber[];
@@ -192,9 +188,7 @@ export class IUniswapV3Pool extends BaseContract {
       }
     >;
 
-    slot0(
-      overrides?: CallOverrides
-    ): Promise<
+    slot0(overrides?: CallOverrides): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         sqrtPriceX96: BigNumber;
         tick: number;
@@ -218,12 +212,12 @@ export class IUniswapV3Pool extends BaseContract {
   estimateGas: {
     increaseObservationCardinalityNext(
       observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     observe(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     slot0(overrides?: CallOverrides): Promise<BigNumber>;
@@ -238,12 +232,12 @@ export class IUniswapV3Pool extends BaseContract {
   populateTransaction: {
     increaseObservationCardinalityNext(
       observationCardinalityNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     observe(
       secondsAgos: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     slot0(overrides?: CallOverrides): Promise<PopulatedTransaction>;

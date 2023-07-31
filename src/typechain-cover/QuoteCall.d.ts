@@ -12,19 +12,19 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface QuoteCallInterface extends ethers.utils.Interface {
   functions: {
-    "perform((uint160,uint128,bool),(((uint128,uint128),uint160,uint128,uint32,uint32,uint32,int24,uint16,uint16,uint8),(uint128,uint128),(ITwapSource,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool),(uint160,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": FunctionFragment;
+    'perform((uint160,uint128,bool),(((uint128,uint128),uint160,uint128,uint32,uint32,uint32,int24,uint16,uint16,uint8),(uint128,uint128),(ITwapSource,(uint160,uint160),address,address,address,uint256,uint32,int16,int16,uint16,uint16,uint16,uint8,uint8,bool),(uint160,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "perform",
+    functionFragment: 'perform',
     values: [
       { priceLimit: BigNumberish; amountIn: BigNumberish; zeroForOne: boolean },
       {
@@ -81,11 +81,11 @@ interface QuoteCallInterface extends ethers.utils.Interface {
         auctionDepth: BigNumberish;
         auctionBoost: BigNumberish;
         amountInDelta: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
 
-  decodeFunctionResult(functionFragment: "perform", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'perform', data: BytesLike): Result;
 
   events: {};
 }
@@ -96,26 +96,26 @@ export class QuoteCall extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -128,7 +128,7 @@ export class QuoteCall extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: QuoteCallInterface;
@@ -195,7 +195,7 @@ export class QuoteCall extends BaseContract {
         auctionBoost: BigNumberish;
         amountInDelta: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -209,7 +209,7 @@ export class QuoteCall extends BaseContract {
             number,
             number,
             number,
-            number
+            number,
           ] & {
             protocolFees: [BigNumber, BigNumber] & {
               token0: BigNumber;
@@ -241,7 +241,7 @@ export class QuoteCall extends BaseContract {
             number,
             number,
             number,
-            boolean
+            boolean,
           ] & {
             source: string;
             bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
@@ -281,7 +281,7 @@ export class QuoteCall extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           state: [
             [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
@@ -293,7 +293,7 @@ export class QuoteCall extends BaseContract {
             number,
             number,
             number,
-            number
+            number,
           ] & {
             protocolFees: [BigNumber, BigNumber] & {
               token0: BigNumber;
@@ -328,7 +328,7 @@ export class QuoteCall extends BaseContract {
             number,
             number,
             number,
-            boolean
+            boolean,
           ] & {
             source: string;
             bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
@@ -369,7 +369,7 @@ export class QuoteCall extends BaseContract {
           auctionDepth: BigNumber;
           auctionBoost: BigNumber;
           amountInDelta: BigNumber;
-        }
+        },
       ]
     >;
   };
@@ -435,7 +435,7 @@ export class QuoteCall extends BaseContract {
       auctionBoost: BigNumberish;
       amountInDelta: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [
@@ -448,7 +448,7 @@ export class QuoteCall extends BaseContract {
         number,
         number,
         number,
-        number
+        number,
       ] & {
         protocolFees: [BigNumber, BigNumber] & {
           token0: BigNumber;
@@ -480,7 +480,7 @@ export class QuoteCall extends BaseContract {
         number,
         number,
         number,
-        boolean
+        boolean,
       ] & {
         source: string;
         bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
@@ -520,7 +520,7 @@ export class QuoteCall extends BaseContract {
       BigNumber,
       BigNumber,
       BigNumber,
-      BigNumber
+      BigNumber,
     ] & {
       state: [
         [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
@@ -532,7 +532,7 @@ export class QuoteCall extends BaseContract {
         number,
         number,
         number,
-        number
+        number,
       ] & {
         protocolFees: [BigNumber, BigNumber] & {
           token0: BigNumber;
@@ -567,7 +567,7 @@ export class QuoteCall extends BaseContract {
         number,
         number,
         number,
-        boolean
+        boolean,
       ] & {
         source: string;
         bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
@@ -673,7 +673,7 @@ export class QuoteCall extends BaseContract {
         auctionBoost: BigNumberish;
         amountInDelta: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -686,7 +686,7 @@ export class QuoteCall extends BaseContract {
           number,
           number,
           number,
-          number
+          number,
         ] & {
           protocolFees: [BigNumber, BigNumber] & {
             token0: BigNumber;
@@ -718,7 +718,7 @@ export class QuoteCall extends BaseContract {
           number,
           number,
           number,
-          boolean
+          boolean,
         ] & {
           source: string;
           bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
@@ -758,7 +758,7 @@ export class QuoteCall extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         state: [
           [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
@@ -770,7 +770,7 @@ export class QuoteCall extends BaseContract {
           number,
           number,
           number,
-          number
+          number,
         ] & {
           protocolFees: [BigNumber, BigNumber] & {
             token0: BigNumber;
@@ -805,7 +805,7 @@ export class QuoteCall extends BaseContract {
           number,
           number,
           number,
-          boolean
+          boolean,
         ] & {
           source: string;
           bounds: [BigNumber, BigNumber] & { min: BigNumber; max: BigNumber };
@@ -914,7 +914,7 @@ export class QuoteCall extends BaseContract {
         auctionBoost: BigNumberish;
         amountInDelta: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -980,7 +980,7 @@ export class QuoteCall extends BaseContract {
         auctionBoost: BigNumberish;
         amountInDelta: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

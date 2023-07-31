@@ -12,61 +12,61 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface IDyDxMathInterface extends ethers.utils.Interface {
   functions: {
-    "getAmountsForLiquidity(uint256,uint256,uint256,uint256,bool)": FunctionFragment;
-    "getDx(uint256,uint256,uint256,bool)": FunctionFragment;
-    "getDy(uint256,uint256,uint256,bool)": FunctionFragment;
-    "getLiquidityForAmounts(uint256,uint256,uint256,uint256,uint256)": FunctionFragment;
-    "getNewPrice(uint256,uint256,uint256,bool)": FunctionFragment;
+    'getAmountsForLiquidity(uint256,uint256,uint256,uint256,bool)': FunctionFragment;
+    'getDx(uint256,uint256,uint256,bool)': FunctionFragment;
+    'getDy(uint256,uint256,uint256,bool)': FunctionFragment;
+    'getLiquidityForAmounts(uint256,uint256,uint256,uint256,uint256)': FunctionFragment;
+    'getNewPrice(uint256,uint256,uint256,bool)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "getAmountsForLiquidity",
-    values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'getAmountsForLiquidity',
+    values: [BigNumberish, BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "getDx",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'getDx',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "getDy",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'getDy',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "getLiquidityForAmounts",
+    functionFragment: 'getLiquidityForAmounts',
     values: [
       BigNumberish,
       BigNumberish,
       BigNumberish,
       BigNumberish,
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "getNewPrice",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'getNewPrice',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "getAmountsForLiquidity",
-    data: BytesLike
+    functionFragment: 'getAmountsForLiquidity',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "getDx", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "getDy", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getDx', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'getDy', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "getLiquidityForAmounts",
-    data: BytesLike
+    functionFragment: 'getLiquidityForAmounts',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getNewPrice",
-    data: BytesLike
+    functionFragment: 'getNewPrice',
+    data: BytesLike,
   ): Result;
 
   events: {};
@@ -78,26 +78,26 @@ export class IDyDxMath extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -110,7 +110,7 @@ export class IDyDxMath extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: IDyDxMathInterface;
@@ -122,7 +122,7 @@ export class IDyDxMath extends BaseContract {
       price: BigNumberish,
       liquidity: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         token0amount: BigNumber;
@@ -135,7 +135,7 @@ export class IDyDxMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { dx: BigNumber }>;
 
     getDy(
@@ -143,7 +143,7 @@ export class IDyDxMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { dy: BigNumber }>;
 
     getLiquidityForAmounts(
@@ -152,7 +152,7 @@ export class IDyDxMath extends BaseContract {
       currentPrice: BigNumberish,
       dy: BigNumberish,
       dx: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { liquidity: BigNumber }>;
 
     getNewPrice(
@@ -160,7 +160,7 @@ export class IDyDxMath extends BaseContract {
       liquidity: BigNumberish,
       input: BigNumberish,
       zeroForOne: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { newPrice: BigNumber }>;
   };
 
@@ -170,7 +170,7 @@ export class IDyDxMath extends BaseContract {
     price: BigNumberish,
     liquidity: BigNumberish,
     roundUp: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & {
       token0amount: BigNumber;
@@ -183,7 +183,7 @@ export class IDyDxMath extends BaseContract {
     priceLower: BigNumberish,
     priceUpper: BigNumberish,
     roundUp: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getDy(
@@ -191,7 +191,7 @@ export class IDyDxMath extends BaseContract {
     priceLower: BigNumberish,
     priceUpper: BigNumberish,
     roundUp: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getLiquidityForAmounts(
@@ -200,7 +200,7 @@ export class IDyDxMath extends BaseContract {
     currentPrice: BigNumberish,
     dy: BigNumberish,
     dx: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   getNewPrice(
@@ -208,7 +208,7 @@ export class IDyDxMath extends BaseContract {
     liquidity: BigNumberish,
     input: BigNumberish,
     zeroForOne: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   callStatic: {
@@ -218,7 +218,7 @@ export class IDyDxMath extends BaseContract {
       price: BigNumberish,
       liquidity: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         token0amount: BigNumber;
@@ -231,7 +231,7 @@ export class IDyDxMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getDy(
@@ -239,7 +239,7 @@ export class IDyDxMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getLiquidityForAmounts(
@@ -248,7 +248,7 @@ export class IDyDxMath extends BaseContract {
       currentPrice: BigNumberish,
       dy: BigNumberish,
       dx: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getNewPrice(
@@ -256,7 +256,7 @@ export class IDyDxMath extends BaseContract {
       liquidity: BigNumberish,
       input: BigNumberish,
       zeroForOne: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -269,7 +269,7 @@ export class IDyDxMath extends BaseContract {
       price: BigNumberish,
       liquidity: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getDx(
@@ -277,7 +277,7 @@ export class IDyDxMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getDy(
@@ -285,7 +285,7 @@ export class IDyDxMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getLiquidityForAmounts(
@@ -294,7 +294,7 @@ export class IDyDxMath extends BaseContract {
       currentPrice: BigNumberish,
       dy: BigNumberish,
       dx: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getNewPrice(
@@ -302,7 +302,7 @@ export class IDyDxMath extends BaseContract {
       liquidity: BigNumberish,
       input: BigNumberish,
       zeroForOne: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -313,7 +313,7 @@ export class IDyDxMath extends BaseContract {
       price: BigNumberish,
       liquidity: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getDx(
@@ -321,7 +321,7 @@ export class IDyDxMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getDy(
@@ -329,7 +329,7 @@ export class IDyDxMath extends BaseContract {
       priceLower: BigNumberish,
       priceUpper: BigNumberish,
       roundUp: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getLiquidityForAmounts(
@@ -338,7 +338,7 @@ export class IDyDxMath extends BaseContract {
       currentPrice: BigNumberish,
       dy: BigNumberish,
       dx: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getNewPrice(
@@ -346,7 +346,7 @@ export class IDyDxMath extends BaseContract {
       liquidity: BigNumberish,
       input: BigNumberish,
       zeroForOne: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

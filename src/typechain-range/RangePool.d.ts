@@ -13,83 +13,83 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface RangePoolInterface extends ethers.utils.Interface {
   functions: {
-    "balanceOf(address,uint256)": FunctionFragment;
-    "balanceOfBatch(address[],uint256[])": FunctionFragment;
-    "burn((address,int24,int24,uint128))": FunctionFragment;
-    "burnFungible(address,uint256,uint256)": FunctionFragment;
-    "fees(uint16,bool)": FunctionFragment;
-    "increaseSampleLength(uint16)": FunctionFragment;
-    "isApprovedForAll(address,address)": FunctionFragment;
-    "mint((address,int24,int24,uint128,uint128))": FunctionFragment;
-    "mintFungible(address,uint256,uint256)": FunctionFragment;
-    "name()": FunctionFragment;
-    "owner()": FunctionFragment;
-    "poolState()": FunctionFragment;
-    "positions(int24,int24)": FunctionFragment;
-    "quote((uint160,uint128,bool,bool))": FunctionFragment;
-    "safeBatchTransferFrom(address,address,uint256[],uint256[])": FunctionFragment;
-    "safeTransferFrom(address,address,uint256,uint256)": FunctionFragment;
-    "sample(uint32[])": FunctionFragment;
-    "samples(uint256)": FunctionFragment;
-    "setApprovalForAll(address,bool)": FunctionFragment;
-    "snapshot((address,int24,int24))": FunctionFragment;
-    "supportsInterface(bytes4)": FunctionFragment;
-    "swap((address,uint160,uint128,bool,bool,bytes))": FunctionFragment;
-    "swapFee()": FunctionFragment;
-    "symbol()": FunctionFragment;
-    "tickMap()": FunctionFragment;
-    "tickSpacing()": FunctionFragment;
-    "ticks(int24)": FunctionFragment;
-    "token0()": FunctionFragment;
-    "token1()": FunctionFragment;
-    "totalSupply(uint256)": FunctionFragment;
+    'balanceOf(address,uint256)': FunctionFragment;
+    'balanceOfBatch(address[],uint256[])': FunctionFragment;
+    'burn((address,int24,int24,uint128))': FunctionFragment;
+    'burnFungible(address,uint256,uint256)': FunctionFragment;
+    'fees(uint16,bool)': FunctionFragment;
+    'increaseSampleLength(uint16)': FunctionFragment;
+    'isApprovedForAll(address,address)': FunctionFragment;
+    'mint((address,int24,int24,uint128,uint128))': FunctionFragment;
+    'mintFungible(address,uint256,uint256)': FunctionFragment;
+    'name()': FunctionFragment;
+    'owner()': FunctionFragment;
+    'poolState()': FunctionFragment;
+    'positions(int24,int24)': FunctionFragment;
+    'quote((uint160,uint128,bool,bool))': FunctionFragment;
+    'safeBatchTransferFrom(address,address,uint256[],uint256[])': FunctionFragment;
+    'safeTransferFrom(address,address,uint256,uint256)': FunctionFragment;
+    'sample(uint32[])': FunctionFragment;
+    'samples(uint256)': FunctionFragment;
+    'setApprovalForAll(address,bool)': FunctionFragment;
+    'snapshot((address,int24,int24))': FunctionFragment;
+    'supportsInterface(bytes4)': FunctionFragment;
+    'swap((address,uint160,uint128,bool,bool,bytes))': FunctionFragment;
+    'swapFee()': FunctionFragment;
+    'symbol()': FunctionFragment;
+    'tickMap()': FunctionFragment;
+    'tickSpacing()': FunctionFragment;
+    'ticks(int24)': FunctionFragment;
+    'token0()': FunctionFragment;
+    'token1()': FunctionFragment;
+    'totalSupply(uint256)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "balanceOf",
-    values: [string, BigNumberish]
+    functionFragment: 'balanceOf',
+    values: [string, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "balanceOfBatch",
-    values: [string[], BigNumberish[]]
+    functionFragment: 'balanceOfBatch',
+    values: [string[], BigNumberish[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "burn",
+    functionFragment: 'burn',
     values: [
       {
         to: string;
         lower: BigNumberish;
         upper: BigNumberish;
         burnPercent: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "burnFungible",
-    values: [string, BigNumberish, BigNumberish]
+    functionFragment: 'burnFungible',
+    values: [string, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "fees",
-    values: [BigNumberish, boolean]
+    functionFragment: 'fees',
+    values: [BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "increaseSampleLength",
-    values: [BigNumberish]
+    functionFragment: 'increaseSampleLength',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "isApprovedForAll",
-    values: [string, string]
+    functionFragment: 'isApprovedForAll',
+    values: [string, string],
   ): string;
   encodeFunctionData(
-    functionFragment: "mint",
+    functionFragment: 'mint',
     values: [
       {
         to: string;
@@ -97,61 +97,61 @@ interface RangePoolInterface extends ethers.utils.Interface {
         upper: BigNumberish;
         amount0: BigNumberish;
         amount1: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "mintFungible",
-    values: [string, BigNumberish, BigNumberish]
+    functionFragment: 'mintFungible',
+    values: [string, BigNumberish, BigNumberish],
   ): string;
-  encodeFunctionData(functionFragment: "name", values?: undefined): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(functionFragment: "poolState", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'name', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'poolState', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "positions",
-    values: [BigNumberish, BigNumberish]
+    functionFragment: 'positions',
+    values: [BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "quote",
+    functionFragment: 'quote',
     values: [
       {
         priceLimit: BigNumberish;
         amount: BigNumberish;
         exactIn: boolean;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "safeBatchTransferFrom",
-    values: [string, string, BigNumberish[], BigNumberish[]]
+    functionFragment: 'safeBatchTransferFrom',
+    values: [string, string, BigNumberish[], BigNumberish[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "safeTransferFrom",
-    values: [string, string, BigNumberish, BigNumberish]
+    functionFragment: 'safeTransferFrom',
+    values: [string, string, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "sample",
-    values: [BigNumberish[]]
+    functionFragment: 'sample',
+    values: [BigNumberish[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "samples",
-    values: [BigNumberish]
+    functionFragment: 'samples',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "setApprovalForAll",
-    values: [string, boolean]
+    functionFragment: 'setApprovalForAll',
+    values: [string, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "snapshot",
-    values: [{ owner: string; lower: BigNumberish; upper: BigNumberish }]
+    functionFragment: 'snapshot',
+    values: [{ owner: string; lower: BigNumberish; upper: BigNumberish }],
   ): string;
   encodeFunctionData(
-    functionFragment: "supportsInterface",
-    values: [BytesLike]
+    functionFragment: 'supportsInterface',
+    values: [BytesLike],
   ): string;
   encodeFunctionData(
-    functionFragment: "swap",
+    functionFragment: 'swap',
     values: [
       {
         to: string;
@@ -160,97 +160,97 @@ interface RangePoolInterface extends ethers.utils.Interface {
         exactIn: boolean;
         zeroForOne: boolean;
         callbackData: BytesLike;
-      }
-    ]
+      },
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "swapFee", values?: undefined): string;
-  encodeFunctionData(functionFragment: "symbol", values?: undefined): string;
-  encodeFunctionData(functionFragment: "tickMap", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'swapFee', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'symbol', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'tickMap', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "tickSpacing",
-    values?: undefined
+    functionFragment: 'tickSpacing',
+    values?: undefined,
   ): string;
-  encodeFunctionData(functionFragment: "ticks", values: [BigNumberish]): string;
-  encodeFunctionData(functionFragment: "token0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "token1", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'ticks', values: [BigNumberish]): string;
+  encodeFunctionData(functionFragment: 'token0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'token1', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "totalSupply",
-    values: [BigNumberish]
+    functionFragment: 'totalSupply',
+    values: [BigNumberish],
   ): string;
 
-  decodeFunctionResult(functionFragment: "balanceOf", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'balanceOf', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "balanceOfBatch",
-    data: BytesLike
+    functionFragment: 'balanceOfBatch',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'burn', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "burnFungible",
-    data: BytesLike
+    functionFragment: 'burnFungible',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "fees", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'fees', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "increaseSampleLength",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "isApprovedForAll",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "mintFungible",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "name", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "poolState", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "positions", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "quote", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "safeBatchTransferFrom",
-    data: BytesLike
+    functionFragment: 'increaseSampleLength',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "safeTransferFrom",
-    data: BytesLike
+    functionFragment: 'isApprovedForAll',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "sample", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "samples", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "setApprovalForAll",
-    data: BytesLike
+    functionFragment: 'mintFungible',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "snapshot", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'name', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'poolState', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'positions', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'quote', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "supportsInterface",
-    data: BytesLike
+    functionFragment: 'safeBatchTransferFrom',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "swap", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "swapFee", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "symbol", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "tickMap", data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "tickSpacing",
-    data: BytesLike
+    functionFragment: 'safeTransferFrom',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "ticks", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "token1", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'sample', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'samples', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "totalSupply",
-    data: BytesLike
+    functionFragment: 'setApprovalForAll',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(functionFragment: 'snapshot', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'supportsInterface',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(functionFragment: 'swap', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'swapFee', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'symbol', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'tickMap', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'tickSpacing',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(functionFragment: 'ticks', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'token1', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'totalSupply',
+    data: BytesLike,
   ): Result;
 
   events: {
-    "ApprovalForAll(address,address,bool)": EventFragment;
-    "TransferBatch(address,address,address,uint256[],uint256[])": EventFragment;
-    "TransferSingle(address,address,address,uint256,uint256)": EventFragment;
+    'ApprovalForAll(address,address,bool)': EventFragment;
+    'TransferBatch(address,address,address,uint256[],uint256[])': EventFragment;
+    'TransferSingle(address,address,address,uint256,uint256)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "ApprovalForAll"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TransferBatch"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TransferSingle"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ApprovalForAll'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'TransferBatch'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'TransferSingle'): EventFragment;
 }
 
 export type ApprovalForAllEvent = TypedEvent<
@@ -287,26 +287,26 @@ export class RangePool extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -319,7 +319,7 @@ export class RangePool extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: RangePoolInterface;
@@ -328,13 +328,13 @@ export class RangePool extends BaseContract {
     balanceOf(
       _account: string,
       _id: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber]>;
 
     balanceOfBatch(
       _accounts: string[],
       _ids: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber[]] & { batchBalances: BigNumber[] }>;
 
     burn(
@@ -344,31 +344,31 @@ export class RangePool extends BaseContract {
         upper: BigNumberish;
         burnPercent: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     burnFungible(
       _account: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     fees(
       protocolFee: BigNumberish,
       setFee: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     increaseSampleLength(
       sampleLengthNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     isApprovedForAll(
       _owner: string,
       _spender: string,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     mint(
@@ -379,23 +379,21 @@ export class RangePool extends BaseContract {
         amount0: BigNumberish;
         amount1: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     mintFungible(
       _account: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     name(overrides?: CallOverrides): Promise<[string]>;
 
     owner(overrides?: CallOverrides): Promise<[string]>;
 
-    poolState(
-      overrides?: CallOverrides
-    ): Promise<
+    poolState(overrides?: CallOverrides): Promise<
       [
         number,
         number,
@@ -412,7 +410,7 @@ export class RangePool extends BaseContract {
           length: number;
           lengthNext: number;
         },
-        [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }
+        [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
       ] & {
         unlocked: number;
         protocolFee: number;
@@ -439,7 +437,7 @@ export class RangePool extends BaseContract {
     positions(
       arg0: BigNumberish,
       arg1: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         liquidity: BigNumber;
@@ -457,7 +455,7 @@ export class RangePool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber, BigNumber, BigNumber]>;
 
     safeBatchTransferFrom(
@@ -465,7 +463,7 @@ export class RangePool extends BaseContract {
       _to: string,
       _ids: BigNumberish[],
       _amounts: BigNumberish[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     safeTransferFrom(
@@ -473,12 +471,12 @@ export class RangePool extends BaseContract {
       _to: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     sample(
       secondsAgo: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
         tickSecondsAccum: BigNumber[];
@@ -491,7 +489,7 @@ export class RangePool extends BaseContract {
 
     samples(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [number, BigNumber, BigNumber] & {
         blockTimestamp: number;
@@ -503,12 +501,12 @@ export class RangePool extends BaseContract {
     setApprovalForAll(
       _spender: string,
       _approved: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     snapshot(
       params: { owner: string; lower: BigNumberish; upper: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
         tickSecondsAccum: BigNumber;
@@ -520,7 +518,7 @@ export class RangePool extends BaseContract {
 
     supportsInterface(
       interfaceID: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[boolean]>;
 
     swap(
@@ -532,7 +530,7 @@ export class RangePool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     swapFee(overrides?: CallOverrides): Promise<[number]>;
@@ -540,14 +538,14 @@ export class RangePool extends BaseContract {
     symbol(overrides?: CallOverrides): Promise<[string]>;
 
     tickMap(
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { blocks: BigNumber }>;
 
     tickSpacing(overrides?: CallOverrides): Promise<[number]>;
 
     ticks(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         liquidityDelta: BigNumber;
@@ -564,20 +562,20 @@ export class RangePool extends BaseContract {
 
     totalSupply(
       _id: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber]>;
   };
 
   balanceOf(
     _account: string,
     _id: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber>;
 
   balanceOfBatch(
     _accounts: string[],
     _ids: BigNumberish[],
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<BigNumber[]>;
 
   burn(
@@ -587,31 +585,31 @@ export class RangePool extends BaseContract {
       upper: BigNumberish;
       burnPercent: BigNumberish;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   burnFungible(
     _account: string,
     _id: BigNumberish,
     _amount: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   fees(
     protocolFee: BigNumberish,
     setFee: boolean,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   increaseSampleLength(
     sampleLengthNext: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   isApprovedForAll(
     _owner: string,
     _spender: string,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   mint(
@@ -622,23 +620,21 @@ export class RangePool extends BaseContract {
       amount0: BigNumberish;
       amount1: BigNumberish;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   mintFungible(
     _account: string,
     _id: BigNumberish,
     _amount: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   name(overrides?: CallOverrides): Promise<string>;
 
   owner(overrides?: CallOverrides): Promise<string>;
 
-  poolState(
-    overrides?: CallOverrides
-  ): Promise<
+  poolState(overrides?: CallOverrides): Promise<
     [
       number,
       number,
@@ -655,7 +651,7 @@ export class RangePool extends BaseContract {
         length: number;
         lengthNext: number;
       },
-      [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }
+      [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
     ] & {
       unlocked: number;
       protocolFee: number;
@@ -682,7 +678,7 @@ export class RangePool extends BaseContract {
   positions(
     arg0: BigNumberish,
     arg1: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
       liquidity: BigNumber;
@@ -700,7 +696,7 @@ export class RangePool extends BaseContract {
       exactIn: boolean;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<[BigNumber, BigNumber, BigNumber]>;
 
   safeBatchTransferFrom(
@@ -708,7 +704,7 @@ export class RangePool extends BaseContract {
     _to: string,
     _ids: BigNumberish[],
     _amounts: BigNumberish[],
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   safeTransferFrom(
@@ -716,12 +712,12 @@ export class RangePool extends BaseContract {
     _to: string,
     _id: BigNumberish,
     _amount: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   sample(
     secondsAgo: BigNumberish[],
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
       tickSecondsAccum: BigNumber[];
@@ -734,7 +730,7 @@ export class RangePool extends BaseContract {
 
   samples(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [number, BigNumber, BigNumber] & {
       blockTimestamp: number;
@@ -746,12 +742,12 @@ export class RangePool extends BaseContract {
   setApprovalForAll(
     _spender: string,
     _approved: boolean,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   snapshot(
     params: { owner: string; lower: BigNumberish; upper: BigNumberish },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber] & {
       tickSecondsAccum: BigNumber;
@@ -763,7 +759,7 @@ export class RangePool extends BaseContract {
 
   supportsInterface(
     interfaceID: BytesLike,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<boolean>;
 
   swap(
@@ -775,7 +771,7 @@ export class RangePool extends BaseContract {
       zeroForOne: boolean;
       callbackData: BytesLike;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   swapFee(overrides?: CallOverrides): Promise<number>;
@@ -788,7 +784,7 @@ export class RangePool extends BaseContract {
 
   ticks(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
       liquidityDelta: BigNumber;
@@ -809,13 +805,13 @@ export class RangePool extends BaseContract {
     balanceOf(
       _account: string,
       _id: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     balanceOfBatch(
       _accounts: string[],
       _ids: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber[]>;
 
     burn(
@@ -825,33 +821,33 @@ export class RangePool extends BaseContract {
         upper: BigNumberish;
         burnPercent: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     burnFungible(
       _account: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     fees(
       protocolFee: BigNumberish,
       setFee: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { token0Fees: BigNumber; token1Fees: BigNumber }
     >;
 
     increaseSampleLength(
       sampleLengthNext: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     isApprovedForAll(
       _owner: string,
       _spender: string,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     mint(
@@ -862,23 +858,21 @@ export class RangePool extends BaseContract {
         amount0: BigNumberish;
         amount1: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     mintFungible(
       _account: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     name(overrides?: CallOverrides): Promise<string>;
 
     owner(overrides?: CallOverrides): Promise<string>;
 
-    poolState(
-      overrides?: CallOverrides
-    ): Promise<
+    poolState(overrides?: CallOverrides): Promise<
       [
         number,
         number,
@@ -895,7 +889,7 @@ export class RangePool extends BaseContract {
           length: number;
           lengthNext: number;
         },
-        [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber }
+        [BigNumber, BigNumber] & { token0: BigNumber; token1: BigNumber },
       ] & {
         unlocked: number;
         protocolFee: number;
@@ -922,7 +916,7 @@ export class RangePool extends BaseContract {
     positions(
       arg0: BigNumberish,
       arg1: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         liquidity: BigNumber;
@@ -940,7 +934,7 @@ export class RangePool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber, BigNumber, BigNumber]>;
 
     safeBatchTransferFrom(
@@ -948,7 +942,7 @@ export class RangePool extends BaseContract {
       _to: string,
       _ids: BigNumberish[],
       _amounts: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     safeTransferFrom(
@@ -956,12 +950,12 @@ export class RangePool extends BaseContract {
       _to: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     sample(
       secondsAgo: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber[], BigNumber[], BigNumber, BigNumber, number] & {
         tickSecondsAccum: BigNumber[];
@@ -974,7 +968,7 @@ export class RangePool extends BaseContract {
 
     samples(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [number, BigNumber, BigNumber] & {
         blockTimestamp: number;
@@ -986,12 +980,12 @@ export class RangePool extends BaseContract {
     setApprovalForAll(
       _spender: string,
       _approved: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     snapshot(
       params: { owner: string; lower: BigNumberish; upper: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
         tickSecondsAccum: BigNumber;
@@ -1003,7 +997,7 @@ export class RangePool extends BaseContract {
 
     supportsInterface(
       interfaceID: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<boolean>;
 
     swap(
@@ -1015,7 +1009,7 @@ export class RangePool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber, BigNumber]>;
 
     swapFee(overrides?: CallOverrides): Promise<number>;
@@ -1028,7 +1022,7 @@ export class RangePool extends BaseContract {
 
     ticks(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         liquidityDelta: BigNumber;
@@ -1045,15 +1039,15 @@ export class RangePool extends BaseContract {
 
     totalSupply(
       _id: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
   filters: {
-    "ApprovalForAll(address,address,bool)"(
+    'ApprovalForAll(address,address,bool)'(
       account?: string | null,
       sender?: string | null,
-      approve?: null
+      approve?: null,
     ): TypedEventFilter<
       [string, string, boolean],
       { account: string; sender: string; approve: boolean }
@@ -1062,18 +1056,18 @@ export class RangePool extends BaseContract {
     ApprovalForAll(
       account?: string | null,
       sender?: string | null,
-      approve?: null
+      approve?: null,
     ): TypedEventFilter<
       [string, string, boolean],
       { account: string; sender: string; approve: boolean }
     >;
 
-    "TransferBatch(address,address,address,uint256[],uint256[])"(
+    'TransferBatch(address,address,address,uint256[],uint256[])'(
       sender?: string | null,
       from?: string | null,
       to?: string | null,
       ids?: null,
-      amounts?: null
+      amounts?: null,
     ): TypedEventFilter<
       [string, string, string, BigNumber[], BigNumber[]],
       {
@@ -1090,7 +1084,7 @@ export class RangePool extends BaseContract {
       from?: string | null,
       to?: string | null,
       ids?: null,
-      amounts?: null
+      amounts?: null,
     ): TypedEventFilter<
       [string, string, string, BigNumber[], BigNumber[]],
       {
@@ -1102,12 +1096,12 @@ export class RangePool extends BaseContract {
       }
     >;
 
-    "TransferSingle(address,address,address,uint256,uint256)"(
+    'TransferSingle(address,address,address,uint256,uint256)'(
       sender?: string | null,
       from?: string | null,
       to?: string | null,
       id?: null,
-      amount?: null
+      amount?: null,
     ): TypedEventFilter<
       [string, string, string, BigNumber, BigNumber],
       {
@@ -1124,7 +1118,7 @@ export class RangePool extends BaseContract {
       from?: string | null,
       to?: string | null,
       id?: null,
-      amount?: null
+      amount?: null,
     ): TypedEventFilter<
       [string, string, string, BigNumber, BigNumber],
       {
@@ -1141,13 +1135,13 @@ export class RangePool extends BaseContract {
     balanceOf(
       _account: string,
       _id: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     balanceOfBatch(
       _accounts: string[],
       _ids: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     burn(
@@ -1157,31 +1151,31 @@ export class RangePool extends BaseContract {
         upper: BigNumberish;
         burnPercent: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     burnFungible(
       _account: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     fees(
       protocolFee: BigNumberish,
       setFee: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     increaseSampleLength(
       sampleLengthNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     isApprovedForAll(
       _owner: string,
       _spender: string,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     mint(
@@ -1192,14 +1186,14 @@ export class RangePool extends BaseContract {
         amount0: BigNumberish;
         amount1: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     mintFungible(
       _account: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     name(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1211,7 +1205,7 @@ export class RangePool extends BaseContract {
     positions(
       arg0: BigNumberish,
       arg1: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     quote(
@@ -1221,7 +1215,7 @@ export class RangePool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     safeBatchTransferFrom(
@@ -1229,7 +1223,7 @@ export class RangePool extends BaseContract {
       _to: string,
       _ids: BigNumberish[],
       _amounts: BigNumberish[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     safeTransferFrom(
@@ -1237,12 +1231,12 @@ export class RangePool extends BaseContract {
       _to: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     sample(
       secondsAgo: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     samples(arg0: BigNumberish, overrides?: CallOverrides): Promise<BigNumber>;
@@ -1250,17 +1244,17 @@ export class RangePool extends BaseContract {
     setApprovalForAll(
       _spender: string,
       _approved: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     snapshot(
       params: { owner: string; lower: BigNumberish; upper: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     supportsInterface(
       interfaceID: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     swap(
@@ -1272,7 +1266,7 @@ export class RangePool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     swapFee(overrides?: CallOverrides): Promise<BigNumber>;
@@ -1291,7 +1285,7 @@ export class RangePool extends BaseContract {
 
     totalSupply(
       _id: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -1299,13 +1293,13 @@ export class RangePool extends BaseContract {
     balanceOf(
       _account: string,
       _id: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     balanceOfBatch(
       _accounts: string[],
       _ids: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     burn(
@@ -1315,31 +1309,31 @@ export class RangePool extends BaseContract {
         upper: BigNumberish;
         burnPercent: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     burnFungible(
       _account: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     fees(
       protocolFee: BigNumberish,
       setFee: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     increaseSampleLength(
       sampleLengthNext: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     isApprovedForAll(
       _owner: string,
       _spender: string,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     mint(
@@ -1350,14 +1344,14 @@ export class RangePool extends BaseContract {
         amount0: BigNumberish;
         amount1: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     mintFungible(
       _account: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     name(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1369,7 +1363,7 @@ export class RangePool extends BaseContract {
     positions(
       arg0: BigNumberish,
       arg1: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     quote(
@@ -1379,7 +1373,7 @@ export class RangePool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     safeBatchTransferFrom(
@@ -1387,7 +1381,7 @@ export class RangePool extends BaseContract {
       _to: string,
       _ids: BigNumberish[],
       _amounts: BigNumberish[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     safeTransferFrom(
@@ -1395,33 +1389,33 @@ export class RangePool extends BaseContract {
       _to: string,
       _id: BigNumberish,
       _amount: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     sample(
       secondsAgo: BigNumberish[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     samples(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     setApprovalForAll(
       _spender: string,
       _approved: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     snapshot(
       params: { owner: string; lower: BigNumberish; upper: BigNumberish },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     supportsInterface(
       interfaceID: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     swap(
@@ -1433,7 +1427,7 @@ export class RangePool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     swapFee(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1446,7 +1440,7 @@ export class RangePool extends BaseContract {
 
     ticks(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     token0(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -1455,7 +1449,7 @@ export class RangePool extends BaseContract {
 
     totalSupply(
       _id: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

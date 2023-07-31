@@ -1,10 +1,8 @@
-import { BigNumberish, type BigNumber } from "ethers"
+import { BigNumberish, type BigNumber } from 'ethers';
 
 export type LimitQuoteParams = {
-    priceLimit:  BigNumberish
-    amount: BigNumberish
-    exactIn: boolean
-    zeroForOne: boolean
-}
-
-
+  priceLimit: BigNumberish;
+  amount: BigNumberish;
+  exactIn: boolean;
+  zeroForOne: boolean;
+};

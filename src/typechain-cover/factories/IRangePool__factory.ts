@@ -2,159 +2,159 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
-import type { IRangePool, IRangePoolInterface } from "../IRangePool";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
+import type { IRangePool, IRangePoolInterface } from '../IRangePool';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "uint16",
-        name: "sampleLengthNext",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'sampleLengthNext',
+        type: 'uint16',
       },
     ],
-    name: "increaseSampleLength",
+    name: 'increaseSampleLength',
     outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
     inputs: [],
-    name: "poolState",
+    name: 'poolState',
     outputs: [
       {
-        internalType: "uint8",
-        name: "",
-        type: "uint8",
+        internalType: 'uint8',
+        name: '',
+        type: 'uint8',
       },
       {
-        internalType: "uint16",
-        name: "",
-        type: "uint16",
+        internalType: 'uint16',
+        name: '',
+        type: 'uint16',
       },
       {
-        internalType: "int24",
-        name: "",
-        type: "int24",
+        internalType: 'int24',
+        name: '',
+        type: 'int24',
       },
       {
-        internalType: "int56",
-        name: "",
-        type: "int56",
+        internalType: 'int56',
+        name: '',
+        type: 'int56',
       },
       {
-        internalType: "uint160",
-        name: "",
-        type: "uint160",
+        internalType: 'uint160',
+        name: '',
+        type: 'uint160',
       },
       {
-        internalType: "uint160",
-        name: "",
-        type: "uint160",
+        internalType: 'uint160',
+        name: '',
+        type: 'uint160',
       },
       {
-        internalType: "uint128",
-        name: "",
-        type: "uint128",
+        internalType: 'uint128',
+        name: '',
+        type: 'uint128',
       },
       {
-        internalType: "uint128",
-        name: "",
-        type: "uint128",
+        internalType: 'uint128',
+        name: '',
+        type: 'uint128',
       },
       {
-        internalType: "uint200",
-        name: "",
-        type: "uint200",
+        internalType: 'uint200',
+        name: '',
+        type: 'uint200',
       },
       {
-        internalType: "uint200",
-        name: "",
-        type: "uint200",
-      },
-      {
-        components: [
-          {
-            internalType: "uint16",
-            name: "index",
-            type: "uint16",
-          },
-          {
-            internalType: "uint16",
-            name: "length",
-            type: "uint16",
-          },
-          {
-            internalType: "uint16",
-            name: "lengthNext",
-            type: "uint16",
-          },
-        ],
-        internalType: "struct IRangePool.SampleState",
-        name: "",
-        type: "tuple",
+        internalType: 'uint200',
+        name: '',
+        type: 'uint200',
       },
       {
         components: [
           {
-            internalType: "uint128",
-            name: "token0",
-            type: "uint128",
+            internalType: 'uint16',
+            name: 'index',
+            type: 'uint16',
           },
           {
-            internalType: "uint128",
-            name: "token1",
-            type: "uint128",
+            internalType: 'uint16',
+            name: 'length',
+            type: 'uint16',
+          },
+          {
+            internalType: 'uint16',
+            name: 'lengthNext',
+            type: 'uint16',
           },
         ],
-        internalType: "struct IRangePool.ProtocolFees",
-        name: "",
-        type: "tuple",
+        internalType: 'struct IRangePool.SampleState',
+        name: '',
+        type: 'tuple',
+      },
+      {
+        components: [
+          {
+            internalType: 'uint128',
+            name: 'token0',
+            type: 'uint128',
+          },
+          {
+            internalType: 'uint128',
+            name: 'token1',
+            type: 'uint128',
+          },
+        ],
+        internalType: 'struct IRangePool.ProtocolFees',
+        name: '',
+        type: 'tuple',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "uint32[]",
-        name: "secondsAgo",
-        type: "uint32[]",
+        internalType: 'uint32[]',
+        name: 'secondsAgo',
+        type: 'uint32[]',
       },
     ],
-    name: "sample",
+    name: 'sample',
     outputs: [
       {
-        internalType: "int56[]",
-        name: "tickSecondsAccum",
-        type: "int56[]",
+        internalType: 'int56[]',
+        name: 'tickSecondsAccum',
+        type: 'int56[]',
       },
       {
-        internalType: "uint160[]",
-        name: "secondsPerLiquidityAccum",
-        type: "uint160[]",
+        internalType: 'uint160[]',
+        name: 'secondsPerLiquidityAccum',
+        type: 'uint160[]',
       },
       {
-        internalType: "uint160",
-        name: "averagePrice",
-        type: "uint160",
+        internalType: 'uint160',
+        name: 'averagePrice',
+        type: 'uint160',
       },
       {
-        internalType: "uint128",
-        name: "averageLiquidity",
-        type: "uint128",
+        internalType: 'uint128',
+        name: 'averageLiquidity',
+        type: 'uint128',
       },
       {
-        internalType: "int24",
-        name: "averageTick",
-        type: "int24",
+        internalType: 'int24',
+        name: 'averageTick',
+        type: 'int24',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
 ];
 
@@ -165,7 +165,7 @@ export class IRangePool__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): IRangePool {
     return new Contract(address, _abi, signerOrProvider) as IRangePool;
   }

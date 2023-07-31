@@ -2,42 +2,42 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   IRangePoolFactory,
   IRangePoolFactoryInterface,
-} from "../IRangePoolFactory";
+} from '../IRangePoolFactory';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "address",
-        name: "fromToken",
-        type: "address",
+        internalType: 'address',
+        name: 'fromToken',
+        type: 'address',
       },
       {
-        internalType: "address",
-        name: "destToken",
-        type: "address",
+        internalType: 'address',
+        name: 'destToken',
+        type: 'address',
       },
       {
-        internalType: "uint16",
-        name: "fee",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'fee',
+        type: 'uint16',
       },
     ],
-    name: "getRangePool",
+    name: 'getRangePool',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
 ];
 
@@ -48,7 +48,7 @@ export class IRangePoolFactory__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): IRangePoolFactory {
     return new Contract(address, _abi, signerOrProvider) as IRangePoolFactory;
   }

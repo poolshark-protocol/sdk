@@ -2,63 +2,63 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   CoverPoolFactoryErrors,
   CoverPoolFactoryErrorsInterface,
-} from "../CoverPoolFactoryErrors";
+} from '../CoverPoolFactoryErrors';
 
 const _abi = [
   {
     inputs: [],
-    name: "CurveMathNotFound",
-    type: "error",
+    name: 'CurveMathNotFound',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "FeeTierNotSupported",
-    type: "error",
+    name: 'FeeTierNotSupported',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidPoolTokenAddress",
-    type: "error",
+    name: 'InvalidPoolTokenAddress',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidTickSpread",
-    type: "error",
+    name: 'InvalidTickSpread',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "OwnerOnly",
-    type: "error",
+    name: 'OwnerOnly',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "PoolAlreadyExists",
-    type: "error",
+    name: 'PoolAlreadyExists',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "TickSpreadNotAtLeastDoubleTickSpread",
-    type: "error",
+    name: 'TickSpreadNotAtLeastDoubleTickSpread',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "TickSpreadNotMultipleOfTickSpacing",
-    type: "error",
+    name: 'TickSpreadNotMultipleOfTickSpacing',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "TwapSourceNotFound",
-    type: "error",
+    name: 'TwapSourceNotFound',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "VolatilityTierNotSupported",
-    type: "error",
+    name: 'VolatilityTierNotSupported',
+    type: 'error',
   },
 ];
 
@@ -69,12 +69,12 @@ export class CoverPoolFactoryErrors__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): CoverPoolFactoryErrors {
     return new Contract(
       address,
       _abi,
-      signerOrProvider
+      signerOrProvider,
     ) as CoverPoolFactoryErrors;
   }
 }

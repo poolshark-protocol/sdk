@@ -2,120 +2,120 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   ICoverPoolFactory,
   ICoverPoolFactoryInterface,
-} from "../ICoverPoolFactory";
+} from '../ICoverPoolFactory';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "bytes32",
-        name: "",
-        type: "bytes32",
+        internalType: 'bytes32',
+        name: '',
+        type: 'bytes32',
       },
     ],
-    name: "coverPools",
+    name: 'coverPools',
     outputs: [
       {
-        internalType: "address",
-        name: "",
-        type: "address",
+        internalType: 'address',
+        name: '',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "bytes32",
-        name: "sourceName",
-        type: "bytes32",
+        internalType: 'bytes32',
+        name: 'sourceName',
+        type: 'bytes32',
       },
       {
-        internalType: "address",
-        name: "tokenIn",
-        type: "address",
+        internalType: 'address',
+        name: 'tokenIn',
+        type: 'address',
       },
       {
-        internalType: "address",
-        name: "tokenOut",
-        type: "address",
+        internalType: 'address',
+        name: 'tokenOut',
+        type: 'address',
       },
       {
-        internalType: "uint16",
-        name: "fee",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'fee',
+        type: 'uint16',
       },
       {
-        internalType: "int16",
-        name: "tickSpread",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpread',
+        type: 'int16',
       },
       {
-        internalType: "uint16",
-        name: "twapLength",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'twapLength',
+        type: 'uint16',
       },
     ],
-    name: "createCoverPool",
+    name: 'createCoverPool',
     outputs: [
       {
-        internalType: "address",
-        name: "pool",
-        type: "address",
+        internalType: 'address',
+        name: 'pool',
+        type: 'address',
       },
     ],
-    stateMutability: "nonpayable",
-    type: "function",
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
     inputs: [
       {
-        internalType: "bytes32",
-        name: "sourceName",
-        type: "bytes32",
+        internalType: 'bytes32',
+        name: 'sourceName',
+        type: 'bytes32',
       },
       {
-        internalType: "address",
-        name: "tokenIn",
-        type: "address",
+        internalType: 'address',
+        name: 'tokenIn',
+        type: 'address',
       },
       {
-        internalType: "address",
-        name: "tokenOut",
-        type: "address",
+        internalType: 'address',
+        name: 'tokenOut',
+        type: 'address',
       },
       {
-        internalType: "uint16",
-        name: "fee",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'fee',
+        type: 'uint16',
       },
       {
-        internalType: "int16",
-        name: "tickSpread",
-        type: "int16",
+        internalType: 'int16',
+        name: 'tickSpread',
+        type: 'int16',
       },
       {
-        internalType: "uint16",
-        name: "twapLength",
-        type: "uint16",
+        internalType: 'uint16',
+        name: 'twapLength',
+        type: 'uint16',
       },
     ],
-    name: "getCoverPool",
+    name: 'getCoverPool',
     outputs: [
       {
-        internalType: "address",
-        name: "pool",
-        type: "address",
+        internalType: 'address',
+        name: 'pool',
+        type: 'address',
       },
     ],
-    stateMutability: "view",
-    type: "function",
+    stateMutability: 'view',
+    type: 'function',
   },
 ];
 
@@ -126,7 +126,7 @@ export class ICoverPoolFactory__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): ICoverPoolFactory {
     return new Contract(address, _abi, signerOrProvider) as ICoverPoolFactory;
   }

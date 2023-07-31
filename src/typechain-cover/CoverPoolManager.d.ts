@@ -13,45 +13,45 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface CoverPoolManagerInterface extends ethers.utils.Interface {
   functions: {
-    "MAX_PROTOCOL_FEE()": FunctionFragment;
-    "collectProtocolFees(address[])": FunctionFragment;
-    "enableTwapSource(bytes32,address,address)": FunctionFragment;
-    "enableVolatilityTier(bytes32,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)": FunctionFragment;
-    "factory()": FunctionFragment;
-    "feeTo()": FunctionFragment;
-    "modifyProtocolFees(address[],uint16[],uint16[],bool[])": FunctionFragment;
-    "modifyVolatilityTierFees(bytes32,uint16,int16,uint16,uint16,uint16)": FunctionFragment;
-    "oneSecond()": FunctionFragment;
-    "owner()": FunctionFragment;
-    "setFactory(address)": FunctionFragment;
-    "transferFeeTo(address)": FunctionFragment;
-    "transferOwner(address)": FunctionFragment;
-    "twapSources(bytes32)": FunctionFragment;
-    "volatilityTiers(bytes32,uint16,int16,uint16)": FunctionFragment;
+    'MAX_PROTOCOL_FEE()': FunctionFragment;
+    'collectProtocolFees(address[])': FunctionFragment;
+    'enableTwapSource(bytes32,address,address)': FunctionFragment;
+    'enableVolatilityTier(bytes32,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)': FunctionFragment;
+    'factory()': FunctionFragment;
+    'feeTo()': FunctionFragment;
+    'modifyProtocolFees(address[],uint16[],uint16[],bool[])': FunctionFragment;
+    'modifyVolatilityTierFees(bytes32,uint16,int16,uint16,uint16,uint16)': FunctionFragment;
+    'oneSecond()': FunctionFragment;
+    'owner()': FunctionFragment;
+    'setFactory(address)': FunctionFragment;
+    'transferFeeTo(address)': FunctionFragment;
+    'transferOwner(address)': FunctionFragment;
+    'twapSources(bytes32)': FunctionFragment;
+    'volatilityTiers(bytes32,uint16,int16,uint16)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "MAX_PROTOCOL_FEE",
-    values?: undefined
+    functionFragment: 'MAX_PROTOCOL_FEE',
+    values?: undefined,
   ): string;
   encodeFunctionData(
-    functionFragment: "collectProtocolFees",
-    values: [string[]]
+    functionFragment: 'collectProtocolFees',
+    values: [string[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "enableTwapSource",
-    values: [BytesLike, string, string]
+    functionFragment: 'enableTwapSource',
+    values: [BytesLike, string, string],
   ): string;
   encodeFunctionData(
-    functionFragment: "enableVolatilityTier",
+    functionFragment: 'enableVolatilityTier',
     values: [
       BytesLike,
       BigNumberish,
@@ -63,109 +63,109 @@ interface CoverPoolManagerInterface extends ethers.utils.Interface {
       BigNumberish,
       BigNumberish,
       BigNumberish,
-      boolean
-    ]
+      boolean,
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "factory", values?: undefined): string;
-  encodeFunctionData(functionFragment: "feeTo", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'factory', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'feeTo', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "modifyProtocolFees",
-    values: [string[], BigNumberish[], BigNumberish[], boolean[]]
+    functionFragment: 'modifyProtocolFees',
+    values: [string[], BigNumberish[], BigNumberish[], boolean[]],
   ): string;
   encodeFunctionData(
-    functionFragment: "modifyVolatilityTierFees",
+    functionFragment: 'modifyVolatilityTierFees',
     values: [
       BytesLike,
       BigNumberish,
       BigNumberish,
       BigNumberish,
       BigNumberish,
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
-  encodeFunctionData(functionFragment: "oneSecond", values?: undefined): string;
-  encodeFunctionData(functionFragment: "owner", values?: undefined): string;
-  encodeFunctionData(functionFragment: "setFactory", values: [string]): string;
+  encodeFunctionData(functionFragment: 'oneSecond', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'owner', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'setFactory', values: [string]): string;
   encodeFunctionData(
-    functionFragment: "transferFeeTo",
-    values: [string]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "transferOwner",
-    values: [string]
+    functionFragment: 'transferFeeTo',
+    values: [string],
   ): string;
   encodeFunctionData(
-    functionFragment: "twapSources",
-    values: [BytesLike]
+    functionFragment: 'transferOwner',
+    values: [string],
   ): string;
   encodeFunctionData(
-    functionFragment: "volatilityTiers",
-    values: [BytesLike, BigNumberish, BigNumberish, BigNumberish]
+    functionFragment: 'twapSources',
+    values: [BytesLike],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'volatilityTiers',
+    values: [BytesLike, BigNumberish, BigNumberish, BigNumberish],
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "MAX_PROTOCOL_FEE",
-    data: BytesLike
+    functionFragment: 'MAX_PROTOCOL_FEE',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "collectProtocolFees",
-    data: BytesLike
+    functionFragment: 'collectProtocolFees',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "enableTwapSource",
-    data: BytesLike
+    functionFragment: 'enableTwapSource',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "enableVolatilityTier",
-    data: BytesLike
+    functionFragment: 'enableVolatilityTier',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "factory", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "feeTo", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'factory', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTo', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "modifyProtocolFees",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "modifyVolatilityTierFees",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "oneSecond", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "setFactory", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "transferFeeTo",
-    data: BytesLike
+    functionFragment: 'modifyProtocolFees',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "transferOwner",
-    data: BytesLike
+    functionFragment: 'modifyVolatilityTierFees',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(functionFragment: 'oneSecond', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'owner', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'setFactory', data: BytesLike): Result;
+  decodeFunctionResult(
+    functionFragment: 'transferFeeTo',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "twapSources",
-    data: BytesLike
+    functionFragment: 'transferOwner',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "volatilityTiers",
-    data: BytesLike
+    functionFragment: 'twapSources',
+    data: BytesLike,
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: 'volatilityTiers',
+    data: BytesLike,
   ): Result;
 
   events: {
-    "FactoryChanged(address,address)": EventFragment;
-    "FeeToTransfer(address,address)": EventFragment;
-    "OwnerTransfer(address,address)": EventFragment;
-    "ProtocolFeesCollected(address[],uint128[],uint128[])": EventFragment;
-    "ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])": EventFragment;
-    "TwapSourceEnabled(bytes32,address,address,address)": EventFragment;
-    "VolatilityTierEnabled(address,address,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)": EventFragment;
+    'FactoryChanged(address,address)': EventFragment;
+    'FeeToTransfer(address,address)': EventFragment;
+    'OwnerTransfer(address,address)': EventFragment;
+    'ProtocolFeesCollected(address[],uint128[],uint128[])': EventFragment;
+    'ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])': EventFragment;
+    'TwapSourceEnabled(bytes32,address,address,address)': EventFragment;
+    'VolatilityTierEnabled(address,address,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)': EventFragment;
   };
 
-  getEvent(nameOrSignatureOrTopic: "FactoryChanged"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "FeeToTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "OwnerTransfer"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeesCollected"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "ProtocolFeesModified"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "TwapSourceEnabled"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "VolatilityTierEnabled"): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FactoryChanged'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'FeeToTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'OwnerTransfer'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeesCollected'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'ProtocolFeesModified'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'TwapSourceEnabled'): EventFragment;
+  getEvent(nameOrSignatureOrTopic: 'VolatilityTierEnabled'): EventFragment;
 }
 
 export type FactoryChangedEvent = TypedEvent<
@@ -221,7 +221,7 @@ export type VolatilityTierEnabledEvent = TypedEvent<
     number,
     number,
     number,
-    boolean
+    boolean,
   ] & {
     sourceAddress: string;
     curveAddress: string;
@@ -244,26 +244,26 @@ export class CoverPoolManager extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -276,7 +276,7 @@ export class CoverPoolManager extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: CoverPoolManagerInterface;
@@ -286,14 +286,14 @@ export class CoverPoolManager extends BaseContract {
 
     collectProtocolFees(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     enableTwapSource(
       sourceName: BytesLike,
       sourceAddress: string,
       curveAddress: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     enableVolatilityTier(
@@ -308,7 +308,7 @@ export class CoverPoolManager extends BaseContract {
       fillFee: BigNumberish,
       minPositionWidth: BigNumberish,
       minLowerPriced: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     factory(overrides?: CallOverrides): Promise<[string]>;
@@ -320,7 +320,7 @@ export class CoverPoolManager extends BaseContract {
       syncFees: BigNumberish[],
       fillFees: BigNumberish[],
       setFees: boolean[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     modifyVolatilityTierFees(
@@ -330,7 +330,7 @@ export class CoverPoolManager extends BaseContract {
       twapLength: BigNumberish,
       syncFee: BigNumberish,
       fillFee: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     oneSecond(overrides?: CallOverrides): Promise<[number]>;
@@ -339,22 +339,22 @@ export class CoverPoolManager extends BaseContract {
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     twapSources(
       sourceName: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [string, string] & { sourceAddress: string; curveAddress: string }
     >;
@@ -364,7 +364,7 @@ export class CoverPoolManager extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, number, number, number, number, number, boolean] & {
@@ -375,7 +375,7 @@ export class CoverPoolManager extends BaseContract {
           fillFee: number;
           minPositionWidth: number;
           minAmountLowerPriced: boolean;
-        }
+        },
       ] & {
         config: [BigNumber, number, number, number, number, number, boolean] & {
           minAmountPerAuction: BigNumber;
@@ -394,14 +394,14 @@ export class CoverPoolManager extends BaseContract {
 
   collectProtocolFees(
     collectPools: string[],
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   enableTwapSource(
     sourceName: BytesLike,
     sourceAddress: string,
     curveAddress: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   enableVolatilityTier(
@@ -416,7 +416,7 @@ export class CoverPoolManager extends BaseContract {
     fillFee: BigNumberish,
     minPositionWidth: BigNumberish,
     minLowerPriced: boolean,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   factory(overrides?: CallOverrides): Promise<string>;
@@ -428,7 +428,7 @@ export class CoverPoolManager extends BaseContract {
     syncFees: BigNumberish[],
     fillFees: BigNumberish[],
     setFees: boolean[],
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   modifyVolatilityTierFees(
@@ -438,7 +438,7 @@ export class CoverPoolManager extends BaseContract {
     twapLength: BigNumberish,
     syncFee: BigNumberish,
     fillFee: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   oneSecond(overrides?: CallOverrides): Promise<number>;
@@ -447,22 +447,22 @@ export class CoverPoolManager extends BaseContract {
 
   setFactory(
     factory_: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   transferFeeTo(
     newFeeTo: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   transferOwner(
     newOwner: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   twapSources(
     sourceName: BytesLike,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [string, string] & { sourceAddress: string; curveAddress: string }
   >;
@@ -472,7 +472,7 @@ export class CoverPoolManager extends BaseContract {
     feeTier: BigNumberish,
     tickSpread: BigNumberish,
     twapLength: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, number, number, number, number, number, boolean] & {
       minAmountPerAuction: BigNumber;
@@ -490,14 +490,14 @@ export class CoverPoolManager extends BaseContract {
 
     collectProtocolFees(
       collectPools: string[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     enableTwapSource(
       sourceName: BytesLike,
       sourceAddress: string,
       curveAddress: string,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     enableVolatilityTier(
@@ -512,7 +512,7 @@ export class CoverPoolManager extends BaseContract {
       fillFee: BigNumberish,
       minPositionWidth: BigNumberish,
       minLowerPriced: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     factory(overrides?: CallOverrides): Promise<string>;
@@ -524,7 +524,7 @@ export class CoverPoolManager extends BaseContract {
       syncFees: BigNumberish[],
       fillFees: BigNumberish[],
       setFees: boolean[],
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     modifyVolatilityTierFees(
@@ -534,7 +534,7 @@ export class CoverPoolManager extends BaseContract {
       twapLength: BigNumberish,
       syncFee: BigNumberish,
       fillFee: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     oneSecond(overrides?: CallOverrides): Promise<number>;
@@ -549,7 +549,7 @@ export class CoverPoolManager extends BaseContract {
 
     twapSources(
       sourceName: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [string, string] & { sourceAddress: string; curveAddress: string }
     >;
@@ -559,7 +559,7 @@ export class CoverPoolManager extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, number, number, number, number, number, boolean] & {
         minAmountPerAuction: BigNumber;
@@ -574,9 +574,9 @@ export class CoverPoolManager extends BaseContract {
   };
 
   filters: {
-    "FactoryChanged(address,address)"(
+    'FactoryChanged(address,address)'(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
@@ -584,15 +584,15 @@ export class CoverPoolManager extends BaseContract {
 
     FactoryChanged(
       previousFactory?: string | null,
-      newFactory?: string | null
+      newFactory?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFactory: string; newFactory: string }
     >;
 
-    "FeeToTransfer(address,address)"(
+    'FeeToTransfer(address,address)'(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
@@ -600,15 +600,15 @@ export class CoverPoolManager extends BaseContract {
 
     FeeToTransfer(
       previousFeeTo?: string | null,
-      newFeeTo?: string | null
+      newFeeTo?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousFeeTo: string; newFeeTo: string }
     >;
 
-    "OwnerTransfer(address,address)"(
+    'OwnerTransfer(address,address)'(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
@@ -616,16 +616,16 @@ export class CoverPoolManager extends BaseContract {
 
     OwnerTransfer(
       previousOwner?: string | null,
-      newOwner?: string | null
+      newOwner?: string | null,
     ): TypedEventFilter<
       [string, string],
       { previousOwner: string; newOwner: string }
     >;
 
-    "ProtocolFeesCollected(address[],uint128[],uint128[])"(
+    'ProtocolFeesCollected(address[],uint128[],uint128[])'(
       collectPools?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       {
@@ -638,7 +638,7 @@ export class CoverPoolManager extends BaseContract {
     ProtocolFeesCollected(
       collectPools?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], BigNumber[], BigNumber[]],
       {
@@ -648,13 +648,13 @@ export class CoverPoolManager extends BaseContract {
       }
     >;
 
-    "ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])"(
+    'ProtocolFeesModified(address[],uint16[],uint16[],bool[],uint128[],uint128[])'(
       modifyPools?: null,
       syncFees?: null,
       fillFees?: null,
       setFees?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], number[], number[], boolean[], BigNumber[], BigNumber[]],
       {
@@ -673,7 +673,7 @@ export class CoverPoolManager extends BaseContract {
       fillFees?: null,
       setFees?: null,
       token0Fees?: null,
-      token1Fees?: null
+      token1Fees?: null,
     ): TypedEventFilter<
       [string[], number[], number[], boolean[], BigNumber[], BigNumber[]],
       {
@@ -686,11 +686,11 @@ export class CoverPoolManager extends BaseContract {
       }
     >;
 
-    "TwapSourceEnabled(bytes32,address,address,address)"(
+    'TwapSourceEnabled(bytes32,address,address,address)'(
       sourceName?: null,
       sourceAddress?: null,
       curveAddress?: null,
-      factoryAddress?: null
+      factoryAddress?: null,
     ): TypedEventFilter<
       [string, string, string, string],
       {
@@ -705,7 +705,7 @@ export class CoverPoolManager extends BaseContract {
       sourceName?: null,
       sourceAddress?: null,
       curveAddress?: null,
-      factoryAddress?: null
+      factoryAddress?: null,
     ): TypedEventFilter<
       [string, string, string, string],
       {
@@ -716,7 +716,7 @@ export class CoverPoolManager extends BaseContract {
       }
     >;
 
-    "VolatilityTierEnabled(address,address,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)"(
+    'VolatilityTierEnabled(address,address,uint16,int16,uint16,uint128,uint16,uint16,uint16,uint16,int16,bool)'(
       sourceAddress?: null,
       curveAddress?: null,
       feeTier?: null,
@@ -728,7 +728,7 @@ export class CoverPoolManager extends BaseContract {
       syncFee?: null,
       fillFee?: null,
       minPositionWidth?: null,
-      minLowerPriced?: null
+      minLowerPriced?: null,
     ): TypedEventFilter<
       [
         string,
@@ -742,7 +742,7 @@ export class CoverPoolManager extends BaseContract {
         number,
         number,
         number,
-        boolean
+        boolean,
       ],
       {
         sourceAddress: string;
@@ -772,7 +772,7 @@ export class CoverPoolManager extends BaseContract {
       syncFee?: null,
       fillFee?: null,
       minPositionWidth?: null,
-      minLowerPriced?: null
+      minLowerPriced?: null,
     ): TypedEventFilter<
       [
         string,
@@ -786,7 +786,7 @@ export class CoverPoolManager extends BaseContract {
         number,
         number,
         number,
-        boolean
+        boolean,
       ],
       {
         sourceAddress: string;
@@ -810,14 +810,14 @@ export class CoverPoolManager extends BaseContract {
 
     collectProtocolFees(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     enableTwapSource(
       sourceName: BytesLike,
       sourceAddress: string,
       curveAddress: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     enableVolatilityTier(
@@ -832,7 +832,7 @@ export class CoverPoolManager extends BaseContract {
       fillFee: BigNumberish,
       minPositionWidth: BigNumberish,
       minLowerPriced: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     factory(overrides?: CallOverrides): Promise<BigNumber>;
@@ -844,7 +844,7 @@ export class CoverPoolManager extends BaseContract {
       syncFees: BigNumberish[],
       fillFees: BigNumberish[],
       setFees: boolean[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     modifyVolatilityTierFees(
@@ -854,7 +854,7 @@ export class CoverPoolManager extends BaseContract {
       twapLength: BigNumberish,
       syncFee: BigNumberish,
       fillFee: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     oneSecond(overrides?: CallOverrides): Promise<BigNumber>;
@@ -863,22 +863,22 @@ export class CoverPoolManager extends BaseContract {
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     twapSources(
       sourceName: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     volatilityTiers(
@@ -886,7 +886,7 @@ export class CoverPoolManager extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -895,14 +895,14 @@ export class CoverPoolManager extends BaseContract {
 
     collectProtocolFees(
       collectPools: string[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     enableTwapSource(
       sourceName: BytesLike,
       sourceAddress: string,
       curveAddress: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     enableVolatilityTier(
@@ -917,7 +917,7 @@ export class CoverPoolManager extends BaseContract {
       fillFee: BigNumberish,
       minPositionWidth: BigNumberish,
       minLowerPriced: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     factory(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -929,7 +929,7 @@ export class CoverPoolManager extends BaseContract {
       syncFees: BigNumberish[],
       fillFees: BigNumberish[],
       setFees: boolean[],
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     modifyVolatilityTierFees(
@@ -939,7 +939,7 @@ export class CoverPoolManager extends BaseContract {
       twapLength: BigNumberish,
       syncFee: BigNumberish,
       fillFee: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     oneSecond(overrides?: CallOverrides): Promise<PopulatedTransaction>;
@@ -948,22 +948,22 @@ export class CoverPoolManager extends BaseContract {
 
     setFactory(
       factory_: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     transferFeeTo(
       newFeeTo: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     transferOwner(
       newOwner: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     twapSources(
       sourceName: BytesLike,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     volatilityTiers(
@@ -971,7 +971,7 @@ export class CoverPoolManager extends BaseContract {
       feeTier: BigNumberish,
       tickSpread: BigNumberish,
       twapLength: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

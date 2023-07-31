@@ -1,7 +1,9 @@
-import { request, gql } from "graphql-request";
+import { request, gql } from 'graphql-request';
 
-const POOLSHARK_COVER_URL = "https://thegraph.com/hosted-service/subgraph/alphak3y/poolshark-cover";
-const POOLSHARK_RANGE_URL = "https://thegraph.com/hosted-service/subgraph/alphak3y/poolshark-range";
+const POOLSHARK_COVER_URL =
+  'https://thegraph.com/hosted-service/subgraph/alphak3y/poolshark-cover';
+const POOLSHARK_RANGE_URL =
+  'https://thegraph.com/hosted-service/subgraph/alphak3y/poolshark-range';
 
 // Replace coverEntities, rangeEntities, and their properties with the actual entities and properties you want to fetch from the subgraphs.
 

@@ -13,25 +13,25 @@ import {
   ContractTransaction,
   Overrides,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface ILimitPoolInterface extends ethers.utils.Interface {
   functions: {
-    "burn((address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "fees(uint16,uint16,bool)": FunctionFragment;
-    "initialize((address,address,address,uint160,uint160,uint160,int16))": FunctionFragment;
-    "mint((address,address,uint128,uint96,int24,int24,bool))": FunctionFragment;
-    "quote((uint160,uint128,bool,bool))": FunctionFragment;
-    "snapshot((address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "swap((address,uint160,uint128,bool,bool,bytes))": FunctionFragment;
+    'burn((address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'fees(uint16,uint16,bool)': FunctionFragment;
+    'initialize((address,address,address,uint160,uint160,uint160,int16))': FunctionFragment;
+    'mint((address,address,uint128,uint96,int24,int24,bool))': FunctionFragment;
+    'quote((uint160,uint128,bool,bool))': FunctionFragment;
+    'snapshot((address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'swap((address,uint160,uint128,bool,bool,bytes))': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "burn",
+    functionFragment: 'burn',
     values: [
       {
         to: string;
@@ -40,15 +40,15 @@ interface ILimitPoolInterface extends ethers.utils.Interface {
         claim: BigNumberish;
         upper: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "fees",
-    values: [BigNumberish, BigNumberish, boolean]
+    functionFragment: 'fees',
+    values: [BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "initialize",
+    functionFragment: 'initialize',
     values: [
       {
         owner: string;
@@ -58,11 +58,11 @@ interface ILimitPoolInterface extends ethers.utils.Interface {
         maxPrice: BigNumberish;
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "mint",
+    functionFragment: 'mint',
     values: [
       {
         to: string;
@@ -72,22 +72,22 @@ interface ILimitPoolInterface extends ethers.utils.Interface {
         lower: BigNumberish;
         upper: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "quote",
+    functionFragment: 'quote',
     values: [
       {
         priceLimit: BigNumberish;
         amount: BigNumberish;
         exactIn: boolean;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "snapshot",
+    functionFragment: 'snapshot',
     values: [
       {
         owner: string;
@@ -96,11 +96,11 @@ interface ILimitPoolInterface extends ethers.utils.Interface {
         upper: BigNumberish;
         claim: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "swap",
+    functionFragment: 'swap',
     values: [
       {
         to: string;
@@ -109,17 +109,17 @@ interface ILimitPoolInterface extends ethers.utils.Interface {
         exactIn: boolean;
         zeroForOne: boolean;
         callbackData: BytesLike;
-      }
-    ]
+      },
+    ],
   ): string;
 
-  decodeFunctionResult(functionFragment: "burn", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "fees", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "mint", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "quote", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "snapshot", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "swap", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'burn', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'fees', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'initialize', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'mint', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'quote', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'snapshot', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'swap', data: BytesLike): Result;
 
   events: {};
 }
@@ -130,26 +130,26 @@ export class ILimitPool extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -162,7 +162,7 @@ export class ILimitPool extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: ILimitPoolInterface;
@@ -177,14 +177,14 @@ export class ILimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     fees(
       syncFee: BigNumberish,
       fillFee: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     initialize(
@@ -197,7 +197,7 @@ export class ILimitPool extends BaseContract {
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     mint(
@@ -210,7 +210,7 @@ export class ILimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
 
     quote(
@@ -220,7 +220,7 @@ export class ILimitPool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         inAmount: BigNumber;
@@ -238,7 +238,7 @@ export class ILimitPool extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
@@ -247,7 +247,7 @@ export class ILimitPool extends BaseContract {
           amountIn: BigNumber;
           amountOut: BigNumber;
           epochLast: number;
-        }
+        },
       ]
     >;
 
@@ -260,7 +260,7 @@ export class ILimitPool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<ContractTransaction>;
   };
 
@@ -273,14 +273,14 @@ export class ILimitPool extends BaseContract {
       upper: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   fees(
     syncFee: BigNumberish,
     fillFee: BigNumberish,
     setFees: boolean,
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   initialize(
@@ -293,7 +293,7 @@ export class ILimitPool extends BaseContract {
       startPrice: BigNumberish;
       tickSpacing: BigNumberish;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   mint(
@@ -306,7 +306,7 @@ export class ILimitPool extends BaseContract {
       upper: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   quote(
@@ -316,7 +316,7 @@ export class ILimitPool extends BaseContract {
       exactIn: boolean;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber] & {
       inAmount: BigNumber;
@@ -334,7 +334,7 @@ export class ILimitPool extends BaseContract {
       claim: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -354,7 +354,7 @@ export class ILimitPool extends BaseContract {
       zeroForOne: boolean;
       callbackData: BytesLike;
     },
-    overrides?: Overrides & { from?: string | Promise<string> }
+    overrides?: Overrides & { from?: string | Promise<string> },
   ): Promise<ContractTransaction>;
 
   callStatic: {
@@ -367,14 +367,14 @@ export class ILimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     fees(
       syncFee: BigNumberish,
       fillFee: BigNumberish,
       setFees: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { token0Fees: BigNumber; token1Fees: BigNumber }
     >;
@@ -389,7 +389,7 @@ export class ILimitPool extends BaseContract {
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     mint(
@@ -402,7 +402,7 @@ export class ILimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<void>;
 
     quote(
@@ -412,7 +412,7 @@ export class ILimitPool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber] & {
         inAmount: BigNumber;
@@ -430,7 +430,7 @@ export class ILimitPool extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -450,7 +450,7 @@ export class ILimitPool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { amount0: BigNumber; amount1: BigNumber }
     >;
@@ -468,14 +468,14 @@ export class ILimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     fees(
       syncFee: BigNumberish,
       fillFee: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     initialize(
@@ -488,7 +488,7 @@ export class ILimitPool extends BaseContract {
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     mint(
@@ -501,7 +501,7 @@ export class ILimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
 
     quote(
@@ -511,7 +511,7 @@ export class ILimitPool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     snapshot(
@@ -523,7 +523,7 @@ export class ILimitPool extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     swap(
@@ -535,7 +535,7 @@ export class ILimitPool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<BigNumber>;
   };
 
@@ -549,14 +549,14 @@ export class ILimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     fees(
       syncFee: BigNumberish,
       fillFee: BigNumberish,
       setFees: boolean,
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     initialize(
@@ -569,7 +569,7 @@ export class ILimitPool extends BaseContract {
         startPrice: BigNumberish;
         tickSpacing: BigNumberish;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     mint(
@@ -582,7 +582,7 @@ export class ILimitPool extends BaseContract {
         upper: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
 
     quote(
@@ -592,7 +592,7 @@ export class ILimitPool extends BaseContract {
         exactIn: boolean;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     snapshot(
@@ -604,7 +604,7 @@ export class ILimitPool extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     swap(
@@ -616,7 +616,7 @@ export class ILimitPool extends BaseContract {
         zeroForOne: boolean;
         callbackData: BytesLike;
       },
-      overrides?: Overrides & { from?: string | Promise<string> }
+      overrides?: Overrides & { from?: string | Promise<string> },
     ): Promise<PopulatedTransaction>;
   };
 }

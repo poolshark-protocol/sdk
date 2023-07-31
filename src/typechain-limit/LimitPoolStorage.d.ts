@@ -12,62 +12,62 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface LimitPoolStorageInterface extends ethers.utils.Interface {
   functions: {
-    "feeTo()": FunctionFragment;
-    "globalState()": FunctionFragment;
-    "pool0()": FunctionFragment;
-    "pool1()": FunctionFragment;
-    "positions0(address,int24,int24)": FunctionFragment;
-    "positions1(address,int24,int24)": FunctionFragment;
-    "tickMap()": FunctionFragment;
-    "ticks0(int24)": FunctionFragment;
-    "ticks1(int24)": FunctionFragment;
+    'feeTo()': FunctionFragment;
+    'globalState()': FunctionFragment;
+    'pool0()': FunctionFragment;
+    'pool1()': FunctionFragment;
+    'positions0(address,int24,int24)': FunctionFragment;
+    'positions1(address,int24,int24)': FunctionFragment;
+    'tickMap()': FunctionFragment;
+    'ticks0(int24)': FunctionFragment;
+    'ticks1(int24)': FunctionFragment;
   };
 
-  encodeFunctionData(functionFragment: "feeTo", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'feeTo', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "globalState",
-    values?: undefined
+    functionFragment: 'globalState',
+    values?: undefined,
   ): string;
-  encodeFunctionData(functionFragment: "pool0", values?: undefined): string;
-  encodeFunctionData(functionFragment: "pool1", values?: undefined): string;
+  encodeFunctionData(functionFragment: 'pool0', values?: undefined): string;
+  encodeFunctionData(functionFragment: 'pool1', values?: undefined): string;
   encodeFunctionData(
-    functionFragment: "positions0",
-    values: [string, BigNumberish, BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "positions1",
-    values: [string, BigNumberish, BigNumberish]
-  ): string;
-  encodeFunctionData(functionFragment: "tickMap", values?: undefined): string;
-  encodeFunctionData(
-    functionFragment: "ticks0",
-    values: [BigNumberish]
+    functionFragment: 'positions0',
+    values: [string, BigNumberish, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "ticks1",
-    values: [BigNumberish]
+    functionFragment: 'positions1',
+    values: [string, BigNumberish, BigNumberish],
+  ): string;
+  encodeFunctionData(functionFragment: 'tickMap', values?: undefined): string;
+  encodeFunctionData(
+    functionFragment: 'ticks0',
+    values: [BigNumberish],
+  ): string;
+  encodeFunctionData(
+    functionFragment: 'ticks1',
+    values: [BigNumberish],
   ): string;
 
-  decodeFunctionResult(functionFragment: "feeTo", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'feeTo', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "globalState",
-    data: BytesLike
+    functionFragment: 'globalState',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "pool0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "pool1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "positions0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "positions1", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "tickMap", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "ticks0", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "ticks1", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'pool0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'pool1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'positions0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'positions1', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'tickMap', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'ticks0', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'ticks1', data: BytesLike): Result;
 
   events: {};
 }
@@ -78,26 +78,26 @@ export class LimitPoolStorage extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -110,7 +110,7 @@ export class LimitPoolStorage extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: LimitPoolStorageInterface;
@@ -119,12 +119,10 @@ export class LimitPoolStorage extends BaseContract {
     feeTo(overrides?: CallOverrides): Promise<[string]>;
 
     globalState(
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number] & { unlocked: number }>;
 
-    pool0(
-      overrides?: CallOverrides
-    ): Promise<
+    pool0(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -136,9 +134,7 @@ export class LimitPoolStorage extends BaseContract {
       }
     >;
 
-    pool1(
-      overrides?: CallOverrides
-    ): Promise<
+    pool1(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -154,7 +150,7 @@ export class LimitPoolStorage extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -169,7 +165,7 @@ export class LimitPoolStorage extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -181,19 +177,19 @@ export class LimitPoolStorage extends BaseContract {
     >;
 
     tickMap(
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[BigNumber] & { blocks: BigNumber }>;
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
     >;
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
     >;
@@ -203,9 +199,7 @@ export class LimitPoolStorage extends BaseContract {
 
   globalState(overrides?: CallOverrides): Promise<number>;
 
-  pool0(
-    overrides?: CallOverrides
-  ): Promise<
+  pool0(overrides?: CallOverrides): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
       price: BigNumber;
       liquidity: BigNumber;
@@ -217,9 +211,7 @@ export class LimitPoolStorage extends BaseContract {
     }
   >;
 
-  pool1(
-    overrides?: CallOverrides
-  ): Promise<
+  pool1(overrides?: CallOverrides): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
       price: BigNumber;
       liquidity: BigNumber;
@@ -235,7 +227,7 @@ export class LimitPoolStorage extends BaseContract {
     arg0: string,
     arg1: BigNumberish,
     arg2: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -250,7 +242,7 @@ export class LimitPoolStorage extends BaseContract {
     arg0: string,
     arg1: BigNumberish,
     arg2: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
       claimPriceLast: BigNumber;
@@ -265,14 +257,14 @@ export class LimitPoolStorage extends BaseContract {
 
   ticks0(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
   >;
 
   ticks1(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
   >;
@@ -282,9 +274,7 @@ export class LimitPoolStorage extends BaseContract {
 
     globalState(overrides?: CallOverrides): Promise<number>;
 
-    pool0(
-      overrides?: CallOverrides
-    ): Promise<
+    pool0(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -296,9 +286,7 @@ export class LimitPoolStorage extends BaseContract {
       }
     >;
 
-    pool1(
-      overrides?: CallOverrides
-    ): Promise<
+    pool1(overrides?: CallOverrides): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number, number, number] & {
         price: BigNumber;
         liquidity: BigNumber;
@@ -314,7 +302,7 @@ export class LimitPoolStorage extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -329,7 +317,7 @@ export class LimitPoolStorage extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, number] & {
         claimPriceLast: BigNumber;
@@ -344,14 +332,14 @@ export class LimitPoolStorage extends BaseContract {
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
     >;
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & { priceAt: BigNumber; liquidityDelta: BigNumber }
     >;
@@ -372,14 +360,14 @@ export class LimitPoolStorage extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     positions1(
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     tickMap(overrides?: CallOverrides): Promise<BigNumber>;
@@ -402,26 +390,26 @@ export class LimitPoolStorage extends BaseContract {
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     positions1(
       arg0: string,
       arg1: BigNumberish,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     tickMap(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     ticks0(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     ticks1(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

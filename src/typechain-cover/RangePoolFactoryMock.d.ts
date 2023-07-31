@@ -12,41 +12,41 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface RangePoolFactoryMockInterface extends ethers.utils.Interface {
   functions: {
-    "feeTierTickSpacing(uint24)": FunctionFragment;
-    "getRangePool(address,address,uint16)": FunctionFragment;
-    "rangePools(address,address,uint24)": FunctionFragment;
+    'feeTierTickSpacing(uint24)': FunctionFragment;
+    'getRangePool(address,address,uint16)': FunctionFragment;
+    'rangePools(address,address,uint24)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "feeTierTickSpacing",
-    values: [BigNumberish]
+    functionFragment: 'feeTierTickSpacing',
+    values: [BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "getRangePool",
-    values: [string, string, BigNumberish]
+    functionFragment: 'getRangePool',
+    values: [string, string, BigNumberish],
   ): string;
   encodeFunctionData(
-    functionFragment: "rangePools",
-    values: [string, string, BigNumberish]
+    functionFragment: 'rangePools',
+    values: [string, string, BigNumberish],
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "feeTierTickSpacing",
-    data: BytesLike
+    functionFragment: 'feeTierTickSpacing',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "getRangePool",
-    data: BytesLike
+    functionFragment: 'getRangePool',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "rangePools", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'rangePools', data: BytesLike): Result;
 
   events: {};
 }
@@ -57,26 +57,26 @@ export class RangePoolFactoryMock extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -89,7 +89,7 @@ export class RangePoolFactoryMock extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: RangePoolFactoryMockInterface;
@@ -97,61 +97,61 @@ export class RangePoolFactoryMock extends BaseContract {
   functions: {
     feeTierTickSpacing(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[number]>;
 
     getRangePool(
       tokenIn: string,
       tokenOut: string,
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
 
     rangePools(
       arg0: string,
       arg1: string,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<[string]>;
   };
 
   feeTierTickSpacing(
     arg0: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<number>;
 
   getRangePool(
     tokenIn: string,
     tokenOut: string,
     feeTier: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   rangePools(
     arg0: string,
     arg1: string,
     arg2: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<string>;
 
   callStatic: {
     feeTierTickSpacing(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<number>;
 
     getRangePool(
       tokenIn: string,
       tokenOut: string,
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
 
     rangePools(
       arg0: string,
       arg1: string,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<string>;
   };
 
@@ -160,42 +160,42 @@ export class RangePoolFactoryMock extends BaseContract {
   estimateGas: {
     feeTierTickSpacing(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     getRangePool(
       tokenIn: string,
       tokenOut: string,
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     rangePools(
       arg0: string,
       arg1: string,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
   populateTransaction: {
     feeTierTickSpacing(
       arg0: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     getRangePool(
       tokenIn: string,
       tokenOut: string,
       feeTier: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     rangePools(
       arg0: string,
       arg1: string,
       arg2: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

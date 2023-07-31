@@ -2,26 +2,26 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
-import type { SafeTransfers, SafeTransfersInterface } from "../SafeTransfers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
+import type { SafeTransfers, SafeTransfersInterface } from '../SafeTransfers';
 
 const _abi = [
   {
     inputs: [
       {
-        internalType: "address",
-        name: "from",
-        type: "address",
+        internalType: 'address',
+        name: 'from',
+        type: 'address',
       },
       {
-        internalType: "address",
-        name: "dest",
-        type: "address",
+        internalType: 'address',
+        name: 'dest',
+        type: 'address',
       },
     ],
-    name: "TransferFailed",
-    type: "error",
+    name: 'TransferFailed',
+    type: 'error',
   },
 ];
 
@@ -32,7 +32,7 @@ export class SafeTransfers__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): SafeTransfers {
     return new Contract(address, _abi, signerOrProvider) as SafeTransfers;
   }

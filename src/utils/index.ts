@@ -1,1 +1,1 @@
-export * from "./isInt24";
+export * from './isInt24';

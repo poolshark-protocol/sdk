@@ -12,31 +12,31 @@ import {
   BaseContract,
   ContractTransaction,
   CallOverrides,
-} from "ethers";
-import { BytesLike } from "@ethersproject/bytes";
-import { Listener, Provider } from "@ethersproject/providers";
-import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
-import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
+} from 'ethers';
+import { BytesLike } from '@ethersproject/bytes';
+import { Listener, Provider } from '@ethersproject/providers';
+import { FunctionFragment, EventFragment, Result } from '@ethersproject/abi';
+import type { TypedEventFilter, TypedEvent, TypedListener } from './common';
 
 interface DeltasInterface extends ethers.utils.Interface {
   functions: {
-    "burnMaxCache((uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128))": FunctionFragment;
-    "burnMaxMinus(((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128))": FunctionFragment;
-    "burnMaxPool((uint160,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))": FunctionFragment;
-    "from(((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128))": FunctionFragment;
-    "max(uint128,uint160,uint160,bool)": FunctionFragment;
-    "maxAuction(uint128,uint160,uint160,bool)": FunctionFragment;
-    "maxRoundUp(uint128,uint160,uint160,bool)": FunctionFragment;
-    "stash((uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128))": FunctionFragment;
-    "to((uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128))": FunctionFragment;
-    "transfer((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),uint256,uint256)": FunctionFragment;
-    "transferMax((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),uint256,uint256)": FunctionFragment;
-    "unstash(((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128))": FunctionFragment;
-    "update(((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),uint128,uint160,uint160,bool,bool)": FunctionFragment;
+    'burnMaxCache((uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128))': FunctionFragment;
+    'burnMaxMinus(((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128))': FunctionFragment;
+    'burnMaxPool((uint160,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint128),uint256,uint256,((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint160,uint128,uint128,uint128,uint32),uint160,uint160,uint160,uint160,bool,bool,bool),(address,address,uint128,int24,int24,int24,bool))': FunctionFragment;
+    'from(((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128))': FunctionFragment;
+    'max(uint128,uint160,uint160,bool)': FunctionFragment;
+    'maxAuction(uint128,uint160,uint160,bool)': FunctionFragment;
+    'maxRoundUp(uint128,uint160,uint160,bool)': FunctionFragment;
+    'stash((uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128))': FunctionFragment;
+    'to((uint128,uint128,uint128,uint128),((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128))': FunctionFragment;
+    'transfer((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),uint256,uint256)': FunctionFragment;
+    'transferMax((uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128),uint256,uint256)': FunctionFragment;
+    'unstash(((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),(uint128,uint128,uint128,uint128))': FunctionFragment;
+    'update(((uint128,uint128,uint128,uint128),int128,uint128,uint128,uint128,uint128),uint128,uint160,uint160,bool,bool)': FunctionFragment;
   };
 
   encodeFunctionData(
-    functionFragment: "burnMaxCache",
+    functionFragment: 'burnMaxCache',
     values: [
       {
         amountInDelta: BigNumberish;
@@ -56,11 +56,11 @@ interface DeltasInterface extends ethers.utils.Interface {
         amountOutDeltaMaxMinus: BigNumberish;
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "burnMaxMinus",
+    functionFragment: 'burnMaxMinus',
     values: [
       {
         deltas: {
@@ -80,11 +80,11 @@ interface DeltasInterface extends ethers.utils.Interface {
         amountOutDelta: BigNumberish;
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "burnMaxPool",
+    functionFragment: 'burnMaxPool',
     values: [
       {
         price: BigNumberish;
@@ -164,11 +164,11 @@ interface DeltasInterface extends ethers.utils.Interface {
         upper: BigNumberish;
         claim: BigNumberish;
         zeroForOne: boolean;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "from",
+    functionFragment: 'from',
     values: [
       {
         deltas: {
@@ -188,23 +188,23 @@ interface DeltasInterface extends ethers.utils.Interface {
         amountOutDelta: BigNumberish;
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "max",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'max',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "maxAuction",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'maxAuction',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "maxRoundUp",
-    values: [BigNumberish, BigNumberish, BigNumberish, boolean]
+    functionFragment: 'maxRoundUp',
+    values: [BigNumberish, BigNumberish, BigNumberish, boolean],
   ): string;
   encodeFunctionData(
-    functionFragment: "stash",
+    functionFragment: 'stash',
     values: [
       {
         amountInDelta: BigNumberish;
@@ -224,11 +224,11 @@ interface DeltasInterface extends ethers.utils.Interface {
         amountOutDeltaMaxMinus: BigNumberish;
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "to",
+    functionFragment: 'to',
     values: [
       {
         amountInDelta: BigNumberish;
@@ -248,11 +248,11 @@ interface DeltasInterface extends ethers.utils.Interface {
         amountOutDeltaMaxMinus: BigNumberish;
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "transfer",
+    functionFragment: 'transfer',
     values: [
       {
         amountInDelta: BigNumberish;
@@ -267,11 +267,11 @@ interface DeltasInterface extends ethers.utils.Interface {
         amountOutDeltaMax: BigNumberish;
       },
       BigNumberish,
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "transferMax",
+    functionFragment: 'transferMax',
     values: [
       {
         amountInDelta: BigNumberish;
@@ -286,11 +286,11 @@ interface DeltasInterface extends ethers.utils.Interface {
         amountOutDeltaMax: BigNumberish;
       },
       BigNumberish,
-      BigNumberish
-    ]
+      BigNumberish,
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "unstash",
+    functionFragment: 'unstash',
     values: [
       {
         deltas: {
@@ -310,11 +310,11 @@ interface DeltasInterface extends ethers.utils.Interface {
         amountOutDelta: BigNumberish;
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
-      }
-    ]
+      },
+    ],
   ): string;
   encodeFunctionData(
-    functionFragment: "update",
+    functionFragment: 'update',
     values: [
       {
         deltas: {
@@ -333,35 +333,35 @@ interface DeltasInterface extends ethers.utils.Interface {
       BigNumberish,
       BigNumberish,
       boolean,
-      boolean
-    ]
+      boolean,
+    ],
   ): string;
 
   decodeFunctionResult(
-    functionFragment: "burnMaxCache",
-    data: BytesLike
+    functionFragment: 'burnMaxCache',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "burnMaxMinus",
-    data: BytesLike
+    functionFragment: 'burnMaxMinus',
+    data: BytesLike,
   ): Result;
   decodeFunctionResult(
-    functionFragment: "burnMaxPool",
-    data: BytesLike
+    functionFragment: 'burnMaxPool',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "from", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "max", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "maxAuction", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "maxRoundUp", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "stash", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "to", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "transfer", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'from', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'max', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'maxAuction', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'maxRoundUp', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'stash', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'to', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'transfer', data: BytesLike): Result;
   decodeFunctionResult(
-    functionFragment: "transferMax",
-    data: BytesLike
+    functionFragment: 'transferMax',
+    data: BytesLike,
   ): Result;
-  decodeFunctionResult(functionFragment: "unstash", data: BytesLike): Result;
-  decodeFunctionResult(functionFragment: "update", data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'unstash', data: BytesLike): Result;
+  decodeFunctionResult(functionFragment: 'update', data: BytesLike): Result;
 
   events: {};
 }
@@ -372,26 +372,26 @@ export class Deltas extends BaseContract {
   deployed(): Promise<this>;
 
   listeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter?: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): Array<TypedListener<EventArgsArray, EventArgsObject>>;
   off<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   on<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   once<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeListener<EventArgsArray extends Array<any>, EventArgsObject>(
     eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
-    listener: TypedListener<EventArgsArray, EventArgsObject>
+    listener: TypedListener<EventArgsArray, EventArgsObject>,
   ): this;
   removeAllListeners<EventArgsArray extends Array<any>, EventArgsObject>(
-    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>
+    eventFilter: TypedEventFilter<EventArgsArray, EventArgsObject>,
   ): this;
 
   listeners(eventName?: string): Array<Listener>;
@@ -404,7 +404,7 @@ export class Deltas extends BaseContract {
   queryFilter<EventArgsArray extends Array<any>, EventArgsObject>(
     event: TypedEventFilter<EventArgsArray, EventArgsObject>,
     fromBlockOrBlockhash?: string | number | undefined,
-    toBlock?: string | number | undefined
+    toBlock?: string | number | undefined,
   ): Promise<Array<TypedEvent<EventArgsArray & EventArgsObject>>>;
 
   interface: DeltasInterface;
@@ -430,7 +430,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -438,7 +438,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -462,7 +462,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -476,7 +476,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -489,7 +489,7 @@ export class Deltas extends BaseContract {
           amountOutDeltaMaxMinus: BigNumber;
           amountInDeltaMaxStashed: BigNumber;
           amountOutDeltaMaxStashed: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -573,7 +573,7 @@ export class Deltas extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -582,7 +582,7 @@ export class Deltas extends BaseContract {
           amountInDelta: BigNumber;
           amountInDeltaMaxClaimed: BigNumber;
           amountOutDeltaMaxClaimed: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -606,7 +606,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -620,7 +620,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -639,7 +639,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -648,7 +648,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         amountInDeltaMax: BigNumber;
@@ -661,7 +661,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         amountInDeltaMax: BigNumber;
@@ -674,7 +674,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         amountInDeltaMax: BigNumber;
@@ -702,7 +702,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -722,7 +722,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -735,7 +735,7 @@ export class Deltas extends BaseContract {
           amountOutDeltaMaxMinus: BigNumber;
           amountInDeltaMaxStashed: BigNumber;
           amountOutDeltaMaxStashed: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -759,7 +759,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -779,7 +779,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -792,7 +792,7 @@ export class Deltas extends BaseContract {
           amountOutDeltaMaxMinus: BigNumber;
           amountInDeltaMaxStashed: BigNumber;
           amountOutDeltaMaxStashed: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -811,7 +811,7 @@ export class Deltas extends BaseContract {
       },
       percentInTransfer: BigNumberish,
       percentOutTransfer: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -825,7 +825,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -844,7 +844,7 @@ export class Deltas extends BaseContract {
       },
       percentInTransfer: BigNumberish,
       percentOutTransfer: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -858,7 +858,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -882,7 +882,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -896,7 +896,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -915,7 +915,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -938,7 +938,7 @@ export class Deltas extends BaseContract {
       priceUpper: BigNumberish,
       isPool0: boolean,
       isAdded: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -952,7 +952,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -971,7 +971,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
   };
@@ -996,7 +996,7 @@ export class Deltas extends BaseContract {
       amountInDeltaMaxStashed: BigNumberish;
       amountOutDeltaMaxStashed: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber] & {
       amountInDelta: BigNumber;
@@ -1026,7 +1026,7 @@ export class Deltas extends BaseContract {
       amountInDeltaMax: BigNumberish;
       amountOutDeltaMax: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1039,7 +1039,7 @@ export class Deltas extends BaseContract {
       BigNumber,
       BigNumber,
       BigNumber,
-      BigNumber
+      BigNumber,
     ] & {
       deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -1135,7 +1135,7 @@ export class Deltas extends BaseContract {
       claim: BigNumberish;
       zeroForOne: boolean;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
       price: BigNumber;
@@ -1166,7 +1166,7 @@ export class Deltas extends BaseContract {
       amountInDeltaMax: BigNumberish;
       amountOutDeltaMax: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [
@@ -1180,7 +1180,7 @@ export class Deltas extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -1199,7 +1199,7 @@ export class Deltas extends BaseContract {
         amountOutDelta: BigNumber;
         amountInDeltaMax: BigNumber;
         amountOutDeltaMax: BigNumber;
-      }
+      },
     ]
   >;
 
@@ -1208,7 +1208,7 @@ export class Deltas extends BaseContract {
     priceStart: BigNumberish,
     priceEnd: BigNumberish,
     isPool0: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & {
       amountInDeltaMax: BigNumber;
@@ -1221,7 +1221,7 @@ export class Deltas extends BaseContract {
     priceStart: BigNumberish,
     priceEnd: BigNumberish,
     isPool0: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & {
       amountInDeltaMax: BigNumber;
@@ -1234,7 +1234,7 @@ export class Deltas extends BaseContract {
     priceStart: BigNumberish,
     priceEnd: BigNumberish,
     isPool0: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [BigNumber, BigNumber] & {
       amountInDeltaMax: BigNumber;
@@ -1262,7 +1262,7 @@ export class Deltas extends BaseContract {
       amountInDeltaMaxStashed: BigNumberish;
       amountOutDeltaMaxStashed: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1282,7 +1282,7 @@ export class Deltas extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -1295,7 +1295,7 @@ export class Deltas extends BaseContract {
         amountOutDeltaMaxMinus: BigNumber;
         amountInDeltaMaxStashed: BigNumber;
         amountOutDeltaMaxStashed: BigNumber;
-      }
+      },
     ]
   >;
 
@@ -1319,7 +1319,7 @@ export class Deltas extends BaseContract {
       amountInDeltaMaxStashed: BigNumberish;
       amountOutDeltaMaxStashed: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1339,7 +1339,7 @@ export class Deltas extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -1352,7 +1352,7 @@ export class Deltas extends BaseContract {
         amountOutDeltaMaxMinus: BigNumber;
         amountInDeltaMaxStashed: BigNumber;
         amountOutDeltaMaxStashed: BigNumber;
-      }
+      },
     ]
   >;
 
@@ -1371,7 +1371,7 @@ export class Deltas extends BaseContract {
     },
     percentInTransfer: BigNumberish,
     percentOutTransfer: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1385,7 +1385,7 @@ export class Deltas extends BaseContract {
         amountOutDelta: BigNumber;
         amountInDeltaMax: BigNumber;
         amountOutDeltaMax: BigNumber;
-      }
+      },
     ]
   >;
 
@@ -1404,7 +1404,7 @@ export class Deltas extends BaseContract {
     },
     percentInTransfer: BigNumberish,
     percentOutTransfer: BigNumberish,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1418,7 +1418,7 @@ export class Deltas extends BaseContract {
         amountOutDelta: BigNumber;
         amountInDeltaMax: BigNumber;
         amountOutDeltaMax: BigNumber;
-      }
+      },
     ]
   >;
 
@@ -1442,7 +1442,7 @@ export class Deltas extends BaseContract {
       amountInDeltaMax: BigNumberish;
       amountOutDeltaMax: BigNumberish;
     },
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [
@@ -1456,7 +1456,7 @@ export class Deltas extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -1475,7 +1475,7 @@ export class Deltas extends BaseContract {
         amountOutDelta: BigNumber;
         amountInDeltaMax: BigNumber;
         amountOutDeltaMax: BigNumber;
-      }
+      },
     ]
   >;
 
@@ -1498,7 +1498,7 @@ export class Deltas extends BaseContract {
     priceUpper: BigNumberish,
     isPool0: boolean,
     isAdded: boolean,
-    overrides?: CallOverrides
+    overrides?: CallOverrides,
   ): Promise<
     [
       [
@@ -1512,7 +1512,7 @@ export class Deltas extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -1531,7 +1531,7 @@ export class Deltas extends BaseContract {
         amountOutDelta: BigNumber;
         amountInDeltaMax: BigNumber;
         amountOutDeltaMax: BigNumber;
-      }
+      },
     ]
   >;
 
@@ -1556,7 +1556,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber] & {
         amountInDelta: BigNumber;
@@ -1586,7 +1586,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1599,7 +1599,7 @@ export class Deltas extends BaseContract {
         BigNumber,
         BigNumber,
         BigNumber,
-        BigNumber
+        BigNumber,
       ] & {
         deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
           amountInDelta: BigNumber;
@@ -1695,7 +1695,7 @@ export class Deltas extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber, BigNumber, BigNumber, BigNumber] & {
         price: BigNumber;
@@ -1726,7 +1726,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -1740,7 +1740,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -1759,7 +1759,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -1768,7 +1768,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         amountInDeltaMax: BigNumber;
@@ -1781,7 +1781,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         amountInDeltaMax: BigNumber;
@@ -1794,7 +1794,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [BigNumber, BigNumber] & {
         amountInDeltaMax: BigNumber;
@@ -1822,7 +1822,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1842,7 +1842,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -1855,7 +1855,7 @@ export class Deltas extends BaseContract {
           amountOutDeltaMaxMinus: BigNumber;
           amountInDeltaMaxStashed: BigNumber;
           amountOutDeltaMaxStashed: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -1879,7 +1879,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1899,7 +1899,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -1912,7 +1912,7 @@ export class Deltas extends BaseContract {
           amountOutDeltaMaxMinus: BigNumber;
           amountInDeltaMaxStashed: BigNumber;
           amountOutDeltaMaxStashed: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -1931,7 +1931,7 @@ export class Deltas extends BaseContract {
       },
       percentInTransfer: BigNumberish,
       percentOutTransfer: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1945,7 +1945,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -1964,7 +1964,7 @@ export class Deltas extends BaseContract {
       },
       percentInTransfer: BigNumberish,
       percentOutTransfer: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [BigNumber, BigNumber, BigNumber, BigNumber] & {
@@ -1978,7 +1978,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -2002,7 +2002,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -2016,7 +2016,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -2035,7 +2035,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
 
@@ -2058,7 +2058,7 @@ export class Deltas extends BaseContract {
       priceUpper: BigNumberish,
       isPool0: boolean,
       isAdded: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<
       [
         [
@@ -2072,7 +2072,7 @@ export class Deltas extends BaseContract {
           BigNumber,
           BigNumber,
           BigNumber,
-          BigNumber
+          BigNumber,
         ] & {
           deltas: [BigNumber, BigNumber, BigNumber, BigNumber] & {
             amountInDelta: BigNumber;
@@ -2091,7 +2091,7 @@ export class Deltas extends BaseContract {
           amountOutDelta: BigNumber;
           amountInDeltaMax: BigNumber;
           amountOutDeltaMax: BigNumber;
-        }
+        },
       ]
     >;
   };
@@ -2119,7 +2119,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     burnMaxMinus(
@@ -2142,7 +2142,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     burnMaxPool(
@@ -2225,7 +2225,7 @@ export class Deltas extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     from(
@@ -2248,7 +2248,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     max(
@@ -2256,7 +2256,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     maxAuction(
@@ -2264,7 +2264,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     maxRoundUp(
@@ -2272,7 +2272,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     stash(
@@ -2295,7 +2295,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     to(
@@ -2318,7 +2318,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     transfer(
@@ -2336,7 +2336,7 @@ export class Deltas extends BaseContract {
       },
       percentInTransfer: BigNumberish,
       percentOutTransfer: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     transferMax(
@@ -2354,7 +2354,7 @@ export class Deltas extends BaseContract {
       },
       percentInTransfer: BigNumberish,
       percentOutTransfer: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     unstash(
@@ -2377,7 +2377,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
 
     update(
@@ -2399,7 +2399,7 @@ export class Deltas extends BaseContract {
       priceUpper: BigNumberish,
       isPool0: boolean,
       isAdded: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<BigNumber>;
   };
 
@@ -2424,7 +2424,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     burnMaxMinus(
@@ -2447,7 +2447,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     burnMaxPool(
@@ -2530,7 +2530,7 @@ export class Deltas extends BaseContract {
         claim: BigNumberish;
         zeroForOne: boolean;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     from(
@@ -2553,7 +2553,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     max(
@@ -2561,7 +2561,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     maxAuction(
@@ -2569,7 +2569,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     maxRoundUp(
@@ -2577,7 +2577,7 @@ export class Deltas extends BaseContract {
       priceStart: BigNumberish,
       priceEnd: BigNumberish,
       isPool0: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     stash(
@@ -2600,7 +2600,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     to(
@@ -2623,7 +2623,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMaxStashed: BigNumberish;
         amountOutDeltaMaxStashed: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     transfer(
@@ -2641,7 +2641,7 @@ export class Deltas extends BaseContract {
       },
       percentInTransfer: BigNumberish,
       percentOutTransfer: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     transferMax(
@@ -2659,7 +2659,7 @@ export class Deltas extends BaseContract {
       },
       percentInTransfer: BigNumberish,
       percentOutTransfer: BigNumberish,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     unstash(
@@ -2682,7 +2682,7 @@ export class Deltas extends BaseContract {
         amountInDeltaMax: BigNumberish;
         amountOutDeltaMax: BigNumberish;
       },
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
 
     update(
@@ -2704,7 +2704,7 @@ export class Deltas extends BaseContract {
       priceUpper: BigNumberish,
       isPool0: boolean,
       isAdded: boolean,
-      overrides?: CallOverrides
+      overrides?: CallOverrides,
     ): Promise<PopulatedTransaction>;
   };
 }

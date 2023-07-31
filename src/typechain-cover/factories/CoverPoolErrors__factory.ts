@@ -2,108 +2,108 @@
 /* tslint:disable */
 /* eslint-disable */
 
-import { Contract, Signer, utils } from "ethers";
-import { Provider } from "@ethersproject/providers";
+import { Contract, Signer, utils } from 'ethers';
+import { Provider } from '@ethersproject/providers';
 import type {
   CoverPoolErrors,
   CoverPoolErrorsInterface,
-} from "../CoverPoolErrors";
+} from '../CoverPoolErrors';
 
 const _abi = [
   {
     inputs: [],
-    name: "CollectToZeroAddress",
-    type: "error",
+    name: 'CollectToZeroAddress',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "FactoryOnly",
-    type: "error",
+    name: 'FactoryOnly',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidPosition",
-    type: "error",
+    name: 'InvalidPosition',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidSwapFee",
-    type: "error",
+    name: 'InvalidSwapFee',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidTick",
-    type: "error",
+    name: 'InvalidTick',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidTickSpread",
-    type: "error",
+    name: 'InvalidTickSpread',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidToken",
-    type: "error",
+    name: 'InvalidToken',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "InvalidTokenDecimals",
-    type: "error",
+    name: 'InvalidTokenDecimals',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "LiquidityOverflow",
-    type: "error",
+    name: 'LiquidityOverflow',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "Locked",
-    type: "error",
+    name: 'Locked',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "LowerNotEvenTick",
-    type: "error",
+    name: 'LowerNotEvenTick',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "MaxTickLiquidity",
-    type: "error",
+    name: 'MaxTickLiquidity',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "NotEnoughOutputLiquidity",
-    type: "error",
+    name: 'NotEnoughOutputLiquidity',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "Overflow",
-    type: "error",
+    name: 'Overflow',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "OwnerOnly",
-    type: "error",
+    name: 'OwnerOnly',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "Token0Missing",
-    type: "error",
+    name: 'Token0Missing',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "Token1Missing",
-    type: "error",
+    name: 'Token1Missing',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "UpperNotOddTick",
-    type: "error",
+    name: 'UpperNotOddTick',
+    type: 'error',
   },
   {
     inputs: [],
-    name: "WaitUntilEnoughObservations",
-    type: "error",
+    name: 'WaitUntilEnoughObservations',
+    type: 'error',
   },
 ];
 
@@ -114,7 +114,7 @@ export class CoverPoolErrors__factory {
   }
   static connect(
     address: string,
-    signerOrProvider: Signer | Provider
+    signerOrProvider: Signer | Provider,
   ): CoverPoolErrors {
     return new Contract(address, _abi, signerOrProvider) as CoverPoolErrors;
   }
