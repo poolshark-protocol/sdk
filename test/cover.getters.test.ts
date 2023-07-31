@@ -16,7 +16,7 @@ const tokenZeroAddress = "0xC26906E10E8BDaDeb2cf297eb56DF59775eE52c4" // WETH
 const  tokenOneAddress = "0x6774be1a283Faed7ED8e40463c40Fb33A8da3461"  // USDC
 
 
-describe('PoolsharkSubgraph', () => {
+describe('Cover Getters', () => {
     const coverPool = new CoverPool({
         signerOrProvider: provider,
         poolAddress:coverPoolAddressArbitrumGoerli
