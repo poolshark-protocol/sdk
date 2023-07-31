@@ -1,38 +1,38 @@
 export type GetRangePoolFromFactoryResponseFeeTierIdUndefined = {
     basePrices: {
-        USD: number
+        USD: string,
     }[],
     rangePools: {
-        id: string,
-        price: number,
-        tickAtPrice: number,
+        id: `0x${string}`,
+        price: string,
+        tickAtPrice: string,
         token0: {
-            usdPrice: number
+            usdPrice: string,
         },
         token1: {
-            usdPrice: number
+            usdPrice: string,
         },
         feeTier: {
-            id: number,
-            feeAmount: number,
-            tickSpacing: number
+            id: `0x${string}`,
+            feeAmount: string,
+            tickSpacing: string,
         }
     }[]
 }
 
 export type GetRangePoolFromFactoryResponseFeeTierIdDefined = {
     rangePools: {
-        id: string,
-        price: number,
-        tickAtPrice: number,
+        id: `0x${string}`,
+        price: string,
+        tickAtPrice: string,
         feeTier: {
-            tickSpacing: number
+            tickSpacing: string
         },
         token0: {
-            usdPrice: number
+            usdPrice: string
         },
         token1: {
-            usdPrice: number
+            usdPrice: string
         }
     }[]
 }
@@ -40,43 +40,43 @@ export type GetRangePoolFromFactoryResponseFeeTierIdDefined = {
 
 export type GetCoverPoolFromFactoryResponse = {
     coverPools: {
-        id: string,
-        latestTick: number,
+        id: `0x${string}`,
+        latestTick: string,
         volatilityTier: {
-            tickSpread: number,
-            auctionLength: number
+            tickSpread: string,
+            auctionLength: string,
         },
         token0: {
-            usdPrice: number
+            usdPrice: string
         },
         token1: {
-            usdPrice: number
+            usdPrice: string,
         }
     }[]
 }
 
 export type GetTickIfZeroForOneResponse = {
     ticks: {
-        index: number
+        index: string
     }[]
 }
 
 export type GetTickIfNotZeroForOneResponse = {
     ticks: {
-        index: number
+        index: string
     }[]
 }
 
 
 export type FetchCoverPositionsResponse = {
     positions: {
-        id: string,
+        id: `0x${string}`,
         inAmount: string,
         inToken: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         liquidity: string,
         zeroForOne: boolean,
@@ -84,38 +84,38 @@ export type FetchCoverPositionsResponse = {
         lower: string,
         amountInDeltaMax: string,
         amountOutDeltaMax: string,
-        epochLast: number,
+        epochLast: string,
         outAmount: string,
         outToken: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         owner: string,
         pool: {
-            id: string,
+            id: `0x${string}`,
             token0: {
-                id: string,
+                id: `0x${string}`,
                 name: string,
                 symbol: string,
-                decimals: number,
-                usdPrice: number
+                decimals: string,
+                usdPrice: string
             },
             token1: {
-                id: string,
+                id: `0x${string}`,
                 name: string,
                 symbol: string,
-                decimals: number,
-                usdPrice: number
+                decimals: string,
+                usdPrice: string
             },
             liquidity: string,
             volatilityTier: {
                 feeAmount: string,
-                tickSpread: number,
-                auctionLength: number
+                tickSpread: string,
+                auctionLength: string
             },
-            latestTick: number
+            latestTick: string
         },
         txnHash: string
     }[]
@@ -124,25 +124,25 @@ export type FetchCoverPositionsResponse = {
 
 export type FetchCoverPoolsResponse = {
     coverPools: {
-        id: string,
-        inputPool: string,
+        id: `0x${string}`,
+        inputPool: `0x${string}`,
         token0: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         token1: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         liquidity: string,
         volatilityTier: {
-            auctionLength: number,
+            auctionLength: string,
             feeAmount: string,
-            tickSpread: number
+            tickSpread: string
         },
         price0: string,
         price1: string,
@@ -161,30 +161,30 @@ export type FetchCoverPoolsResponse = {
 
 export type FetchCoverPoolMetricsResponse = {
     coverPoolFactories: {
-        id: string,
-        poolCount: number
+        id: `0x${string}`,
+        poolCount: string
     }[]
 }
 
 export type FetchRangePoolsResponse = {
     rangePools: {
-        id: string,
+        id: `0x${string}`,
         token0: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         token1: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         feesEth: string,
         feesUsd: string,
         feeTier: {
-            tickSpacing: number,
+            tickSpacing: string,
             feeAmount: string
         },
         ticks: {
@@ -212,7 +212,7 @@ export type FetchRangePoolsResponse = {
 
 export type FetchRangePositionsResponse = {
     positionFractions: {
-        id: string,
+        id: `0x${string}`,
         owner: string,
         amount: string,
         token: {
@@ -222,18 +222,18 @@ export type FetchRangePositionsResponse = {
                 upper: string,
                 liquidity: string,
                 pool: {
-                    id: string,
+                    id: `0x${string}`,
                     token0: {
-                        id: string,
+                        id: `0x${string}`,
                         name: string,
                         symbol: string,
-                        decimals: number
+                        decimals: string
                     },
                     token1: {
-                        id: string,
+                        id: `0x${string}`,
                         name: string,
                         symbol: string,
-                        decimals: number
+                        decimals: string
                     },
                     ticks: {
                         price0: string,
@@ -242,13 +242,13 @@ export type FetchRangePositionsResponse = {
                         liquidityDeltaMinus: string
                     }[],
                     factory: {
-                        id: string
+                        id: `0x${string}`
                     },
                     price: string,
                     liquidity: string,
                     feeTier: {
                         feeAmount: string,
-                        tickSpacing: number
+                        tickSpacing: string
                     },
                     feesEth: string,
                     feesUsd: string,
@@ -268,7 +268,7 @@ export type FetchRangePositionsResponse = {
 
 export type FetchRangePoolMetricsResponse = {
     rangePoolFactories: {
-        id: string,
+        id: `0x${string}`,
         txnCount: string,
         feesEthTotal: string,
         feesUsdTotal: string,
@@ -282,7 +282,7 @@ export type FetchRangePoolMetricsResponse = {
 
 export type FetchUniV3PoolsResponse = {
     pools: {
-        id: string,
+        id: `0x${string}`,
         tick: string,
         liquidity: string,
         sqrtPrice: string,
@@ -291,16 +291,16 @@ export type FetchUniV3PoolsResponse = {
         totalValueLockedToken1: string,
         totalValueLockedUSD: string,
         token1: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         token0: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         }
     }[]
 }
@@ -309,20 +309,20 @@ export type FetchUniV3PoolsResponse = {
 
 export type FetchUniV3PositionsResponse = {
     positions: {
-        id: string,
+        id: `0x${string}`,
         liquidity: string,
         owner: string,
         token1: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         token0: {
-            id: string,
+            id: `0x${string}`,
             name: string,
             symbol: string,
-            decimals: number
+            decimals: string
         },
         pool: {
             tick: string
@@ -336,7 +336,7 @@ export type FetchUniV3PositionsResponse = {
 
 export type FetchPriceResponse = {
     bundles: {
-        id: string,
+        id: `0x${string}`,
         ethPriceUSD: string
     }[]
 }

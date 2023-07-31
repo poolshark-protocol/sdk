@@ -1,0 +1,40 @@
+{
+    "coverPools": [
+        {
+            "id": "0x7c745bc99b7c17de1666a54e9b551fc2933d83e1",
+            "latestTick": "78240",
+            "volatilityTier": {
+                "tickSpread": "20",
+                "auctionLength": "5",
+                "__typename": "VolatilityTier"
+            },
+            "token0": {
+                "usdPrice": "2493.91470623804103042751003284208",
+                "__typename": "Token"
+            },
+            "token1": {
+                "usdPrice": "1",
+                "__typename": "Token"
+            },
+            "__typename": "CoverPool"
+        },
+        {
+            "id": "0xb8cfe8a193b2d43acf64291c34d7ac014b4c55c9",
+            "latestTick": "34480",
+            "volatilityTier": {
+                "tickSpread": "40",
+                "auctionLength": "10",
+                "__typename": "VolatilityTier"
+            },
+            "token0": {
+                "usdPrice": "2493.91470623804103042751003284208",
+                "__typename": "Token"
+            },
+            "token1": {
+                "usdPrice": "1",
+                "__typename": "Token"
+            },
+            "__typename": "CoverPool"
+        }
+    ]
+}

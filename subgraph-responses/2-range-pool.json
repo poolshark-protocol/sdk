@@ -1,0 +1,30 @@
+{
+    "basePrices": [
+        {
+            "USD": "0.0101628208321482380149062280234638",
+            "__typename": "BasePrice"
+        }
+    ],
+    "rangePools": [
+        {
+            "id": "0x2901638048a62d994635f216664d877e23218a2e",
+            "price": "7987055795592116429387707294",
+            "tickAtPrice": "-45893",
+            "token0": {
+                "usdPrice": "0.0101628208321482380149062280234638",
+                "__typename": "Token"
+            },
+            "token1": {
+                "usdPrice": "1",
+                "__typename": "Token"
+            },
+            "feeTier": {
+                "id": "500",
+                "feeAmount": "500",
+                "tickSpacing": "10",
+                "__typename": "FeeTier"
+            },
+            "__typename": "RangePool"
+        }
+    ]
+}

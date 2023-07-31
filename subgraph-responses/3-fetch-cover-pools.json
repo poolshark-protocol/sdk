@@ -1,0 +1,80 @@
+{
+    "coverPools": [
+        {
+            "id": "0x7c745bc99b7c17de1666a54e9b551fc2933d83e1",
+            "inputPool": "0x117e312b6c48211db25d3b731171a311a2e1ada6",
+            "token0": {
+                "id": "0x6774be1a283faed7ed8e40463c40fb33a8da3461",
+                "name": "Token20B",
+                "symbol": "TOKEN20B",
+                "decimals": "18",
+                "__typename": "Token"
+            },
+            "token1": {
+                "id": "0xc26906e10e8bdadeb2cf297eb56df59775ee52c4",
+                "name": "Token20A",
+                "symbol": "TOKEN20A",
+                "decimals": "18",
+                "__typename": "Token"
+            },
+            "liquidity": "0",
+            "volatilityTier": {
+                "auctionLength": "5",
+                "feeAmount": "500",
+                "tickSpread": "20",
+                "__typename": "VolatilityTier"
+            },
+            "price0": "0.0004009760227559888547232616149045857",
+            "price1": "2493.91470623804103042751003284208",
+            "feesEth": "0",
+            "feesUsd": "0",
+            "volumeEth": "0",
+            "volumeToken0": "0",
+            "volumeToken1": "0",
+            "volumeUsd": "0",
+            "totalValueLockedEth": "46792.99229912960969390069323306389",
+            "totalValueLocked0": "46636.813152410894154364",
+            "totalValueLocked1": "389497.470809513374497496",
+            "totalValueLockedUsd": "116697731.6436827367193304514271469",
+            "__typename": "CoverPool"
+        },
+        {
+            "id": "0xb8cfe8a193b2d43acf64291c34d7ac014b4c55c9",
+            "inputPool": "0x117e312b6c48211db25d3b731171a311a2e1ada6",
+            "token0": {
+                "id": "0x6774be1a283faed7ed8e40463c40fb33a8da3461",
+                "name": "Token20B",
+                "symbol": "TOKEN20B",
+                "decimals": "18",
+                "__typename": "Token"
+            },
+            "token1": {
+                "id": "0xc26906e10e8bdadeb2cf297eb56df59775ee52c4",
+                "name": "Token20A",
+                "symbol": "TOKEN20A",
+                "decimals": "18",
+                "__typename": "Token"
+            },
+            "liquidity": "0",
+            "volatilityTier": {
+                "auctionLength": "10",
+                "feeAmount": "500",
+                "tickSpread": "40",
+                "__typename": "VolatilityTier"
+            },
+            "price0": "0.03194218236598716285437769310514649",
+            "price1": "31.30656473443796651481525004571362",
+            "feesEth": "0",
+            "feesUsd": "0",
+            "volumeEth": "0",
+            "volumeToken0": "0",
+            "volumeToken1": "0",
+            "volumeUsd": "0",
+            "totalValueLockedEth": "2",
+            "totalValueLocked0": "2",
+            "totalValueLocked1": "0",
+            "totalValueLockedUsd": "4987.82941247608206085502006568416",
+            "__typename": "CoverPool"
+        }
+    ]
+}

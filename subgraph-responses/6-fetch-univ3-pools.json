@@ -1,0 +1,2504 @@
+{
+    "pools": [
+        {
+            "__typename": "Pool",
+            "id": "0x00024a7832837d0c503d450e39aaf98e92d0e622",
+            "tick": "0",
+            "liquidity": "0",
+            "sqrtPrice": "79228162514264337593543950336",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x82ec78959c2f3b8bd3c35a0bd0e66ab41df3e623",
+                "name": "SHO",
+                "symbol": "Shoaib",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x130f7d31338829159ecfa38935e8b5f09a9a2ec9",
+                "name": "RAY",
+                "symbol": "Rayyan",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x000375805565995fe463af3d62fc6d2f69356b89",
+            "tick": "257902",
+            "liquidity": "20424098133885442585",
+            "sqrtPrice": "31541258030938140815559370346307310",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "51638600.550446",
+            "totalValueLockedToken1": "8185092.622960765070657607",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd354fef0e34ef0ee467d61eee5af8336fd36cb7d",
+                "name": "Uniswap",
+                "symbol": "UNI",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x1f2cd0d7e5a7d8fe41f886063e9f11a05de217fa",
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x000698f6cd7a21405cd5c5aeb428ac3af2525956",
+            "tick": "376910",
+            "liquidity": "1892659175269177916836",
+            "sqrtPrice": "12105599207194312111536699100262134523",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "5765.963465",
+            "totalValueLockedToken1": "1603395330.516780567603089794",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd2ef1b90c8c4019c459bb341dbc63eb2d1ce68cf",
+                "name": "Viet Nam Stablecoin",
+                "symbol": "VNDS",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xc2c527c0cacf457746bd31b2a698fe89de2b6d49",
+                "name": "USDT",
+                "symbol": "USDT",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0011fb79644b885bf832cde735bf43d4ab42fc57",
+            "tick": "-230575",
+            "liquidity": "8928827154556",
+            "sqrtPrice": "780292445820232204156210",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.275181712439425786",
+            "totalValueLockedToken1": "24.79497",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xef9dcb11780934e9b72214d1dcf22ae44d331396",
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x0f0069d8be3c9bc39c5be6f954a39e67fb7ddc0f",
+                "name": "Nova Core BTC & ETH Token",
+                "symbol": "nBTCETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00177483d79ebc0a62d60cf57a55ed32aeafd9f6",
+            "tick": "-69082",
+            "liquidity": "0",
+            "sqrtPrice": "2505290050365003892876723467",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x1e17a20bd14293a5ec5824a0b19328a4afa1352d",
+                "name": "HabitatDAO",
+                "symbol": "HBT",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0020eb535ed764053bead0240a68e94d4c53fb3d",
+            "tick": "-109157",
+            "liquidity": "0",
+            "sqrtPrice": "337818907814160868026718063",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xcb2e2a85155accfe044f7a627c83acbaceb832e3",
+                "name": "usdcusdc",
+                "symbol": "usdc",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x5289e69f5c9ec60a5b04dbf980168dd7a8d9fd8d",
+                "name": "MyTokenMon",
+                "symbol": "CMT",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0022959a9a21f2b6951a1fdbfb195b735dc36bcb",
+            "tick": "-249573",
+            "liquidity": "19428603558413407",
+            "sqrtPrice": "301825029690222537075863",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "5099.999999942156500825",
+            "totalValueLockedToken1": "74014.575877",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c",
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xba8dced3512925e52fe67b1b5329187589072a55",
+                "name": "DAI",
+                "symbol": "DAI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00254de995f57b7a390733def889623f01e083ba",
+            "tick": "23027",
+            "liquidity": "462475370081579604",
+            "sqrtPrice": "250541420775534450580036817218",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000021934393562347",
+            "totalValueLockedToken1": "0.99999999999997201",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x6095c34ddd7264d40de181d32dce4de94f91a347",
+                "name": "NikaToken",
+                "symbol": "NKA",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0026c4e37841ba8fe15326bea8de0f4ec429feac",
+            "tick": "228586",
+            "liquidity": "33957211906377",
+            "sqrtPrice": "7283412802337933661058788031004597",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "6572.6449",
+            "totalValueLockedToken1": "0.025958248932302051",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x8e08de0817b54eeb3df7fcf00e00ce603f1b2820",
+                "name": "Qul Qul Coin",
+                "symbol": "QQC",
+                "decimals": "4"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x002cd28f841dba60503232cdfa9d71958aef1fdb",
+            "tick": "-87863",
+            "liquidity": "98920272342287210",
+            "sqrtPrice": "979658926636251558598480956",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "8.000000000000006519",
+            "totalValueLockedToken1": "0.001223152535034033",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xaabd6cfee4c6783a70bc8434203b277c250d3559",
+                "name": "sd",
+                "symbol": "dsf",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x002dfe35a77e441789dbd7bc49d1b99bb0ba50c3",
+            "tick": "0",
+            "liquidity": "4500000000000000000244",
+            "sqrtPrice": "79228162514264337593543950336",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "4500",
+            "totalValueLockedToken1": "4500",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xdfe7e4da49c36512b287b0aa220124fafd759f0e",
+                "name": "ROUTE USDC",
+                "symbol": "RUSDC",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x508e243298eb592d4839c38a01a6aae355e0cdf8",
+                "name": "Tangleswap Exchange",
+                "symbol": "VOID",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x002eaf0fd95deb36bb02262629a2c036e2145750",
+            "tick": "-22819",
+            "liquidity": "0",
+            "sqrtPrice": "25316882294764863086537100430",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000002",
+            "totalValueLockedToken1": "0.015000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xdc31ee1784292379fbb2964b3b9c4124d8f89c60",
+                "name": "Dai",
+                "symbol": "DAI",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x7569bcce6a871e36bf44c24cdaec4cb2691188d8",
+                "name": "Shush_Club",
+                "symbol": "SHUSH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x002f7ced61ed2ecfba914b5b8a613bcb8d474ef2",
+            "tick": "90204",
+            "liquidity": "1685658794335600527",
+            "sqrtPrice": "7203384960640808796926159401379",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000687702832551049",
+            "totalValueLockedToken1": "100.009999999999999962",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xf15d7d9a7a5dc23863971fa4bfb5dcd991f74820",
+                "name": "Zimal Noor",
+                "symbol": "ZNF",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00302f322d48d7e9645e10a6114da5f3e53f097c",
+            "tick": "-45618",
+            "liquidity": "9045602482639872194",
+            "sqrtPrice": "8097509280092642261067045649",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "12.812553453190583419",
+            "totalValueLockedToken1": "0.52",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x90d3fdd831b6ad54f9543b5ee35445d4b02a2db0",
+                "name": "Tayyab",
+                "symbol": "TYB",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00358f0fa66857501ff06aab74061782497a0edd",
+            "tick": "92108",
+            "liquidity": "0",
+            "sqrtPrice": "7922812760334014175246846344927",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xc4cc1beb4fcaf1bf5ad55a8040fcb67e4787d139",
+                "name": "ZDJD Token",
+                "symbol": "ZDJD",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00441bc88fa6051680547e6ddf019e3c109cf7b9",
+            "tick": "135539",
+            "liquidity": "478591300277990736508",
+            "sqrtPrice": "69492989076435984407634353793596",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1.169143276975428274",
+            "totalValueLockedToken1": "1297929.646082973431785396",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xcbe9771ed31e761b744d3cb9ef78a1f32dd99211",
+                "name": "Gho Token",
+                "symbol": "GHO",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0045b978ba96b8cf4623d1958db72ddd4c190f21",
+            "tick": "-887272",
+            "liquidity": "0",
+            "sqrtPrice": "4295128740",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1.087367648392784892",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x310839be20fc6a8a89f33a59c7d5fc651365068f",
+                "name": "Aave Ethereum DAI",
+                "symbol": "aEthDAI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0048c538a8446b0b1a5b5e0256f6c85baa4e5116",
+            "tick": "23027",
+            "liquidity": "0",
+            "sqrtPrice": "250541420775534450580036817218",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x72205acd1964e170435a9ad56a4e07c22505ff77",
+                "name": "Fake ETH",
+                "symbol": "FETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x294f31824c31fb3639cda23091656c494b92af37",
+                "name": "Fake BTC",
+                "symbol": "FBTC",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x004f8c293dbe68979430f57acfbd9ec3c03f8571",
+            "tick": "-84975",
+            "liquidity": "0",
+            "sqrtPrice": "1131830893060919108479199290",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb3feba70ac77195fec4cbdc1d63619bbfc5bfa0d",
+                "name": "Fantom Token Mock",
+                "symbol": "FTM",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x005788eda234c66fa7b143913eaf2b53d28ed885",
+            "tick": "-207097",
+            "liquidity": "665508201288200880864755752",
+            "sqrtPrice": "2523773587735851930061302",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "20892124466760.515397699545340122",
+            "totalValueLockedToken1": "110",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x14d8610f507cea52b196103e05298db1ec0fd7e5",
+                "name": "Tether USD",
+                "symbol": "USDT",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x047a399ba7163ee8644a0d3aa8a179512ce078af",
+                "name": "3AAAA",
+                "symbol": "3AAAA",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x005bde214b97a1a186a4fb183f26f21283b0e6e8",
+            "tick": "-158958",
+            "liquidity": "0",
+            "sqrtPrice": "28010640907913110919026380",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x03d09b78b4d75e5041386fde6627d0cc05d5cac1",
+                "name": "Ahmed33",
+                "symbol": "AOA33",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x005d6d8f4f169c73654e63087d6a977a54f6e0e6",
+            "tick": "-23028",
+            "liquidity": "173217759822328",
+            "sqrtPrice": "25052894984021797146183221489",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.00016075722230226",
+            "totalValueLockedToken1": "0.00001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x44823d6f1442873be9eb34bf865aae0cb6540e8d",
+                "name": "SAITAMA7.6",
+                "symbol": "SAITAMA7.6",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x006a25ed863bdc0cb2b777ed781cec4c9e2d9e8f",
+            "tick": "-184217",
+            "liquidity": "0",
+            "sqrtPrice": "7922427122162318518285487",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x0c3571668668981e849f25600313165ac2639919",
+                "name": "Quasar",
+                "symbol": "$X",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x006ac33dd747e8dd5642c9b68359e454850f2d92",
+            "tick": "184216",
+            "liquidity": "0",
+            "sqrtPrice": "792280926924313289846529216293289",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xcaabf4617e2d01ec2421f3d75b9be7ae6ee0e453",
+                "name": "Jabba",
+                "symbol": "JAB",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x7af963cf6d228e564e2a0aa0ddbf06210b38615d",
+                "name": "Goerli Test Token",
+                "symbol": "TST",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x006ae187adcc0de1397c4d537dfca8a9cb4221dc",
+            "tick": "86273",
+            "liquidity": "4775369067925409",
+            "sqrtPrice": "5918241792645170281381247267436",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "163938.37925879",
+            "totalValueLockedToken1": "0.118666989652106491",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x9009981a5c9568c54af2ec3f074523b66971e79b",
+                "name": "HEX",
+                "symbol": "HEX",
+                "decimals": "8"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x006bd3c765b049e5e438e117a0dff7304ee4ad60",
+            "tick": "26327",
+            "liquidity": "7849722657292506179",
+            "sqrtPrice": "295484390021072526680000893287",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.069642853446788592",
+            "totalValueLockedToken1": "1.045016079667047403",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x04a1d3e1b65de606ef1912f7f3a5d805910a28cc",
+                "name": "Unwrapped Bitcoin",
+                "symbol": "BTCU",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x006d3c47252aa6ccafc57f0572427b157528f8a9",
+            "tick": "-207244",
+            "liquidity": "366637376100093344732",
+            "sqrtPrice": "2505291706254206075074035",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1000009.999999998132539493",
+            "totalValueLockedToken1": "607220531.471633",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xda7c762b05a56ce06ba7fae75c78c22c8c8bf23b",
+                "name": "Tether USD",
+                "symbol": "USDT",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x6676e4d89a7804c9bbb1c4f53947766a10b3d6ea",
+                "name": "Pawnfi Bored Ape Yacht Club",
+                "symbol": "P-BAYC",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0070062896754968a6932a3cbbc1512e5c8150de",
+            "tick": "205224",
+            "liquidity": "104062877095064",
+            "sqrtPrice": "2264939270927096962490435682649772",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "188.856876",
+            "totalValueLockedToken1": "0.588222016986486786",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x4a42255e9cf5cc3cf1189cfdf07191cec622c86a",
+                "name": "Circle USD",
+                "symbol": "USDC",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x007aad71a4164bbb52e11129490b0abda1b96c48",
+            "tick": "-23028",
+            "liquidity": "20431568383795",
+            "sqrtPrice": "25053241653332528720170525760",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "922830.915224",
+            "totalValueLockedToken1": "100090",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xdc3a0922254974c804f90c0bc4581ed4243cc062",
+                "name": "Crazy Zoo Token",
+                "symbol": "ZOO",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x7168908ede8d8578f3695f479db52f3a1c22d975",
+                "name": "USDT",
+                "symbol": "USDT",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x007be28995db7289ce9bea2f1d5170c325ae6eb7",
+            "tick": null,
+            "liquidity": "0",
+            "sqrtPrice": "0",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd2831969f1a53aa2539960576eb7ec319cc477a3",
+                "name": "unknown",
+                "symbol": "unknown",
+                "decimals": "0"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x5796fdf05b88c7012a7f3399b612970cb46730f1",
+                "name": "unknown",
+                "symbol": "unknown",
+                "decimals": "0"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x007d97bfbcfc827003ad8e5d58838d36776bd2b6",
+            "tick": "184216",
+            "liquidity": "0",
+            "sqrtPrice": "792280926924313289846529216293289",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000002",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xdeb91d7867c5fa0241cef1f38794f89a017098b6",
+                "name": "easytech",
+                "symbol": "easy",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00802cfac7018fa76c954524df51abf8b0edeb50",
+            "tick": "46409",
+            "liquidity": "0",
+            "sqrtPrice": "806499107398411605093531756923",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000600000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xe60e23174aaa85a61ac48022bb6dc5fb49d6f929",
+                "name": "FCM50005",
+                "symbol": "FCM50005",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x008476defa102536dd555fe203f38e329dc2bc9e",
+            "tick": "246631",
+            "liquidity": "0",
+            "sqrtPrice": "17953190752835484416318281673515438",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000300000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xc1d7dd45cdb1bea5c6635737f9d49674c652b3aa",
+                "name": "Boo",
+                "symbol": "BOO",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0084a4cd94283e5c951b3aa812ad02cff59005a4",
+            "tick": "-46065",
+            "liquidity": "1705081508",
+            "sqrtPrice": "7918568068591741919509947610",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.13693863",
+            "totalValueLockedToken1": "49.884382",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd7b45979e2a3c34576f7e507fa52d852d38f5dfa",
+                "name": "ANAN",
+                "symbol": "ANAN",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x0be6adf489b0c6627d9ae0da9e4d127881d09ffc",
+                "name": "ABE",
+                "symbol": "ABE",
+                "decimals": "8"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00897df0e6d42476fb5da96538467940f3af2c08",
+            "tick": "-235695",
+            "liquidity": "0",
+            "sqrtPrice": "604090390363370625367788",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000030654",
+            "totalValueLockedToken1": "0.001200000013082113",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xa8a617593e7b03e66970b2e7c7b25842d68f28f6",
+                "name": "Roshambo",
+                "symbol": "ROS",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x008b33cf64e4c70b2f4af062d801cb00b7bbd2a8",
+            "tick": "0",
+            "liquidity": "3402647085",
+            "sqrtPrice": "79228162514264337593543950336",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "2327.334626",
+            "totalValueLockedToken1": "1000",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd3603fa1b65cb6fd5710395bc292a2e7f0b868e3",
+                "name": "USDC",
+                "symbol": "USDC",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x2b9c1dc5dbc6ce74d2d4d5d1eafa3fb66df75231",
+                "name": "KGB",
+                "symbol": "KGB",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00935335e6dfc545ccfa890255f05f437f4ba9cf",
+            "tick": "-161213",
+            "liquidity": "0",
+            "sqrtPrice": "25024894088836503787224530",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1910.492837786490884315",
+            "totalValueLockedToken1": "0.000200000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x29700bfcdb836b8d73f987776262ff85f5dd0a7e",
+                "name": "Golly Ully Polly",
+                "symbol": "GUP",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00971336a4963d40ae207825cd175d614b9b0592",
+            "tick": "887271",
+            "liquidity": "0",
+            "sqrtPrice": "1461446703485210103287273052203988822378723970341",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000002",
+            "totalValueLockedToken1": "350.938652",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c",
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xca41f293a32d25c2216bc4b30f5b0ab61b6ed2cb",
+                "name": "XEN Crypto",
+                "symbol": "XEN",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x009aabc966e6ce4d352b6934f3ff659ae4cafd4f",
+            "tick": "85000",
+            "liquidity": "0",
+            "sqrtPrice": "5553142912955801861254440912313",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x45ce3b6ebea0f3c67f38f4353a656cea5db61f66",
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x009ac1289de4ff7e4b015383927cfdba0b45af86",
+            "tick": "-223339",
+            "liquidity": "7074673532433044442198749",
+            "sqrtPrice": "1120410809417529842224792",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "499999999999.9999998202876134",
+            "totalValueLockedToken1": "0.304663297257692466",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x0050cddfa54bdf99416989d37deff42bbe5874ba",
+                "name": "Simp9",
+                "symbol": "SIMP9",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00a21f6f2a370e04b3b30c6e9238a65131215e2a",
+            "tick": "-116189",
+            "liquidity": "2300594494528445387845",
+            "sqrtPrice": "237680552340421171407421416",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1111.111111111110310591",
+            "totalValueLockedToken1": "0.000345057581637648",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x21cef7aa01181b74377cf56245a795db7e6f293f",
+                "name": "TEST",
+                "symbol": "TEST",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00a306e3887a41a7e0b2797082681bacc7a43bb5",
+            "tick": "-887272",
+            "liquidity": "0",
+            "sqrtPrice": "4295128740",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "4.375856468817956557",
+            "totalValueLockedToken1": "0.000198000000000002",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xa9f8614b38a9731610cb6bf75218b1c61ca1a10d",
+                "name": "RUG",
+                "symbol": "RUG",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00a330786c7e28526791201a98e526aa53668de6",
+            "tick": "-257008",
+            "liquidity": "154059764838430600152",
+            "sqrtPrice": "208113760994369753354279",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "58649999.999999884220509698",
+            "totalValueLockedToken1": "0.000391824649486477",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x3569e9376f12be606691142e8bcd6293e5a86bf3",
+                "name": "CAP",
+                "symbol": "CAP",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00a62c1ac29161b1f0221b73c32022de41f737ce",
+            "tick": "207243",
+            "liquidity": "36684636463033030",
+            "sqrtPrice": "2505411999795360582221170761428213",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "121717.037784",
+            "totalValueLockedToken1": "99.999999999703557016",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x8173e333fe3c577468626f94ac8b7b985995c1a9",
+                "name": "Pawnfi Token",
+                "symbol": "PAWN",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x39903eecdbb03ca801084ae616d46134c3575282",
+                "name": "Tether USD",
+                "symbol": "USDT",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00a67d9cc7ad03c31fb5183a62b58f6f79afcd7e",
+            "tick": "-6931",
+            "liquidity": "0",
+            "sqrtPrice": "56027864467524418217578629389",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.001414792392424968",
+            "totalValueLockedToken1": "0.000000000000000002",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x41e5e6045f91b61aacc99edca0967d518fb44cfb",
+                "name": "Uniswap",
+                "symbol": "UNI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00ab45594e061581df8cb337fb2c0f87a7a8cc75",
+            "tick": "-16096",
+            "liquidity": "808957276262523860802458",
+            "sqrtPrice": "35430465601290701888012765807",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "999999.999999999999999995",
+            "totalValueLockedToken1": "106113.36641046800016045",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xc06c2e7ce4ad91e1e146fe60594eb1a096fc2dd0",
+                "name": "FakeUNI",
+                "symbol": "FUNI",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x6ebf65ed1b4b546d436f656f164b3c79e0fd60b8",
+                "name": "FakeDAI",
+                "symbol": "FDAI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00afb20d6ac367396c62efb2a059f6d3f6902d56",
+            "tick": "-276365",
+            "liquidity": "0",
+            "sqrtPrice": "79069057317444878813609",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.015256660104000001",
+            "totalValueLockedToken1": "0.000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd5596c3b9f8e52c8061bf8dc7f6708ea7d4d5e1b",
+                "name": "USDC",
+                "symbol": "[Test] USD Coin",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x9f80ee7917bd3d2e32de822cc01d72dfeb597123",
+                "name": "DAI",
+                "symbol": "[Test] DAI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00b784311810b228681653aa515af207d4d9dcde",
+            "tick": null,
+            "liquidity": "0",
+            "sqrtPrice": "0",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x2127f8b37a7351fd594ce3b23b692450d7b8c6c6",
+                "name": "UT6",
+                "symbol": "UT6",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00b8c3f21a4d46d00542fcc3e2d33eeac7442093",
+            "tick": null,
+            "liquidity": "0",
+            "sqrtPrice": "0",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xc3bd34ca2c5ddff1aa51dc349bd3b00b215d46ad",
+                "name": "test456",
+                "symbol": "TEST2",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x456366765cfb857640572541041d0173598c9b98",
+                "name": "test789",
+                "symbol": "TEST3",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00bd05d7c1615da700c34e3def48098bc5b75404",
+            "tick": "97366",
+            "liquidity": "551301774824098058",
+            "sqrtPrice": "10305274775889940610251709114050",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.003689316423112553",
+            "totalValueLockedToken1": "71.27699400522443987",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xe4e81fa6b16327d4b78cfeb83aade04ba7075165",
+                "name": "0x",
+                "symbol": "ZRX",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+                "name": "Uniswap",
+                "symbol": "UNI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00c0fe36eb9e0814afd3f447c02778e0aa8928cd",
+            "tick": "6931",
+            "liquidity": "255680332094486523384",
+            "sqrtPrice": "112040957517951813098925484553",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "99.999999999999999292",
+            "totalValueLockedToken1": "105.891466585264428621",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd7c13106e69f7b4b271b603747e8095dfe9e30d6",
+                "name": "BNB",
+                "symbol": "BNB",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x7641d1cbe8ad00b90dc8c4cb48300dfbd48b548e",
+                "name": "BNB",
+                "symbol": "BNB",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00c17ac416ae96ec4f66812d48ab9351d20d917d",
+            "tick": "210784",
+            "liquidity": "0",
+            "sqrtPrice": "2990806932483547826001812431415356",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000093923306484368",
+            "totalValueLockedToken1": "5547.860055823032192572",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xe9c2950440d10b5095eb96314679a0cf4e6ac36a",
+                "name": "SHIB",
+                "symbol": "SB",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00c4ef2c3ddb9f20803ec11b089cf96ae1cb7fa3",
+            "tick": "92547",
+            "liquidity": "5050507298428774273",
+            "sqrtPrice": "8098771027866237079669616695083",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.048690531555528124",
+            "totalValueLockedToken1": "511.329999794948764842",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb7e29a7d3ca1701e0468268b0a62734e2a58d736",
+                "name": "CHaeGyeom",
+                "symbol": "CHG",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00c8af8c460a0a2f81f8682f0f5fb11f4270c532",
+            "tick": null,
+            "liquidity": "0",
+            "sqrtPrice": "0",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x7a55a5ec54a15ff89bee488adbb9b0497fcf9e58",
+                "name": "PahoojaCoin",
+                "symbol": "PAHJC",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x5e22522b5060bb16f70e14da346146d474536dfd",
+                "name": "Himanshoo",
+                "symbol": "HSPC",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00c8ef9d47b4d284163d55c192ff1d22e86a3719",
+            "tick": "184176",
+            "liquidity": "2101682440947088761198336309",
+            "sqrtPrice": "790735549394714651388827971227542",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "245",
+            "totalValueLockedToken1": "20975811710478.531119921238684913",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb005c59d3f19218758cfbf72903c5145274b6613",
+                "name": "KKKKK",
+                "symbol": "MMMM",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x14d8610f507cea52b196103e05298db1ec0fd7e5",
+                "name": "Tether USD",
+                "symbol": "USDT",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00c9725650c7fe2decdb7a0b00e6f5d3ff1f29aa",
+            "tick": "87980",
+            "liquidity": "983364999414519573",
+            "sqrtPrice": "6445473455852942477681365058635",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.012087584025919008",
+            "totalValueLockedToken1": "79.999999999999788219",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xcb3d3c42d9027ad3b83e0cf99b5065ddffaf1729",
+                "name": "asdasddsa",
+                "symbol": "asdsads",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00ca58e66cba801701e69b0e9a00bf88c5986e2c",
+            "tick": "0",
+            "liquidity": "10000000000000000000542",
+            "sqrtPrice": "79228162514264337593543950336",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "10000",
+            "totalValueLockedToken1": "10000",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xfe7c1e020902ce44ff80f6fbf257556526500641",
+                "name": "Horyxen",
+                "symbol": "HORYXEN",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xca41f293a32d25c2216bc4b30f5b0ab61b6ed2cb",
+                "name": "XEN Crypto",
+                "symbol": "XEN",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00ca7acb0a6b3d71cc15696abb4bee4c63d1e553",
+            "tick": "-38925",
+            "liquidity": "707135558406003794",
+            "sqrtPrice": "11315803079526210253870178625",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "4.243909501963824088",
+            "totalValueLockedToken1": "0.100999999999999858",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x98e729f6bf79ed401e7f952fdce8ce3ff3496c2e",
+                "name": "MKToken",
+                "symbol": "MKT",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00cb661524da4503e6c459c69c958379ccdcdfad",
+            "tick": "226215",
+            "liquidity": "4894985501532490609",
+            "sqrtPrice": "6468899588447589776830677701833182",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "14970.296753",
+            "totalValueLockedToken1": "100.000005106477843612",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x44cffae26e30c108cd7d5c9f52dcaa166391f484",
+                "name": "Token 1",
+                "symbol": "token1",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x433d23dfd8c64f809263adac241ae2e98d1a84bf",
+                "name": "Token 3",
+                "symbol": "token3",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00cb752fb1ca3ce75977f81bd424e17c307ba6c7",
+            "tick": "62139",
+            "liquidity": "116129824860605349802",
+            "sqrtPrice": "1770735465978907698852751544670",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.452222086424923017",
+            "totalValueLockedToken1": "270.362647484487096583",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xccd66c3dd58dc405d760a6abf1ec394b4e41e98f",
+                "name": "LuckyTokenWM",
+                "symbol": "LCWM",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x326c977e6efc84e512bb9c30f76e30c160ed06fb",
+                "name": "ChainLink Token",
+                "symbol": "LINK",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00d452dd9fa4b3876338e50f5dde9a25eb4bcba5",
+            "tick": "-168121",
+            "liquidity": "0",
+            "sqrtPrice": "17715808496720005579036614",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb402b7ca526a5cb32888c3a837ae25f78d4c1e91",
+                "name": "bs400 test",
+                "symbol": "BS400",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00d9156dcd68148fbfef04be8b6c25d7b67a0e93",
+            "tick": "41984",
+            "liquidity": "0",
+            "sqrtPrice": "646423818844724568661917649350",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.003000000000000002",
+            "totalValueLockedToken1": "0.000000000000000002",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd32070d7f16249d3974820325274894401143d4b",
+                "name": "X1",
+                "symbol": "X1",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00dc40f6c98ae99d8d91370dd078b43d7e78d640",
+            "tick": "887271",
+            "liquidity": "0",
+            "sqrtPrice": "1461446703485210103287273052203988822378723970341",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000005",
+            "totalValueLockedToken1": "0.01701690266971099",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x5c946740441c12510a167b447b7de565c20b9e3c",
+                "name": "Graph Token",
+                "symbol": "GRT",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00df0876789f85b3149b08c240e5d7a358f610f7",
+            "tick": "-304454",
+            "liquidity": "2462230047986668849",
+            "sqrtPrice": "19412740681663057990966",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "2579142.987290912574241075",
+            "totalValueLockedToken1": "370287.189428",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c",
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x0934b69818a9e4dbfcfff521a61b7e8fcc8a4937",
+                "name": "NutsDAO",
+                "symbol": "NUTS",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00e0638946491a0f64800704558a1ddff0aa34b2",
+            "tick": "887271",
+            "liquidity": "0",
+            "sqrtPrice": "1461446703485210103287273052203988822378723970341",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.001645702946958418",
+            "totalValueLockedToken1": "401806.702065",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xd87ba7a50b2e7e660f678a895e4b72e7cb4ccd9c",
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x1f9840a85d5af5bf1d1762f925bdaddc4201f984",
+                "name": "Uniswap",
+                "symbol": "UNI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00e46e77ef34cef597108cf23530581128e7a713",
+            "tick": "51",
+            "liquidity": "303024999183389796913",
+            "sqrtPrice": "79433782574417494615140179159",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "5.240660685441618859",
+            "totalValueLockedToken1": "6.819424374894986682",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xffc94fb06b924e6dba5f0325bbed941807a018cd",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00e614efee86b2d9e66e2a7cf14cbe1a7c64aec8",
+            "tick": "115135",
+            "liquidity": "0",
+            "sqrtPrice": "25054131037751093162929900172930",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xe0a1967379feb47966f4b315abc8d941c158f165",
+                "name": "TestToken",
+                "symbol": "TETON",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00e66fd8615ce995090360729500327361ad87bf",
+            "tick": "256600",
+            "liquidity": "1076534439764932",
+            "sqrtPrice": "29552960544980978721205754532902960",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "28.86067723",
+            "totalValueLockedToken1": "401.824218361540331483",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x75e518bc1053a7a8038a06969385ed16de9eed31",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x1e41d10a1d74eda2a36333c86baa8bc55da89db9",
+                "name": "Wrapped Bitcoin",
+                "symbol": "WBTC",
+                "decimals": "8"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00f242aeb8a9923995fd800024e596be4ba9cf42",
+            "tick": "-67262",
+            "liquidity": "38757229699197174109",
+            "sqrtPrice": "2744065247126317294940819739",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "250.177611584263373803",
+            "totalValueLockedToken1": "1.304566793112796968",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x90be02599452fbc1a3d47e9eb62895330cfa05ed",
+                "name": "MKR",
+                "symbol": "MKR",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x70cba46d2e933030e2f274ae58c951c800548aef",
+                "name": "Basic Attention Token",
+                "symbol": "BAT",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00f3247583d1d6495d25079361d657f3ef54f147",
+            "tick": "-1",
+            "liquidity": "42676749258169096140207",
+            "sqrtPrice": "79228162514264337016192497825",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "2243.317647012373620656",
+            "totalValueLockedToken1": "1999.999999999999508693",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x73b08e6f9a85752bdba96a1cb5192188ae671d8f",
+                "name": "FUSD",
+                "symbol": "FUSD",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x5ec926f9a35c0e90798e884972acb0f96dbc3033",
+                "name": "ILION",
+                "symbol": "ILION",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00f5032f785dd359158dc2a447c4f5aeee3d73fc",
+            "tick": "-138163",
+            "liquidity": "10249107635575030939",
+            "sqrtPrice": "79224253767016489810214999",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1.537249837707798837",
+            "totalValueLockedToken1": "0.003",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xa67351437d2d1748c4acc484cce36bfa52658acf",
+                "name": "AliCoin",
+                "symbol": "ALI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00f6aaa3d2191da0cdccdeb3653f5008941bf9eb",
+            "tick": "276319",
+            "liquidity": "501432987730687039",
+            "sqrtPrice": "79208625152734945179626148871389811",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "44485.019042",
+            "totalValueLockedToken1": "49446.821386906361071021",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x252d98fab648203aa33310721bbbddfa8f1b6587",
+                "name": "GSU Coin",
+                "symbol": "GSUc",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x1f1f156e0317167c11aa412e3d1435ea29dc3cce",
+                "name": "Tether USD",
+                "symbol": "USDT",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00f7919b49c01e447f496d5538f7e8025e3e2cf4",
+            "tick": "-5895",
+            "liquidity": "2414213562373095",
+            "sqrtPrice": "59004790104496270509384517805",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000827450447025038",
+            "totalValueLockedToken1": "0.00103530187841639",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x4d8de5120ce97ec30eff622ab1e14513dfcafbbb",
+                "name": "Token-AAAA",
+                "symbol": "Token-AAAA",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00f83a99f24bf094540ebafdd9cd5cab0341aa1a",
+            "tick": "-230271",
+            "liquidity": "0",
+            "sqrtPrice": "792242886762337261366193",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x8d2591f1ebb3ea049c0ad359a0f94f09449cf989",
+                "name": "FTX",
+                "symbol": "FTT",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00fb1de0b8dc7bb04abdc4344e9883135fbb3eef",
+            "tick": "-204122",
+            "liquidity": "3556202233819151437852",
+            "sqrtPrice": "2928573845442321418885802",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "96207704.973223533782141998",
+            "totalValueLockedToken1": "0.131503243278203035",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x5dc5b82218562c86b4cf3a6bb42d0e439aedd601",
+                "name": "NEFSTER",
+                "symbol": "NEF",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x00fb7b577ac7c934e6353cb689bdc4e52b06f507",
+            "tick": "-173129",
+            "liquidity": "0",
+            "sqrtPrice": "13792048781092541689989613",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000002",
+            "totalValueLockedToken1": "0.000200000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x47b96a03727dca525ab7c9d853f21383816b8dc6",
+                "name": "Trump Inu",
+                "symbol": "TRIN",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0103131439f85a80999de1d6d669ac9f137e22e7",
+            "tick": "-138161",
+            "liquidity": "0",
+            "sqrtPrice": "79235429484286868969891495",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000002",
+            "totalValueLockedToken1": "0.000605000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x990eed7bf0cdb953b6f8a9f08920b9b5f69ec3ac",
+                "name": "COCOLI",
+                "symbol": "COCOLI",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x01035c6afe5b8f6de0c01a33e34331cf45b1d89f",
+            "tick": "92243",
+            "liquidity": "1462305685151745216",
+            "sqrtPrice": "7976830520661961343059411297561",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.009900975064434022",
+            "totalValueLockedToken1": "145.76819839530498738",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xbc3bf156443b4a4fba5c688313a83c0a6419c117",
+                "name": "Quick_buy_10",
+                "symbol": "QB_10",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x01039e4e08333d32e7089a4b823df485b8e18f2e",
+            "tick": "1217",
+            "liquidity": "222120984099542697071",
+            "sqrtPrice": "84198640969926319349295982570",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "36.967196892098087177",
+            "totalValueLockedToken1": "48.283620648014921815",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x8efd7511fb568dbc7572facd3461606624558c83",
+                "name": "testtest",
+                "symbol": "$teststest",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x010e8d89c45325ce01295b12bc8b7b72703aef2f",
+            "tick": "-183814",
+            "liquidity": "0",
+            "sqrtPrice": "8083938948518981613450557",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000050000000000001",
+            "totalValueLockedToken1": "10.00001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xf1aa3ec2a23560c7159015309dcd69432db6f7fd",
+                "name": "Game AI",
+                "symbol": "GameAi",
+                "decimals": "5"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0118b10c93b501f73f3bf6954f98e7b237e183cf",
+            "tick": "-46788",
+            "liquidity": "0",
+            "sqrtPrice": "7637541641013313669334151879",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "4.634440422920464822",
+            "totalValueLockedToken1": "0.006030000000000006",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x7f79d0bb864015bd6613a2fa63526be33b93ef53",
+                "name": "Pawnfi Bored Ape Yacht Club",
+                "symbol": "P-BAYC",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x011985700416ddc550fa220859ace403eff87860",
+            "tick": "887271",
+            "liquidity": "0",
+            "sqrtPrice": "1461446703485210103287273052203988822378723970341",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000300000000000001",
+            "totalValueLockedToken1": "417566.274448777760206436",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xf8e060dcf7646f0d03f22da6d70e86a6e5bf766c",
+                "name": "Direct",
+                "symbol": "DRT",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x011bbed8a8dfa6becf6b67c467f1225bf02672f6",
+            "tick": "-74210",
+            "liquidity": "0",
+            "sqrtPrice": "1938699399361918744888504894",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000000000000000001",
+            "totalValueLockedToken1": "0.000000000000000001",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb1f664162c0269a469a699709d37cc5739379dd1",
+                "name": "Synth sUSD",
+                "symbol": "sUSD",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x011f2d232bf0ecfb1f04d6ee84689825cc6c4f0c",
+            "tick": "-6932",
+            "liquidity": "2414138713961846292",
+            "sqrtPrice": "56022262241300288188759753413",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1",
+            "totalValueLockedToken1": "0.31346660276631071",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x655f2166b0709cd575202630952d71e2bb0d61af",
+                "name": "Dummy ERC20",
+                "symbol": "DERC20",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x326c977e6efc84e512bb9c30f76e30c160ed06fb",
+                "name": "ChainLink Token",
+                "symbol": "LINK",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x01212777da22fc7b70a995ce15de1f100d4ed106",
+            "tick": "887271",
+            "liquidity": "0",
+            "sqrtPrice": "1461446703485210103287273052203988822378723970341",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.00000006",
+            "totalValueLockedToken1": "0.06602713072253778",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x63bfb2118771bd0da7a6936667a7bb705a06c1ba",
+                "name": "ChainLink Token (goerli)",
+                "symbol": "LINK",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x20572e4c090f15667cf7378e16fad2ea0e2f3eff",
+                "name": "Compound Ether 📈",
+                "symbol": "cETH",
+                "decimals": "8"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0124e43bcd6fc3bde233132da351d1cfb2565a6f",
+            "tick": "887271",
+            "liquidity": "0",
+            "sqrtPrice": "1461446703485210103287273052203988822378723970341",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.000151813684217613",
+            "totalValueLockedToken1": "19.79",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xeea5055f980111d0b47544cc5d908d3626ef2aeb",
+                "name": "Xtest Coin",
+                "symbol": "XKZ",
+                "decimals": "2"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x012afee494c9e7ca5cc440d3ae914b065eedd283",
+            "tick": "-21974",
+            "liquidity": "52114386735759443",
+            "sqrtPrice": "26408521819380835009591174457",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.008765540287826959",
+            "totalValueLockedToken1": "0.01",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x85d9a9d4afc2462af8e5bab58bc31d05c2850c88",
+                "name": "name_ ",
+                "symbol": "symbol_",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x012febdc7f7861514e0dc1473a8b618f05dff70e",
+            "tick": "-23216",
+            "liquidity": "770111495882",
+            "sqrtPrice": "24819246072037082305217248016",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1067554.031826",
+            "totalValueLockedToken1": "65057.537425",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x8ac76e0cd6c4c067bf64bfd807b0e7025f45a998",
+                "name": "LandX xToken",
+                "symbol": "xSOY",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x78d581b48275dd87179d578c42f246b7263fa6da",
+                "name": "USD Coin",
+                "symbol": "USDC",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0139ad4d1e698f25c3fef10dd5c1295de5b4934b",
+            "tick": "-161325",
+            "liquidity": "462680035306252468936",
+            "sqrtPrice": "24884542317732854981949651",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "1472732.085433904577482885",
+            "totalValueLockedToken1": "0.099016750148212747",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x0e8e42890e14338e48d4b45c10f53afab66863f4",
+                "name": "LamoToken",
+                "symbol": "LAMO",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x013be206e1e33753249a7c38161e1a2ec874ffac",
+            "tick": null,
+            "liquidity": "0",
+            "sqrtPrice": "0",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xefbc755f4f61fefa9e2c02ec45b98ebd40281c4d",
+                "name": "TokenB",
+                "symbol": "TB",
+                "decimals": "6"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x2be56080e3c3b30da721bb12c90188aa9bcc415e",
+                "name": "TokenA",
+                "symbol": "TA",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x014408d1dbac8010a592a08e7497f3dde48b1c0f",
+            "tick": "-20796",
+            "liquidity": "53032045825668936",
+            "sqrtPrice": "28010622394093857924646789391",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.096969317443786352",
+            "totalValueLockedToken1": "0.015000000000000002",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x8f5c098b87925de934fb22088da0fae0c3fc732c",
+                "name": "tobber",
+                "symbol": "tob",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x014417a95b10b7107c107d0c8e7877b34e5ce536",
+            "tick": "-887272",
+            "liquidity": "0",
+            "sqrtPrice": "4295128740",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "13.520266",
+            "totalValueLockedToken1": "0.000000050000000002",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x65e2fe35c30ec218b46266f89847c63c2eda7dc7",
+                "name": "USDT",
+                "symbol": "USDT",
+                "decimals": "6"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0147fd68f11975409a9591c0d310dff700c55b3c",
+            "tick": "-69094",
+            "liquidity": "0",
+            "sqrtPrice": "2503846803868857019829732162",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.200000000000000001",
+            "totalValueLockedToken1": "0.000100941884033303",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x70164d8626c291f78099e6b84141374135fd0818",
+                "name": "AkodaToken_A",
+                "symbol": "AT_A",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x014bdbbd9c0a4632894ad700f8ecdbd2e9bbeaee",
+            "tick": "-29959",
+            "liquidity": "211277136631961253322758",
+            "sqrtPrice": "17715955711429570570949230592",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "888.677945687072573429",
+            "totalValueLockedToken1": "50",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xdbeef4c10359b9db496ba5817adacdfeba62cbd6",
+                "name": "Alphabet Inc.",
+                "symbol": "GOOGL",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x057d51b5c5ede28dfefccc73266347a9e970c9d2",
+                "name": "Shiba Inu",
+                "symbol": "SHIB",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x014c3ce60e3d4b0bf2f9279a5a3a223e56d6fca3",
+            "tick": "-887272",
+            "liquidity": "0",
+            "sqrtPrice": "4295128740",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "76.45071769",
+            "totalValueLockedToken1": "3.314199204356412896",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xdc31ee1784292379fbb2964b3b9c4124d8f89c60",
+                "name": "Dai",
+                "symbol": "DAI",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xca063a2ab07491ee991dcecb456d1265f842b568",
+                "name": "wBTC",
+                "symbol": "wBTC",
+                "decimals": "8"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x014f3783a179d5aa63dbf45e2885cad42be85990",
+            "tick": null,
+            "liquidity": "0",
+            "sqrtPrice": "0",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0",
+            "totalValueLockedToken1": "0",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xe735619be1dda1b2589f6d6016b1ac52f7d566ec",
+                "name": "Token C",
+                "symbol": "C",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x78ab73ebbb3434a77ab5c4633aa7dcbbb4678178",
+                "name": "Token D",
+                "symbol": "d",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x01515127593768ec941c04488c1f082469b842ac",
+            "tick": "115757",
+            "liquidity": "671365260023359064468",
+            "sqrtPrice": "25846311519766777753177152193319",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.034929421547500398",
+            "totalValueLockedToken1": "17842.547192200996771773",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xc883d4f7dad93d4b7325ed2b83ed56fd95e73c42",
+                "name": "Wrapped Fanbase Coin",
+                "symbol": "WFNB",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0xb4fbf271143f4fbf7b91a5ded31805e42b2208d6",
+                "name": "Wrapped Ether",
+                "symbol": "WETH",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x0158fb7f71e762f7e816a108dec50f9831bde5b6",
+            "tick": "69070",
+            "liquidity": "0",
+            "sqrtPrice": "2504067122816411853623422936393",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "0.001670909162944087",
+            "totalValueLockedToken1": "0.000000000000000002",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0x79a69e057d9db32374604109f42f2e0dd1b96e4b",
+                "name": "myDAI",
+                "symbol": "myDAI",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x6981aea348ad9806a9d6df21647aea5fa3df5adb",
+                "name": "myUSDT",
+                "symbol": "myUSDT",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x015aa5a630ac054dd99c135beee7cdc3cee1b21f",
+            "tick": "-122067",
+            "liquidity": "2308819688893165653195605",
+            "sqrtPrice": "177158045935920268341787830",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "999999999.999999999999970117",
+            "totalValueLockedToken1": "4999.474786935947855602",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xcaeee8c913b71488eeea0e15618f68583cdbd616",
+                "name": "Bridge Token",
+                "symbol": "BTK",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x598aa007544646e07534c2ba930e9dab05bfb08f",
+                "name": "AI Shares",
+                "symbol": "AIS",
+                "decimals": "18"
+            }
+        },
+        {
+            "__typename": "Pool",
+            "id": "0x015d36728bdf9073d2583fda3ba5103627505c87",
+            "tick": "29957",
+            "liquidity": "522031520964175995120339184156",
+            "sqrtPrice": "354304577946832130752611902243",
+            "totalValueLockedETH": "0",
+            "totalValueLockedToken0": "244873182.054564585093393471",
+            "totalValueLockedToken1": "2099999960.123272162754372087",
+            "totalValueLockedUSD": "0",
+            "token1": {
+                "__typename": "Token",
+                "id": "0xb5ad8b2bc4e997f7c81bda15e3df8aacd4b8f147",
+                "name": "WahajCoin2",
+                "symbol": "WHJ2",
+                "decimals": "18"
+            },
+            "token0": {
+                "__typename": "Token",
+                "id": "0x69949354f5fed1f3a3e4c70e99f492fd1e10cade",
+                "name": "WahajCoin1",
+                "symbol": "WHJ1",
+                "decimals": "18"
+            }
+        }
+    ]
+}

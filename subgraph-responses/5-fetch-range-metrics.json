@@ -1,0 +1,16 @@
+{
+    "rangePoolFactories": [
+        {
+            "id": "0x7193df9f66ea75cb3a12e94503ad9b6bbc0b653e",
+            "txnCount": "155",
+            "feesEthTotal": "9.849999249941015432691486478138031",
+            "feesUsdTotal": "4061.15172873621334158045013355317",
+            "poolCount": "1",
+            "totalValueLockedEth": "121179308.9823150030014748360413962",
+            "totalValueLockedUsd": "1231523.605750799012300777813276381",
+            "volumeEthTotal": "19699.99849988203086538297295627608",
+            "volumeUsdTotal": "8122303.457472426683160900267106339",
+            "__typename": "RangePoolFactory"
+        }
+    ]
+}
