@@ -40,6 +40,9 @@ export class LimitPool {
                 poolAddress: this.poolAddress
             });
         }
+        else {
+            throw new Error("Limit.initSetters: signerOrProvider is not a signer");
+        }
         if(this.debugMode) console.log("End CoverPool.initSetters");
     }
 

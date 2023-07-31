@@ -39,6 +39,8 @@ export class CoverPool {
                 debugMode: false,
                 poolAddress: this.poolAddress
             });
+        } else {
+            throw new Error("CoverPool.initSetters: signerOrProvider is not a signer");
         }
         if(this.debugMode) console.log("End CoverPool.initSetters");
     }

@@ -5,7 +5,15 @@ export enum IsSignerOrIsProvider  {
     Provider
 }
 export const isSignerOrIsProvider = async (signerOrProvider: Signer | Provider):Promise<IsSignerOrIsProvider> => {
-    const isSigner =  await (signerOrProvider as Signer).getAddress !== undefined
-    return isSigner ? IsSignerOrIsProvider.Signer : IsSignerOrIsProvider.Provider;
+    let status: IsSignerOrIsProvider = IsSignerOrIsProvider.Provider;
+    try{
+
+        let trySignerCall = await (signerOrProvider as Signer).getAddress();
+        status = IsSignerOrIsProvider.Signer;
+    }
+    catch(e){
+
+    }
+    return status;
 
 }
