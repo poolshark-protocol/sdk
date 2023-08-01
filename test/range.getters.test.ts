@@ -16,14 +16,14 @@ const tokenZeroAddress = "0xC26906E10E8BDaDeb2cf297eb56DF59775eE52c4" // WETH
 const  tokenOneAddress = "0x6774be1a283Faed7ED8e40463c40Fb33A8da3461"  // USDC
 
 
-describe('Limit Getters Should All Correctly Fetch', () => {
+describe('Range Getters Should All Correctly Fetch', () => {
     const rangePool = new RangePool({
         signerOrProvider: provider,
         poolAddress:coverPoolAddressArbitrumGoerli
     })
 
     test('Should Fail To Init Setters With Only A Provider', async () => {
-        await expect(rangePool.initSetters()).rejects.toThrow("Limit.initSetters: signerOrProvider is not a signer");
+        await expect(rangePool.initSetters()).rejects.toThrow("Range.initSetters: signerOrProvider is not a signer");
     });
 
     

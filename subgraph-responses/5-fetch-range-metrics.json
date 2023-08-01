@@ -2,14 +2,14 @@
     "rangePoolFactories": [
         {
             "id": "0x7193df9f66ea75cb3a12e94503ad9b6bbc0b653e",
-            "txnCount": "155",
-            "feesEthTotal": "9.849999249941015432691486478138031",
-            "feesUsdTotal": "4061.15172873621334158045013355317",
+            "txnCount": "177",
+            "feesEthTotal": "73.23813095823216351891798549687855",
+            "feesUsdTotal": "4067.381292443565891176398330014323",
             "poolCount": "1",
-            "totalValueLockedEth": "121179308.9823150030014748360413962",
-            "totalValueLockedUsd": "1231523.605750799012300777813276381",
-            "volumeEthTotal": "19699.99849988203086538297295627608",
-            "volumeUsdTotal": "8122303.457472426683160900267106339",
+            "totalValueLockedEth": "1836147.780493582345542187055602913",
+            "totalValueLockedUsd": "1953096.743934309643963371123934729",
+            "volumeEthTotal": "146476.2619164643270378359709937572",
+            "volumeUsdTotal": "8134762.584887131782352796660028647",
             "__typename": "RangePoolFactory"
         }
     ]
