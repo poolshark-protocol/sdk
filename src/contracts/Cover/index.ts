@@ -8,8 +8,9 @@ import {
   isSignerOrIsProvider,
   IsSignerOrIsProvider,
 } from '../../utils/isSignerOrIsProvider';
-
+import { FromSignerArgs } from '../types';
 type CoverPoolConstructor = ContractConstructorArgs;
+
 export class CoverPool {
   public setters: CoverPoolSetters | undefined;
   public getters: CoverPoolGetters;
@@ -50,5 +51,21 @@ export class CoverPool {
       );
     }
     if (this.debugMode) console.log('End CoverPool.initSetters');
+  }
+
+  static fromSigner(args:FromSignerArgs): CoverPool {
+    const pool =  new CoverPool({
+      network: args.network,
+      signerOrProvider: args.signer,
+      debugMode: args.debugMode,
+      poolAddress: args.poolAddress,
+    });
+    pool.setters = new CoverPoolSetters({
+      network: args.network,
+      signerOrProvider: args.signer,
+      debugMode: args.debugMode,
+      poolAddress: args.poolAddress,
+    });
+    return pool;
   }
 }

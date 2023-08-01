@@ -42,3 +42,8 @@ export type ContractConstructorArgs = {
   poolAddress: `0x${string}`;
   network?: Network | undefined;
 };
+
+
+export type FromSignerArgs = Omit<ContractConstructorArgs, 'signerOrProvider'> & {
+  signer: Signer;
+};

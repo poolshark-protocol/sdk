@@ -8,6 +8,7 @@ import {
   isSignerOrIsProvider,
   IsSignerOrIsProvider,
 } from '../../utils/isSignerOrIsProvider';
+import { FromSignerArgs } from '../types';
 
 type LimitPoolConstructor = ContractConstructorArgs;
 export class LimitPool {
@@ -48,5 +49,22 @@ export class LimitPool {
       throw new Error('Limit.initSetters: signerOrProvider is not a signer');
     }
     if (this.debugMode) console.log('End CoverPool.initSetters');
+  }
+
+  static fromSigner(args: FromSignerArgs): LimitPool {
+    const pool =  new LimitPool({
+      network: args.network,
+      signerOrProvider: args.signer,
+      debugMode: args.debugMode,
+      poolAddress: args.poolAddress,
+    });
+
+    pool.setters = new LimitPoolSetters({
+      network: args.network,
+      signerOrProvider: args.signer,
+      debugMode: args.debugMode,
+      poolAddress: args.poolAddress,
+    });
+    return pool;
   }
 }
