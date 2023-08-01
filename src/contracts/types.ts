@@ -2,6 +2,7 @@ import { type BigNumber } from 'ethers';
 import type { Signer } from 'ethers';
 import type { Provider } from '@ethersproject/providers';
 import { Network } from '../enums';
+import { type Wallet } from 'ethers/lib/ethers';
 export * from './Cover/types';
 export * from './Range/types';
 export * from './Limit/types';
@@ -37,7 +38,7 @@ export type SnapshotParamsArgs = {
  * @param network: Network enum to use
  */
 export type ContractConstructorArgs = {
-  signerOrProvider: Signer | Provider;
+  signerOrProvider: Wallet | Signer | Provider;
   debugMode?: boolean;
   poolAddress: `0x${string}`;
   network?: Network | undefined;
@@ -46,4 +47,8 @@ export type ContractConstructorArgs = {
 
 export type FromSignerArgs = Omit<ContractConstructorArgs, 'signerOrProvider'> & {
   signer: Signer;
+};
+
+export type FromWalletArgs = Omit<ContractConstructorArgs, 'signerOrProvider'> & {
+  wallet: Wallet;
 };

@@ -3,7 +3,7 @@ import { limitPoolGetters } from './getters';
 import type { Provider } from '@ethersproject/providers';
 import { Network } from '../../enums';
 import { Signer } from 'ethers';
-import { ContractConstructorArgs } from '../types';
+import { ContractConstructorArgs, FromWalletArgs } from '../types';
 import {
   isSignerOrIsProvider,
   IsSignerOrIsProvider,
@@ -62,6 +62,24 @@ export class LimitPool {
     pool.setters = new LimitPoolSetters({
       network: args.network,
       signerOrProvider: args.signer,
+      debugMode: args.debugMode,
+      poolAddress: args.poolAddress,
+    });
+    return pool;
+  }
+
+
+  static fromWallet(args:FromWalletArgs): LimitPool {
+    const pool = new LimitPool({
+      network: args.network,
+      signerOrProvider: args.wallet,
+      debugMode: args.debugMode,
+      poolAddress: args.poolAddress,
+    });
+
+    pool.setters = new LimitPoolSetters({
+      network: args.network,
+      signerOrProvider: args.wallet,
       debugMode: args.debugMode,
       poolAddress: args.poolAddress,
     });

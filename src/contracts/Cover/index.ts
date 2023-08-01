@@ -1,6 +1,6 @@
 import { CoverPoolSetters } from './setters';
 import { CoverPoolGetters } from './getters';
-import type { ContractConstructorArgs } from '../types';
+import type { ContractConstructorArgs, FromWalletArgs } from '../types';
 import type { Provider } from '@ethersproject/providers';
 import { Network } from '../../enums';
 import { Signer } from 'ethers';
@@ -63,6 +63,22 @@ export class CoverPool {
     pool.setters = new CoverPoolSetters({
       network: args.network,
       signerOrProvider: args.signer,
+      debugMode: args.debugMode,
+      poolAddress: args.poolAddress,
+    });
+    return pool;
+  }
+
+  static fromWallet(args:FromWalletArgs): CoverPool {
+    const pool =  new CoverPool({
+      network: args.network,
+      signerOrProvider: args.wallet,
+      debugMode: args.debugMode,
+      poolAddress: args.poolAddress,
+    });
+    pool.setters = new CoverPoolSetters({
+      network: args.network,
+      signerOrProvider: args.wallet,
       debugMode: args.debugMode,
       poolAddress: args.poolAddress,
     });
