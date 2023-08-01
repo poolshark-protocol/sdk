@@ -215,13 +215,13 @@ export class PoolsharkSubgraph {
   }
 
   async fetchCoverPositions(
-    address: string,
+    address: `0x${string}`,
     skip?: number,
     limit?: number,
   ): Promise<FetchCoverPositionsResponse> {
     const positionsQuery = `
       query($owner: String) {
-          positions(where: {owner:"${address}"},skip:${skip},limit:${limit}) {
+          positions(where: {owner:"${address.toLowerCase()}"},skip:${skip||0},limit:${limit || 100}) {
                 id
                 inAmount
                 inToken{

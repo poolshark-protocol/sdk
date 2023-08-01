@@ -2,7 +2,8 @@
   "name": "poolshark-sdk",
   "version": "1.0.0",
   "description": "⚒️ The Official SDK for the Poolshark Protocol",
-  "main": "dist/PoolSharkSDK.js",
+  "main": "dist/index.js",
+  "types":"dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "start": "ts-node src/PoolSharkSDK.ts",
